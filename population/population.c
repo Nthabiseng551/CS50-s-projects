@@ -20,6 +20,6 @@ do
 while (m < n);
     // TODO: Calculate number of years until we reach threshold
 int n = S;
-end year size =
+end year size = n + (n/3)
     // TODO: Print number of years
 }
