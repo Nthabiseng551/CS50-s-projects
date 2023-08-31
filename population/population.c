@@ -24,7 +24,7 @@ int main(void)
     int y = 0; //number of years passed
     while (total < m)
     {
-        total = n + round((n/3)) - round((n/4));//total at the end of each year
+        total = n + round((n / 3)) - round((n / 4)); //total at the end of each year
         n = total;
         y = y + 1;
     }
