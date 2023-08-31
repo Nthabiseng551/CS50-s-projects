@@ -23,11 +23,11 @@ int main(void)
     int total = n;
     int y = 0; //number of years passed
     while (total < m)
-{
-      total = n + round((n/3)) - round((n/4));//total at the end of each year
-      n = total;
-      y = y + 1;
-}
+    {
+        total = n + round((n/3)) - round((n/4));//total at the end of each year
+        n = total;
+        y = y + 1;
+    }
     // TODO: Print number of years
-printf("Years: %i\n", y);
+    printf("Years: %i\n", y);
 }
