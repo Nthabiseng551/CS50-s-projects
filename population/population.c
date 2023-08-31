@@ -21,7 +21,10 @@ while (m < n);
     // TODO: Calculate number of years until we reach threshold
 
 int total;
-total = n + round((n/3)) - round((n/4));
-printf("%li\n",total);
+while (total < m)
+{
+      total = n + round((n/3)) - round((n/4));//total at the end of each year
+      n = total;
+}
     // TODO: Print number of years
 }
