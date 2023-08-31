@@ -21,6 +21,6 @@ while (m < n);
     // TODO: Calculate number of years until we reach threshold
 int n = S;
 float end year size;
-end year size = n + (float)(n/3) - (float)(n/4);
+end year size = n + (n/3) - (n/4);
     // TODO: Print number of years
 }
