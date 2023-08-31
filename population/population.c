@@ -13,9 +13,9 @@ while (n>=9);
     // TODO: Prompt for end size
 do
 {
-    n = get_int("Start size: ");
+    n = get_int("End size: ");
 }
-while (n>=9);
+while (n>= start size);
     // TODO: Calculate number of years until we reach threshold
 
     // TODO: Print number of years
