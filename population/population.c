@@ -4,18 +4,18 @@
 
 int main(void)
 {
-    const int n;
-    const int m;
+    const int S;
+    const int E;
     // TODO: Prompt for start size
 do
 {
-    n = get_int("Start size: ");
+    S = get_int("Start size: ");
 }
 while (n < 9);
     // TODO: Prompt for end size
 do
 {
-    m = get_int("End size: ");
+    E = get_int("End size: ");
 }
 while (m < n);
     // TODO: Calculate number of years until we reach threshold
