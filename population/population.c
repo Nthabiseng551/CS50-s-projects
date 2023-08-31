@@ -22,6 +22,6 @@ while (m < n);
 
 long total;
 total = n + round((n/3)) - round((n/4));
-printf("%l\n",total);
+printf("%li\n",total);
     // TODO: Print number of years
 }
