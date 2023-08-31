@@ -20,7 +20,7 @@ do
 while (m < n);
     // TODO: Calculate number of years until we reach threshold
 
-
- = n + (n/3) - (n/4);
+float total;
+total = n + (n/3) - (n/4);
     // TODO: Print number of years
 }
