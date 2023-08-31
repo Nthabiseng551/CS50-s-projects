@@ -21,6 +21,6 @@ while (m < n);
     // TODO: Calculate number of years until we reach threshold
 
 
-year-end size = n + (n/3) - (n/4);
+ = n + (n/3) - (n/4);
     // TODO: Print number of years
 }
