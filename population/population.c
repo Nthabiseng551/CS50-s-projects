@@ -21,10 +21,13 @@ while (m < n);
     // TODO: Calculate number of years until we reach threshold
 
 int total;
+int y = 0; //number of years passed
 while (total < m)
 {
       total = n + round((n/3)) - round((n/4));//total at the end of each year
       n = total;
+      y = y + 1;
 }
     // TODO: Print number of years
+printf("%i\n", y);
 }
