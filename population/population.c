@@ -4,8 +4,8 @@
 
 int main(void)
 {
-    int n;
-    int m;
+    const int n;
+    const int m;
     // TODO: Prompt for start size
 do
 {
