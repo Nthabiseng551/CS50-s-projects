@@ -11,7 +11,7 @@ do
 {
     n = get_int("Start size: ");
 }
-while (S < 9);
+while (n < 9);
     // TODO: Prompt for end size
 do
 {
