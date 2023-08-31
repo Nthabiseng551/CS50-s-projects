@@ -21,7 +21,7 @@ while (m < n);
     // TODO: Calculate number of years until we reach threshold
 
 float total;
-total = n + (n/3) - (n/4);
-printf("%.2f\n", total);
+total = n + round((n/3)) - round((n/4));
+printf("%f\n",total);
     // TODO: Print number of years
 }
