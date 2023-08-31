@@ -20,7 +20,7 @@ do
 while (m < n);
     // TODO: Calculate number of years until we reach threshold
 
-int total;
+int total = n + round((n/3)) - round((n/4));
 int y = 0; //number of years passed
 while (total < m)
 {
