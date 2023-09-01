@@ -4,9 +4,11 @@
 int main(void)
 {
     int n;
-  do
+    // Prompting user for height
+    do
     {
         n = get_int("Height: ");
     }
     while (n < 1 || n > 8);
+    printf("Stored: %i\n", n);
 }
