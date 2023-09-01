@@ -43,7 +43,7 @@ int get_cents(void)
     {
         c = get_int("Change owed: ");
     }
-    while (c < 0 || c > 99);
+    while (c < 0);
     return c;
 }
 
@@ -112,7 +112,7 @@ int calculate_pennies(int cents)
     {
        p  = 0;
     }
-    else 
+    else
     {
         p = cents;
     }
