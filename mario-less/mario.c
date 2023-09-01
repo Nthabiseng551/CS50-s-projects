@@ -1,4 +1,4 @@
-// Printing a pyramid bricks(#)
+// Printing bricks(#) of a right-aligned pyramid of height n
 #include <cs50.h>
 #include <stdio.h>
 
