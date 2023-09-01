@@ -50,7 +50,11 @@ int get_cents(void)
 int calculate_quarters(int cents)
 {
     // TODO
-    if (cents >= 25 && cents < 50)
+    if (cents < 25)
+    {
+        quaters = 0;
+    }
+    else if (cents >= 25 && cents < 50)
     {
         quaters = 1;
     }
