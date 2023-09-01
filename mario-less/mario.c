@@ -14,12 +14,5 @@ int main(void)
     printf("Stored: %i\n", n);
 
     // Printing the pyramid blocks(#)
-     for (int i = 1; i < n; i++)
-  {
-      for (int j = 0; j < n; j++)
-      {
-          printf("#");
-      }
-      printf("\n");
-  }
+     for ()
 }
