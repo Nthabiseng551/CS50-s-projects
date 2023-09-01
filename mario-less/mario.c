@@ -1,3 +1,4 @@
+// Printing a pyramid bricks(#)
 #include <cs50.h>
 #include <stdio.h>
 
