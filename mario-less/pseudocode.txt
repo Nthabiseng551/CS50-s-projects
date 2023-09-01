@@ -1,4 +1,5 @@
 Prompt user for the height of the pyramid
 If the height is a positive integer between 1 and 8 (inclusive),
-
-else repeat step 1
+       print i hashes and a newline, iterating i from 1 to the height value
+else
+       repeat step 1
