@@ -11,19 +11,18 @@ int main(void)
         n = get_int("Height: ");
     }
     while (n < 1 || n > 8);
-    
 
     // Printing the pyramid blocks(#)
-     for (int i = 1; i <= n; i++)
-         {
-            for (int j = i; j < n; j++)
-            {
-                printf (" ");
-            }
-            for (int k = 1; k <= i; k++)
-            {
-                printf ("#");
-            }
-            printf("\n");
-         }
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = i; j < n; j++)
+        {
+            printf(" ");
+        }
+        for (int k = 1; k <= i; k++)
+        {
+            printf("#");
+        }
+        printf("\n");
+    }
 }
