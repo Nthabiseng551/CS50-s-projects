@@ -63,7 +63,7 @@ int calculate_quarters(int cents)
     {
         q = 2;
     }
-    else if (cents >= 75 && cents < 100)
+    else
     {
         q = 3;
     }
