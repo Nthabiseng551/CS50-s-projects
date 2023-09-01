@@ -38,13 +38,13 @@ int main(void)
 int get_cents(void)
 {
     // TODO
-    int n;
+    int c;
      do
     {
-        n = get_int("Change owed: ");
+        c = get_int("Change owed: ");
     }
-    while (n < 0);
-    return n;
+    while (c < 0);
+    return c;
 }
 
 int calculate_quarters(int cents)
@@ -74,7 +74,7 @@ int calculate_dimes(int cents)
 {
     // TODO
     int d;
-     (cents < 10)
+    if (cents < 10)
     {
         d = 0;
     }
@@ -82,13 +82,9 @@ int calculate_dimes(int cents)
     {
         d = 1;
     }
-    else if (cents >= 50 && cents < 75)
+    else if (cents >= 20 && cents < 25)
     {
-        q = 2;
-    }
-    else if (cents >= 75 && cents < 100)
-    {
-        q = 3;
+        d = 2;
     }
     return d;
 }
@@ -96,7 +92,7 @@ int calculate_dimes(int cents)
 int calculate_nickels(int cents)
 {
     // TODO
-    return nickels;
+    return n;
 }
 
 int calculate_pennies(int cents)
