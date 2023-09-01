@@ -82,7 +82,7 @@ int calculate_dimes(int cents)
     {
         d = 1;
     }
-    else if (cents >= 20 && cents < 25)
+    else
     {
         d = 2;
     }
@@ -97,7 +97,7 @@ int calculate_nickels(int cents)
     {
         n = 0;
     }
-    else if (cents >= 5 && cents < 10)
+    else
     {
         n = 1;
     }
@@ -112,7 +112,7 @@ int calculate_pennies(int cents)
     {
        p  = 0;
     }
-    else if (cents >= 1 && cents < 5)
+    else 
     {
         p = cents;
     }
