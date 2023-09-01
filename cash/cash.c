@@ -50,29 +50,47 @@ int get_cents(void)
 int calculate_quarters(int cents)
 {
     // TODO
+    int q;
     if (cents < 25)
     {
-        quaters = 0;
+        q = 0;
     }
     else if (cents >= 25 && cents < 50)
     {
-        quaters = 1;
+        q = 1;
     }
     else if (cents >= 50 && cents < 75)
     {
-        quaters = 2;
+        q = 2;
     }
     else if (cents >= 75 && cents < 100)
     {
-        quaters = 3;
+        q = 3;
     }
-    return quaters;
+    return q;
 }
 
 int calculate_dimes(int cents)
 {
     // TODO
-    return dimes;
+    int d;
+     (cents < 10)
+    {
+        d = 0;
+    }
+    else if (cents >= 10 && cents < 20)
+    {
+        d = 1;
+    }
+    else if (cents >= 50 && cents < 75)
+    {
+        q = 2;
+    }
+    else if (cents >= 75 && cents < 100)
+    {
+        q = 3;
+    }
+    return d;
 }
 
 int calculate_nickels(int cents)
