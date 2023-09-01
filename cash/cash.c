@@ -67,10 +67,6 @@ int calculate_quarters(int cents)
     {
         q = 3;
     }
-    else
-    {
-        q = 4;
-    }
     return q;
 }
 
