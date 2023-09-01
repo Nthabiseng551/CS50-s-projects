@@ -62,23 +62,23 @@ int calculate_quarters(int cents)
     {
         quaters = 3;
     }
-    return 0;
+    return quaters;
 }
 
 int calculate_dimes(int cents)
 {
     // TODO
-    return 0;
+    return dimes;
 }
 
 int calculate_nickels(int cents)
 {
     // TODO
-    return 0;
+    return nickels;
 }
 
 int calculate_pennies(int cents)
 {
     // TODO
-    return 0;
+    return pennies;
 }
