@@ -12,6 +12,7 @@ int main(void)
 {
     string text = get_string("Text: ");
     int nl = count_letters(text);
+    printf("%i letters\n", nl);
 }
 
 // Function to count letters
