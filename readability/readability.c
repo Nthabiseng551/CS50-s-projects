@@ -16,5 +16,6 @@ int main(void)
 // Function to count letters
 int count_letters(string text)
 {
-
+    int n = 0;
+    for (int i = 0; i < strlen(text); i++)
 }
