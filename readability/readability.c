@@ -16,7 +16,8 @@ int main(void)
     int letters = count_letters(text);
     int words = count_words(text);
     int sentences = count_sentences(text);
-    
+
+    L = (letters/words) * 100
 
     index = round(0.0588 * L - 0.296 * S - 15.8);
 
