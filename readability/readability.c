@@ -47,7 +47,7 @@ int count_words(string text)
      int n = 1;
     for (int i = 0; i < strlen(text); i++)
     {
-        if (text[i] == 33 || text[i] == 46 || text[i] == 63)
+        if (isspace(text[i]))
         {
             n = n + 1;
         }
@@ -59,13 +59,13 @@ int count_words(string text)
     return n;
 }
 
-
+// Function to count sentences in a text
 int count_sentences(string text)
 {
      int n = 1;
     for (int i = 0; i < strlen(text); i++)
     {
-        if (ispunct(text[i]))
+        if (text[i] == 33 || text[i] == 46 || text[i] == 63)
         {
             n = n + 1;
         }
