@@ -16,10 +16,9 @@ int main(void)
     int letters = count_letters(text);
     int words = count_words(text);
     int sentences = count_sentences(text);
-    printf("%i letters\n", letters);
-    printf("%i words\n", words);
-    printf("%i sentences\n", sentences);
+    
 
+    index = round(0.0588 * L - 0.296 * S - 15.8);
 
 }
 
