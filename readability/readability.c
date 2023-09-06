@@ -1,7 +1,7 @@
 // Code that computes the Coleman-Liau index of text
 
-#include <ctype.h>
 #include <cs50.h>
+#include <ctype.h>
 #include <math.h>
 #include <stdio.h>
 #include <string.h>
@@ -17,13 +17,13 @@ int main(void)
     int words = count_words(text);
     int sentences = count_sentences(text);
 
-    float L = ((float)letters/words) * 100;
-    float S = ((float)sentences/words) * 100;
+    float L = ((float) letters / words) * 100;
+    float S = ((float) sentences / words) * 100;
 
     int index = round((0.0588 * L) - (0.296 * S) - 15.8);
     if (index < 1)
     {
-         printf("Before Grade 1\n");
+        printf("Before Grade 1\n");
     }
     else if (index >= 16)
     {
@@ -56,7 +56,7 @@ int count_letters(string text)
 // Function to count words in a text
 int count_words(string text)
 {
-     int n = 1;
+    int n = 1;
     for (int i = 0; i < strlen(text); i++)
     {
         if (isspace(text[i]))
@@ -74,7 +74,7 @@ int count_words(string text)
 // Function to count sentences in a text
 int count_sentences(string text)
 {
-     int n = 0;
+    int n = 0;
     for (int i = 0; i < strlen(text); i++)
     {
         if (text[i] == 33 || text[i] == 46 || text[i] == 63)
