@@ -7,15 +7,20 @@
 #include <string.h>
 
 int count_letters(string text);
+int count_words(string text);
 
 int main(void)
 {
     string text = get_string("Text: ");
-    int nl = count_letters(text);
-    printf("%i letters\n", nl);
+    int letters = count_letters(text);
+    int words = count_words(text);
+    printf("%i letters\n", letters);
+     printf("%i words\n", words);
+
+
 }
 
-// Function to count letters
+// Function to count letters in a text
 int count_letters(string text)
 {
     int n = 0;
@@ -31,4 +36,10 @@ int count_letters(string text)
         }
     }
     return n;
+}
+
+// Function to count words in a text
+int count_words(string text)
+{
+
 }
