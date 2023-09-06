@@ -5,12 +5,12 @@
 #include <math.h>
 #include <stdio.h>
 
-int count_letters(string text)
+int count_letters(string text);
 
 int main(void)
 {
     string text = get_string("Text: ");
-    nl = count_letters(text);
+    int nl = count_letters(text);
 }
 
 // Function to count letters
