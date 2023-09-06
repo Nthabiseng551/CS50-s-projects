@@ -17,10 +17,22 @@ int main(void)
     int words = count_words(text);
     int sentences = count_sentences(text);
 
-    L = (letters/words) * 100
+    L = (letters/words) * 100;
+    S = (sentences/words) * 100;
 
     index = round(0.0588 * L - 0.296 * S - 15.8);
-
+    if (index < 1)
+    {
+         printf("Before Grade 1");
+    }
+    else if (index >= 16)
+    {
+        printf("Grade 16+");
+    }
+    else
+    {
+        printf("Grade %i\n" index);
+    }
 }
 
 // Function to count letters in a text
