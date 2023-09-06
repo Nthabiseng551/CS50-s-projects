@@ -58,3 +58,21 @@ int count_words(string text)
     }
     return n;
 }
+
+
+int count_sentences(string text)
+{
+     int n = 1;
+    for (int i = 0; i < strlen(text); i++)
+    {
+        if (ispunct(text[i]))
+        {
+            n = n + 1;
+        }
+        else
+        {
+            n = n + 0;
+        }
+    }
+    return n;
+}
