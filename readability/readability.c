@@ -47,7 +47,7 @@ int count_words(string text)
      int n = 1;
     for (int i = 0; i < strlen(text); i++)
     {
-        if (isspace(text[i]))
+        if (text[i] == 33 || text[i] == 46 || text[i] == 63)
         {
             n = n + 1;
         }
