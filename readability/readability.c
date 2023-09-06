@@ -25,7 +25,8 @@ int count_letters(string text)
         }
         else
         {
-            n
+            n = n + 0;
         }
+        return n;
     }
 }
