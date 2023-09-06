@@ -18,4 +18,14 @@ int count_letters(string text)
 {
     int n = 0;
     for (int i = 0; i < strlen(text); i++)
+    {
+        if (isalpha(text[i]))
+        {
+            n = n + 1;
+        }
+        else
+        {
+            n
+        }
+    }
 }
