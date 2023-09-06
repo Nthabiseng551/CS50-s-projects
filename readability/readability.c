@@ -1,6 +1,8 @@
 // Code that computes the Coleman-Liau index of text
 
+#include <ctype.h>
 #include <cs50.h>
+#include <math.h>
 #include <stdio.h>
 
 int count_letters(string text)
