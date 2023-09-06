@@ -28,6 +28,6 @@ int count_letters(string text)
         {
             n = n + 0;
         }
-        return n;
     }
+    return n;
 }
