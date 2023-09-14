@@ -104,11 +104,11 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             int totalRed, totalGreen, totalBlue;
             totalRed = totalGreen = totalBlue = 0;
             int counter = 0;
-             for (int s = i - 1; s < i + 2; s++)
+             for (int n = i - 1; n < i + 2; n++)
             {
                 for (int m = j - 1; m < j + 2; m++)
                 {
-                    if (s < 0 || m < 0 || s > height - 1 || m > width - 1) // Edge case
+                    if (n < 0 || m < 0 || n > height - 1 || m > width - 1) // Edge case
                     {
                         continue;
                     }
