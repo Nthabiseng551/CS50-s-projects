@@ -1,0 +1,11 @@
+sort1 uses: Bubble sort
+
+How do you know?: the time taken by sort1 to finish sorting the sorted 50 000 numbers file was in between of the running times of sort2 and sort3(i.e. 2nd to finish), therefore sort1 uses the bubble sort because we know that the lower bound running time(big omega) of the bubble sort is the second fastest.
+
+sort2 uses: Merge sort
+
+How do you know?: sort2 was the fastest to finish sorting the 50 000 random and sorted numbers, and since the merge sort algorithm has the fastest running times(both big 0 and big omega) I have concluded that sort2 uses merge sort.
+
+sort3 uses: Selection sort
+
+How do you know?: sort3 was the slowest when sorting the 50 000 sorted numbers and since the selection sort algorithm has the slowest lower bound running time(big omega), I have concluded that sort3 uses selection sort.
