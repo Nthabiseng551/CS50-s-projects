@@ -119,8 +119,22 @@ RGBTRIPLE temp[height][width];
                     {
                         continue;
                     }
+                    totalRed += image[currentX][currentY].rgbtRed;
+                    totalGreen += image[currentX][currentY].rgbtGreen;
+                    totalBlue += image[currentX][currentY].rgbtBlue;
+                    counter++;
                 }
+                temp[i][j].rgbtRed = round(totalRed / counter);
+                temp[i][j].rgbtGreen = round(totalGreen / counter);
+                temp[i][j].rgbtBlue = round(totalBlue / counter);
             }
+        }
+    }
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            
         }
     }
     return;
