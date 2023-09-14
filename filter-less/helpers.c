@@ -134,7 +134,9 @@ RGBTRIPLE temp[height][width];
     {
         for (int j = 0; j < width; j++)
         {
-            
+            image[i][j].rgbtRed = temp[i][j].rgbtRed;
+            image[i][j].rgbtGreen = temp[i][j].rgbtGreen;
+            image[i][j].rgbtBlue = temp[i][j].rgbtBlue;
         }
     }
     return;
