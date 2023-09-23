@@ -24,18 +24,17 @@ def main():
     coins = quarters + dimes + nickels + pennies
 
     # Print total number of coins to give the customer
-    printf(coins)
+    print(coins)
 
 
 def get_cents():
     while True:
-        c = get_float("Change owed: ")
+        c = get_float("Change owed: ") * 100
         if c > 0:
             break
-    c = round(c * 100)
     return c
 
-def calculate_quarters():
+def calculate_quarters(cents):
     if cents < 25:
         q = 0
     elif cents >= 25 and cents < 50:
@@ -46,7 +45,7 @@ def calculate_quarters():
         q = 3
     return q
 
-def calculate_dimes():
+def calculate_dimes(cents):
     if cents < 10:
         d = 0
     elif cents >= 10 and cents < 20:
@@ -55,14 +54,14 @@ def calculate_dimes():
         d = 2
     return d
 
-def calculate_nickels():
+def calculate_nickels(cents):
     if cents < 5:
         n = 0
     else:
         n = 1
     return n
 
-def calculate_pennies():
+def calculate_pennies(cents):
     if cents < 1:
         p = 0
     else:
