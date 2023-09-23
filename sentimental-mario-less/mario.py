@@ -3,6 +3,11 @@ from cs50 import get_int
 def main():
     height = get_height()
     for i in range(height):
+        for j in range(i, height):
+            print(" ")
+        for k in range(1, i + 1):
+            print("#")
+        print()
 
 def get_height():
     while True:
@@ -11,3 +16,4 @@ def get_height():
             break
     return n
 
+main()
