@@ -35,6 +35,7 @@ def get_cents():
     return c
 
 def calculate_quarters():
+    c =
 
 def calculate_dimes():
 def calculate_nickels():
