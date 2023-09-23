@@ -1,5 +1,6 @@
 from cs50 import get_float
 
+
 def main():
     # Ask how many cents the customer is owed
     cents = get_cents()
@@ -34,6 +35,7 @@ def get_cents():
             break
     return c
 
+
 def calculate_quarters(cents):
     if cents < 25:
         q = 0
@@ -45,6 +47,7 @@ def calculate_quarters(cents):
         q = 3
     return q
 
+
 def calculate_dimes(cents):
     if cents < 10:
         d = 0
@@ -54,6 +57,7 @@ def calculate_dimes(cents):
         d = 2
     return d
 
+
 def calculate_nickels(cents):
     if cents < 5:
         n = 0
@@ -61,11 +65,13 @@ def calculate_nickels(cents):
         n = 1
     return n
 
+
 def calculate_pennies(cents):
     if cents < 1:
         p = 0
     else:
         p = cents
     return p
+
 
 main()
