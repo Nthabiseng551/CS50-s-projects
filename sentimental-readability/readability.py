@@ -19,7 +19,13 @@ def main():
 
 # Function to count letters in a text
 def count_letters(text):
-
+    n = 0
+    for (int i = 0; i < strlen(text); i++):
+        if isalpha(text[i]):
+            n = n + 1
+        else:
+            n = n + 0
+    return n
 
 def count_words(text):
 def count_sentences(text):
