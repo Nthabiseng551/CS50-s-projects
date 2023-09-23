@@ -5,7 +5,7 @@ def main():
     cents = get_cents()
 
     # Calculate the number of quarters to give the customer
-    quarters = calculate_quarters()
+    quarters = calculate_quarters(cents)
     cents = cents - quarters * 25
 
     # Calculate the number of dimes to give the customer
@@ -29,9 +29,10 @@ def main():
 
 def get_cents():
     while True:
-        c = get_float("Change owed: ") * 100
+        c = get_float("Change owed: ")
         if c > 0:
             break
+    c = round(c * 100)
     return c
 
 def calculate_quarters():
