@@ -1,4 +1,5 @@
 from cs50 import get_int
 
- n = get_int("Height: ")
-while n < 1 or n > 8
+while True
+    n = get_int("Height: ")
+    if n > 1 or n < 8
