@@ -20,8 +20,8 @@ def main():
 # Function to count letters in a text
 def count_letters(text):
     n = 0
-    for i in range(len(text))
-        if isalpha(text[i]):
+    for i in range(len(text)):
+        if (text[i].isalpha):
             n = n + 1
         else:
             n = n + 0
