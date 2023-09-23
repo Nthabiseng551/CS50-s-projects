@@ -35,8 +35,24 @@ def get_cents():
     return c
 
 def calculate_quarters():
-    c =
+    if cents < 25
+        q = 0
+    elif cents >= 25 and cents < 50
+        q = 1
+    elif cents >= 50 and cents < 75
+        q = 2
+    else
+        q = 3
+    return q
 
 def calculate_dimes():
+    if cents < 10
+        d = 0
+    elif cents >= 10 and cents < 20
+        d = 1
+    else
+        d = 2
+    return d
+
 def calculate_nickels():
 def calculate_pennies():
