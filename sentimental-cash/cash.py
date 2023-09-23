@@ -29,9 +29,13 @@ def main():
 
 def get_cents():
     while True:
-        c = get_float("Change owed: ")
-        
+        c = get_float("Change owed: ") * 100
+        if c > 0:
+            break
+    return c
+
 def calculate_quarters():
+
 def calculate_dimes():
 def calculate_nickels():
 def calculate_pennies():
