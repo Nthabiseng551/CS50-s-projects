@@ -19,26 +19,26 @@ def main():
 
 # Function to count letters in a text
 def count_letters(text):
-    n = 0
+    l = 0
     for i in range(len(text)):
-        if (text[i].isalpha):
-            n = n + 1
-    return n
+        if (text[i].isalpha()):
+            l = l + 1
+    return l
 
+# Fuction to count the number of words in a text
 def count_words(text):
-    int n = 1;
-    for (int i = 0; i < strlen(text); i++)
-    {
-        if (isspace(text[i]))
-        {
-            n = n + 1;
-        }
-        else
-        {
-            n = n + 0;
-        }
-    }
-    return n;
-}
+    w = 1
+    for i in range(len(text)):
+        if (text[i].isspace()):
+            w = w + 1
+    return w
 
+# Function to count the number of sentences in a text
 def count_sentences(text):
+    s = 0
+    for i in range(len(text)):
+        if (text[i] == 33 or text[i] == 46 or text[i] == 63):
+            s += 1
+    return s
+
+main()
