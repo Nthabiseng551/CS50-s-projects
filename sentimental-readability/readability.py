@@ -23,9 +23,22 @@ def count_letters(text):
     for i in range(len(text)):
         if (text[i].isalpha):
             n = n + 1
-        else:
-            n = n + 0
     return n
 
 def count_words(text):
+    int n = 1;
+    for (int i = 0; i < strlen(text); i++)
+    {
+        if (isspace(text[i]))
+        {
+            n = n + 1;
+        }
+        else
+        {
+            n = n + 0;
+        }
+    }
+    return n;
+}
+
 def count_sentences(text):
