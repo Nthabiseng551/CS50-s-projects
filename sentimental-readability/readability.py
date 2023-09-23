@@ -22,7 +22,9 @@ def count_letters(text):
     l = 0
     for i in range(len(text)):
         if (text[i].isalpha()):
-            l = l + 1
+            l += 1
+        else:
+            l = l + 0
     return l
 
 # Fuction to count the number of words in a text
@@ -30,7 +32,9 @@ def count_words(text):
     w = 1
     for i in range(len(text)):
         if (text[i].isspace()):
-            w = w + 1
+            w += 1
+        else:
+            w = w + 0
     return w
 
 # Function to count the number of sentences in a text
@@ -39,6 +43,8 @@ def count_sentences(text):
     for i in range(len(text)):
         if (text[i] == 33 or text[i] == 46 or text[i] == 63):
             s += 1
+        else:
+            s = s + 0
     return s
 
 main()
