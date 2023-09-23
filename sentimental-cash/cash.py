@@ -17,17 +17,20 @@ def main():
     cents = cents - nickels * 5
 
     # Calculate the number of pennies to give the customer
-    int pennies = calculate_pennies(cents);
-    cents = cents - pennies * 1;
+    pennies = calculate_pennies(cents)
+    cents = cents - pennies * 1
 
     # Sum coins
-    int coins = quarters + dimes + nickels + pennies;
+    coins = quarters + dimes + nickels + pennies
 
     # Print total number of coins to give the customer
-    printf("%i\n", coins);
+    printf(coins)
 
 
 def get_cents():
+    while True:
+        c = get_float("Change owed: ")
+        
 def calculate_quarters():
 def calculate_dimes():
 def calculate_nickels():
