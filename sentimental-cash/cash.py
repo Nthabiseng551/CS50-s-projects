@@ -5,7 +5,7 @@ def main():
     cents = get_cents()
 
     # Calculate the number of quarters to give the customer
-    quarters = calculate_quarters(cents)
+    quarters = calculate_quarters()
     cents = cents - quarters * 25
 
     # Calculate the number of dimes to give the customer
