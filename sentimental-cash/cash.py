@@ -55,4 +55,10 @@ def calculate_dimes():
     return d
 
 def calculate_nickels():
+    if cents < 5
+        n = 0
+    else
+        n = 1
+    return n
+
 def calculate_pennies():
