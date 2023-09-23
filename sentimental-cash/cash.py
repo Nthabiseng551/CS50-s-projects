@@ -21,7 +21,7 @@ def main():
     cents = cents - pennies * 1
 
     # Sum coins
-    coins = quarters + dimes + nickels + pennies
+    coins = int(quarters + dimes + nickels + pennies)
 
     # Print total number of coins to give the customer
     print(coins)
