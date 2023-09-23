@@ -3,7 +3,7 @@ from cs50 import get_int
 def main():
     height = get_height()
     for i in range(height):
-        for j in range(i, height):
+        for j in range(i, height + 1):
             print(" ", end="")
         for k in range(1, i + 1):
             print("#", end="")
