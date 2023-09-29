@@ -1,0 +1,1 @@
+SELECT name FROM people WHERE id IN (SELECT personid FROM stars WHERE movieid IN (SELECT id FROM movies WHERE));
