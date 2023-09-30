@@ -36,11 +36,35 @@ WHERE id IN
         (SELECT account_number
         FROM atm_transactions
         WHERE year=2021 AND month=7 AND day=28
-        AND atm_location= "Leggett Street" AND transaction_type= 'withdraw')) AND license_plate IN (SELECT license_plate FROM bakery_security_logs WHERE year=2021 AND month=7 AND day=28 AND hour=10 AND minute BETWEEN 15 AND 25 AND activity = 'exit') AND phone_number IN (SELECT caller FROM phone_calls WHERE year=2021 AND month=7 AND day=28 AND duration<60) AND passport_number IN (SELECT passport_number FROM passengers WHERE flight_id=36);
+        AND atm_location= "Leggett Street" AND transaction_type= 'withdraw'))
+AND license_plate IN
+    (SELECT license_plate
+    FROM bakery_security_logs
+    WHERE year=2021 AND month=7 AND day=28
+    AND hour=10 AND minute BETWEEN 15 AND 25 AND activity = 'exit')
+AND phone_number IN
+    (SELECT caller
+    FROM phone_calls
+    WHERE year=2021 AND month=7
+    AND day=28 AND duration<60)
+AND passport_number IN
+    (SELECT passport_number
+    FROM passengers
+    WHERE flight_id=36);
 
 
 -- The city the thief escaped to found from the destination airport id and airports table
 SELECT city FROM airports WHERE id = 4;
 
 -- The accomplice is the receiver of the call from the thief on the day and time of theft
-SELECT name FROM people WHERE phone_number= (SELECT receiver FROM phone_calls WHERE caller= (SELECT phone_number FROM people WHERE name='Bruce') AND year2021 AND month7 AND day28 AND duration<60);
+SELECT name
+FROM people
+WHERE phone_number=
+    (SELECT receiver
+    FROM phone_calls
+    WHERE caller=
+        (SELECT phone_number
+        FROM people
+        WHERE name='Bruce')
+    AND year2021 AND month7
+    AND day28 AND duration<60);
