@@ -14,3 +14,9 @@ SELECT name, transcript FROM interviews WHERE month=7 AND day=28 AND year=2021 A
 SELECT name, phone_number, passport_number FROM people WHERE id IN (SELECT person_id FROM bank_accounts WHERE account_number IN (SELECT account_number FROM atm_transactions WHERE year=2021 AND month=7 AND day=28 AND atm_location= "Leggett Street" AND transaction_type= 'withdraw')) AND license_plate IN (SELECT license_plate FROM bakery_security_logs WHERE year=2021 AND month=7 AND day=28 AND hour=10 AND minute BETWEEN 15 AND 35 AND activity = 'exit') AND phone_number IN (SELECT caller FROM phone_calls WHERE year=2021 AND month=7 AND day=28 AND duration<60);
 
 -- From Raymond's transcript, we are going to for ealiest flight out of fiftyville on july,29 2021
+SELECT id, destination_airport_id, hour, minute FROM flights WHERE origin_airport_id = (SELECT id FROM airports WHERE city= 'Fiftyville') AND year=2021 AND month=7 AND day=29;
+-- From the data above I selected the earliest flight (8:20), with flight id of 36 and destination airport id of 4
+
+-- The city the thief escaped to found from the destination airport id and airports table
+SELECT city FROM airports WHERE id = 4;
+
