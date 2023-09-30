@@ -23,4 +23,4 @@ SELECT name FROM people WHERE id IN (SELECT person_id FROM bank_accounts WHERE a
 SELECT city FROM airports WHERE id = 4;
 
 -- The accomplice is the receiver of the call from the thief on the day and time of theft
-SELECT name FROM people WHERE phone_number= (SELECT receiver FROM phonecalls WHERE )
+SELECT name FROM people WHERE phone_number= (SELECT receiver FROM phonecalls WHERE caller= (SELECT phonenumber FROM people WHERE name='Bruce'))
