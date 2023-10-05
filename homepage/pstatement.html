@@ -11,12 +11,12 @@
           // Go to the next page when next button clicked
           // Go to previous page when previous button clicked
           document.addEventListener('DOMContentLoaded', function(){
-              let next= document.querySelector('.nextpage1');
+              let next= document.querySelector('.nextpage');
               next.addEventListener('click', function(){
                   window.location.replace("education.html");
               });
-              let previous= document.querySelector('.previouspage1');
-              next.addEventListener('click', function(){
+              let previous= document.querySelector('.previouspage');
+              previous.addEventListener('click', function(){
                   window.location.replace("index.html");
               });
           });
@@ -46,8 +46,8 @@
             <p>
               my personal statement paragraph
             </p>
-            <button class="previouspage1">previous</button>
-            <button class="nextpage1">next</button>
+            <button class="previouspage">previous</button>
+            <button class="nextpage">next</button>
         </div>
         </div>
     </body>
