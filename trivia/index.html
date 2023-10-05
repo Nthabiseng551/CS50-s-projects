@@ -7,6 +7,36 @@
         <title>Trivia!</title>
         <script>
             // TODO: Add code to check answers to questions
+            // Run script once DOM is loaded
+            document.addEventListener('DOMContentLoaded', function(){
+
+                // change button to green when correct answer is clicked
+                let correct = document.querySelector('.correct');
+                correct.addEventListener('click', function(){
+                correct.style.backgroundColor='#00ff00';
+                document.querySelector('#comment1').innerHTML='Correct!';
+            });
+            // change button to red when incorrect answer clicked
+            let incorrects= document.querySelectorAll('.incorrect');
+            for (let i = 0; i < incorrects.length; i++ ){
+                incorrects[i].addEventListener('click', function(){
+                    incorrects[i].style.backgroundColor = '#ff0000';
+                    document.querySelector('#comment1').innerHTML='Incorrect!';
+                });
+            }
+            // Check answer to free response question
+            document.querySelector('#check').addEventListener('click', function(){
+                let input = document.querySelector('input');
+                if (input.value == 'Skin'){
+                    input.style.backgroundColor = '#00ff00';
+                    document.querySelector('#comment2').innerHTML = 'Correct!';
+                }
+                else{
+                    input.style.backgroundColor = '#ff0000';
+                    document.querySelector('#comment2').innerHTML = 'Incorrect!';
+                }
+            });
+        });
         </script>
     </head>
     <body>
@@ -19,12 +49,24 @@
                 <h2>Part 1: Multiple Choice </h2>
                 <hr>
                 <!-- TODO: Add multiple choice question here -->
+                <h3>What is the average percentage of water the human adult body is made of?</h3>
+                <button class="incorrect">30%</button>
+                <button class="incorrect">40%</button>
+                <button class="incorrect">55%</button>
+                <button class="correct">60%</button>
+
+                <p id=comment1></p>
             </div>
 
             <div class="section">
                 <h2>Part 2: Free Response</h2>
                 <hr>
                 <!-- TODO: Add free response question here -->
+                <h3>What is the largest organ of the human body?</h3>
+                <input type="text"></input>
+                <button id="check">Check Answer</button>
+
+                <p id="comment2"></p>
             </div>
         </div>
     </body>
