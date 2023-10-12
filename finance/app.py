@@ -57,7 +57,7 @@ def buy():
     """Buy shares of stock"""
     if request.method == "POST":
         symbol = request.form.get("symbol").upper()
-        shares = request.form.get("shares")
+        shares = int(request.form.get("shares"))
         if not symbol:
             return apology("Please provide the stock's symbol")
         elif not shares or shares <= 0:
@@ -68,11 +68,11 @@ def buy():
             return apology("Invalid symbol")
 
         price = quote["price"]
-        total_cost = int(shares) * price
+        total_price = shares * price
         user_id = session["user_id"]
         cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"] #index into the dict produced by db.execute
 
-        if cash < total_cost:
+        if cash < total_pr:
             return apology("Insufficient cash")
 
         # Update user's table
