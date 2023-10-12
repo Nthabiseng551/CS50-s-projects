@@ -228,7 +228,7 @@ def sell():
 
                     db.execute("UPDATE users SET cash = ? WHERE id = ?", cash + total_sale, user_id)
 
-                    db.execute("INSERT INTO transactions (user_id, symbol, shares, price, type) VALUES (?, ?, ?, ?)", user_id, symbol, shares, price, "sell")
+                    db.execute("INSERT INTO transactions (user_id, symbol, shares, price, type) VALUES (?, ?, ?, ?)", user_id, symbol, -shares, price, "sell")
 
                     return redirect("/")
     else:
