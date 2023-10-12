@@ -72,7 +72,7 @@ def buy():
         price = quote["price"]
         totalCost = int(shares) * price
         user_id = session["user_id"]
-        cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0][cash] 
+        cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
 
         if cash < totalCost:
             return apology("Insufficient cash")
