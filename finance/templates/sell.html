@@ -8,7 +8,7 @@
     <form action="/sell" method="post">
         <div class="mb-3">
             <label for="symbol">Symbol</label>
-            <select class="form-select" name = "symbol" id="cars">
+            <select class="form-select form-select-lg mb-3" name = "symbol" id="cars">
                 {%for stock in stocks%}
                 <option value="symbol">{{stock.symbol}}</option>
                 {%endfor%}
