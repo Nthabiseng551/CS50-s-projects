@@ -172,7 +172,7 @@ def register():
 
         if request.form.get("password"):
             if len(password) < 8 or len(password) > 20:
-                return apology("The length of the password must be atleast 8 but not exceeding 20")
+                return apology("The length of the password must be atleast 8 and not exceeding 20")
 
             elif not any(char.isdigit() for char in password) :
                 return apology("Password must contain atleast one number")
