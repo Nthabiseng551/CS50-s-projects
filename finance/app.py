@@ -179,7 +179,7 @@ def register():
 
             elif not any(char.isupper() for char in passwd) or not any(char.islower() for char in passwd):
                 return apology("Password must contain atleast one uppercase letter and atleast one lowercase letter")
-        elif not request.form.get("password")::
+        elif not request.form.get("password"):
             return apology("Password required")
 
 
