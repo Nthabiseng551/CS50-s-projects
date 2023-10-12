@@ -210,19 +210,21 @@ def sell():
         shares = request.form.get("shares")
         if not symbol:
             return apology("Stock's symbol required")
-        elif not shares or shares <= 0:
+        elif not shares:
+            return apology("Please provide the number of shares you'd like buy")
+        elif not shares.isdigit() or int(shares) <= 0:
             return apology("A positive number of shares must be provided")
 
         for stock in stocks:
             if stock["symbol"] == symbol:
-                if stock["total_shares"] < shares:
+                if stock["total_shares"] < int(shares):
                     return apology("not enough shares")
                 else:
                     quote = lookup(symbol)
                     if quote is None:
                         return apology("Symbol not found")
                     price = quote["price"]
-                    total_price = shares * price
+                    total_price = int(shares) * price
 
                     cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
 
