@@ -212,19 +212,18 @@ def sell():
             return apology("Stock's symbol required")
         elif not shares or shares <= 0:
             return apology("A positive number of shares must be provided")
-        else:
-            shares = int(shares)
+
 
         for stock in stocks:
             if stock["symbol"] == symbol:
-                if stock["total_shares"] < shares:
+                if stock["total_shares"] < int(shares):
                     return apology("not enough shares")
                 else:
                     quote = lookup(symbol)
                     if quote is None:
                         return apology("Symbol not found")
                     price = quote["price"]
-                    total_sale = shares * price
+                    total_sale = int(shares) * price
 
                     db.execute("UPDATE users SET cash = ? WHERE id = ?", cash + total_sale, user_id)
 
