@@ -72,14 +72,14 @@ def buy():
         user_id = session["user_id"]
         cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"] #index into the dict produced by db.execute
 
-        if cash < total_pr:
+        if cash < total_price:
             return apology("Insufficient cash")
 
         # Update user's table
         db.execute("UPDATE users SET cash = ? WHERE id = ?", cash - total_cost, user_id)
 
-        # Add purchase to the history table #come back
-        db.execute("INSERT INTO transactions (user_id, symbol, shares, price, type) VALUES (?, ?, ?, ?, ?))", user_id, symbol, int(shares), price, "Buy")
+        # Add transaction to the transaction table
+        db.execute("INSERT INTO transactions (user_id, symbol, shares, price, type) VALUES (?, ?, ?, ?, ?))", user_id, symbol, shares, price, "Buy")
 
         return redirect("/")
     else:
