@@ -20,10 +20,11 @@
         <tr>
             <td>{{stock.symbol}}</td>
             <td>{{stock.name}}</td>
-            <td>{{stock.totalshares}}</td>
-            <td>price</td>
-            <td>TOTAL</td>
+            <td>{{stock.total_shares}}</td>
+            <td>{{stock.price}}</td>
+            <td>{{stock.price * stock.total_shares}}</td>
         </tr>
+        {%endfor%}
     </tbody>
 
 </table>
