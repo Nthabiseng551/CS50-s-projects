@@ -151,9 +151,9 @@ def quote():
         symbol = request.form.get("symbol")
         quote = lookup(symbol)
         if not symbol:
-            return apology("Please provide stock's symbol", 400)
+            return apology("Please provide stock's symbol")
         elif not quote:
-            return apology("Invalid symbol", 400)
+            return apology("Invalid symbol")
 
         return render_template("quote.html", quote=quote)
     else:
@@ -170,21 +170,21 @@ def register():
     # User reached route via POST by submitting form
     if request.method == "POST":
         if not request.form.get("username"):
-            return apology("Username required", 400)
+            return apology("Username required")
 
         elif not request.form.get("password"):
-            return apology("Password required", 400)
+            return apology("Password required")
 
         elif not request.form.get("confirmation"):
-            return apology("Re-enter password to confirm", 400)
+            return apology("Re-enter password to confirm")
 
         elif request.form.get("confirmation") != request.form.get("password"):
-            return apology("Passwords do not match", 400)
+            return apology("Passwords do not match")
 
         rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
 
         if len(rows) != 0:
-            return apology("Username already exist, try another one", 400)
+            return apology("Username already exist, try another one")
 
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", request.form.get("username"), generate_password_hash(request.form.get("password")))
 
