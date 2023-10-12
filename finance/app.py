@@ -172,6 +172,7 @@ def register():
 
         elif not request.form.get("password"):
             return apology("Password required")
+        
 
         elif not request.form.get("confirmation"):
             return apology("Re-enter password to confirm")
