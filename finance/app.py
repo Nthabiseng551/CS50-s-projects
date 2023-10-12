@@ -70,15 +70,15 @@ def buy():
             return apology("Invalid symbol")
 
         price = quote["price"]
-        totalCost = int(shares) * price
+        total_cost = int(shares) * price
         user_id = session["user_id"]
-        cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
+        cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"] #index into the dict produced by db.execute
 
-        if cash < totalCost:
+        if cash < total_cost:
             return apology("Insufficient cash")
 
         # Update user's table
-        db.execute("UPDATE users SET cash =") #come back
+        db.execute("UPDATE users SET cash =")
 
         # Add purchase to the history table #come back
         db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (?, ?, ?, ?))", user_id, symbol=symbol, shares=shares, price=price)
