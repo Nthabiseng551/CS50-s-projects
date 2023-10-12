@@ -203,7 +203,7 @@ def register():
 def sell():
     """Sell shares of stock"""
     user_id = session["user_id"]
-    stocks = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id= ? GROUP BY symbol HAVING total_shares > 0", user_id)
+    stocks = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id= ? GROUP BY symbol HAVING total_shares > 0", user_id)[0]["shares"]
 
     if request.method == "POST":
         symbol = request.form.get("symbol").upper()
@@ -212,7 +212,6 @@ def sell():
             return apology("Stock's symbol required")
         elif not shares or shares <= 0:
             return apology("A positive number of shares must be provided")
-
 
         for stock in stocks:
             if stock["symbol"] == symbol:
