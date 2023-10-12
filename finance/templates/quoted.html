@@ -4,4 +4,4 @@
     Quoted
 {% endblock %}
 
-<p>A share of {{ quote }}costs {{ value | usd }}</p>
+<p>A share of {{ quote["name"] }}({{quote["symbol"]}}) costs {{ quote["price"] | usd }}.</p>
