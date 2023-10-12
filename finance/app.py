@@ -202,7 +202,7 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-    stocks = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id= ? GROUP BY symbol HAVING total_shares > 0")
+    stocks = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id= ? GROUP BY symbol HAVING total_shares > 0", session["user_id"])
 
     if request.method == "POST":
         symbol = request.form.get("symbol").upper()
