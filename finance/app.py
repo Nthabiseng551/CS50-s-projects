@@ -226,7 +226,7 @@ def sell():
                     price = quote["price"]
                     total_sale = shares * price
 
-                    db.execute("UPDATE users SET cash = cash + ? WHERE id = user_id", total_sale)
+                    db.execute("UPDATE users SET cash = ? WHERE id = ?", cash + total_sale, user_id)
 
                     db.execute("INSERT INTO transactions (user_id, symbol, shares, price, type) VALUES (?, ?, ?, ?)", user_id, symbol, shares, price, "sell")
 
