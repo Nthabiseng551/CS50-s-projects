@@ -166,7 +166,9 @@ def register():
     session.clear()
 
     # User reached route via POST by submitting form
+
     if request.method == "POST":
+        password = request.form.get("password")
         if not request.form.get("username"):
             return apology("Username required")
 
