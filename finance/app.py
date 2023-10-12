@@ -170,11 +170,20 @@ def register():
         if not request.form.get("username"):
             return apology("Username required")
 
-        elif not request.form.get("password"):
-            return apology("Password required")
-        
+        if request.form.get("password"):
+            if len(password) < 8 or len(password) > 20:
+                return apology("The length of the password must be atleast 8 but not exceeding 20")
 
-        elif not request.form.get("confirmation"):
+            elif not any(char.isdigit() for char in password) :
+                return apology("Password must contain atleast one number")
+
+            elif not any(char.isupper() for char in passwd) or not any(char.islower() for char in passwd):
+                return apology("Password must contain atleast one uppercase letter and atleast one lowercase letter")
+        elif not request.form.get("password")::
+            return apology("Password required")
+
+
+        if not request.form.get("confirmation"):
             return apology("Re-enter password to confirm")
 
         elif request.form.get("confirmation") != request.form.get("password"):
