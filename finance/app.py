@@ -208,7 +208,7 @@ def sell():
         symbol = request.form.get("symbol").upper()
         shares = request.form.get("shares")
         if not symbol:
-            return apology("symbol required")
+            return apology("Stock's symbol required")
         elif not shares or shares <= 0:
             return apology("A positive number of shares must be provided")
         else:
