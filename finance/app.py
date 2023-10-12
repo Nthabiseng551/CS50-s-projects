@@ -155,7 +155,7 @@ def quote():
         elif not quote:
             return apology("Invalid symbol")
 
-        return render_template("quoted.html")
+        return render_template("quoted.html", quote=quote)
     else:
         return render_template("quote.html")
 
