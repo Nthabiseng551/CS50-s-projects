@@ -9,7 +9,7 @@
         <div class="mb-3">
             <select name = "symbol">
                 {%for stock in stocks%}
-                <option>{{stock.symbol}}</option>
+                <option value="symbol">{{stock.symbol}}</option>
                 {%endfor%}
             </select>
         </div>
