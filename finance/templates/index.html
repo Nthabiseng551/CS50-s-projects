@@ -17,7 +17,13 @@
     </thead>
     <tbody>
         {%for stock in stocks%}
-        
+        <tr>
+            <td>{{stock.symbol}}</td>
+            <td>{{stock.name}}</td>
+            <td>{{stock.totalshares}}</td>
+            <td>price</td>
+            <td>TOTAL</td>
+        </tr>
     </tbody>
 
 </table>
