@@ -167,21 +167,21 @@ def register():
     # User reached route via POST by submitting form
     if request.method == "POST":
         if not request.form.get("username"):
-            return apology("Username required", 400)
+            return apology("Username required", 403)
 
         elif not request.form.get("password"):
-            return apology("Password required", 400)
+            return apology("Password required", 403)
 
         elif not request.form.get("confirmation"):
-            return apology("Re-enter password to confirm", 400)
+            return apology("Re-enter password to confirm", 403)
 
         elif request.form.get("confirmation") != request.form.get("password"):
-            return apology("Passwords do not match", 400)
+            return apology("Passwords do not match", 403)
 
-        user = db.execute("SELECT username FROM users WHERE username = ?", request.form.get("username"))
+        rows = db.execute("SELECT username FROM users WHERE username = ?", request.form.get("username"))
 
-        if len(user) != 0:
-            return apology("Username already exist, try another one", 400)
+        if len(rows) != 0:
+            return apology("Username already exist, try another one", 403)
 
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", request.form.get("username"), generate_password_hash(request.form.get("password")))
 
