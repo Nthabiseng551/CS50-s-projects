@@ -229,5 +229,6 @@ def sell():
                     db.execute("INSERT INTO transactions (user_id, symbol, shares, price, type) VALUES (?, ?, ?, ?)", user_id, symbol, -shares, price, "sell")
 
                     return redirect("/")
+        return apology("Invalid symbol")
     else:
         return render_template("sell.html", stocks=stocks)
