@@ -74,3 +74,52 @@ def logout():
 
     # Redirect user to login form
     return redirect("/")
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    """Register user"""
+
+    # Forget any user id
+    session.clear()
+
+    # User reached route via POST by submitting form
+
+    if request.method == "POST":
+        if not request.form.get("username"):
+            return apology("Username required")
+
+        elif not request.form.get("password"):
+            return apology("Password required")
+
+        elif not request.form.get("confirmation"):
+            return apology("Re-enter password to confirm")
+
+        elif request.form.get("confirmation") != request.form.get("password"):
+            return apology("Passwords do not match")
+
+        rows = db.execute(
+            "SELECT * FROM users WHERE username = ?", request.form.get("username")
+        )
+
+        if len(rows) != 0:
+            return apology("Username already exist, try another one")
+
+        db.execute(
+            "INSERT INTO users (username, hash) VALUES (?, ?)",
+            request.form.get("username"),
+            generate_password_hash(request.form.get("password")),
+        )
+
+        # recently inserted user
+        rows = db.execute(
+            "SELECT * FROM users WHERE username = ?", request.form.get("username")
+        )
+        session["user_id"] = rows[0]["id"]
+
+        # Redirect to homepage
+        return redirect("/")
+
+    # User reached route via GET through URL or redirect
+    else:
+        return render_template("register.html")
+
