@@ -142,4 +142,4 @@ def requests():
 @app.route("/counselling")
 @login_required
 def counselling():
-    return render_template("survivors.html")
+    return render_template("counselling.html")
