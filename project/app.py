@@ -29,7 +29,6 @@ def after_request(response):
 @app.route("/")
 @login_required
 def index():
-    user_id = session["user_id"]
 
     return render_template("index.html")
 
