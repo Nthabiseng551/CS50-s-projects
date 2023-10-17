@@ -129,10 +129,12 @@ def register():
         return render_template("register.html")
 
 @app.route("/tests")
+@login_required
 def tests():
     return render_template("tests.html")
 
 
-@app.route("/tests")
-def tests():
+@app.route("/request")
+@login_required
+def request():
     return render_template("tests.html")
