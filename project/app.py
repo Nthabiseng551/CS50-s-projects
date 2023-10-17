@@ -134,10 +134,10 @@ def tests():
     return render_template("tests.html")
 
 
-@app.route("/requests")
+@app.route("/surviving")
 @login_required
-def requests():
-    return render_template("requests.html")
+def surviving():
+    return render_template("surviving.html")
 
 @app.route("/counselling")
 @login_required
