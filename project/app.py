@@ -134,7 +134,12 @@ def tests():
     return render_template("tests.html")
 
 
-@app.route("/request")
+@app.route("/requests")
 @login_required
-def request():
-    return render_template("tests.html")
+def requests():
+    return render_template("requests.html")
+
+@app.route("/counselling")
+@login_required
+def counselling():
+    return render_template("survivors.html")
