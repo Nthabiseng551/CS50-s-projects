@@ -130,3 +130,9 @@ def register():
 
 @app.route("/tests")
 def tests():
+    return render_template("tests.html")
+
+
+@app.route("/tests")
+def tests():
+    return render_template("tests.html")
