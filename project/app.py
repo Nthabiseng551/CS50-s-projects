@@ -131,4 +131,3 @@ def register():
 
 @app.route("/tests")
 def tests():
-    
