@@ -172,3 +172,7 @@ def cancel():
         db.execute("UPDATE users SET requests=0 WHERE id=?", id)
         flash("Counselling request is cancelled")
     return redirect("/counselling")
+
+@app.route("/form", methods=["GET", "POST"])
+@login_required
+def form():
