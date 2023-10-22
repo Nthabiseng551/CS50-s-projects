@@ -11,6 +11,7 @@
 <form action="/cancel" method="post">
     <input type="hidden" name="id" value="{{user.id}}">
     <button class="btn btn-primary" id = "cancel" type="submit">Cancel request</button>
+    <a class="btn btn-primary" href="/counselling" role="button">My requests</a>
 </form>
 {%endfor%}
 {% endblock %}
