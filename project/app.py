@@ -173,7 +173,7 @@ def cancel():
         flash("Counselling request is cancelled")
     return redirect("/counselling")
 
-@app.route("/form", methods=["GET", "POST"])
+@app.route("/form")
 @login_required
 def form():
     return render_template("form.html")
