@@ -158,7 +158,7 @@ def counselling():
             return apology("Each user is allowed one request at a time")
 
     else:
-        requests = db.execute("SELECT requests FROM users WHERE id=?", user_id)
+        requests = db.execute("SELECT requests FROM users WHERE id=?", user_id)[0]["requests"]
         if requests == 0:
             return render_template("counselling.html")
         else:
