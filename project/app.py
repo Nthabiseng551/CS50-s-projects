@@ -144,7 +144,7 @@ def surviving():
 def counselling():
     user_id=session["user_id"]
     users=db.execute("SELECT * FROM users WHERE id=?", user_id)
-    
+
     if request.method == "POST":
         # query database for request status of user
         requests = db.execute("SELECT requests FROM users WHERE username=?", request.form.get("username"))
@@ -159,7 +159,7 @@ def counselling():
 
     else:
         requests = db.execute("SELECT requests FROM users WHERE id=?", user_id)
-        if requests != 0:
+        if requests = 0:
             return render_template("counselling.html")
         else:
             return render_template("requested.html", users=users)
