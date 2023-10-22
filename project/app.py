@@ -158,8 +158,11 @@ def counselling():
             return apology("Each user is allowed one request at a time")
 
     else:
+        requests = db.execute("SELECT requests FROM users WHERE id=?", user_id)
+        if requests = 0:
             return render_template("counselling.html")
-
+        else:
+            return render_template("requested.html", users=users)
 
 @app.route("/cancel", methods=["POST"])
 @login_required
