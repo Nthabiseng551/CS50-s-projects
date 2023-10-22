@@ -149,7 +149,7 @@ def counselling():
         # query database for request status of user
         requests = db.execute("SELECT requests FROM users WHERE username=?", request.form.get("username"))
         #check if user already has request
-        if requests = 0:
+        if requests == "0":
             db.execute("UPDATE users SET requests=1 WHERE username=?", request.form.get("username"))
             flash("Your request for counselling has been submitted, response time depends on availability of counsellors")
             return render_template("requested.html", users=users)
@@ -159,7 +159,7 @@ def counselling():
 
     else:
         requests = db.execute("SELECT requests FROM users WHERE id=?", user_id)
-        if requests = 0:
+        if requests == "0":
             return render_template("counselling.html")
         else:
             return render_template("requested.html", users=users)
