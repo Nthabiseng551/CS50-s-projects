@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Surviving
+{% endblock %}
+
+{% block main %}
+<script>
+    // Run script once DOM is loaded
+    document.addEventListener('DOMContentLoaded', function(){
+
+        // when cancel request button clicked
+        let cancel = document.querySelector('#cancel');
+        cancel.addEventListener('click', function(){
+        cancel.style.backgroundColor='#0000ff';
+        document.querySelector('#request').innerHTML='You currently have no live request';
+    })
+  });
+    </script>
+{%for user in users%}
+<p id = "request">Hi, {{ user.username }} your request is live, available counsellors will be in touch!</p>
+<form action="/cancel" method="post">
+    <input type="hidden" name="id" value="{{user.id}}">
+    <button class="btn btn-primary" id = "cancel" type="submit">Cancel request</button>
+</form>
+{%endfor%}
+{% endblock %}

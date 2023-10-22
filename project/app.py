@@ -137,9 +137,36 @@ def tests():
 @app.route("/surviving")
 @login_required
 def surviving():
-    return render_template("surviving.html")
+        return render_template("surviving.html")
 
-@app.route("/counselling")
+@app.route("/counselling", methods=["GET", "POST"])
 @login_required
 def counselling():
-    return render_template("counselling.html")
+    user_id=session["user_id"]
+    if request.method == "POST":
+        # query database for request status of user
+        requests = db.execute("SELECT requests FROM users WHERE username=?", request.form.get("username"))
+        #check if user already has request
+        if requests != 0:
+            return apology("Each user is allowed one request at a time")
+        else:
+            db.execute("UPDATE users SET requests=1 WHERE username=?", request.form.get("username"))
+            flash("Your request for counselling has been submitted, response time depends on availability of counsellors")
+            return render_template("requested.html")
+
+    else:
+        users=db.execute("SELECT * FROM users WHERE id=?", user_id)
+        requests = db.execute("SELECT requests FROM users WHERE id=?", user_id)
+        if requests != 0:
+            return render_template("requested.html", users=users)
+        else:
+            return render_template("counselling.html")
+
+@app.route("/cancel", methods=["POST"])
+@login_required
+def cancel():
+    id = request.form.get("id")
+    if id:
+        db.execute("UPDATE users SET requests=0 WHERE id=?", id)
+        flash("Counselling request is cancelled")
+    return redirect("/counselling")
