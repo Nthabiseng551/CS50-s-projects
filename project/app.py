@@ -176,3 +176,4 @@ def cancel():
 @app.route("/form", methods=["GET", "POST"])
 @login_required
 def form():
+    return render_template("form.html")
