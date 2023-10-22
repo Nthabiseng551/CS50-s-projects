@@ -194,6 +194,6 @@ def form():
     else:
         requests = db.execute("SELECT requests FROM users WHERE id=?", user_id)[0]["requests"]
         if requests == 0:
-            return render_template("counselling.html")
+            return render_template("form.html")
         else:
             return render_template("requested.html", users=users)
