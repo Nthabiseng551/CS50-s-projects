@@ -1,108 +1,11 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    counselling
+    Form
 {% endblock %}
 
 {% block main %}
-<form action="/counselling" method="post">
-  <div class="form-group">
-    <label for="email">Your (name of website)username</label>
-    <input autocomplete="off" autofocus class="form-control" id="username" name="username" placeholder="Username" type="text">
-</div>
-    <div class="form-group">
-        <label for="email">Email address</label>
-        <input class="form-control" id="email" name="email" placeholder="Enter email" type="email">
-    </div>
-    <div class="form-group">
-      <label for="number">Cellphone number</label>
-        <input class="form-control" id="number" name="phonenumber" placeholder="Cellphone number" type="tel">
-    </div>
-    <div class="form-group">
-      <label for="age">What is your age?</label>
-        <input class="form-control" id="age" name="age" placeholder="Age" type="number" min="13" max="65">
-    </div>
-    <div class="form-check">
-      <h4>Preferred gender of counsellor</h4>
-        <input type="radio" id="female" name="gender" value="female">
-        <label for="female">Female</label><br>
-        <input type="radio" id="male" name="gender" value="male">
-        <label for="male">Male</label><br>
-        <input type="radio" id="any" name="gender" value="any">
-        <label for="any">Any gender</label>
-
-      </div>
-
-      <div class="form-check">
-        <h4>Which of the psychological tests did you receive positive results?</h4>
-        <input type="checkbox" class="form-check-input" id="test1">
-        <label for="test1">Alcoholism test</label>
-        <br>
-        <input type="checkbox" class="form-check-input" id="test2">
-        <label for="test2">Drug abuse test</label>
-        <br>
-        <input type="checkbox" class="form-check-input" id="test3">
-        <label for="test3">Depression test</label>
-        <br>
-        <input type="checkbox" class="form-check-input" id="test4">
-        <label for="test4">Bipolar Disoder test</label>
-        <br>
-        <input type="checkbox" class="form-check-input" id="test5">
-        <label for="test5">PTSD test</label>
-        <br>
-        <input type="checkbox" class="form-check-input" id="test6">
-        <label for="test6">ADHD test</label>
-        <br>
-        <input type="checkbox" class="form-check-input" id="test7">
-        <label for="test7">Anxiety test</label>
-        <br>
-        <input type="checkbox" class="form-check-input" id="test8">
-        <label for="test8">Personality Disoders test</label>
-        <br>
-        <input type="checkbox" class="form-check-input" id="test9">
-        <label for="test9">OCD test</label>
-        <br>
-        <input type="checkbox" class="form-check-input" id="test10">
-        <label for="test10">Sleeping Disorders test</label>
-      </div>
-
-      <div class="form-check">
-        <h4>In addition to the psychological tests, what else led you to request counselling? (if there is any other reason)</h4>
-        <input type="checkbox" class="form-check-input" id="s1">
-        <label for="s1">Grief and loss</label>
-        <br>
-        <input type="checkbox" class="form-check-input" id="s2">
-        <label for="s2">Self-Esteem / Body Image / Self confidance issues</label>
-        <br>
-        <input type="checkbox" class="form-check-input" id="s3">
-        <label for="s3">Anger Management</label>
-        <br>
-        <input type="checkbox" class="form-check-input" id="s4">
-        <label for="s4">Relationship conflicts</label>
-        <br>
-        <input type="checkbox" class="form-check-input" id="s5">
-        <label for="s5">Suicidality</label>
-        <br>
-        <input type="checkbox" class="form-check-input" id="s6">
-        <label for="s6">Other</label>
-      </div>
-
-      <div class="form-group">
-        <label for="other">If other, state the specific issues</label>
-        <textarea class="form-control" id="other" rows="3"></textarea>
-      </div>
-
-      <div class="form-check">
-        <h4>Preferred counselling setting</h4>
-          <input type="radio" id="individual" name="setting" value="individual">
-          <label for="individual">Individual counselling</label><br>
-          <input type="radio" id="group" name="setting" value="group">
-          <label for="group">Group counselling</label><br>
-          <input type="radio" id="any" name="setting" value="any">
-          <label for="any">Any</label>
-
-        </div>
-
-    <button class="btn btn-primary" type="submit">Request Counselling</button>
-</form>
+<p>anyone with a background in psychology and counselling can volunteer, including interns and students</p>
+<a class="btn btn-primary" href="/form" role="button">Request counselling</a>
+<a class="btn btn-primary" href="/counselling" role="button">My requests</a>
 {%endblock%}
