@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    requested
+{% endblock %}
+
+{% block main %}
+
+{%for user in users%}
+<p id = "request">Hi, {{ user.username }} you are currently a volunteer counsellor on (website name), if you cant continue, you can click below to withdraw.</p>
+<form action="/withdraw" method="post">
+    <input type="hidden" name="id" value="{{user.id}}">
+    <button class="btn btn-primary" id = "withdraw" type="submit">Withdraw volunteering</button>
+</form>
+{%endfor%}
+{% endblock %}
