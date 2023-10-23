@@ -187,7 +187,7 @@ def form():
             return render_template("requested.html", users=users)
 
 
-@app.route("/requests")
+@app.route("/requests", methods=["POST"])
 @login_required
 def requests():
     return render_template("requests.html")
