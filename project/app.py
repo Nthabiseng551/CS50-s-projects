@@ -178,8 +178,6 @@ def form():
             flash("Your request for counselling has been submitted, response time depends on availability of counsellors")
             return render_template("requested.html", users=users)
 
-
-
     else:
         requests = db.execute("SELECT requests FROM users WHERE id=?", user_id)[0]["requests"]
         if requests == 0:
