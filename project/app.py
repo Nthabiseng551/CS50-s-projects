@@ -215,4 +215,4 @@ def volunteer():
             return render_template("volunteer.html")
         else:
             flash("You have already submitted your application to volunteer as a counsellor")
-            return redirect("/counselling")
+            return render_template("requested.html", users=users)
