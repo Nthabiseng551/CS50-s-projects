@@ -207,7 +207,7 @@ def volunteer():
 
         db.execute("UPDATE users SET counsellor="yes" WHERE username=?", request.form.get("username"))
         flash("Your application for volunteer counsellor has been submitted, thank you for volunteering.")
-        return render_template("requested.html", users=users)
+        return render_template("volunteered.html", users=users)
 
     else:
         counsellor = db.execute("SELECT counsellor FROM users WHERE id=?", user_id)[0]["counsellor"]
@@ -215,7 +215,7 @@ def volunteer():
             return render_template("volunteer.html")
         else:
             flash("You have already submitted your application to volunteer as a counsellor")
-            return render_template("requested.html", users=users)
+            return render_template("volunteered.html", users=users)
 
 
 # Function to withdraw volunteering as counsellor application
