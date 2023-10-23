@@ -211,9 +211,9 @@ def volunteer():
             return render_template("requested.html", users=users)
 
     else:
-        requests = db.execute("SELECT requests FROM users WHERE id=?", user_id)[0]["requests"]
-        if requests == 0:
-            return render_template("form.html")
+        counsellor = db.execute("SELECT counsellor FROM users WHERE id=?", user_id)[0]["counsellor"]
+        if requests == "no":
+            return render_template("volunteer.html")
         else:
-            flash("Each user is allowed one request at a time")
-            return render_template("requested.html", users=users)
+            flash("You have already submitted your application to volunteer as a counsellor")
+            return redirect("/counselling")
