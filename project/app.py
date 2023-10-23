@@ -227,6 +227,6 @@ def volunteer():
 def withdraw():
     id = request.form.get("id")
     if id:
-        db.execute("UPDATE users SET counsellor="no" WHERE id=?", id)
+        db.execute("UPDATE users SET counsellor='no' WHERE id=?", id)
         flash("Volunteering withdrawn")
     return redirect("/counselling")
