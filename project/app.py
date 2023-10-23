@@ -205,6 +205,8 @@ def volunteer():
         if request.form.get("username") != username:
             return apology("please provide your valid username")
 
+        if 
+
         db.execute("UPDATE users SET counsellor="yes" WHERE username=?", request.form.get("username"))
         flash("Your application for volunteer counsellor has been submitted, thank you for volunteering.")
         return render_template("volunteered.html", users=users)
