@@ -206,7 +206,7 @@ def volunteer():
             return apology("please provide your valid username")
 
         db.execute("UPDATE users SET counsellor="yes" WHERE username=?", request.form.get("username"))
-        flash("Your request for counselling has been submitted, response time depends on availability of counsellors")
+        flash("Your application for volunteer counsellor has been submitted, thank you for volunteering.")
         return render_template("requested.html", users=users)
 
     else:
