@@ -172,7 +172,6 @@ def form():
 
         if requests != 0:
             return apology("Each user is allowed one request at a time")
-            flash("Each user is allowed one request at a time")
 
         else:
             db.execute("UPDATE users SET requests=1 WHERE username=?", request.form.get("username"))
