@@ -187,11 +187,7 @@ def form():
             return render_template("requested.html", users=users)
 
 
-@app.route("/requests", methods=["POST"])
+@app.route("/requests")
 @login_required
 def requests():
-    id = request.form.get("id")
-    if id:
-        db.execute("UPDATE users SET requests=0 WHERE id=?", id)
-        flash("Counselling request is cancelled")
-    return redirect("/counselling")
+    return render_template("requests.html")
