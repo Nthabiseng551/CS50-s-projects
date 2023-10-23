@@ -164,13 +164,15 @@ def form():
         # query database for request status of user
         requests = db.execute("SELECT requests FROM users WHERE username=?", request.form.get("username"))[0]["requests"]
         #check if user already has request
-        if requests == 0:
+        if requests != 0:
+            return apology("Each user is allowed one request at a time")
+
+        else:
             db.execute("UPDATE users SET requests=1 WHERE username=?", request.form.get("username"))
             flash("Your request for counselling has been submitted, response time depends on availability of counsellors")
             return render_template("requested.html", users=users)
 
-        else:
-            return apology("Each user is allowed one request at a time")
+
 
     else:
         requests = db.execute("SELECT requests FROM users WHERE id=?", user_id)[0]["requests"]
