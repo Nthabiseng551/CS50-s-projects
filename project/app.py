@@ -165,7 +165,7 @@ def form():
         username = db.execute("SELECT username FROM users WHERE id=?", user_id)[0]["username"]
         #check if username is valid and if user already has request
         if request.form.get("username") != username:
-            return apology("please provide a your valid username")
+            return apology("please provide your valid username")
 
         # query database for request status of user and usernames
         requests = db.execute("SELECT requests FROM users WHERE username=?", request.form.get("username"))[0]["requests"]
