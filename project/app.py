@@ -204,12 +204,13 @@ def volunteer():
         #check if username is valid and if user already has request
         if request.form.get("username") != username:
             return apology("please provide your valid username")
-
-        if 
-
-        db.execute("UPDATE users SET counsellor="yes" WHERE username=?", request.form.get("username"))
-        flash("Your application for volunteer counsellor has been submitted, thank you for volunteering.")
-        return render_template("volunteered.html", users=users)
+        counsellor = db.execute("SELECT counsellor FROM users WHERE username=?", request.form.get("username"))[0]["counsellor"]
+        if counsellor != 'no':
+            return apology("You have already volunteered!")
+        else:
+            db.execute("UPDATE users SET counsellor='yes' WHERE username=?", request.form.get("username"))
+            flash("Your application for volunteer counsellor has been submitted, thank you for volunteering.")
+            return render_template("volunteered.html", users=users)
 
     else:
         counsellor = db.execute("SELECT counsellor FROM users WHERE id=?", user_id)[0]["counsellor"]
