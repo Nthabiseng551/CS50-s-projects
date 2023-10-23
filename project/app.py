@@ -216,3 +216,14 @@ def volunteer():
         else:
             flash("You have already submitted your application to volunteer as a counsellor")
             return render_template("requested.html", users=users)
+
+
+# Function to withdraw volunteering as counsellor application
+@app.route("/withdraw", methods=["POST"])
+@login_required
+def withdraw():
+    id = request.form.get("id")
+    if id:
+        db.execute("UPDATE users SET counsellor="no" WHERE id=?", id)
+        flash("Volunteering withdrawn")
+    return redirect("/counselling")
