@@ -184,4 +184,4 @@ def form():
             return render_template("form.html")
         else:
             return render_template("requested.html", users=users)
-            flash("")
+            flash("Each user is allowed one request at a time")
