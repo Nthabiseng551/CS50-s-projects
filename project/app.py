@@ -60,7 +60,7 @@ def login():
             return apology("invalid username and/or password", 403)
 
         # Remember which user has logged in
-        session["user_id"] = rows[0]["id"]
+        session["username"] = rows[0]["username"]
 
         # Redirect user to home page
         return redirect("/")
@@ -119,7 +119,7 @@ def register():
         rows = db.execute(
             "SELECT * FROM users WHERE username = ?", request.form.get("username")
         )
-        session["user_id"] = rows[0]["id"]
+        session["username"] = rows[0]["username"]
 
         # Redirect to homepage
         return redirect("/")
@@ -157,14 +157,14 @@ def cancel():
 @app.route("/form", methods=["GET", "POST"])
 @login_required
 def form():
-    user_id=session["user_id"]
-    users=db.execute("SELECT * FROM users WHERE id=?", user_id)
+    username=session["username"]
+    users=db.execute("SELECT * FROM users WHERE username=?", username)
 
     if request.method == "POST":
 
-        username = db.execute("SELECT username FROM users WHERE id=?", user_id)[0]["username"]
+        name = db.execute("SELECT username FROM users WHERE username=?", username)[0]["username"]
         #check if username is valid and if user already has request
-        if request.form.get("username") != username:
+        if request.form.get("username") != name:
             return apology("please provide your valid username")
 
         # query database for request status of user and usernames
@@ -179,7 +179,7 @@ def form():
             return render_template("requested.html", users=users)
 
     else:
-        requests = db.execute("SELECT requests FROM users WHERE id=?", user_id)[0]["requests"]
+        requests = db.execute("SELECT requests FROM users WHERE username=?", name)[0]["requests"]
         if requests == 0:
             return render_template("form.html")
         else:
@@ -195,8 +195,8 @@ def requests():
 @app.route("/volunteer", methods=["GET", "POST"])
 @login_required
 def volunteer():
-    user_id=session["user_id"]
-    users=db.execute("SELECT * FROM users WHERE id=?", user_id)
+    username=session["username"]
+    users=db.execute("SELECT * FROM users WHERE username=?", username)
 
     if request.method == "POST":
 
