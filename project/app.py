@@ -161,6 +161,7 @@ def counselling():
 def myrequest():
     user_id=session["user_id"]
     users=db.execute("SELECT * FROM users WHERE id=?", user_id)
+    concerns
     return render_template("myrequest.html", users=users)
 
 # Function for users to cancel their requests for counselling
