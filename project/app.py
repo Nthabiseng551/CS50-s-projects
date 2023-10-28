@@ -31,6 +31,12 @@ def index():
 
     return render_template("index.html")
 
+# Define index page for counsellors
+@app.route("/counsellor")
+def counsellor():
+
+    return render_template("counsellor.html")
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """Log user in"""
@@ -60,10 +66,14 @@ def login():
             return apology("invalid username and/or password", 403)
 
         # Remember which user has logged in
-        session["username"] = rows[0]["username"]
+        session["user_id"] = rows[0]["id"]
 
         # Redirect user to home page
-        return redirect("/")
+        counsellor = db.execute("SELECT counsellor FROM users WHERE username=?", request.form.get("username"))[0]["counsellor"]
+        if counsellor != 'no':
+            return redirect("/")
+        else:
+            return redirect("/counsellor")# Redirect to counsellors homepage
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
@@ -119,7 +129,7 @@ def register():
         rows = db.execute(
             "SELECT * FROM users WHERE username = ?", request.form.get("username")
         )
-        session["username"] = rows[0]["username"]
+        session["user_id"] = rows[0]["id"]
 
         # Redirect to homepage
         return redirect("/")
@@ -128,23 +138,32 @@ def register():
     else:
         return render_template("register.html")
 
+# access to psychological tests
 @app.route("/tests")
 @login_required
 def tests():
     return render_template("tests.html")
 
-
+# View or post stories about coping and/or surviving psychological disorders
 @app.route("/surviving")
 @login_required
 def surviving():
         return render_template("surviving.html")
 
+# counselling services page
 @app.route("/counselling")
 @login_required
 def counselling():
     return render_template("counselling.html")
 
+@app.route("/myrequest")
+@login_required
+def myrequest():
+    user_id=session["user_id"]
+    users=db.execute("SELECT * FROM users WHERE id=?", user_id)
+    return render_template("myrequest.html", users=users)
 
+# Function for users to cancel their requests for counselling
 @app.route("/cancel", methods=["POST"])
 @login_required
 def cancel():
@@ -154,17 +173,18 @@ def cancel():
         flash("Counselling request is cancelled")
     return redirect("/counselling")
 
+# Function and form for users to request for counselling
 @app.route("/form", methods=["GET", "POST"])
 @login_required
 def form():
-    username=session["username"]
-    users=db.execute("SELECT * FROM users WHERE username=?", username)
+    user_id=session["user_id"]
+    users=db.execute("SELECT * FROM users WHERE id=?", user_id)
 
     if request.method == "POST":
 
-        name = db.execute("SELECT username FROM users WHERE username=?", username)[0]["username"]
+        username = db.execute("SELECT username FROM users WHERE id=?", user_id)[0]["username"]
         #check if username is valid and if user already has request
-        if request.form.get("username") != name:
+        if request.form.get("username") != username:
             return apology("please provide your valid username")
 
         # query database for request status of user and usernames
@@ -179,24 +199,26 @@ def form():
             return render_template("requested.html", users=users)
 
     else:
-        requests = db.execute("SELECT requests FROM users WHERE username=?", name)[0]["requests"]
+        requests = db.execute("SELECT requests FROM users WHERE id=?", user_id)[0]["requests"]
         if requests == 0:
             return render_template("form.html")
         else:
             flash("Each user is allowed one request at a time")
             return render_template("requested.html", users=users)
 
-
+# Function to desplay counselling requests to "counsellors"
 @app.route("/requests")
 @login_required
 def requests():
     return render_template("requests.html")
 
+
+# Function for users to volunteer as counsellors
 @app.route("/volunteer", methods=["GET", "POST"])
 @login_required
 def volunteer():
-    username=session["username"]
-    users=db.execute("SELECT * FROM users WHERE username=?", username)
+    user_id=session["user_id"]
+    users=db.execute("SELECT * FROM users WHERE id=?", user_id)
 
     if request.method == "POST":
 
@@ -204,6 +226,7 @@ def volunteer():
         #check if username is valid and if user already has request
         if request.form.get("username") != username:
             return apology("please provide your valid username")
+
         counsellor = db.execute("SELECT counsellor FROM users WHERE username=?", request.form.get("username"))[0]["counsellor"]
         if counsellor != 'no':
             return apology("You have already volunteered!")
