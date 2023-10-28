@@ -164,7 +164,6 @@ def myrequest():
     users=db.execute("SELECT * FROM users WHERE id=?", user_id)
 
     # get psychological concerns checked by user on the form(including psychological tests)
-    concerns=request.form.getlist
     return render_template("myrequest.html", users=users)
 
 # Function for users to cancel their requests for counselling
