@@ -156,12 +156,15 @@ def surviving():
 def counselling():
     return render_template("counselling.html")
 
+#function for users to view their submitted request for counselling
 @app.route("/myrequest")
 @login_required
 def myrequest():
     user_id=session["user_id"]
     users=db.execute("SELECT * FROM users WHERE id=?", user_id)
-    concerns
+
+    # get psychological concerns checked by user on the form(including psychological tests)
+    concerns=request.form
     return render_template("myrequest.html", users=users)
 
 # Function for users to cancel their requests for counselling
