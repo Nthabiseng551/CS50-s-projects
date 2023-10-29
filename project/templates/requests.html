@@ -6,5 +6,38 @@
 
 
 {% block main %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Submitted</th>
+            <th>Username</th>
+            <th>Age</th>
+            <th>Contact details</th>
+            <th>Psychological concerns</th>
+            <th>Preffered counselling setting</th>
+            <th>Preffered counsellor's gender</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for request in requests %}
+        <tr>
+            <td>{{ request.timestamp }}</td>
+            <td>{{ request.username }}</td>
+            <td>{{ request.age }}</td>
+            <td>{{ request.user_email }}; {{ request.user_number }}</td>
+            <td>{{ request.psychological_concerns }}</td>
+            <td>{{ request.setting }}</td>
+            <td>{{ request.counsellor_gender }}</td>
+        </tr>
+        {%endfor%}
+    </tbody>
 
+</table>
+{%for user in users%}
+<p id = "request">{{ user.username }}'s request for counselling information:</p>
+<form action="/cancel" method="post">
+    <input type="hidden" name="id" value="{{user.id}}">
+    <button class="btn btn-primary" id = "cancel" type="submit">Cancel request</button>
+</form>
+{%endfor%}
 { % endblock% }
