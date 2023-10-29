@@ -34,7 +34,7 @@
 
 </table>
 {%for user in users%}
-<p id = "request">{{ user.username }}'s request for counselling information:</p>
+<p id = "request">Submitted requests for counselling:</p>
 <form action="/cancel" method="post">
     <input type="hidden" name="id" value="{{user.id}}">
     <button class="btn btn-primary" id = "cancel" type="submit">Cancel request</button>
