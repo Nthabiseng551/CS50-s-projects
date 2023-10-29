@@ -157,7 +157,7 @@ def surviving():
 @app.route("/counselling")
 @login_required
 def counselling():
-    return render_template("cindex.html")
+    return render_template("counselling.html")
 
 #function for users to view their submitted request for counselling
 @app.route("/myrequest")
