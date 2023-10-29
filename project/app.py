@@ -26,7 +26,7 @@ def after_request(response):
     response.headers["Pragma"] = "no-cache"
     return response
 
-TESTS = ["Anxiety", ""]
+TESTS = ["Alcoholism", "Drug Abuse", "Depression", "Bipolar Disoder", "PTSD", "ADHD", "Anxiety", "Personality Disoders", "OCD", "Sleeping disorder"]
 CONCERNS = []
 
 @app.route("/")
