@@ -27,7 +27,7 @@ def after_request(response):
     return response
 
 TESTS = ["Alcoholism", "Drug Abuse", "Depression", "Bipolar Disoder", "PTSD", "ADHD", "Anxiety", "Personality Disoders", "OCD", "Sleeping disorder"]
-CONCERNS = []
+CONCERNS = ["Grief and loss"]
 
 @app.route("/")
 def index():

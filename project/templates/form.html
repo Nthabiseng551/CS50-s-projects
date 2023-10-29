@@ -35,14 +35,18 @@
 
       <div class="form-check">
         <h4>Which of the psychological tests did you receive positive results?</h4>
-        {% for test in TESTS%}
+        {% for test in tests %}
         <input type="checkbox" class="form-check-input" name="concern" value="{{ test }}">{{ test }}
         <br>
-        {%endfor%}
+        { %endfor% }
       </div>
 
       <div class="form-check">
         <h4>In addition to the psychological tests, what else led you to request counselling? (if there is any other reason)</h4>
+        {% for concern in concerns %}
+        <input type="checkbox" class="form-check-input" name="concern" value="{{ concern }}">{{ concern }}
+        <br>
+        {% endfor %}
         <input type="checkbox" class="form-check-input" id="s1">
         <label for="s1">Grief and loss</label>
         <br>
