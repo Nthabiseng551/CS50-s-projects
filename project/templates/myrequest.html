@@ -7,13 +7,6 @@
 
 {% block main %}
 
-{% for user in users %}
-{% for request in requests %}
-
-{% endfor %}
-{% endfor %}
-
-{% endblock %}
 <table class="table table-striped">
     <thead>
         <tr>
@@ -38,7 +31,7 @@
             <td>{{ request.counsellor_gender }}</td>
         </tr>
         {%endfor%}
-        
     </tbody>
 
 </table>
+{% endblock %}
