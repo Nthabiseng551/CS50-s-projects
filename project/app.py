@@ -200,6 +200,7 @@ def form():
 
         else:
             db.execute("UPDATE users SET requests=1 WHERE username=?", request.form.get("username"))
+            
             flash("Your request for counselling has been submitted, response time depends on availability of counsellors")
             return render_template("requested.html", users=users)
 
