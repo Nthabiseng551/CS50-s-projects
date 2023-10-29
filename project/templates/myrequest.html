@@ -17,32 +17,28 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Symbol</th>
-            <th>Name</th>
-            <th>Shares</th>
-            <th>price</th>
-            <th>TOTAL</th>
+            <th>Submitted</th>
+            <th>Username</th>
+            <th>Age</th>
+            <th>Contact details</th>
+            <th>Psychological concerns</th>
+            <th>Preffered counselling setting</th>
+            <th>Preffered counsellor's gender</th>
         </tr>
     </thead>
     <tbody>
-        {%for stock in stocks%}
+        {% for request in requests %}
         <tr>
-            <td>{{ stock.symbol }}</td>
-            <td>{{ stock.name }}</td>
-            <td>{{ stock.total_shares }}</td>
-            <td>{{ stock.price | usd }}</td>
-            <td>{{ stock.price * stock.total_shares | usd}}</td>
+            <td>{{ request.timestamp }}</td>
+            <td>{{ request.username }}</td>
+            <td>{{ request.age }}</td>
+            <td>{{ request.user_email }}; {{ request.user_number }}</td>
+            <td>{{ request.psychological_concerns }}</td>
+            <td>{{ request.setting }}</td>
+            <td>{{ request.counsellor_gender }}</td>
         </tr>
         {%endfor%}
-        <tr>
-            <td>CASH</td>
-            <td colspan="3"></td>
-            <td>{{ cash | usd}}</td>
-        </tr>
-        <tr>
-            <td colspan="4"></td>
-            <td><b>{{ total_value | usd}}</b></td>
-        </tr>
+        
     </tbody>
 
 </table>
