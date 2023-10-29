@@ -173,6 +173,7 @@ def cancel():
     id = request.form.get("id")
     if id:
         db.execute("UPDATE users SET requests=0 WHERE id=?", id)
+        db.execute("")
         flash("Counselling request is cancelled")
     return redirect("/counselling")
 
