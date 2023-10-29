@@ -222,10 +222,11 @@ def form():
 @app.route("/requests")
 @login_required
 def requests():
+    user_id=session["user_id"]
     users=db.execute("SELECT * FROM users")
     username=db.execute("SELECT username FROM users WHERE id=?", user_id)[0]["username"]
     requests=db.execute("SELECT * FROM requests")
-    return render_template("requests.html", users=users, requests=requests)
+    return render_template("requests.html", users=users, requests=requests, username=username)
 
 
 # Function for users to volunteer as counsellors
