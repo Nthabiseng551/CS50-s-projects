@@ -165,9 +165,11 @@ def counselling():
 def myrequest():
     user_id=session["user_id"]
     users=db.execute("SELECT * FROM users WHERE id=?", user_id)
+    username=db.execute("SELECT username FROM users WHERE id=?", user_id)[0]["username"]
+    requests=db.execute("SELECT * FROM requests WHERE username=?", username)
 
     # get psychological concerns checked by user on the form(including psychological tests)
-    return render_template("myrequest.html", users=users)
+    return render_template("myrequest.html", users=users, requests=requests)
 
 # Function for users to cancel their requests for counselling
 @app.route("/cancel", methods=["POST"])
