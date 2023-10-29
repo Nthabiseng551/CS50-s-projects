@@ -197,18 +197,11 @@ def form():
         if request.form.get("username") != username:
             return apology("please provide your valid username")
 
-        # query database for request status of user and usernames
-        requests = db.execute("SELECT requests FROM users WHERE username=?", request.form.get("username"))[0]["requests"]
-
-        if requests != 0:
-            return apology("Each user is allowed one request at a time")
-
-        else:
-            db.execute("UPDATE users SET requests=1 WHERE username=?", request.form.get("username"))
-            db.execute("UPDATE requests SET user_email=?, user_number=?, age=?, username=? WHERE username=?", request.form.get("email"), request.form.get("phonenumber"), request.form.get("age"), request.form.get("username"), request.form.get("username"))
-            db.execute("UPDATE requests SET counsellor_gender=?, psychological_concerns=?, setting=? WHERE username=?", request.form.get("gender"), request.form.get("concern"), request.form.get("setting"), request.form.get("username"))
-            flash("Your request for counselling has been submitted, response time depends on availability of counsellors")
-            return render_template("requested.html", users=users)
+        db.execute("UPDATE users SET requests=1 WHERE username=?", request.form.get("username"))
+        db.execute("UPDATE requests SET user_email=?, user_number=?, age=?, username=? WHERE username=?", request.form.get("email"), request.form.get("phonenumber"), request.form.get("age"), request.form.get("username"), request.form.get("username"))
+        db.execute("UPDATE requests SET counsellor_gender=?, psychological_concerns=?, setting=? WHERE username=?", request.form.get("gender"), request.form.get("concern"), request.form.get("setting"), request.form.get("username"))
+        flash("Your request for counselling has been submitted, response time depends on availability of counsellors")
+        return render_template("requested.html", users=users)
 
     else:
         requests = db.execute("SELECT requests FROM users WHERE id=?", user_id)[0]["requests"]
