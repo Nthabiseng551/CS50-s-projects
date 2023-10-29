@@ -265,3 +265,15 @@ def withdraw():
         db.execute("UPDATE users SET counsellor='no' WHERE id=?", id)
         flash("Volunteering withdrawn")
     return redirect("/counselling")
+
+# Function for counsellors to accept request from users for councelling
+@app.route("/accept", methods=["POST"])
+@login_required
+def accept():
+    id = request.form.get("id")
+    username = db.execute("SELECT username FROM users WHERE id=?", id)[0]["username"]
+    if id:
+        db.execute("UPDATE users SET requests=0 WHERE id=?", id)
+        db.execute("DELETE * FROM requests WHERE username=?", username)
+        flash("Counselling request is cancelled")
+    return redirect("/counselling")
