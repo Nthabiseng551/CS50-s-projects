@@ -31,8 +31,8 @@ CONCERNS = ["Grief and loss", "Self-Esteem/ Body image/ Self-confidance issues",
 
 @app.route("/")
 def index():
-
-    return render_template("index.html", )
+    username=db.execute("SELECT username FROM users WHERE id=?", session["user_id"])[0]["username"]
+    return render_template("index.html", username=username)
 
 # Define index page for counsellors
 @app.route("/counsellor")
