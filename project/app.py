@@ -179,7 +179,7 @@ def cancel():
     username = db.execute("SELECT username FROM users WHERE id=?", id)[0]["username"]
     if id:
         db.execute("UPDATE users SET requests=0 WHERE id=?", id)
-        db.execute("DELETE * FROM requests WHERE username=?", username)
+        db.execute("DELETE FROM requests WHERE username=?", username)
         flash("Counselling request is cancelled")
     return redirect("/counselling")
 
