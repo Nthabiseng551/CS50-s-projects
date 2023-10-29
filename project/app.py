@@ -26,6 +26,9 @@ def after_request(response):
     response.headers["Pragma"] = "no-cache"
     return response
 
+TESTS = []
+CONCERNS = []
+
 @app.route("/")
 def index():
 
