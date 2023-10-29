@@ -222,6 +222,9 @@ def form():
 @app.route("/requests")
 @login_required
 def requests():
+    users=db.execute("SELECT * FROM users WHERE id=?", user_id)
+    username=db.execute("SELECT username FROM users WHERE id=?", user_id)[0]["username"]
+    requests=db.execute("SELECT * FROM requests WHERE username=?", username)
     return render_template("requests.html", users=users, requests=requests)
 
 
