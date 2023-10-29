@@ -222,7 +222,7 @@ def form():
 @app.route("/requests")
 @login_required
 def requests():
-    return render_template("requests.html")
+    return render_template("requests.html", users=users, requests=requests)
 
 
 # Function for users to volunteer as counsellors
