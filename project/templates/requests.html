@@ -29,15 +29,15 @@
             <td>{{ request.psychological_concerns }}</td>
             <td>{{ request.setting }}</td>
             <td>{{ request.counsellor_gender }}</td>
+            <td>
+                <form action="/accept" method="post">
+                <input type="hidden" name="rqst_username" value="{{request.username}}">
+                <button class="btn btn-primary" id = "accept" type="submit">Accept request</button>
+            </form>
+        </td>
         </tr>
         {%endfor%}
     </tbody>
 
 </table>
-{%for user in users%}
-<form action="/accept" method="post">
-    <input type="hidden" name="id" value="{{user.id}}">
-    <button class="btn btn-primary" id = "accept" type="submit">Accept request</button>
-</form>
-{%endfor%}
 { % endblock% }
