@@ -38,7 +38,7 @@ def index():
 @app.route("/counsellor")
 def counsellor():
 
-    return render_template("counsellor.html")
+    return render_template("counsellor.html", username=username)
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
