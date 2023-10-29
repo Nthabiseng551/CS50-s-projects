@@ -200,8 +200,8 @@ def form():
 
         else:
             db.execute("UPDATE users SET requests=1 WHERE username=?", request.form.get("username"))
-            db.execute("UPDATE requests SET user_email=?, user_number=?, age=?, username=?, WHERE username=?", request.form.get("username"), request.form.get("username"), request.form.get("username"), request.form.get("username"), request.form.get("username"))
-            db.execute("UPDATE requests SET counsellor_gender=?, psychological_concerns=?, setting=?, WHERE username=?", request.form.get("username"), request.form.get("username"), request.form.get("username"), request.form.get("username"))
+            db.execute("UPDATE requests SET user_email=?, user_number=?, age=?, username=? WHERE username=?", request.form.get("email"), request.form.get("phonenumber"), request.form.get("age"), request.form.get("username"), request.form.get("username"))
+            db.execute("UPDATE requests SET counsellor_gender=?, psychological_concerns=?, setting=? WHERE username=?", request.form.get("username"), request.form.get("username"), request.form.get("username"), request.form.get("username"))
             flash("Your request for counselling has been submitted, response time depends on availability of counsellors")
             return render_template("requested.html", users=users)
 
