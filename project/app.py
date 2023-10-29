@@ -171,9 +171,10 @@ def myrequest():
 @login_required
 def cancel():
     id = request.form.get("id")
+    username = db.execute("SELECT username FROM users WHERE id=?", id)[0]["username"]
     if id:
         db.execute("UPDATE users SET requests=0 WHERE id=?", id)
-        db.execute("")
+        db.execute("DELETE FROM requests WHERE username=?", username)
         flash("Counselling request is cancelled")
     return redirect("/counselling")
 
