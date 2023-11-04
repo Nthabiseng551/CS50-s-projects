@@ -292,9 +292,9 @@ def accept():
     return redirect("/requests")
 
 # Function for users to post their stories
-@app.route("/post", methods=["GET", "POST"])
+@app.route("/posts", methods=["GET", "POST"])
 @login_required
-def post():
+def posts():
     if request.method == "POST":
         TODO
     else:
