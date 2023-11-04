@@ -298,4 +298,4 @@ def post():
     if request.method == "POST":
         TODO
     else:
-        return render_template("storyform.html")
+        return render_template("storyform.html", tests=TESTS, concerns=CONCERNS)
