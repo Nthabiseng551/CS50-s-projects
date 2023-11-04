@@ -296,7 +296,8 @@ def accept():
 @login_required
 def posts():
     if request.method == "POST":
-        TODO
+        psychological_concerns=
+        story = request.form.get("story")
     else:
         return render_template("storyform.html", tests=TESTS, concerns=CONCERNS)
 
