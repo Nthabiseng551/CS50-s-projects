@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Post your story
+{% endblock %}
+
+{% block main %}
+<form action="/post" method="post">
+  <div class="form-group">
+    <label for="username">Your (name of website)username</label>
+    <input autocomplete="off" autofocus class="form-control" id="username" name="username" placeholder="Username" type="text" required>
+</div>
+
+      <div class="form-check">
+        <h4>What psychological concerns is this story addressing?</h4>
+        {% for test in tests %}
+            <input type="checkbox" name="concern" value="{{ test }}">{{ test }}
+            <br>
+        {% endfor %}
+        {% for concern in concerns %}
+            <input type="checkbox" name="concern" value="{{ concern }}">{{ concern }}
+            <br>
+        {% endfor %}
+      </div>
+
+      <div class="form-group">
+        <label for="other">If other, state the specific issues</label>
+        <textarea class="form-control" id="other" name="concern" rows="3"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+        <label for="story">Detail your story here, what where your issues and disoders, how you struggled, how where you coping, suggestions on how to deal with the specific issues.</label>
+        <textarea class="form-control" id="story" name="story" rows="50" required></textarea>
+      </div>
+    <button class="btn btn-primary" type="submit">Post story</button>
+</form>
+{% endblock %}

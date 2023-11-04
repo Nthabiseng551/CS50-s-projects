@@ -168,7 +168,6 @@ def myrequest():
     username=db.execute("SELECT username FROM users WHERE id=?", user_id)[0]["username"]
     requests=db.execute("SELECT * FROM requests WHERE username=?", username)
 
-    # get psychological concerns checked by user on the form(including psychological tests)
     return render_template("myrequest.html", users=users, requests=requests)
 
 # Function for users to cancel their requests for counselling
@@ -191,35 +190,53 @@ def form():
     users=db.execute("SELECT * FROM users WHERE id=?", user_id)
 
     if request.method == "POST":
+        # check if username and email are provided
+        if not request.form.get("username"):
+            return apology("please provide your username")
+
+        if not request.form.get("email"):
+            return apology("please provide your email")
+
 
         username = db.execute("SELECT username FROM users WHERE id=?", user_id)[0]["username"]
         #check if username is valid and if user already has request
         if request.form.get("username") != username:
             return apology("please provide your valid username")
 
+        # Get the string array of ticked psychological tests and concerns checkboxes
+        checked_concerns = request.form.getlist("concern")
+
+        # convert to string array to a comma delimited string
+        concerns_csv = ','.join(checked_concerns)
+
         db.execute("UPDATE users SET requests=1 WHERE username=?", request.form.get("username"))
-        db.execute("UPDATE requests SET user_email=?, user_number=?, age=?, username=? WHERE username=?", request.form.get("email"), request.form.get("phonenumber"), request.form.get("age"), request.form.get("username"), request.form.get("username"))
-        db.execute("UPDATE requests SET counsellor_gender=?, psychological_concerns=?, setting=? WHERE username=?", request.form.get("gender"), request.form.get("concern"), request.form.get("setting"), request.form.get("username"))
+        db.execute("INSERT INTO requests (user_email, user_number, age, username, counsellor_gender, psychological_concerns, setting) VALUES (?, ?, ?, ?, ?, ?, ?)", request.form.get("email"), request.form.get("phonenumber"), request.form.get("age"), request.form.get("username"), request.form.get("gender"), concerns_csv, request.form.get("setting"))
         flash("Your request for counselling has been submitted, response time depends on availability of counsellors")
         return render_template("requested.html", users=users)
 
     else:
         requests = db.execute("SELECT requests FROM users WHERE id=?", user_id)[0]["requests"]
         if requests == 0:
-            return render_template("form.html")
+            return render_template("form.html", tests=TESTS, concerns=CONCERNS)
         else:
             flash("Each user is allowed one request at a time")
             return render_template("requested.html", users=users)
 
-# Function to desplay counselling requests to "counsellors"
+# Function to desplay counselling requests to "counsellors"(only counsellors must be able to access)
 @app.route("/requests")
 @login_required
 def requests():
     user_id=session["user_id"]
-    users=db.execute("SELECT * FROM users")
-    username=db.execute("SELECT username FROM users WHERE id=?", user_id)[0]["username"]
-    requests=db.execute("SELECT * FROM requests ORDER BY timestamp")
-    return render_template("requests.html", users=users, requests=requests, username=username)
+
+    # Check if user is a counsellor
+    counsellor = db.execute("SELECT counsellor FROM users WHERE id=?", user_id)[0]["counsellor"]
+    if counsellor == 'no':
+        return apology("Only counsellors can view all requests")
+    else:
+        users=db.execute("SELECT * FROM users")
+        username=db.execute("SELECT username FROM users WHERE id=?", user_id)[0]["username"]
+        requests=db.execute("SELECT * FROM requests ORDER BY timestamp")
+        return render_template("requests.html", users=users, requests=requests, username=username)
 
 
 # Function for users to volunteer as counsellors
@@ -270,6 +287,15 @@ def accept():
     username = request.form.get("rqst_username")
     if username:
         db.execute("UPDATE users SET requests=0 WHERE username=?", username)
-        db.execute("DELETE * FROM requests WHERE username=?", username)
+        db.execute("DELETE FROM requests WHERE username=?", username)
         flash("Counselling request was accepted")
     return redirect("/requests")
+
+# Function for users to post their stories
+@app.route("/post", methods=["GET", "POST"])
+@login_required
+def post():
+    if request.method == "POST":
+        TODO
+    else:
+        return render_template("storyform.html")
