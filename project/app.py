@@ -299,3 +299,5 @@ def posts():
         TODO
     else:
         return render_template("storyform.html", tests=TESTS, concerns=CONCERNS)
+
+#function for users to view stories
