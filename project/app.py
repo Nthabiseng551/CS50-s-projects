@@ -312,3 +312,17 @@ def posts():
         return render_template("storyform.html", tests=TESTS, concerns=CONCERNS)
 
 #function for users to view stories
+@app.route("/stories")
+@login_required
+def stories():
+    user_id=session["user_id"]
+
+    # Check if user is a counsellor
+    counsellor = db.execute("SELECT counsellor FROM users WHERE id=?", user_id)[0]["counsellor"]
+    if counsellor == 'no':
+        return apology("Only counsellors can view all requests")
+    else:
+        users=db.execute("SELECT * FROM users")
+        username=db.execute("SELECT username FROM users WHERE id=?", user_id)[0]["username"]
+        requests=db.execute("SELECT * FROM requests ORDER BY timestamp")
+        return render_template("requests.html", users=users, requests=requests, username=username)
