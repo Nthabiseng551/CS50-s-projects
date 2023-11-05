@@ -315,5 +315,5 @@ def posts():
 @app.route("/stories")
 @login_required
 def stories():
-        stories=db.execute("SELECT story FROM stories")
+        stories=db.execute("SELECT * FROM stories")
         return render_template("stories.html", stories=stories)
