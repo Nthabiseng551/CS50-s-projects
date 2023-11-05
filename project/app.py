@@ -305,6 +305,8 @@ def posts():
 
         #add story to database
         db.execute("INSERT INTO stories (psychological_concerns, story) VALUES (?, ?)",concerns_csv, request.form.get("story"))
+        flash("Your story has been posted")
+        return redirect("/surviving")
 
     else:
         return render_template("storyform.html", tests=TESTS, concerns=CONCERNS)
