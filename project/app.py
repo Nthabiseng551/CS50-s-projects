@@ -297,8 +297,6 @@ def accept():
 def posts():
     if request.method == "POST":
 
-        story = request.form.get("story")
-
         # Get the string array of ticked psychological tests and concerns checkboxes
         checked_concerns = request.form.getlist("concern")
 
@@ -306,7 +304,7 @@ def posts():
         concerns_csv = ','.join(checked_concerns)
 
         #add story to database
-        db.execute("INSERT INTO stories (psychological_concerns, story) VALUES (?, ?)")
+        db.execute("INSERT INTO stories (psychological_concerns, story) VALUES (?, ?)",concerns_csv, request.form.get("story"))
 
     else:
         return render_template("storyform.html", tests=TESTS, concerns=CONCERNS)
