@@ -10,31 +10,17 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Submitted</th>
-            <th>Username</th>
-            <th>Age</th>
-            <th>Contact details</th>
+
             <th>Psychological concerns</th>
-            <th>Preffered counselling setting</th>
-            <th>Preffered counsellor's gender</th>
+            <th>Story</th>
+
         </tr>
     </thead>
     <tbody>
-        {% for request in requests %}
+        {% for story in stories %}
         <tr>
-            <td>{{ request.timestamp }}</td>
-            <td>{{ request.username }}</td>
-            <td>{{ request.age }}</td>
-            <td>{{ request.user_email }}; {{ request.user_number }}</td>
-            <td>{{ request.psychological_concerns }}</td>
-            <td>{{ request.setting }}</td>
-            <td>{{ request.counsellor_gender }}</td>
-            <td>
-                <form action="/accept" method="post">
-                <input type="hidden" name="rqst_username" value="{{ request.username }}">
-                <button class="btn btn-primary" id = "accept" type="submit">Accept request</button>
-            </form>
-        </td>
+            <td>{{ story.psychological_concerns }}</td>
+            <td>{{ story.story }}</td>
         </tr>
         {% endfor %}
     </tbody>
