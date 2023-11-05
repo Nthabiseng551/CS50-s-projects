@@ -7,23 +7,14 @@
 
 {% block main %}
 <p>View stories, filter by specific psychological concerns</p>
-<table class="table table-striped">
-    <thead>
-        <tr>
 
-            <th>Psychological concerns</th>
-            <th>Story</th>
-
-        </tr>
-    </thead>
-    <tbody>
         {% for story in stories %}
-        <tr>
-            <td>{{ story.psychological_concerns }}</td>
-            <td>{{ story.story }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Psychological concerns: {{ story.psychological_concerns }}</h5>
+                  <p class="card-text">{{ story.story }}</p>
+                </div>
+              </div>
 
-</table>
+        {% endfor %}
 {% endblock %}
