@@ -336,6 +336,8 @@ def stories():
             match = re.search(pattern, concern)
             if match:
                stories=db.execute("SELECT * FROM stories WHERE psychological_concerns LIKE ?", "%" + concern + "%")
+            else:
+                flash("There are currently no stories on this category")
 
         for test in TESTS:
             # Compare strings(psychological concerns) using regular expression
