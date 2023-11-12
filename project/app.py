@@ -343,6 +343,8 @@ def stories():
             match = re.search(pattern, test)
             if match:
                stories=db.execute("SELECT * FROM stories WHERE psychological_concerns LIKE ?", "%" + test + "%")
+            else:
+                flash("There are currently no stories on this category")
 
 
         return render_template("stories.html", stories=stories, tests=TESTS, concerns=CONCERNS)
