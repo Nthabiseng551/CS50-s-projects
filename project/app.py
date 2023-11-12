@@ -312,9 +312,25 @@ def posts():
         return render_template("storyform.html", tests=TESTS, concerns=CONCERNS)
 
 #function for users to view stories
-@app.route("/stories")
+@app.route("/stories", methods=["GET", "POST"])
 @login_required
 def stories():
+    if request.method == "POST":
+
+        # Get the string array of ticked psychological tests and concerns checkboxes
+        checked_concerns = request.form.getlist("concern")
+
+        # convert to string array to a comma delimited string
+        concerns_csv = ','.join(checked_concerns)
+
+        # Get stories that falls under category of ticked psychological concerns (and filter)
+        stories=db.execute("SELECT * FROM stories")
+
+        if not stories:
+            flash("There are currently no stories, please revisit the page later")
+        return render_template("stories.html", stories=stories, tests=TESTS, concerns=CONCERNS)
+
+    else:
         stories=db.execute("SELECT * FROM stories")
         if not stories:
             flash("There are currently no stories, please revisit the page later")
