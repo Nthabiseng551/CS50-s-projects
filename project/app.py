@@ -342,8 +342,7 @@ def stories():
             if match:
                stories=db.execute("SELECT * FROM stories WHERE psychological_concerns LIKE ?", "%" + test + "%")
 
-        if not stories:
-            flash("There are currently no stories, please revisit the page later")
+    
         return render_template("stories.html", stories=stories, tests=TESTS, concerns=CONCERNS)
 
     else:
