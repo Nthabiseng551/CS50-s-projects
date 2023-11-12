@@ -317,9 +317,11 @@ def posts():
 @login_required
 def stories():
 
-    stories=db.execute("SELECT * FROM stories")
 
     if request.method == "POST":
+
+        # Get all stories
+        stories=db.execute("SELECT * FROM stories")
 
         # Get the string array of ticked psychological tests and concerns checkboxes
         checked_concerns = request.form.getlist("concern")
@@ -342,7 +344,7 @@ def stories():
             if match:
                stories=db.execute("SELECT * FROM stories WHERE psychological_concerns LIKE ?", "%" + test + "%")
 
-    
+
         return render_template("stories.html", stories=stories, tests=TESTS, concerns=CONCERNS)
 
     else:
