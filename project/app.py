@@ -316,6 +316,9 @@ def posts():
 @app.route("/stories", methods=["GET", "POST"])
 @login_required
 def stories():
+
+    stories=db.execute("SELECT * FROM stories")
+    
     if request.method == "POST":
 
         # Get the string array of ticked psychological tests and concerns checkboxes
