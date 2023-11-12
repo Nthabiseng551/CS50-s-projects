@@ -325,7 +325,8 @@ def stories():
 
         # Get stories that falls under category of ticked psychological concerns (and filter)
         for concern in CONCERNS:
-        stories=db.execute("SELECT * FROM stories WHERE psychological_concerns LIKE ?", "%" + x + "%")
+            if concerns_csv
+               stories=db.execute("SELECT * FROM stories WHERE psychological_concerns LIKE ?", "%" + x + "%")
 
         if not stories:
             flash("There are currently no stories, please revisit the page later")
