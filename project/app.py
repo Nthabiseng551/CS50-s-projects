@@ -320,9 +320,6 @@ def stories():
 
     if request.method == "POST":
 
-        # Get all stories
-        stories=db.execute("SELECT * FROM stories")
-
         # Get the string array of ticked psychological tests and concerns checkboxes
         checked_concerns = request.form.getlist("concern")
 
@@ -336,8 +333,6 @@ def stories():
             match = re.search(pattern, concern)
             if match:
                stories=db.execute("SELECT * FROM stories WHERE psychological_concerns LIKE ?", "%" + concern + "%")
-            else:
-                flash("There are currently no stories on this category")
 
         for test in TESTS:
             # Compare strings(psychological concerns) using regular expression
@@ -345,8 +340,6 @@ def stories():
             match = re.search(pattern, test)
             if match:
                stories=db.execute("SELECT * FROM stories WHERE psychological_concerns LIKE ?", "%" + test + "%")
-            else:
-                flash("There are currently no stories on this category")
 
 
         return render_template("stories.html", stories=stories, tests=TESTS, concerns=CONCERNS)
