@@ -318,7 +318,7 @@ def posts():
 def stories():
 
     stories=db.execute("SELECT * FROM stories")
-    
+
     if request.method == "POST":
 
         # Get the string array of ticked psychological tests and concerns checkboxes
@@ -334,6 +334,13 @@ def stories():
             match = re.search(pattern, concern)
             if match:
                stories=db.execute("SELECT * FROM stories WHERE psychological_concerns LIKE ?", "%" + concern + "%")
+
+        for test in TESTS:
+            # Compare strings(psychological concerns) using regular expression
+            pattern = re.compile(concerns_csv)
+            match = re.search(pattern, test)
+            if match:
+               stories=db.execute("SELECT * FROM stories WHERE psychological_concerns LIKE ?", "%" + test + "%")
 
         if not stories:
             flash("There are currently no stories, please revisit the page later")
