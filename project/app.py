@@ -326,6 +326,9 @@ def stories():
 
         # Get stories that falls under category of ticked psychological concerns (and filter)
         for concern in CONCERNS:
+            # Compare strings(psychological concerns) using regular expression
+            pattern = re.compile(concerns_csv)
+            match = re.search(pattern, concern)
             if match:
                stories=db.execute("SELECT * FROM stories WHERE psychological_concerns LIKE ?", "%" + concern + "%")
 
