@@ -6,10 +6,10 @@
 
 {% block main %}
 <form action="/posts" method="post">
-  <p> Hi username, thank you for offering to share your story with us, many may find it helpful.<p>
+  <h5> Hi username, thank you for offering to share your story with us, many may find it helpful, complete and submit the form below to share your story</h5>
 
       <div class="form-check">
-        <h4>What psychological concerns is this story addressing?</h4>
+        <h6>What psychological concerns is this story addressing?</h6>
         {% for test in tests %}
             <input type="checkbox" name="concern" value="{{ test }}">{{ test }}
             <br>

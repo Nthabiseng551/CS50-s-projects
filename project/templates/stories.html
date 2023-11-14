@@ -7,7 +7,7 @@
 
 {% block main %}
 <div class="filter">
-    <p>View stories, filter by specific psychological concerns.</p>
+    <h5>View stories, filter by specific psychological concerns.</h5>
     <form action="/stories" method="post">
     {% for test in tests %}
         <input type="checkbox" name="concern" value="{{ test }}">{{ test }}

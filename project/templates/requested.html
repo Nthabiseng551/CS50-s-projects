@@ -7,7 +7,7 @@
 {% block main %}
 
 {%for user in users%}
-<p id = "request">Hi, {{ user.username }} your request is live, available counsellors will be in touch!</p>
+<h5>Hi, {{ user.username }} your request is live, available counsellors will be in touch!</h5>
 <form action="/cancel" method="post">
     <input type="hidden" name="id" value="{{user.id}}">
     <button class="btn btn-primary" id = "cancel" type="submit">Cancel request</button>
