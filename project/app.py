@@ -32,7 +32,11 @@ CONCERNS = ["Grief and loss", "Self-Esteem/ Body image/ Self-confidance issues",
 
 @app.route("/")
 def index():
-        return render_template("index.html")
+        if session.get("user_id") is None:
+            return render_template("index.html")
+        else:
+            users=db.execute("SELECT * FROM users WHERE id=?", user_id)
+            return render_template("index.html", users=users)
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
