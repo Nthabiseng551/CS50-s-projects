@@ -7,7 +7,7 @@
 
 {% block main %}
 <p>View stories, filter by specific psychological concerns.</p>
-<div>
+<div class="filter">
 <form action="/stories" method="post">
     {% for test in tests %}
         <input type="checkbox" name="concern" value="{{ test }}">{{ test }}
@@ -19,7 +19,7 @@
     {% endfor %}
     <input type="submit" value="Filter">
 </form>
-<div>
+<div class="stories">
         {% for story in stories %}
             <div class="card">
                 <div class="card-body">
