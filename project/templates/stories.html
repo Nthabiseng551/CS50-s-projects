@@ -19,13 +19,12 @@
     {% endfor %}
     <input class="btn btn-primary" type="submit" value="Filter">
 </form>
-
-        <div class="stories">
+</div>
+<div class="stories">
         {% for story in stories %}
-                <div class="card-body">
-                  <h5 class="card-title">Psychological concerns: {{ story.psychological_concerns }}</h5>
-                  <p class="card-text">{{ story.story }}</p>
-                </div>
+                  <h5>Psychological concerns: {{ story.psychological_concerns }}</h5>
+                  <p>{{ story.story }}</p>
+
         {% endfor %}
-            </div>
+        </div>
 {% endblock %}
