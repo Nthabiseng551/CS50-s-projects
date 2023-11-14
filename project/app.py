@@ -35,7 +35,7 @@ def index():
         if session.get("user_id") is None:
             return render_template("index.html")
         else:
-            users=db.execute("SELECT * FROM users WHERE id=?", user_id)
+            users=db.execute("SELECT * FROM users WHERE id=?", session["user_id"])
             return render_template("index.html", users=users)
 
 @app.route("/login", methods=["GET", "POST"])
