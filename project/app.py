@@ -35,12 +35,6 @@ def index():
     username=db.execute("SELECT username FROM users WHERE id=?", session["user_id"])[0]["username"]
     return render_template("index.html", username=username)
 
-# Define index page for counsellors
-@app.route("/counsellor")
-def counsellor():
-    username=db.execute("SELECT username FROM users WHERE id=?", session["user_id"])[0]["username"]
-    return render_template("cindex.html", username=username)
-
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """Log user in"""
