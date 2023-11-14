@@ -22,12 +22,10 @@
 
         <div class="stories">
         {% for story in stories %}
-            <div>
                 <div class="card-body">
                   <h5 class="card-title">Psychological concerns: {{ story.psychological_concerns }}</h5>
                   <p class="card-text">{{ story.story }}</p>
                 </div>
-              </div>
         {% endfor %}
             </div>
 {% endblock %}
