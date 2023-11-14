@@ -17,16 +17,18 @@
         <input type="checkbox" name="concern" value="{{ concern }}">{{ concern }}
         <br>
     {% endfor %}
-    <input type="submit" value="Filter">
+    <input class="btn btn-primary" type="submit" value="Filter">
 </form>
-<div class="stories">
+
         {% for story in stories %}
-            <div>
+        <div class="stories">
+            <div class="card">
                 <div class="card-body">
                   <h5 class="card-title">Psychological concerns: {{ story.psychological_concerns }}</h5>
                   <p class="card-text">{{ story.story }}</p>
                 </div>
               </div>
-
+            </div>
         {% endfor %}
+
 {% endblock %}
