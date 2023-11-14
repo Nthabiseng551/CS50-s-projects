@@ -17,3 +17,7 @@ nav .navbar-brand .lightBlue
 {
     color: #add8e6;
 }
+nav .nav-item .nav-link
+{
+    color: #000080;
+}
