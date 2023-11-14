@@ -70,11 +70,7 @@ def login():
         session["user_id"] = rows[0]["id"]
 
         # Redirect user to home page
-        counsellor = db.execute("SELECT counsellor FROM users WHERE username=?", request.form.get("username"))[0]["counsellor"]
-        if counsellor != 'no':
-            return redirect("/")
-        else:
-            return redirect("/counsellor")# Redirect to counsellors homepage
+        return redirect("/")
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
