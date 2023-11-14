@@ -28,9 +28,10 @@ nav .navbar-brand .lightBlue
 }
 .filter
 {
-
+    width: 30%;
+    float: left;
 }
 .stories
 {
-    
+    margin-left: 70%;
 }
