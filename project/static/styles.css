@@ -21,4 +21,7 @@ nav .navbar-brand .lightBlue
 {
     color: #000080;
 }
-
+.card
+{
+    width: 18rem;
+}
