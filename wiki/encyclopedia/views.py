@@ -3,6 +3,8 @@ from django.shortcuts import render
 from . import util
 import markdown2
 
+# markdown2.markdown(content)
+
 def index(request):
     return render(request, "encyclopedia/index.html", {
         "entries": util.list_entries()
