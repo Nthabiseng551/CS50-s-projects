@@ -37,3 +37,4 @@ def search(request):
                 "title": search,
                 "content": content
             })
+        
