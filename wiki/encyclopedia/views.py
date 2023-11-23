@@ -3,6 +3,9 @@ from django.shortcuts import render
 from . import util
 from markdown2 import Markdown
 
+
+def converter
+
 def index(request):
     return render(request, "encyclopedia/index.html", {
         "entries": util.list_entries()
