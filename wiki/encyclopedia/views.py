@@ -6,7 +6,7 @@ from markdown2 import Markdown
 # Convert markdown content to HTML
 def converter(title):
     markdowner = markdown.Markdown()
-    
+
     if util.get_entry(title) == None:
         return None
     return markdowner.convert(util.get_entry(title))
