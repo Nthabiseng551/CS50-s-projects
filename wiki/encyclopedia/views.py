@@ -18,7 +18,9 @@ def index(request):
 
 def entry(request, title):
      if util.get_entry(title) == None:
-        return render(request, "encyclopedia/error.html")
+        return render(request, "encyclopedia/error.html", {
+            "message:" "The requested page not found"
+        })
 
      return render(request,"encyclopedia/entry.html", {
         "entries": util.get_entry(title)
