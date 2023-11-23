@@ -23,6 +23,7 @@ def entry(request, title):
         })
 
      return render(request,"encyclopedia/entry.html", {
+         
         "entries": util.get_entry(title)
     })
 
