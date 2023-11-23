@@ -2,11 +2,12 @@ from django.shortcuts import render
 
 from . import util
 import markdown2
+from markdown2 import Markdown
 
 # markdown2.markdown(content)
 def md_html(title):
     content = util.get_entry(title)
-    
+
 
 def index(request):
     return render(request, "encyclopedia/index.html", {
