@@ -17,13 +17,14 @@ def index(request):
     })
 
 def entry(request, title):
+
      if util.get_entry(title) == None:
         return render(request, "encyclopedia/error.html", {
             "message:" "The requested page not found"
         })
 
      return render(request,"encyclopedia/entry.html", {
-         "title": title
+         "title": title,
          "content": converter(title)
     })
 
