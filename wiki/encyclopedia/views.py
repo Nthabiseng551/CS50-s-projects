@@ -21,4 +21,4 @@ def entry(request, title):
          "title": title,
          "content": markdown2.markdown(util.get_entry(title))
     })
- 
+
