@@ -3,8 +3,13 @@ from django.shortcuts import render
 from . import util
 from markdown2 import Markdown
 
-
-def converter
+# Convert markdown content to HTML
+def converter(title):
+    markdowner = markdown.Markdown()
+    
+    if util.get_entry(title) == None:
+        return None
+    return markdowner.convert(util.get_entry(title))
 
 def index(request):
     return render(request, "encyclopedia/index.html", {
@@ -12,7 +17,7 @@ def index(request):
     })
 
 def entry(request, title):
-     if None:
+     if util.get_entry(title) == None:
         return render(request, "encyclopedia/error.html")
 
      return render(request,"encyclopedia/entry.html", {
