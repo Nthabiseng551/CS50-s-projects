@@ -30,4 +30,10 @@ def entry(request, title):
 
 def search(request):
     if request.method == "POST":
-        request.POST["q"]
+        content = md_html(request.POST["q"])
+        if content == None:
+            return None
+        return render(request, "encyclopedia/entry.html",{
+
+            "content":
+        })
