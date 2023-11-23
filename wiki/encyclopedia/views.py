@@ -19,6 +19,6 @@ def entry(request, title):
 
      return render(request,"encyclopedia/entry.html", {
          "title": title,
-         "content":
+         "content": markdown2.markdown()
     })
 
