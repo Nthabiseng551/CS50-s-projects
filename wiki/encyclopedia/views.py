@@ -28,3 +28,5 @@ def entry(request, title):
          "content": content
     })
 
+def search(request):
+    
