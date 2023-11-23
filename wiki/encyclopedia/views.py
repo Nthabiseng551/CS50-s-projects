@@ -29,4 +29,5 @@ def entry(request, title):
     })
 
 def search(request):
-    
+    if request.method == "POST":
+        request.POST["q"]
