@@ -37,4 +37,12 @@ def search(request):
                 "title": search,
                 "content": content
             })
-        
+        else:
+            entries = util.list_entries()
+            recommendation = []
+            for entry in entries:
+                if search.upper() in entry.upper():
+                    recommendation.append(entry)
+            return render(request, "encyclopedia/dearch.html", {
+                "recommendation": recommendation
+            })
