@@ -8,7 +8,7 @@
     <h1>search</h1>
 
     <ul>
-        {% for entry in entries %}
+        {% for entry in recommendation %}
             <li><a href="{% url 'entry' title=entry %}">{{ entry }}</a></li>
         {% endfor %}
     </ul>
