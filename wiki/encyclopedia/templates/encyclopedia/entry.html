@@ -8,5 +8,7 @@
 <h1>{{ title }}</h1>
 <p>{{ content | safe }}</p>
 <form action="{% url 'edit' %}" method=""POST">
+    <input type="hidden" name="entry" value="{{ title }}">
+    <button class="btn btn-primary" id = "edit" type="submit">Edit page</button>
 </form>
 {% endblock %}
