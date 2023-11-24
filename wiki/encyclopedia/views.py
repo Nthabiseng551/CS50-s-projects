@@ -17,7 +17,7 @@ def index(request):
         "entries": util.list_entries()
     })
 
-# define entry page
+# define entry page (display content of specific entry)
 def entry(request, title):
     content = md_html(title)
     if content == None:
@@ -30,6 +30,7 @@ def entry(request, title):
          "content": content
     })
 
+# function to search for encyclopedia entry
 def search(request):
     if request.method == "POST":
         search = request.POST["q"]
@@ -48,3 +49,5 @@ def search(request):
             return render(request, "encyclopedia/search.html", {
                 "recommendation": recommendation
             })
+
+def new(request, ):
