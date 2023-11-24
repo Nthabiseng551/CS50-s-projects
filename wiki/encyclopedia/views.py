@@ -96,7 +96,7 @@ def save(request):
         })
 
 # function to take user to random encyclopedia page
-def random(request):
+def r_entry(request):
     entries = util.list_entries()
     randompage = random.choice(entries)
     content = md_html(randompage)
