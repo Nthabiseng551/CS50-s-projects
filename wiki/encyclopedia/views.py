@@ -53,6 +53,7 @@ def search(request):
 # function to create new page/ encyclopedia entry
 def new(request):
     if request.method == "POST":
+        if request.POST['TITLE'] in 
         return
     else:
         return render(request, "encyclopedia/new.html")
