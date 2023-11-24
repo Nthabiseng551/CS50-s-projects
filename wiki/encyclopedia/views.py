@@ -55,7 +55,18 @@ def new(request):
     if request.method == "POST":
         title = request.POST['title']
         content = request.POST['md']
-        titleE
-        return
+        titleExist = util.get_entry(title) # i want to change this to if title in list entries...
+        if titleExist is not None:
+            return render(request, "encyclopedia/error.html", {
+                "message": "Encyclopedia entry already exists"
+            })
+        else:
+            util.save_entry(title, content)
+            html= md_html(title)
+            return render(request, "encyclopedia/entry.html", {
+                "title": title,
+                "content": html
+            })
+
     else:
         return render(request, "encyclopedia/new.html")

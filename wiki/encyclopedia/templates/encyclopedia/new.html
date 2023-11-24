@@ -6,6 +6,7 @@
 
 {% block body %}
 <form action="{% url 'new' %}" method="POST">
+    {% csrf_token %}
     <div class="form-group">
         <label for="title">Enter a title for the new page</label>
         <input class="form-control" id="title" name="title" placeholder="Enter a title" type="text" required>
