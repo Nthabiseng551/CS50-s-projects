@@ -97,5 +97,6 @@ def save(request):
 
 # function to take user to random encyclopedia page
 def random(request):
-    
+    entries = util.list_entries()
+    ran
 
