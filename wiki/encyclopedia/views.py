@@ -43,6 +43,6 @@ def search(request):
             for entry in entries:
                 if search.upper() in entry.upper():
                     recommendation.append(entry)
-            return render(request, "encyclopedia/dearch.html", {
+            return render(request, "encyclopedia/search.html", {
                 "recommendation": recommendation
             })
