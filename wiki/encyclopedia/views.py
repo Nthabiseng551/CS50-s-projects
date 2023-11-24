@@ -73,3 +73,8 @@ def new(request):
 
 # function to edit contents of an entry
 def edit(request):
+     if request.method == "POST":
+
+        title = request.POST['entry']
+        content = request.POST['md']
+
