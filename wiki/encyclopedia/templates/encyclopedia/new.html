@@ -6,9 +6,15 @@
 
 {% block body %}
 <form action="{% url 'new' %}" method="POST">
-    <label for="title">Enter a title for the page</label>
-    <input type="text" id="title" name="title" placeholder="Entry title">
-    <label for="content">Enter Markdown content</label>
-    <textarea id="content" name="content" rows="4" cols="20"></textarea>
+    <div class="form-group">
+        <label for="title">Enter a title for the new page</label>
+        <input class="form-control" id="title" name="title" placeholder="Enter a title" type="text" required>
+    </div>
+
+    <div class="form-group">
+        <label for="content">Enter markdown content</label>
+        <textarea class="form-control" id="content" name="content" rows="3"></textarea>
+      </div>
+
 </form>
 {% endblock %}
