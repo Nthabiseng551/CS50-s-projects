@@ -70,3 +70,6 @@ def new(request):
 
     else:
         return render(request, "encyclopedia/new.html")
+
+# function to edit contents of an entry
+def edit(request):
