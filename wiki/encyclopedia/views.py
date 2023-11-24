@@ -74,7 +74,7 @@ def new(request):
 # function to edit contents of an entry
 def edit(request):
      if request.method == "POST":
-        title = request.POST['entry']
+        title = request.POST['title']
         content = util.get_entry(title)
         return render(request, "encyclopedia/edit.html", {
             "title": title,
