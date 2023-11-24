@@ -6,7 +6,9 @@
 
 {% block body %}
 <form action="{% url 'new' %}" method="POST">
-    <input type="text" name="title" placeholder="Enter a title">
-    <textarea name="content" rows></textarea>
+    <label for="title">Enter a title for the page</label>
+    <input type="text" id="title" name="title" placeholder="Entry title">
+    <label for="content">Enter Markdown content</label>
+    <textarea id="content" name="content" rows="4" cols="20"></textarea>
 </form>
 {% endblock %}
