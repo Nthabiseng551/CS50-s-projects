@@ -81,3 +81,6 @@ def edit(request):
             "content": content
         })
 
+# save edited entry
+def save(request):
+    return  # i want to try the save entry util
