@@ -3,6 +3,7 @@ from django.shortcuts import render
 from . import util
 import markdown2
 from markdown2 import Markdown
+import random
 
 # convert markdown content to html
 def md_html(title):
@@ -87,3 +88,14 @@ def save(request):
         title = request.POST['title']
         content = request.POST['md']
         util.save_entry(title, content)
+        html = md_html(title)
+
+        return render(request,"encyclopedia/entry.html", {
+            "title": title,
+            "content": html
+        })
+
+# function to take user to random encyclopedia page
+def random(request):
+    
+
