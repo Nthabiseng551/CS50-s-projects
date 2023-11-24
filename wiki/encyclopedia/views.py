@@ -50,4 +50,5 @@ def search(request):
                 "recommendation": recommendation
             })
 
+# function to create new page/ encyclopedia entry
 def new(request, ):
