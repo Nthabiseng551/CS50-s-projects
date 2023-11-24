@@ -83,6 +83,7 @@ def edit(request):
 
 # save edited entry
 def save(request):
-    if request.method == "POST": # i want to try the save entry util
+    if request.method == "POST":
         title = request.POST['title']
         content = request.POST['md']
+        util.save_entry(title, content)
