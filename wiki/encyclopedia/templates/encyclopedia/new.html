@@ -7,5 +7,6 @@
 {% block body %}
 <form action="{% url 'new' %}" method="POST">
     <input type="text" name="title" placeholder="Enter a title">
+    <textarea name="content" rows></textarea>
 </form>
 {% endblock %}
