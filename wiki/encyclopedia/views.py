@@ -4,18 +4,20 @@ from . import util
 import markdown2
 from markdown2 import Markdown
 
-# markdown2.markdown(content)
+# convert markdown content to html
 def md_html(title):
     markdowner = Markdown()
     if util.get_entry(title) == None:
         return None
     return markdowner.convert(util.get_entry(title))
 
+# define index page
 def index(request):
     return render(request, "encyclopedia/index.html", {
         "entries": util.list_entries()
     })
 
+# define entry page
 def entry(request, title):
     content = md_html(title)
     if content == None:
