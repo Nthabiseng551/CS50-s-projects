@@ -51,4 +51,8 @@ def search(request):
             })
 
 # function to create new page/ encyclopedia entry
-def new(request, ):
+def new(request):
+    if request.method == "POST":
+        return
+    else:
+        return render(request, "encyclopedia/new.html")
