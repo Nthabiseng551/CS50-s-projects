@@ -88,7 +88,7 @@ def edit(request):
 
 # save edited entry
 @csrf_exempt
-def save(request):
+def save_edit(request):
     if request.method == "POST":
         title = request.POST['title']
         content = request.POST['md']
