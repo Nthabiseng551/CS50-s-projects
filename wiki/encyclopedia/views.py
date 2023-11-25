@@ -16,7 +16,7 @@ def index(request):
 
 # define entry page (display content of specific entry)
 def entry(request, title):
-    content = md_html(title)
+    content = util.md_html(title)
     if content == None:
         return render(request, "encyclopedia/error.html", {
             "message:" "The requested page not found"
@@ -32,7 +32,7 @@ def entry(request, title):
 def search(request):
     if request.method == "POST":
         input = request.POST["q"]
-        content = md_html(input)
+        content = util.md_html(input)
         if content is not None:
             return render(request, "encyclopedia/entry.html",{
                 "title": input,
@@ -55,13 +55,13 @@ def new(request):
         title = request.POST['title']
         content = request.POST['md']
         titleExist = util.get_entry(title) # i want to change this to if title in list entries...
-        if titleExist is not None:
+        if title not in util. is not None:
             return render(request, "encyclopedia/error.html", {
                 "message": "Encyclopedia entry already exists"
             })
         else:
             util.save_entry(title, content)
-            html= md_html(title)
+            html= util.md_html(title)
             return render(request, "encyclopedia/entry.html", {
                 "title": title,
                 "content": html
