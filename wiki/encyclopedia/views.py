@@ -67,10 +67,9 @@ def new(request):
             })
         else:
             util.save_entry(title, content)
-            html= md_html(title)
             return render(request, "encyclopedia/entry.html", {
                 "title": title,
-                "content": html
+                "content": md_html(title)
             })
 
     else:
@@ -80,9 +79,9 @@ def new(request):
 @csrf_exempt
 def edit(request):
      if request.method == "POST":
-        
+        title = request.POST['title']
         return render(request, "encyclopedia/edit.html", {
-            "title": request.POST['title'],
+            "title": title,
             "content": util.get_entry(title)
         })
 
@@ -93,20 +92,19 @@ def save_edit(request):
         title = request.POST['title']
         content = request.POST['md']
         util.save_entry(title, content)
-        html = md_html(title)
 
         return render(request,"encyclopedia/entry.html", {
             "title": title,
-            "content": html
+            "content": md_html(title)
         })
 
 # function to take user to random encyclopedia page
 def r_entry(request):
     entries = util.list_entries()
     randompage = random.choice(entries)
-    content = md_html(randompage)
+
     return render(request, "encyclopedia/entry.html", {
         "title": randompage,
-        "content": content
+        "content": md_html(randompage)
     })
 
