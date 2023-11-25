@@ -93,7 +93,7 @@ def save_edit(request):
         title = request.POST['title']
         content = request.POST['md']
         util.save_entry(title, content)
-        html = util.md_html(title)
+        html = md_html(title)
 
         return render(request,"encyclopedia/entry.html", {
             "title": title,
@@ -104,7 +104,7 @@ def save_edit(request):
 def r_entry(request):
     entries = util.list_entries()
     randompage = random.choice(entries)
-    content = util.md_html(randompage)
+    content = md_html(randompage)
     return render(request, "encyclopedia/entry.html", {
         "title": randompage,
         "content": content
