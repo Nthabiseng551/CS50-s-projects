@@ -46,7 +46,7 @@ def search(request):
         else:
             entries = util.list_entries()
             recommendation = []
-            for entry.capitalize in entries:
+            for entry in entries:
                 if search.upper() in entry.upper():
                     recommendation.append(entry)
             return render(request, "encyclopedia/search.html", {
