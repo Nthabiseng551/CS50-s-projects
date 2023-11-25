@@ -17,7 +17,9 @@ def md_html(title):
 
 # define index page
 def index(request):
-    return render(request, "encyclopedia/index.html", {"entries": util.list_entries()})
+    return render(request, "encyclopedia/index.html", {
+        "entries": util.list_entries()
+        })
 
 
 # define entry page (display content of specific entry)
