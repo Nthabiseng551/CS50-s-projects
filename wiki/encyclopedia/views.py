@@ -36,18 +36,18 @@ def entry(request, title):
 @csrf_exempt
 def search(request):
     if request.method == "POST":
-        search = request.POST["q"]
-        content = md_html(search)
+        input = request.POST["q"]
+        content = md_html(input)
         if content is not None:
             return render(request, "encyclopedia/entry.html",{
-                "title": search,
+                "title": input,
                 "content": content
             })
         else:
             entries = util.list_entries()
             recommendation = []
             for entry in entries:
-                if search.upper() in entry.upper():
+                if input.upper() in entry.upper():
                     recommendation.append(entry)
             return render(request, "encyclopedia/search.html", {
                 "recommendation": recommendation
