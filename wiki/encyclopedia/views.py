@@ -45,7 +45,7 @@ def search(request):
             })
         else:
             entries = util.list_entries()
-            recommendation = []
+            search = []
             for entry in entries:
                 if input.upper() in entry.upper():
                     recommendation.append(entry)
