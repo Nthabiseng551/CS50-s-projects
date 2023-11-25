@@ -10,9 +10,9 @@ import random
 # convert markdown content to html
 def md_html(title):
     markdowner = Markdown()
-    if util.get_entry(title) == None:
-        return None
-    return markdowner.convert(util.get_entry(title))
+    if util.get_entry(title) != None:
+        return markdowner.convert(util.get_entry(title))
+    return None
 
 
 # define index page
