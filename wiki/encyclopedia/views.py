@@ -33,6 +33,7 @@ def entry(request, title):
     })
 
 # function to search for encyclopedia entry
+@csrf_exempt
 def search(request):
     if request.method == "POST":
         search = request.POST["q"]
@@ -53,6 +54,7 @@ def search(request):
             })
 
 # function to create new page/ encyclopedia entry
+@csrf_exempt
 def new(request):
     if request.method == "POST":
         title = request.POST['title']
@@ -85,6 +87,7 @@ def edit(request):
         })
 
 # save edited entry
+@csrf_exempt
 def save(request):
     if request.method == "POST":
         title = request.POST['title']
