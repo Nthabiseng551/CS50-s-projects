@@ -21,15 +21,15 @@ def index(request):
 
 # define entry page (display content of specific entry)
 def entry(request, title):
-    content = md_html(title)
-    if content == None:
+
+    if util.get_entry(title) == None:
         return render(request, "encyclopedia/error.html", {
             "message:" "The requested page not found"
         })
 
     return render(request,"encyclopedia/entry.html", {
          "title": title,
-         "content": content
+         "content": md_html(title)
     })
 
 # function to search for encyclopedia entry
