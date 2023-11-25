@@ -37,11 +37,11 @@ def entry(request, title):
 def search(request):
     if request.method == "POST":
         input = request.POST["q"]
-        content = md_html(input)
-        if content is not None:
+
+        if  is not None:
             return render(request, "encyclopedia/entry.html",{
                 "title": input,
-                "content": content
+                "content": md_html(input)
             })
         else:
             entries = util.list_entries()
