@@ -74,6 +74,7 @@ def new(request):
         return render(request, "encyclopedia/new.html")
 
 # function to edit contents of an entry
+@csrf_exempt
 def edit(request):
      if request.method == "POST":
         title = request.POST['title']
