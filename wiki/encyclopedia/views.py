@@ -24,7 +24,7 @@ def index(request):
 
 # define entry page (display content of specific entry)
 def entry(request, title):
-    if util.get_entry(title) == None:
+    if md_html(title) == None:
         return render(request, "encyclopedia/error.html",{
             "message:" "The requested page not found"
             })
