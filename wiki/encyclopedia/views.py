@@ -104,8 +104,7 @@ def save_edit(request):
 
 # function to take user to random encyclopedia page
 def r_entry(request):
-    entries = util.list_entries()
-    randompage = random.choice(entries)
+    randompage = random.choice(util.list_entries())
 
     return render(request, "encyclopedia/entry.html",{
         "title": randompage,
