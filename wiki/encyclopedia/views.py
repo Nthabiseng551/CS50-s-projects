@@ -36,7 +36,7 @@ def entry(request, title):
 @csrf_exempt
 def search(request):
     if request.method == "POST":
-        
+
         input = request.POST["q"]
 
         if  util.get_entry(title) != None:
@@ -80,11 +80,10 @@ def new(request):
 @csrf_exempt
 def edit(request):
      if request.method == "POST":
-        title = request.POST['title']
-        content = util.get_entry(title)
+        
         return render(request, "encyclopedia/edit.html", {
-            "title": title,
-            "content": content
+            "title": request.POST['title'],
+            "content": util.get_entry(title)
         })
 
 # save edited entry
