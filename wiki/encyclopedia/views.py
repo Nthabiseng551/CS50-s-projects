@@ -39,7 +39,7 @@ def search(request):
 
         input = request.POST["q"]
 
-        if  util.get_entry(title) != None:
+        if  util.get_entry(input) != None:
             return render(request, "encyclopedia/entry.html",{
                 "title": input,
                 "content": md_html(input)
