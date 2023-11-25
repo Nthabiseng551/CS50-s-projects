@@ -21,7 +21,7 @@ def index(request):
 
 # define entry page (display content of specific entry)
 def entry(request, title):
-    content = util.md_html(title)
+    content = md_html(title)
     if content == None:
         return render(request, "encyclopedia/error.html", {
             "message:" "The requested page not found"
@@ -37,7 +37,7 @@ def entry(request, title):
 def search(request):
     if request.method == "POST":
         input = request.POST["q"]
-        content = util.md_html(input)
+        content = md_html(input)
         if content is not None:
             return render(request, "encyclopedia/entry.html",{
                 "title": input,
@@ -66,7 +66,7 @@ def new(request):
             })
         else:
             util.save_entry(title, content)
-            html= util.md_html(title)
+            html= md_html(title)
             return render(request, "encyclopedia/entry.html", {
                 "title": title,
                 "content": html
