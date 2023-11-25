@@ -45,12 +45,12 @@ def search(request):
             })
         else:
             entries = util.list_entries()
-            search = []
+            search_results = []
             for entry in entries:
                 if input.upper() in entry.upper():
-                    recommendation.append(entry)
+                    search_results.append(entry)
             return render(request, "encyclopedia/search.html", {
-                "recommendation": recommendation
+                "search_results": search_results
             })
 
 # function to create new page/ encyclopedia entry
