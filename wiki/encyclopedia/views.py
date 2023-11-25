@@ -36,9 +36,10 @@ def entry(request, title):
 @csrf_exempt
 def search(request):
     if request.method == "POST":
+        
         input = request.POST["q"]
 
-        if  is not None:
+        if  util.get_entry(title) != None:
             return render(request, "encyclopedia/entry.html",{
                 "title": input,
                 "content": md_html(input)
