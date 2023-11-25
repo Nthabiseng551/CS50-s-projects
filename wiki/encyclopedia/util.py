@@ -35,3 +35,10 @@ def get_entry(title):
         return f.read().decode("utf-8")
     except FileNotFoundError:
         return None
+
+# convert markdown content to html
+def md_html(title):
+    markdowner = Markdown()
+    if util.get_entry(title) == None:
+        return None
+    return markdowner.convert(util.get_entry(title))

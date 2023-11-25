@@ -6,12 +6,7 @@ import markdown2
 from markdown2 import Markdown
 import random
 
-# convert markdown content to html
-def md_html(title):
-    markdowner = Markdown()
-    if util.get_entry(title) == None:
-        return None
-    return markdowner.convert(util.get_entry(title))
+
 
 # define index page
 def index(request):
