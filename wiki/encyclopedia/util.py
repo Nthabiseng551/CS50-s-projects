@@ -2,8 +2,6 @@ import re
 
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
-import markdown2
-from markdown2 import Markdown
 
 def list_entries():
     """
@@ -37,9 +35,4 @@ def get_entry(title):
     except FileNotFoundError:
         return None
 
-# convert markdown content to html
-def md_html(title):
-    markdowner = Markdown()
-    if util.get_entry(title) == None:
-        return None
-    return markdowner.convert(util.get_entry(title))
+
