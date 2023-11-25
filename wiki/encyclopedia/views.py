@@ -26,12 +26,13 @@ def index(request):
 def entry(request, title):
     if util.get_entry(title) == None:
         return render(request, "encyclopedia/error.html",{
-            "message:" "The requested page not found"},
-        )
+            "message:" "The requested page not found"
+            })
 
-    return render(
-        request, "encyclopedia/entry.html", {"title": title, "content": md_html(title)}
-    )
+    return render(request, "encyclopedia/entry.html", {
+        "title": title,
+        "content": md_html(title)
+        })
 
 
 # function to search for encyclopedia entry
@@ -41,20 +42,19 @@ def search(request):
         input = request.POST["q"]
 
         if util.get_entry(input) != None:
-            return render(
-                request,
-                "encyclopedia/entry.html",
-                {"title": input, "content": md_html(input)},
-            )
+            return render(request, "encyclopedia/entry.html",{
+                "title": input,
+                "content": md_html(input)
+                })
         else:
             entries = util.list_entries()
             search_results = []
             for entry in entries:
                 if input.upper() in entry.upper():
                     search_results.append(entry)
-            return render(
-                request, "encyclopedia/search.html", {"search_results": search_results}
-            )
+            return render(request, "encyclopedia/search.html", {
+                "search_results": search_results
+                })
 
 
 # function to create new page/ encyclopedia entry
@@ -65,18 +65,14 @@ def new(request):
         content = request.POST["md"]
 
         if title in util.list_entries():
-            return render(
-                request,
-                "encyclopedia/error.html",
-                {"message": "Encyclopedia entry already exists"},
-            )
+            return render(request, "encyclopedia/error.html",{
+                "message": "Encyclopedia entry already exists"
+                })
         else:
             util.save_entry(title, content)
-            return render(
-                request,
-                "encyclopedia/entry.html",
-                {"title": title, "content": md_html(title)},
-            )
+            return render(request, "encyclopedia/entry.html",{
+                "title": title, "content": md_html(title)
+                })
 
     else:
         return render(request, "encyclopedia/new.html")
@@ -87,11 +83,10 @@ def new(request):
 def edit(request):
     if request.method == "POST":
         title = request.POST["title"]
-        return render(
-            request,
-            "encyclopedia/edit.html",
-            {"title": title, "content": util.get_entry(title)},
-        )
+        return render(request, "encyclopedia/edit.html",{
+            "title": title,
+            "content": util.get_entry(title)
+            })
 
 
 # save edited entry
@@ -102,11 +97,10 @@ def save_edit(request):
         content = request.POST["md"]
         util.save_entry(title, content)
 
-        return render(
-            request,
-            "encyclopedia/entry.html",
-            {"title": title, "content": md_html(title)},
-        )
+        return render(request, "encyclopedia/entry.html",{
+            "title": title,
+            "content": md_html(title)
+            })
 
 
 # function to take user to random encyclopedia page
@@ -114,8 +108,7 @@ def r_entry(request):
     entries = util.list_entries()
     randompage = random.choice(entries)
 
-    return render(
-        request,
-        "encyclopedia/entry.html",
-        {"title": randompage, "content": md_html(randompage)},
-    )
+    return render(request, "encyclopedia/entry.html",{
+        "title": randompage,
+        "content": md_html(randompage)
+        })
