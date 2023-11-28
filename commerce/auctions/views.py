@@ -152,7 +152,7 @@ def listing(request, listing_id):
 # function to list all active auctions for specic category
 def cindex(request):
     # Get active listings
-    listings = Listing.objects.filter(active="yes")
+    listings = Listing.objects.filter(active="yes",)
     return render(request, "auctions/cindex.html", {
         "listings": listings
     })
