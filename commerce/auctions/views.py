@@ -109,7 +109,7 @@ def create_listing(request):
             new_listing.save()
 
             # Redirect user to index
-            return HttpResponseRedirect(reverse("auctions:index"))
+            return HttpResponseRedirect(reverse("index"))
 
         else:
 
