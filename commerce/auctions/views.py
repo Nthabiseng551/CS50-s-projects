@@ -129,8 +129,9 @@ def create_listing(request):
             "form": NewListingForm()
         })
 
-def listings(request):
-    
+# 
+def listing(request):
+
     return render(request, "encyclopedia/entry.html", {
         "title": title,
         "content": md_html(title)
