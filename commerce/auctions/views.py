@@ -13,8 +13,10 @@ from .models import User, Listing
 CATEGORIES = ["Home appliances", "Fashion", "Electronics"]
 
 def index(request):
+    # Get active listings
+    listings = Listing.objects.filter(active="yes")
     return render(request, "auctions/index.html", {
-        "categories": CATEGORIES
+        "listings": listings
     })
 
 
