@@ -77,7 +77,7 @@ class NewListingForm(forms.Form):
 #add login required decorator later
 def create_listing(request):
     if request.method == "POST":
-        return
+        
     else:
         return render(request, "auctions/create.html",{
             "form": NewListingForm()
