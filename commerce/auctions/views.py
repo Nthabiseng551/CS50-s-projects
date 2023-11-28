@@ -84,11 +84,11 @@ def create_listing(request):
         if form.is_valid():
 
             # Isolate the variables from the 'cleaned' version of form data
-            title = form.cleaned_data["task"]
-            description = form.cleaned_data["task"]
-            price = form.cleaned_data["task"]
-            image = form.cleaned_data["task"]
-            category = form.cleaned_data["task"]
+            title = form.cleaned_data["title"]
+            description = form.cleaned_data["description"]
+            price = form.cleaned_data["price"]
+            image = form.cleaned_data["image"]
+            category = form.cleaned_data["category"]
 
             # Add the new task to our list of tasks
             tasks.append(task)
