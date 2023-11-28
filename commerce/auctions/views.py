@@ -136,7 +136,7 @@ def create_listing(request):
         })
 
 # function to display active listings filtered by category
-def catfilter(request, category):
+def catfilter(request):
     listings = Listing.objects.filter(active="yes", category=category)
     return render(request, "auctions/index.html", {
         "listings": listings
