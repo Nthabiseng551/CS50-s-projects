@@ -10,10 +10,11 @@ from datetime import datetime
 
 from .models import User, Listing
 
-categories = []
+categories = ["Home appliances", "Fashion", "Electronics"]
 
 def index(request):
-    return render(request, "auctions/index.html")
+    return render(request, "auctions/index.html"
+)
 
 
 def login_view(request):
@@ -96,7 +97,7 @@ def create_listing(request):
 
 
             categories.append(category)
-            
+
 
             new_listing =Listing(
                 title = title,
