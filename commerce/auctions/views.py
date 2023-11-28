@@ -19,12 +19,6 @@ def index(request):
         "listings": listings
     })
 
-# function to display active listings filtered by category
-def catfilter(request, category):
-    listings = Listing.objects.filter(active="yes", category=category)
-    return render(request, "auctions/index.html", {
-        "listings": listings
-    })
 
 def login_view(request):
     if request.method == "POST":
@@ -149,10 +143,4 @@ def listing(request, listing_id):
         "listing": listing
     })
 
-# function to list all active auctions for specic category
-def cindex(request):
-    # Get active listings
-    listings = Listing.objects.filter(active="yes",)
-    return render(request, "auctions/cindex.html", {
-        "listings": listings
-    })
+
