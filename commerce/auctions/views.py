@@ -129,7 +129,7 @@ def create_listing(request):
             "form": NewListingForm()
         })
 
-def entry(request, category):
+def (request, category):
     if util.get_entry(title) == None:
         return render(request, "encyclopedia/error.html",{
             "message:" "The requested page not found"
