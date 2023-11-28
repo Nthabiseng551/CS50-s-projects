@@ -98,7 +98,7 @@ def create_listing(request):
 
             # add new items not the category list if necessary
             for cat in CATEGORIES:
-                if category.upper() not in cat.upper()
+                if category.upper() not in cat.upper():
                     CATEGORIES.append(category)
 
 
