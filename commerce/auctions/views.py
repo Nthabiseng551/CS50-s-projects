@@ -138,6 +138,6 @@ def create_listing(request):
 # Categories page
 def category(request):
 
-    return render(request, "auctions/index.html", {
+    return render(request, "auctions/category.html", {
         "categories": CATEGORIES
     })
