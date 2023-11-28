@@ -69,7 +69,7 @@ def register(request):
 class NewListingForm(forms.Form):
     title = forms.CharField(label="Title for listing", widget=forms.TextInput(attrs={'style': 'width: 300px;', 'class': 'form-control'}))
     description = forms.CharField(label="Description", widget=forms.TextInput(attrs={'style': 'width: 300px;', 'class': 'form-control'}))
-    price = forms.FloatField(label="Price", widget=forms.TextInput(attrs={'style': 'width: 300px;', 'class': 'form-control'}))
+    price = forms.FloatField(label="Price", widget=forms.NumberInput(attrs={'style': 'width: 300px;', 'class': 'form-control'}))
     image = forms.URLField(label="Enter image URL", required=False, widget=forms.URLInput(attrs={'style': 'width: 300px;', 'class': 'form-control'}))
     category = forms.CharField(label="Category", required=False, widget=forms.TextInput(attrs={'style': 'width: 300px;', 'class': 'form-control'}))
 
