@@ -78,6 +78,7 @@ class NewListingForm(forms.Form):
 def create_listing(request):
     if request.method == "POST":
 
+        # current user
         user = request.user
          # Take in the data the user submitted and save it as form
         form = NewListingForm(request.POST)
@@ -101,9 +102,10 @@ def create_listing(request):
                 price = price,
                 image = image,
                 category = category,
-                timestamp = 
+                timestamp = datetime.now(),
                 listed_by = user
             )
+             new_listing.save()
 
             # Redirect user to index
             return HttpResponseRedirect(reverse("auctions:index"))
