@@ -10,11 +10,12 @@ from datetime import datetime
 
 from .models import User, Listing
 
-categories = ["Home appliances", "Fashion", "Electronics"]
+CATEGORIES = ["Home appliances", "Fashion", "Electronics"]
 
 def index(request):
-    return render(request, "auctions/index.html"
-)
+    return render(request, "auctions/index.html", {
+        "categories": CATEGORIES
+    })
 
 
 def login_view(request):
@@ -95,8 +96,8 @@ def create_listing(request):
             image = form.cleaned_data["image"]
             category = form.cleaned_data["category"]
 
-
-            categories.append(category)
+            if category.upper() not in CATEGORIES.upper()
+                CATEGORIES.append(category)
 
 
             new_listing =Listing(
