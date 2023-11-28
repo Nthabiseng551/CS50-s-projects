@@ -9,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 
 from .models import User
 
+CATEGORIES = []
 
 def index(request):
     return render(request, "auctions/index.html")
