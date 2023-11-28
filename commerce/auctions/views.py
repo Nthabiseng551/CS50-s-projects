@@ -96,6 +96,7 @@ def create_listing(request):
 
 
             categories.append(category)
+            
 
             new_listing =Listing(
                 title = title,
