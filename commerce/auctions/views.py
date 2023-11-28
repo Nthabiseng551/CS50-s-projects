@@ -21,7 +21,7 @@ def index(request):
 
 # function to display active listings filtered by category
 def filter(request):
-    # Get active listings
+    category = 
     listings = Listing.objects.filter(active="yes", category=category)
     return render(request, "auctions/category.html", {
         "listings": listings
