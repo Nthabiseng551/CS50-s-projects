@@ -101,6 +101,7 @@ def create_listing(request):
                 price = price,
                 image = image,
                 category = category,
+                timestamp = 
                 listed_by = user
             )
 
