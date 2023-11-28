@@ -65,13 +65,13 @@ def register(request):
     else:
         return render(request, "auctions/register.html")
 
-# 
+# form for creating a new listing
 class NewListingForm(forms.Form):
     title = forms.CharField(label="Title for listing", widget=forms.TextInput(attrs={'style': 'width: 300px;', 'class': 'form-control'}))
-    description = forms.CharField(label="Description", max_length=100)
+    description = forms.CharField(label="Description", widget=forms.TextInput(attrs={'style': 'width: 300px;', 'class': 'form-control'}))
     price = forms.FloatField(label="Price")
     image = forms.URLField(label="Enter image URL", required=False)
-    category = forms.CharField(label="Listing category", required=False, max_length=64)
+    category = forms.CharField(label="Listing category", required=False, widget=forms.TextInput(attrs={'style': 'width: 300px;', 'class': 'form-control'}))
 
 #add login required decorator later
 def create_listing(request):
