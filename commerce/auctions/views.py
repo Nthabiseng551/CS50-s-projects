@@ -84,18 +84,22 @@ def create_listing(request):
         if form.is_valid():
 
             # Isolate the variables from the 'cleaned' version of form data
-            task = form.cleaned_data["task"]
+            title = form.cleaned_data["task"]
+            description = form.cleaned_data["task"]
+            price = form.cleaned_data["task"]
+            image = form.cleaned_data["task"]
+            category = form.cleaned_data["task"]
 
             # Add the new task to our list of tasks
             tasks.append(task)
 
             # Redirect user to index
-            return HttpResponseRedirect(reverse("tasks:index"))
+            return HttpResponseRedirect(reverse("auctions:index"))
 
         else:
 
             # If the form is invalid, re-render the page with existing information.
-            return render(request, "tasks/add.html", {
+            return render(request, "auctions/add.html", {
                 "form": form
             })
 
