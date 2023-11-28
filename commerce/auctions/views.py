@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 
 from .models import User, Listing
 
-CATEGORIES = []
+categories = []
 
 def index(request):
     return render(request, "auctions/index.html")
@@ -90,8 +90,8 @@ def create_listing(request):
             image = form.cleaned_data["image"]
             category = form.cleaned_data["category"]
 
-            # Add the new task to our list of tasks
-            tasks.append(task)
+
+            categories.append(category)
 
             # Redirect user to index
             return HttpResponseRedirect(reverse("auctions:index"))
@@ -99,7 +99,7 @@ def create_listing(request):
         else:
 
             # If the form is invalid, re-render the page with existing information.
-            return render(request, "auctions/add.html", {
+            return render(request, "auctions/create.html", {
                 "form": form
             })
 
