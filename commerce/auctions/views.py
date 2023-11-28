@@ -71,7 +71,7 @@ class NewListingForm(forms.Form):
     description = forms.CharField(label="Description", widget=forms.TextInput(attrs={'style': 'width: 300px;', 'class': 'form-control'}))
     price = forms.FloatField(label="Price")
     image = forms.URLField(label="Enter image URL", required=False)
-    category = forms.CharField(label="Listing category", required=False, widget=forms.TextInput(attrs={'style': 'width: 300px;', 'class': 'form-control'}))
+    category = forms.CharField(label="Category", required=False, widget=forms.TextInput(attrs={'style': 'width: 300px;', 'class': 'form-control'}))
 
 #add login required decorator later
 def create_listing(request):
