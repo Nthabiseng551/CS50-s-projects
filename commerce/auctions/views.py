@@ -95,6 +95,15 @@ def create_listing(request):
 
             categories.append(category)
 
+            new_listing =(
+                title = title,
+                description = description,
+                price = price,
+                image = image,
+                category = category,
+                listed_by = user
+            )
+
             # Redirect user to index
             return HttpResponseRedirect(reverse("auctions:index"))
 
