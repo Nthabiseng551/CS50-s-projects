@@ -106,7 +106,7 @@ def create_listing(request):
                 timestamp = datetime.now(),
                 listed_by = user
             )
-             new_listing.save()
+            new_listing.save()
 
             # Redirect user to index
             return HttpResponseRedirect(reverse("auctions:index"))
