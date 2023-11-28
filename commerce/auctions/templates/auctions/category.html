@@ -9,7 +9,9 @@
 
     <ul>
         {% for category in categories %}
-            <li><a href="{% url 'cindex' %}">{{ category }}</a></li>
+            {% for listing in listings %}
+                <li><a href="{% url 'cindex' listing.id %}">{{ category }}</a></li>
+            {% endfor %}
         {% endfor %}
     </ul>
 
