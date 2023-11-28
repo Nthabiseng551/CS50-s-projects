@@ -9,7 +9,7 @@
 
     <ul>
         {% for category in categories %}
-            <li>{{ category }}</li>
+            <li><a href="{% url 'category' %}>{{ category }}</a></li>
         {% endfor %}
     </ul>
 
