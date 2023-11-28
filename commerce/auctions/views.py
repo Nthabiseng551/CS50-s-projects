@@ -128,3 +128,13 @@ def create_listing(request):
         return render(request, "auctions/create.html",{
             "form": NewListingForm()
         })
+
+def entry(request, category):
+    if util.get_entry(title) == None:
+        return render(request, "encyclopedia/error.html",{
+            "message:" "The requested page not found"
+            })
+    return render(request, "encyclopedia/entry.html", {
+        "title": title,
+        "content": md_html(title)
+            })
