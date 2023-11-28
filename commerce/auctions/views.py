@@ -96,6 +96,7 @@ def create_listing(request):
             image = form.cleaned_data["image"]
             category = form.cleaned_data["category"]
 
+            for category in categories:
             if category.upper() not in CATEGORIES.upper()
                 CATEGORIES.append(category)
 
