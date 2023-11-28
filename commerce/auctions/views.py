@@ -137,7 +137,7 @@ def create_listing(request):
 
 # Categories page
 def category(request):
-    listings = Listing.objects.filter(active="yes", category=category)
+
     return render(request, "auctions/index.html", {
-        "listings": listings
+        "categories": CATEGORIES
     })
