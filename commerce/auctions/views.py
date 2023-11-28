@@ -142,8 +142,9 @@ def category(request):
         "categories": CATEGORIES
     })
 
+# page that renders an html for specific listing
 def catfilter(request, cat):
-    listings = listings.objects.get(category=cat)
+    listing = listings.objects.get(category=cat)
     return render(request, "auctions/index.html", {
         "listings": listings
     })
