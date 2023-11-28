@@ -143,8 +143,8 @@ def category(request):
     })
 
 # page that renders an html for specific listing
-def catfilter(request, title):
-    listing = listings.objects.get(category=cat)
+def listing(request, title):
+    listing = listings.objects.get(title=title)
     return render(request, "auctions/index.html", {
         "listings": listings
     })
