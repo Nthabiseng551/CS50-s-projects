@@ -33,4 +33,4 @@ class Bid(models.Model):
     bid_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name="bidder")
 
     def __str__(self):
-        return f"{self.bid}"
+        return self.bid
