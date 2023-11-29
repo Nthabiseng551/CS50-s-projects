@@ -153,12 +153,16 @@ def listing(request, listing_id):
     #check if listing in current user's watchlist
     inwatchlist = user in listing.watchlist.all()
 
+    #check if user is the owner of the listing
+    owner = listing.listed_by.username == user.username
+
     #get all comments on listing
     comments = Comment.objects.filter(listing=listing)
     return render(request, "auctions/listing.html", {
         "listing": listing,
         "watchlist": inwatchlist,
         "comments": comments,
+        "owner": owner
     })
 
 # Add listing to watchlist
