@@ -171,4 +171,9 @@ def watchlist(request):
     # current user
     user = request.user
     listings = user.userlist.all()
-    return render(request, "auctions/watchlist.html")
+    return render(request, "auctions/watchlist.html", {
+        "listings": listings
+    })
+
+# function for users to add comments on listings
+def comment(request):
