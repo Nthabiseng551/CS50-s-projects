@@ -7,13 +7,11 @@
                 {% if watchlist %}
                         <form action="{% url 'remove' listing_id=listing.id %}" method="POST">
                                 {% csrf_token %}
-                                <input type="hidden" name="title" value="{{ title }}">
                                 <button class="btn btn-primary" id = "remove" type="submit">Remove from watchlist</button>
                         </form>
                 {% else %}
                         <form action="{% url 'add' listing_id=listing.id %}" method="POST">
                                 {% csrf_token %}
-                                <input type="hidden" name="title" value="{{ title }}">
                                 <button class="btn btn-primary" id = "add" type="submit">Add to watchlist</button>
                         </form>
                 {% endif %}
