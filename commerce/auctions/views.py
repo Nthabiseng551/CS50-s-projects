@@ -189,5 +189,5 @@ def comment(request, listing_id):
                 timestamp = datetime.now(),
                 comment_by = user
             )
-            new_comment.save()
+    new_comment.save()
     return HttpResponseRedirect(reverse("listing", args=(listing_id, )))
