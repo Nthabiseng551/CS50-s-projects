@@ -149,14 +149,14 @@ def add(request, listing_id):
     user = request.user
 
     listing = Listing.objects.get(pk=listing_id)
-    
-    return render(request, "auctions/listing.html", {
-        "listing": listing
-    })
+    listing.watchlist.add(user)
+    return HTTPResponseRedirect(reverse("listing"), args=(listing.id))
 
 # remove listing from watchlist
 def remove(request, listing_id):
+     # current user
+    user = request.user
+
     listing = Listing.objects.get(pk=listing_id)
-    return render(request, "auctions/listing.html", {
-        "listing": listing
-    })
+    listing.watchlist.remove(user)
+    return HTTPResponseRedirect(reverse("listing"), args=(listing.id))
