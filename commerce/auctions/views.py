@@ -138,9 +138,15 @@ def category(request):
 
 # page that renders an html for specific listing
 def listing(request, listing_id):
+    # current user
+    user = request.user
+
     listing = Listing.objects.get(pk=listing_id)
+    #check if listing in current user's watchlist
+    watchlist = user in listing.watchlist.all()
     return render(request, "auctions/listing.html", {
-        "listing": listing
+        "listing": listing,
+        "watchlist": watchlist
     })
 
 # Add listing to watchlist
