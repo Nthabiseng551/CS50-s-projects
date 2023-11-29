@@ -168,4 +168,7 @@ def remove(request, listing_id):
     return HttpResponseRedirect(reverse("listing", args=(listing_id, )))
 
 def watchlist(request):
-
+    # current user
+    user = request.user
+    listings = user.userlist.all()
+    return render(request, "auctions/watchlist.html")
