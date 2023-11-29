@@ -5,7 +5,7 @@
     <ol>
     {% for listing in listings %}
         <li>{{ listing.title}} : {{ listing.timestamp}}</li>
-        <a href"">
+        <a href="{% url 'listing' listingid=listing.id %}">
     {% endfor %}
     <ol>
 {% endblock %}
