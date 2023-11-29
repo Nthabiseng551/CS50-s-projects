@@ -105,7 +105,7 @@ def create_listing(request):
             #create new bid object
             bid = Bid(
                 bid=price,
-                user=user
+                bid_by=user
             )
             bid.save()
 
