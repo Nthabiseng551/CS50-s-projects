@@ -5,6 +5,9 @@
         <h1>{{ listing.title}} : {{ listing.timestamp}}</h1>
         {% if user.is_authenticated %}
                 {% if watchlist %}
+                        remove
+                {% else %}
+                        Add
                 {% endif %}
         {% endif %}
         <form action="{% url 'watchlist' %}" method="POST">
