@@ -14,6 +14,7 @@ class Listing(models.Model):
     category = models.CharField(max_length=64, blank=True)
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
     listed_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name="owner")
+    watchlist = models.ManyToManyField(User, )
 
     def __str__(self):
         return f"{self.title}"
