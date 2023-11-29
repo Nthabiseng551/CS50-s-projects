@@ -144,9 +144,13 @@ def listing(request, listing_id):
     listing = Listing.objects.get(pk=listing_id)
     #check if listing in current user's watchlist
     inwatchlist = user in listing.watchlist.all()
+
+    #get all comments on listing
+    comments = Comment.objects.filter(listing=listing)
     return render(request, "auctions/listing.html", {
         "listing": listing,
-        "watchlist": inwatchlist
+        "watchlist": inwatchlist,
+        "comments": comments,
     })
 
 # Add listing to watchlist
