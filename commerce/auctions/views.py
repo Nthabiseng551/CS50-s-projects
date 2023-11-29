@@ -113,7 +113,7 @@ def create_listing(request):
             new_listing =Listing(
                 title = title,
                 description = description,
-                price = price,
+                price = bid,
                 image_url = image,
                 category = category,
                 timestamp = datetime.now(),
