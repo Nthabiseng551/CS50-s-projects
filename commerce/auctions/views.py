@@ -216,3 +216,5 @@ def bid(request, listing_id):
         currentbid.save()
         listing.price=currentbid
         listing.save()
+        return HttpResponseRedirect(reverse("listing", args=(listing_id, )))
+    else:
