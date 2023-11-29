@@ -25,3 +25,5 @@ class Comment(models.Model):
     listing = models.ForeignKey(Listing, on_delete=models.CASCADE, related_name="listing")
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
+    def __str__(self):
+        return f"{self.title}"
