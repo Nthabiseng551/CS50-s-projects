@@ -226,3 +226,7 @@ def bid(request, listing_id):
     else:
         messages.error(request, 'Failed to place bid, make sure your bid is not less than the current price.')
         return HttpResponseRedirect(reverse("listing", args=(listing_id, )))
+
+# function for users to close auction
+def close(request, listing_id):
+    
