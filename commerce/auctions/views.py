@@ -150,7 +150,7 @@ def add(request, listing_id):
 
     listing = Listing.objects.get(pk=listing_id)
     listing.watchlist.add(user)
-    return HTTPResponseRedirect(reverse("listing"), args=(listing.id))
+    return HTTPResponseRedirect(reverse("listing"))
 
 # remove listing from watchlist
 def remove(request, listing_id):
@@ -159,4 +159,4 @@ def remove(request, listing_id):
 
     listing = Listing.objects.get(pk=listing_id)
     listing.watchlist.remove(user)
-    return HTTPResponseRedirect(reverse("listing"), args=(listing.id))
+    return HTTPResponseRedirect(reverse("listing"))
