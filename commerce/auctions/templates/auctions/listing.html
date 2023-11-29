@@ -3,6 +3,10 @@
 {% block body %}
 
         <h1>{{ listing.title}} : {{ listing.timestamp}}</h1>
+        {% if user.is_authenticated %}
+                {% if watchlist %}
+                {% endif %}
+        {% endif %}
         <form action="{% url 'watchlist' %}" method="POST">
                 {% csrf_token %}
                 <input type="hidden" name="title" value="{{ title }}">
