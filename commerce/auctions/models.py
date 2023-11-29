@@ -20,4 +20,7 @@ class Listing(models.Model):
         return f"{self.title}"
 
 class Comment(models.Model):
-    
+    timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
+    comment_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name="author")
+    listing
+
