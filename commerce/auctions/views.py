@@ -143,10 +143,10 @@ def listing(request, listing_id):
 
     listing = Listing.objects.get(pk=listing_id)
     #check if listing in current user's watchlist
-    watchlist = user in listing.watchlist.all()
+    inwatchlist = user in listing.watchlist.all()
     return render(request, "auctions/listing.html", {
         "listing": listing,
-        "watchlist": watchlist
+        "watchlist": inwatchlist
     })
 
 # Add listing to watchlist
@@ -166,3 +166,6 @@ def remove(request, listing_id):
     listing = Listing.objects.get(pk=listing_id)
     listing.watchlist.remove(user)
     return HttpResponseRedirect(reverse("listing", args=(listing_id, )))
+
+def watchlist(request):
+
