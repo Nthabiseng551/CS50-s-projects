@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 
 from datetime import datetime
 
-from .models import User, Listing, Comment
+from .models import User, Listing, Comment, Bid
 
 CATEGORIES = ["Home appliances", "Fashion", "Electronics"]
 
