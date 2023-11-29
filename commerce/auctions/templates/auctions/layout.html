@@ -46,8 +46,8 @@
         <hr>
         {% if messages %}
             <header>
-                <div class="alert alert-primary mb-0 text-center" role="alert">
-                    {{ messages() | join(" ") }}
+                <div class="alert {% if message.tags %}alert-{{ message.tags }}"{% endif %}>
+                    {{ messages }}
                 </div>
             </header>
         {% endif %}
