@@ -4,8 +4,8 @@
     <h2>Active Listings</h2>
     <ol>
     {% for listing in listings %}
-        <li>{{ listing.title}} : {{ listing.timestamp}}</li>
-        <a href="{% url 'listing' listing_id=listing.id %}">
+        <li><a href="{% url 'listing' listing_id=listing.id %}">{{ listing.title}} : {{ listing.timestamp}}</a></li>
+
     {% endfor %}
     <ol>
 {% endblock %}
