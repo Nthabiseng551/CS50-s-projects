@@ -2,7 +2,7 @@
 
 {% block body %}
 
-        <h1>{{ listing.title}} : {{ listing.timestamp}}</h1>
+        <h1>{{ listing.title}} : {{ listing.timestamp}} : {{ listing.price.bid }}</h1>
         <h2>Comments</h2>
         {% if user.is_authenticated %}
                 {% if watchlist %}
