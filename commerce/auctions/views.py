@@ -176,4 +176,9 @@ def watchlist(request):
     })
 
 # function for users to add comments on listings
-def comment(request):
+def comment(request, listing_id):
+    # current user
+    user = request.user
+
+    listing = Listing.objects.get(pk=listing_id)
+    comment = request.POST['comment']
