@@ -3,6 +3,7 @@
 {% block body %}
 
         <h1>{{ listing.title}} : {{ listing.timestamp}}</h1>
+        <h2>Comments</h2>
         {% if user.is_authenticated %}
                 {% if watchlist %}
                         <form action="{% url 'remove' listing_id=listing.id %}" method="POST">
