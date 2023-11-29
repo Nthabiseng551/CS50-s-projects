@@ -202,3 +202,6 @@ def comment(request, listing_id):
             )
     new_comment.save()
     return HttpResponseRedirect(reverse("listing", args=(listing_id, )))
+
+# function for users to place bids on listings
+def bid(request, listing_id):
