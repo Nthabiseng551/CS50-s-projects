@@ -30,5 +30,5 @@ class Comment(models.Model):
 
 class Bid(models.Model):
     bid = models.FloatField(default=0)
-    bid_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name="author")
+    bid_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name="bidder")
 
