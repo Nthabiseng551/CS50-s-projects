@@ -229,4 +229,6 @@ def bid(request, listing_id):
 
 # function for users to close auction
 def close(request, listing_id):
-    
+    listing = Listing.objects.get(pk=listing_id)
+    listing.active="no"
+    listing.save()
