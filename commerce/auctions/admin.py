@@ -4,3 +4,4 @@ from .models import User, Listing
 # Register your models here.
 admin.site.register(User)
 admin.site.register(Listing)
+admin.site.register(Comment)
