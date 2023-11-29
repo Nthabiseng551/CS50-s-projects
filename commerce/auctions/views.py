@@ -149,6 +149,7 @@ def add(request, listing_id):
     user = request.user
 
     listing = Listing.objects.get(pk=listing_id)
+    
     return render(request, "auctions/listing.html", {
         "listing": listing
     })
