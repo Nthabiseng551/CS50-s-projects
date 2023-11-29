@@ -217,6 +217,8 @@ def bid(request, listing_id):
         currentbid.save()
         listing.price=currentbid
         listing.save()
-        return HttpResponseRedirect(reverse("listing", args=(listing_id, ), kwargs=(message="Bid was placed")))
+        messages.success(request, 'Bid was placed successfully.')
+        return HttpResponseRedirect(reverse("listing", args=(listing_id, )))
     else:
-        return HttpResponseRedirect(reverse("listing", args=(listing_id, ), kwargs=(message="Failed to place bid")))
+        messages.error(request, 'Failed to place bid, make sure your bid is not less than the current price.')
+        return HttpResponseRedirect(reverse("listing", args=(listing_id, )))
