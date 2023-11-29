@@ -27,3 +27,8 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"comment on item,{self.listing}, by {self.comment_by}"
+
+class Bid(models.Model):
+    bid = models.FloatField(default=0)
+    bid_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name="author")
+
