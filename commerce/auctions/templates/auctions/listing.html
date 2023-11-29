@@ -5,13 +5,13 @@
         <h1>{{ listing.title}} : {{ listing.timestamp}}</h1>
         {% if user.is_authenticated %}
                 {% if watchlist %}
-                        <form action="{% url 'remove' %}" method="POST">
+                        <form action="{% url 'remove' listing_id=listing.id %}" method="POST">
                                 {% csrf_token %}
                                 <input type="hidden" name="title" value="{{ title }}">
-                                <button class="btn btn-primary" id = "watchlist" type="submit">Add to watchlist</button>
+                                <button class="btn btn-primary" id = "remove" type="submit">Add to watchlist</button>
                         </form>
                 {% else %}
-                        <form action="{% url 'add' %}" method="POST">
+                        <form action="{% url 'add' listing_id=listing.id %}" method="POST">
                                 {% csrf_token %}
                                 <input type="hidden" name="title" value="{{ title }}">
                                 <button class="btn btn-primary" id = "watchlist" type="submit">Add to watchlist</button>
