@@ -145,6 +145,9 @@ def listing(request, listing_id):
 
 # Add listing to watchlist
 def add(request, listing_id):
+    # current user
+    user = request.user
+
     listing = Listing.objects.get(pk=listing_id)
     return render(request, "auctions/listing.html", {
         "listing": listing
