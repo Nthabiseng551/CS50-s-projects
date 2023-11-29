@@ -190,3 +190,4 @@ def comment(request, listing_id):
                 comment_by = user
             )
             new_comment.save()
+    return HttpResponseRedirect(reverse("listing", args=(listing_id, )))
