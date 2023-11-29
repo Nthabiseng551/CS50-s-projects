@@ -5,6 +5,12 @@
         <h1>{{ listing.title}} : {{ listing.timestamp}} : {{ listing.price.bid }}</h1>
         <h2>Comments</h2>
         {% if user.is_authenticated %}
+                {% if owner %}
+                <form action="{% url 'close' listing_id=listing.id %}" method="POST">
+                        {% csrf_token %}
+                        <button class="btn btn-primary" id = "closee" type="submit">Close listing</button>
+                </form>
+                {% endif%}
                 {% if watchlist %}
                         <form action="{% url 'remove' listing_id=listing.id %}" method="POST">
                                 {% csrf_token %}
