@@ -28,7 +28,7 @@
                 <form action="{% url 'bid' listing_id=listing.id %}" method="POST">
                         {% csrf_token %}
                         <input name="bid" type="number" placeholder="Bid">
-                        <button class="btn btn-primary" id ="comment" type="submit">Place Bid</button>
+                        <button class="btn btn-primary" id ="bid" type="submit">Place Bid</button>
                 </form>
         {% endif %}
         {% for comment in comments %}

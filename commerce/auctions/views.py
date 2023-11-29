@@ -205,4 +205,4 @@ def comment(request, listing_id):
 
 # function for users to place bids on listings
 def bid(request, listing_id):
-    if 
+    if Listing.objects.get(pk=listing_id) <= request.POST['bid']
