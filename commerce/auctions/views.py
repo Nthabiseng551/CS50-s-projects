@@ -138,7 +138,7 @@ def category(request):
 
 # page that renders an html for specific listing
 def listing(request, listing_id):
-    listing = listings.objects.get(id=listing_id)
+    listing = listing.objects.get(id=listing_id)
     return render(request, "auctions/listing.html", {
         "listing": listing
     })
