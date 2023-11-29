@@ -102,7 +102,14 @@ def create_listing(request):
             if category and category not in CATEGORIES:
                 CATEGORIES.append(category)
 
+            #create new bid object
+            bid = Bid(
+                bid=price,
+                user=user
+            )
+            bid.save()
 
+            #create new listing object
             new_listing =Listing(
                 title = title,
                 description = description,
