@@ -182,3 +182,11 @@ def comment(request, listing_id):
 
     listing = Listing.objects.get(pk=listing_id)
     comment = request.POST['comment']
+
+    new_comment =Comment(
+                comment = comment,
+                listing = listing,
+                timestamp = datetime.now(),
+                comment_by = user
+            )
+            new_comment.save()
