@@ -22,8 +22,8 @@ class Listing(models.Model):
 class Comment(models.Model):
     comment = models.CharField(max_length=300)
     comment_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name="author")
-    listing = models.ForeignKey(Listing, on_delete=models.CASCADE, related_name="listing")
+    listing = models.ForeignKey(Listing, on_delete=models.CASCADE, related_name="item")
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
     def __str__(self):
-        return f"{self.title}"
+        return f"comment on item,{self.listing}, by {self.comment_by}"
