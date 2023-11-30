@@ -14,7 +14,7 @@
                 {% if watchlist %}
                         <form action="{% url 'remove' listing_id=listing.id %}" method="POST">
                                 {% csrf_token %}
-                                <button class="btn btn-primary" id = "remove" type="submit">Remove from watchlist</button>
+                                <button class="btn btn-" id = "remove" type="submit">Remove from watchlist</button>
                         </form>
                 {% else %}
                         <form action="{% url 'add' listing_id=listing.id %}" method="POST">
@@ -27,14 +27,14 @@
                 <form action="{% url 'comment' listing_id=listing.id %}" method="POST">
                         {% csrf_token %}
                         <input name="comment" type="text" placeholder="Type your comment here">
-                        <button class="btn btn-primary" id ="comment" type="submit">Post comment</button>
+                        <button class="btn btn-primary btn-sm" id ="comment" type="submit">Post comment</button>
                 </form>
 
                 <h2>Bids</h2>
                 <form action="{% url 'bid' listing_id=listing.id %}" method="POST">
                         {% csrf_token %}
                         <input name="bid" type="number" placeholder="Bid">
-                        <button class="btn btn-primary" id ="bid" type="submit">Place Bid</button>
+                        <button class="btn btn-primary btn-sm" id ="bid" type="submit">Place Bid</button>
                 </form>
         {% endif %}
         <p>{{ message }}</p>
