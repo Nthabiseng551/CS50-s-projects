@@ -4,7 +4,7 @@
         <h2>Active Listings for category: {{ c }}</h2>
         <ol>
         {% for listing in listings %}
-            {% if listings == Null %}
+            {% if listing == [] %}
                 <li><a href="{% url 'listing' listing_id=listing.id %}">{{ listing.title}} : {{ listing.timestamp}}</a></li>
             {% else %}
                 <li>No active listings for this category</li>
