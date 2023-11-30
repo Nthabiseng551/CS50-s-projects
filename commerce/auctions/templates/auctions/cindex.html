@@ -1,7 +1,6 @@
 {% extends "auctions/layout.html" %}
 
 {% block body %}
-    {% for category in categories %}
         <h2>Active Listings for category: {{ category }}</h2>
         <ol>
         {% for listing in listings %}
@@ -9,5 +8,4 @@
 
         {% endfor %}
         <ol>
-    {% endfor %}
 {% endblock %}
