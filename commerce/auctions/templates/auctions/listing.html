@@ -3,6 +3,11 @@
 {% block body %}
 
         <h3><strong>Listing: {{ listing.title}}</strong></h3>
+        {% if watchlist %}
+                <hearder>
+                        <h5><span class="badge badge-secondary">Watchlist</span></h5>
+                </hearder>
+        {% endif %}
                 <div class="card mb-3">
                         <img class="card-img-top" src="..." alt="Card image cap">
                         <div class="card-body">
@@ -19,9 +24,7 @@
                 </form>
                 {% endif%}
                 {% if watchlist %}
-                        <hearder>
-                                <h4><span class="badge badge-secondary">Watchlist</span></h4>
-                        </hearder>
+
                         <form action="{% url 'remove' listing_id=listing.id %}" method="POST">
                                 {% csrf_token %}
                                 <button class="btn btn-secondary btn-lg btn-block" id = "remove" type="submit">Remove from watchlist</button>
@@ -40,7 +43,7 @@
                         <button class="btn btn-primary btn-sm" id ="comment" type="submit">Post comment</button>
                 </form>
 
-                <h2>Bids</h2>
+                <h4>Bids</h4>
                 <form action="{% url 'bid' listing_id=listing.id %}" method="POST">
                         {% csrf_token %}
                         <input name="bid" type="number" placeholder="Bid">
