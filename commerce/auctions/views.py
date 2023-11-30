@@ -226,7 +226,7 @@ def bid(request, listing_id):
 
     user = request.user
     listing = Listing.objects.get(pk=listing_id)
-    if listing.price.bid < request.POST['bid']:
+    if listing.price.bid < float(request.POST['bid']):
         currentbid= Bid(
             bid=request.POST['bid'],
             bid_by=user
