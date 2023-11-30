@@ -4,7 +4,7 @@
     <h2>Active Listings</h2>
     <ol>
     {% for listing in listings %}
-        <li><a href="{% url 'listing' listing_id=listing.id %}">{{ listing.title}} : {{ listing.timestamp}}</a></li>
+        <li><a href="{% url 'listing' cat=listing.category %}">{{ listing.title}} : {{ listing.timestamp}}</a></li>
 
     {% endfor %}
     <ol>
