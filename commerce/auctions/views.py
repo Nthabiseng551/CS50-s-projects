@@ -24,6 +24,8 @@ def index(request):
 def cindex(request):
     # Get active listings
     listings = Listing.objects.filter(active="yes")
+    for category in CATEGORIES:
+        if 
     return render(request, "auctions/index.html", {
         "listings": listings
     })
