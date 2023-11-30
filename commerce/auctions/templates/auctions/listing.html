@@ -32,7 +32,7 @@
                                 <button class="btn btn-danger btn-lg btn-block" id = "close" type="submit">Close auction</button>
                         </form>
                         </div>
-                {% endif%}
+                {% endif% }
                 {% if watchlist %}
                         <div>
                         <form action="{% url 'remove' listing_id=listing.id %}" method="POST">
