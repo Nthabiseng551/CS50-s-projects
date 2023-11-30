@@ -43,6 +43,11 @@
         {% endfor %}
 <footer>
         <p><strong>Details:</strong></p>
-        <p><small class="text-muted">Listed by: {{ listing.listed_by }}</small></p>
+        <p><small>Listed by: {{ listing.listed_by }}</small></p>
+        {% if listing.category %}
+                <p><small>Category: {{ listing.category }}</small></p>
+        {% else %}
+                <p><small>Category: No category listed</small></p>
+        {% endif %}
 </footer>
 {% endblock %}
