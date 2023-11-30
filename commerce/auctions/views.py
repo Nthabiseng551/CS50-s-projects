@@ -250,8 +250,8 @@ def close(request, listing_id):
     listing = Listing.objects.get(pk=listing_id)
     listing.active="no"
     listing.save()
-    message.success(request, 'Auction has been closed.')
-    if listing.active=="no" and user==listing.price.user:
-        message.success(request, 'Congratulations! you have won the auction')
+    messages.success(request, 'Auction has been closed.')
+    if listing.active=="no" and user==listing.price.bid_by:
+        messages.success(request, 'Congratulations! you have won the auction')
 
     return HttpResponseRedirect(reverse("listing", args=(listing_id, )))
