@@ -31,7 +31,7 @@ def cindex(request, cat):
 
     return render(request, "auctions/cindex.html", {
         "listings": listings,
-        "categories": CATEGORIES
+        "category": category
     })
 
 def login_view(request):
