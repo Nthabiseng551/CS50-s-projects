@@ -32,7 +32,7 @@
                                 <button class="btn btn-danger btn-lg btn-block" id = "close" type="submit">Close auction</button>
                         </form>
                         </div>
-                {% endif% }
+                {% endif % }
                 {% if watchlist %}
                         <div>
                         <form action="{% url 'remove' listing_id=listing.id %}" method="POST">
@@ -47,7 +47,7 @@
                                 <button class="btn btn-primary btn-lg btn-block" id ="add" type="submit">Add to watchlist</button>
                         </form>
                         </div>
-                {% endif %}
+                 {% endif %}
 
                 <div>
                 <p><strong>Details:</strong></p>
@@ -67,7 +67,7 @@
                         <button class="btn btn-primary btn-sm" id ="comment" type="submit">Post comment</button>
                 </form>
                 </div>
-{% endif %}
+  {% endif %}
 
         {% for comment in comments %}
         <div class="card">
@@ -78,5 +78,5 @@
               </div>
 
         {% endfor %}
-
+{% endif %}
 {% endblock %}
