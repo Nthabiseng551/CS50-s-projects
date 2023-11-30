@@ -8,18 +8,18 @@
                 {% if owner and listing.active == "yes" %}
                 <form action="{% url 'close' listing_id=listing.id %}" method="POST">
                         {% csrf_token %}
-                        <button class="btn btn-primary" id = "close" type="submit">Close auction</button>
+                        <button class="btn btn-primary btn-lg btn-block" id = "close" type="submit">Close auction</button>
                 </form>
                 {% endif%}
                 {% if watchlist %}
                         <form action="{% url 'remove' listing_id=listing.id %}" method="POST">
                                 {% csrf_token %}
-                                <button class="btn btn-" id = "remove" type="submit">Remove from watchlist</button>
+                                <button class="btn btn-primary btn-lg btn-block" id = "remove" type="submit">Remove from watchlist</button>
                         </form>
                 {% else %}
                         <form action="{% url 'add' listing_id=listing.id %}" method="POST">
                                 {% csrf_token %}
-                                <button class="btn btn-primary" id ="add" type="submit">Add to watchlist</button>
+                                <button class="btn btn-primary btn-lg btn-block" id ="add" type="submit">Add to watchlist</button>
                         </form>
                 {% endif %}
 
