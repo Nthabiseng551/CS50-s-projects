@@ -59,8 +59,13 @@
         {% endif %}
 
         {% for comment in comments %}
-                <p>{{ comment.comment_by}} commented on: {{ comment.timestamp }}</p>
-                <p>{{ comment.comment }}</p>
+        <div class="card">
+                <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-muted">{{ comment.comment_by}} commented on: {{ comment.timestamp }}</h6>
+                        <p>{{ comment.comment }}</p>
+                </div>
+              </div>
+
         {% endfor %}
 <footer>
         <p><strong>Details:</strong></p>
