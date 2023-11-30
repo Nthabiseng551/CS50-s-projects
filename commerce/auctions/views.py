@@ -135,12 +135,14 @@ def create_listing(request):
             )
             new_listing.save()
 
+            messages.success(request, 'Listing created successfully.')
             # Redirect user to index
             return HttpResponseRedirect(reverse("index"))
 
         else:
 
             # If the form is invalid, re-render the page with existing information.
+            messages.error(request, 'Could not create listing, there has been an error.')
             return render(request, "auctions/create.html", {
                 "form": form
             })
