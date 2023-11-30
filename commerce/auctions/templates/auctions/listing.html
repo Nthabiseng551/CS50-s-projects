@@ -41,5 +41,8 @@
         {% for comment in comments %}
                 <p>{{ comment.comment_by}} on {{ comment.listing}} at {{ comment.timestamp }}</p>
         {% endfor %}
-
+<footer>
+        <p><strong>Details:</strong></p>
+        <p class="card-text"><small class="text-muted">Created {{ listing.timestamp }}</small></p>
+</footer>
 {% endblock %}
