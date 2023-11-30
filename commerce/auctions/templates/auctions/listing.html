@@ -2,7 +2,14 @@
 
 {% block body %}
 
-        <h1>{{ listing.title}} : {{ listing.timestamp}} : {{ listing.price.bid }}</h1>
+        <h3><strong>Listing: {{ listing.title}}</strong></h3>
+                <div class="card mb-3">
+                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <div class="card-body">
+                        <p class="card-text">{{ listing.description }}</p>
+                        <p class="card-text"><strong>{{ listing.price.bid }}</strong></p>
+                        </div>
+                </div>
         <h2>Comments</h2>
         {% if user.is_authenticated %}
                 {% if owner and listing.active == "yes" %}
