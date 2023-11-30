@@ -1,11 +1,13 @@
 {% extends "auctions/layout.html" %}
 
 {% block body %}
-    <h2>Active Listings</h2>
+    {% for category in categories %}
+    <h2>Active Listings for {{ category }} category:</h2>
     <ol>
     {% for listing in listings %}
         <li><a href="{% url 'listing' listing_id=listing.id %}">{{ listing.title}} : {{ listing.timestamp}}</a></li>
 
     {% endfor %}
     <ol>
+    {% endfor %}
 {% endblock %}
