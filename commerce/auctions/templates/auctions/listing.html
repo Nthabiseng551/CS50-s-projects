@@ -63,7 +63,7 @@
                 <h4>Comments</h4>
                 <form action="{% url 'comment' listing_id=listing.id %}" method="POST">
                         {% csrf_token %}
-                        <textarea name="comment" type="text" placeholder="Type your comment here" rows="3"></textarea>
+                        <input name="comment" type="text" placeholder="Type your comment here">
                         <button class="btn btn-primary btn-sm" id ="comment" type="submit">Post comment</button>
                 </form>
                 </div>
