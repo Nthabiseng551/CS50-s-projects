@@ -17,6 +17,12 @@
                 </div>
 
         {% if user.is_authenticated %}
+                <h4>Bids</h4>
+                        <form action="{% url 'bid' listing_id=listing.id %}" method="POST">
+                                {% csrf_token %}
+                                <input name="bid" type="number" placeholder="Bid">
+                                <button class="btn btn-primary btn-sm" id ="bid" type="submit">Place Bid</button>
+                        </form>
                 {% if owner and listing.active == "yes" %}
                 <form action="{% url 'close' listing_id=listing.id %}" method="POST">
                         {% csrf_token %}
