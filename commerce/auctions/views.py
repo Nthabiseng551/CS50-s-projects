@@ -27,11 +27,11 @@ def cindex(request, cat):
     for category in CATEGORIES:
         if cat == category:
             listings = Listing.objects.filter(active="yes", category=cat)
-            category = cat
+            c = cat
 
     return render(request, "auctions/cindex.html", {
         "listings": listings,
-        "category": category
+        "c": c
     })
 
 def login_view(request):
