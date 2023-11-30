@@ -2,9 +2,8 @@
 
 {% block body %}
         <h2>Active Listings for category: {{ c }}</h2>
-        <ol>
             {% if not listings %}
-                <li>No active listings for this category</li>
+                <p>No active listings for this category<p>
             {% else %}
                 {% for listing in listings %}
                 <div class="card mb-3">
@@ -18,9 +17,6 @@
                     </div>
                   </div>
                 {% endfor %}
-                <ol>
-                {% endfor %}
             {% endif %}
-        <ol>
 
 {% endblock %}
