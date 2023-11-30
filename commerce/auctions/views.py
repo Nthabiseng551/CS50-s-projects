@@ -93,7 +93,7 @@ class NewListingForm(forms.Form):
     image = forms.URLField(label="Enter image URL", required=False, widget=forms.URLInput(attrs={'style': 'width: 300px;', 'class': 'form-control'}))
     category = forms.CharField(label="Category", required=False, widget=forms.TextInput(attrs={'style': 'width: 300px;', 'class': 'form-control'}))
 
-#add login required decorator later
+@login_required
 def create_listing(request):
     if request.method == "POST":
 
@@ -181,6 +181,7 @@ def listing(request, listing_id):
     })
 
 # Add listing to watchlist
+@login_required
 def add(request, listing_id):
     # current user
     user = request.user
@@ -191,6 +192,7 @@ def add(request, listing_id):
     return HttpResponseRedirect(reverse("listing", args=(listing_id, )))
 
 # remove listing from watchlist
+@login_required
 def remove(request, listing_id):
      # current user
     user = request.user
@@ -200,6 +202,7 @@ def remove(request, listing_id):
     messages.success(request, 'Listing removed from watchlist.')
     return HttpResponseRedirect(reverse("listing", args=(listing_id, )))
 
+@login_required
 def watchlist(request):
     # current user
     user = request.user
@@ -209,6 +212,7 @@ def watchlist(request):
     })
 
 # function for users to add comments on listings
+@login_required
 def comment(request, listing_id):
     # current user
     user = request.user
@@ -226,6 +230,7 @@ def comment(request, listing_id):
     return HttpResponseRedirect(reverse("listing", args=(listing_id, )))
 
 # function for users to place bids on listings
+@login_required
 def bid(request, listing_id):
 
     user = request.user
@@ -245,6 +250,7 @@ def bid(request, listing_id):
         return HttpResponseRedirect(reverse("listing", args=(listing_id, )))
 
 # function for users to close auction
+@login_required
 def close(request, listing_id):
     user = request.user
     listing = Listing.objects.get(pk=listing_id)
