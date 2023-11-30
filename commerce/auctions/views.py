@@ -20,6 +20,13 @@ def index(request):
         "listings": listings
     })
 
+# index page for listings of specific category
+def cindex(request):
+    # Get active listings
+    listings = Listing.objects.filter(active="yes")
+    return render(request, "auctions/index.html", {
+        "listings": listings
+    })
 
 def login_view(request):
     if request.method == "POST":
