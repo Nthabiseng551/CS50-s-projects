@@ -48,6 +48,17 @@
                         </form>
                         </div>
                 {% endif %}
+
+                <div>
+                <p><strong>Details:</strong></p>
+
+        {% if listing.category %}
+                <p><small><strong>Listed by:</strong> {{ listing.listed_by }}; <strong>Category:</strong> {{ listing.category }}</small></p>
+        {% else %}
+                <p><small><strong>Listed by:</strong> {{ listing.listed_by }}; <strong>Category:</strong> No category listed</small></p>
+        {% endif %}
+                </div>
+
                 <div>
                 <h4>Comments</h4>
                 <form action="{% url 'comment' listing_id=listing.id %}" method="POST">
@@ -67,13 +78,5 @@
               </div>
 
         {% endfor %}
-<footer>
-        <p><strong>Details:</strong></p>
 
-        {% if listing.category %}
-                <p><small><strong>Listed by:</strong> {{ listing.listed_by }}; <strong>Category:</strong> {{ listing.category }}</small></p>
-        {% else %}
-                <p><small><strong>Listed by:</strong> {{ listing.listed_by }}; <strong>Category:</strong> No category listed</small></p>
-        {% endif %}
-</footer>
 {% endblock %}
