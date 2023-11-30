@@ -49,7 +49,7 @@
                         </div>
                 {% endif %}
                 <div>
-                <h2>Comments</h2>
+                <h4>Comments</h4>
                 <form action="{% url 'comment' listing_id=listing.id %}" method="POST">
                         {% csrf_token %}
                         <input name="comment" type="text" placeholder="Type your comment here">
@@ -59,7 +59,7 @@
         {% endif %}
 
         {% for comment in comments %}
-                <p>{{ comment.comment_by}} posted on: {{ comment.timestamp }}</p>
+                <p>{{ comment.comment_by}} commented on: {{ comment.timestamp }}</p>
                 <p>{{ comment.comment }}</p>
         {% endfor %}
 <footer>
