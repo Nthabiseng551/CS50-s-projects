@@ -19,7 +19,9 @@
                 </form>
                 {% endif%}
                 {% if watchlist %}
-                        <hearder></hearder>
+                        <hearder>
+                                <h6>""<span class="badge badge-secondary">Watchlist</span></h6>
+                        </hearder>
                         <form action="{% url 'remove' listing_id=listing.id %}" method="POST">
                                 {% csrf_token %}
                                 <button class="btn btn-secondary btn-lg btn-block" id = "remove" type="submit">Remove from watchlist</button>
