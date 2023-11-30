@@ -25,7 +25,8 @@ def cindex(request, cat):
     # active listings
     listings = Listing.objects.filter(active="yes")
     for category in CATEGORIES:
-        listings.filter(category=cat)
+        if cat == category:
+            listings =Listing.objects.filter(active="yes", category=cat)
 
     return render(request, "auctions/cindex.html", {
         "listings": listings
