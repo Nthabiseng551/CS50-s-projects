@@ -27,7 +27,7 @@ def cindex(request, cat):
     for category in CATEGORIES:
         listings.filter(category=cat)
 
-    return render(request, "auctions/index.html", {
+    return render(request, "auctions/cindex.html", {
         "listings": listings
     })
 
