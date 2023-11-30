@@ -7,10 +7,10 @@
                         <img class="card-img-top" src="..." alt="Card image cap">
                         <div class="card-body">
                         <p class="card-text">{{ listing.description }}</p>
-                        <p class="card-text"><strong>{{ listing.price.bid }}</strong></p>
+                        <p class="card-text"><strong>${{ listing.price.bid }}</strong></p>
                         </div>
                 </div>
-        <h2>Comments</h2>
+
         {% if user.is_authenticated %}
                 {% if owner and listing.active == "yes" %}
                 <form action="{% url 'close' listing_id=listing.id %}" method="POST">
@@ -20,7 +20,7 @@
                 {% endif%}
                 {% if watchlist %}
                         <hearder>
-                                <h6>""<span class="badge badge-secondary">Watchlist</span></h6>
+                                <h4><span class="badge badge-secondary">Watchlist</span></h4>
                         </hearder>
                         <form action="{% url 'remove' listing_id=listing.id %}" method="POST">
                                 {% csrf_token %}
