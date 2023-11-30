@@ -17,17 +17,21 @@
                 </div>
 
         {% if user.is_authenticated %}
+                <div>
                 <h4>Bids</h4>
                         <form action="{% url 'bid' listing_id=listing.id %}" method="POST">
                                 {% csrf_token %}
                                 <input name="bid" type="number" placeholder="Bid">
                                 <button class="btn btn-primary btn-sm" id ="bid" type="submit">Place Bid</button>
                         </form>
+                </div>
                 {% if owner and listing.active == "yes" %}
-                <form action="{% url 'close' listing_id=listing.id %}" method="POST">
-                        {% csrf_token %}
-                        <button class="btn btn-danger btn-lg btn-block" id = "close" type="submit">Close auction</button>
-                </form>
+                        <div>
+                        <form action="{% url 'close' listing_id=listing.id %}" method="POST">
+                                {% csrf_token %}
+                                <button class="btn btn-danger btn-lg btn-block" id = "close" type="submit">Close auction</button>
+                        </form>
+                        </div>
                 {% endif%}
                 {% if watchlist %}
 
