@@ -43,11 +43,11 @@
         {% endfor %}
 <footer>
         <p><strong>Details:</strong></p>
-        <p><small>Listed by: {{ listing.listed_by }}</small></p>
+
         {% if listing.category %}
-                <p><small>Category: {{ listing.category }}</small></p>
+                <p><small><strong>Listed by:</strong> {{ listing.listed_by }}; <strong>Category:</strong> {{ listing.category }}</small></p>
         {% else %}
-                <p><small>Category: No category listed</small></p>
+                <p><small><strong>Listed by:</strong> {{ listing.listed_by }}; <strong>Category:</strong> No category listed</small></p>
         {% endif %}
 </footer>
 {% endblock %}
