@@ -34,26 +34,30 @@
                         </div>
                 {% endif%}
                 {% if watchlist %}
-
+                        <div>
                         <form action="{% url 'remove' listing_id=listing.id %}" method="POST">
                                 {% csrf_token %}
                                 <button class="btn btn-secondary btn-lg btn-block" id = "remove" type="submit">Remove from watchlist</button>
                         </form>
+                        <div>
                 {% else %}
+                        <div>
                         <form action="{% url 'add' listing_id=listing.id %}" method="POST">
                                 {% csrf_token %}
                                 <button class="btn btn-primary btn-lg btn-block" id ="add" type="submit">Add to watchlist</button>
                         </form>
+                        </div>
                 {% endif %}
-
+                <div>
                 <h2>Comments</h2>
                 <form action="{% url 'comment' listing_id=listing.id %}" method="POST">
                         {% csrf_token %}
                         <input name="comment" type="text" placeholder="Type your comment here">
                         <button class="btn btn-primary btn-sm" id ="comment" type="submit">Post comment</button>
                 </form>
-
+                </div>
         {% endif %}
+
         <p>{{ message }}</p>
         {% for comment in comments %}
                 <p>{{ comment.comment_by}} on {{ comment.listing}} at {{ comment.timestamp }}</p>
