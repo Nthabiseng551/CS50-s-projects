@@ -58,9 +58,9 @@
                 </div>
         {% endif %}
 
-        <p>{{ message }}</p>
         {% for comment in comments %}
-                <p>{{ comment.comment_by}} on {{ comment.listing}} at {{ comment.timestamp }}</p>
+                <p>{{ comment.comment_by}} posted on: {{ comment.timestamp }}</p>
+                <p>{{ comment.comment }}</p>
         {% endfor %}
 <footer>
         <p><strong>Details:</strong></p>
