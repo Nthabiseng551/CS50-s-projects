@@ -8,7 +8,7 @@
                 {% if owner and listing.active == "yes" %}
                 <form action="{% url 'close' listing_id=listing.id %}" method="POST">
                         {% csrf_token %}
-                        <button class="btn btn-primary" id = "closee" type="submit">Close auction</button>
+                        <button class="btn btn-primary" id = "close" type="submit">Close auction</button>
                 </form>
                 {% endif%}
                 {% if watchlist %}
