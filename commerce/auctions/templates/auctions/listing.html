@@ -49,12 +49,6 @@
                         <button class="btn btn-primary btn-sm" id ="comment" type="submit">Post comment</button>
                 </form>
 
-                <h4>Bids</h4>
-                <form action="{% url 'bid' listing_id=listing.id %}" method="POST">
-                        {% csrf_token %}
-                        <input name="bid" type="number" placeholder="Bid">
-                        <button class="btn btn-primary btn-sm" id ="bid" type="submit">Place Bid</button>
-                </form>
         {% endif %}
         <p>{{ message }}</p>
         {% for comment in comments %}
