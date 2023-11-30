@@ -21,12 +21,11 @@ def index(request):
     })
 
 # index page for listings of specific category
-def cindex(request, cat_id):
-    # Get active listings
-    listings = Listing.objects.filter(active="yes", category == category)
+def cindex(request, cat):
+    # active listings
+    listings = Listing.objects.filter(active="yes")
     for category in CATEGORIES:
-        for listing in listings:
-            if listing.category == category:
+        listings.filter(category=cat)
 
     return render(request, "auctions/index.html", {
         "listings": listings
