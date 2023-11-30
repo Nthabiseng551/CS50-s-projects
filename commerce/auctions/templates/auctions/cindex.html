@@ -7,7 +7,18 @@
                 <li>No active listings for this category</li>
             {% else %}
                 {% for listing in listings %}
-                    <li><a href="{% url 'listing' listing_id=listing.id %}">{{ listing.title}} : {{ listing.timestamp}}</a></li>
+                <div class="card mb-3">
+                    <img class="card-img-top" src="..." alt="{{ listing.title }}">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ listing.title }}</h5>
+                      <p class="card-text"><strong>Price:</strong> ${{ listing.price.bid }}</p>
+                      <p class="card-text">{{ listing.description }}</p>
+                      <p class="card-text"><small class="text-muted">Created {{ listing.timestamp }}</small></p>
+                      <a href="{% url 'listing' listing_id=listing.id %}" class="btn btn-primary">View listing</a>
+                    </div>
+                  </div>
+                {% endfor %}
+                <ol>
                 {% endfor %}
             {% endif %}
         <ol>
