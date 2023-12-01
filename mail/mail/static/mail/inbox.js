@@ -38,7 +38,9 @@ function view_email(id){
       document.querySelector('#compose-view').style.display = 'none';
       document.querySelector('#emails-content').style.display = 'block';
 
-      
+      document.querySelector('#emails-content').innerHTML = `
+          <p>$</p>
+      `;
   });
 }
 
