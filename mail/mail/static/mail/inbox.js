@@ -7,7 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelector('#compose').addEventListener('click', compose_email);
 
   // When Compose form is submitted
-  document.querySelector('#compose-form').onSubmit
+  document.querySelector('#compose-form').onSubmit = () => {
+    
+  }
 
   // By default, load the inbox
   load_mailbox('inbox');
