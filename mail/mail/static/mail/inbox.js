@@ -43,7 +43,15 @@ function view_email(id){
           <p>${email.sender}: ${email.subject} : ${email.timestamp} : ${email.recipient}</p>
           <p>${email.body}</p>
       `;
-      
+      // read vs unread
+      if (!email.read){
+        fetch('/emails/100', {
+          method: 'PUT',
+          body: JSON.stringify({
+              archived: true
+          })
+        })
+      }
   });
 }
 
