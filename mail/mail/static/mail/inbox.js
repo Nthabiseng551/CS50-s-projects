@@ -67,6 +67,7 @@ function view_email(id){
               archived: !email.archived
           })
         })
+        .then
       });
       document.querySelector('#email-content').append(archive);
   });
