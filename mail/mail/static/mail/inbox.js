@@ -61,7 +61,12 @@ function view_email(id){
         archive.innerHTML = "Archive";
       }
       element.addEventListener('click', function() {
-        console.log('This element has been clicked!')
+        fetch(`/emails/${email.id}`, {
+          method: 'PUT',
+          body: JSON.stringify({
+              archived: true
+          })
+        })
       });
       document.querySelector('#email-content').append(archive);
   });
