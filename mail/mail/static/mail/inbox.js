@@ -41,7 +41,14 @@ function load_mailbox(mailbox) {
   .then(emails => {
     // Print emails
        console.log(emails);
-       emails.forEach(mail=)
+       emails.forEach(email => {
+        const element = document.createElement('div');
+        element.innerHTML = 'This is the content of the div.';
+        element.addEventListener('click', function() {
+            console.log('This element has been clicked!')
+        });
+        document.querySelector('#container').append(element);
+       })
 });
 }
 
