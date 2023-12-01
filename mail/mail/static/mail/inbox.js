@@ -52,6 +52,7 @@ function view_email(id){
           })
         })
       }
+      // archived
   });
 }
 
