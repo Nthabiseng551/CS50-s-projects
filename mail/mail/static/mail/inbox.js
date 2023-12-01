@@ -27,7 +27,13 @@ function compose_email() {
 }
 
 function view_email(id){
+  fetch(`/emails/${id}`)
+  .then(response => response.json())
+  .then(email => {
+    // Print email
+      console.log(email);
 
+  });
 }
 
 function load_mailbox(mailbox) {
