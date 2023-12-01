@@ -7,30 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelector('#compose').addEventListener('click', compose_email);
 
   // When Compose form is submitted
-  document.querySelector('#compose-form').addEventListener('submit', () => {
-    event.preventDefault();
-    // Get info submitted
-    const recipients = document.querySelector('#compose-recipients').value;
-    const subject = document.querySelector('#compose-subject').value;
-    const body = document.querySelector('#compose-body').value;
+  document.querySelector('#compose-form').addEventListener('submit', send_email);
 
-    // send email
-    fetch('/emails', {
-      method: 'POST',
-      body: JSON.stringify({
-          recipients: recipients,
-          subject: subject,
-          body: body
-      })
-    })
-    .then(response => response.json())
-    .then(result => {
-        // Print result
-        console.log(result);
-        load_mailbox('sent');
-    });
-    load_mailbox('sent');
-  });
 
   // By default, load the inbox
   load_mailbox('inbox');
@@ -57,3 +35,4 @@ function load_mailbox(mailbox) {
   // Show the mailbox name
   document.querySelector('#emails-view').innerHTML = `<h3>${mailbox.charAt(0).toUpperCase() + mailbox.slice(1)}</h3>`;
 }
+
