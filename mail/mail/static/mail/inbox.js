@@ -76,6 +76,17 @@ function view_email(id){
       // Reply
       const reply = document.createElement('button');
       reply.innerHTML = "Reply"
+      element.addEventListener('click', function() {
+        fetch(`/emails/${email.id}`, {
+          method: 'PUT',
+          body: JSON.stringify({
+              archived: !email.archived
+          })
+        })
+        .then(() => {
+          load_mailbox('inbox')
+        })
+      });
       document.querySelector('#email-content').append(reply);
   });
 }
