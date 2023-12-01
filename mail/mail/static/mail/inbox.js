@@ -26,6 +26,10 @@ function compose_email() {
   document.querySelector('#compose-body').value = '';
 }
 
+function view_email(id){
+
+}
+
 function load_mailbox(mailbox) {
 
   // Show the mailbox and hide other views
@@ -76,6 +80,6 @@ function send_email(event) {
   });
 }
 
-function view_email(){
+function view_email(id){
 
 }
