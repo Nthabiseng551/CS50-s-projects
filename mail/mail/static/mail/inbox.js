@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // When Compose form is submitted
   document.querySelector('#compose-form').onSubmit = () => {
+    // Get info submitted
     document.querySelector('#compose-recipients').value = '';
     document.querySelector('#compose-subject').value = '';
     document.querySelector('#compose-body').value = '';
