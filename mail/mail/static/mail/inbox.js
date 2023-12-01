@@ -49,6 +49,7 @@ function load_mailbox(mailbox) {
         `;
         mail.addEventListener('click', function() {
             console.log('This element has been clicked!')
+            
         });
         document.querySelector('#emails-view').append(mail);
        })
