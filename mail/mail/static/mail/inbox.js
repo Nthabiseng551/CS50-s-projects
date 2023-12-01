@@ -43,7 +43,9 @@ function load_mailbox(mailbox) {
        console.log(emails);
        emails.forEach(email => {
         const mail = document.createElement('div');
-        mail.innerHTML = 'This is the content of the div.';
+        mail.innerHTML = `
+        <p>${email.sender}: ${email.subject} : ${email.timestamp}</p>
+        `;
         mail.addEventListener('click', function() {
             console.log('This element has been clicked!')
         });
