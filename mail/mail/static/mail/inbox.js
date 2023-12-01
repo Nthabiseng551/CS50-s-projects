@@ -37,6 +37,7 @@ function load_mailbox(mailbox) {
 }
 
 function send_email() {
+  
   fetch('/emails', {
     method: 'POST',
     body: JSON.stringify({
