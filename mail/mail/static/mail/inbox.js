@@ -8,7 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // When Compose form is submitted
   document.querySelector('#compose-form').onSubmit = () => {
-    
+    document.querySelector('#compose-recipients').value = '';
+    document.querySelector('#compose-subject').value = '';
+    document.querySelector('#compose-body').value = '';
   }
 
   // By default, load the inbox
