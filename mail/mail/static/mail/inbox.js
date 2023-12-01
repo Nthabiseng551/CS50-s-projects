@@ -41,6 +41,7 @@ function load_mailbox(mailbox) {
   .then(emails => {
     // Print emails
        console.log(emails);
+       emails.forEach()
 });
 }
 
