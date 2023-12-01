@@ -36,7 +36,8 @@ function load_mailbox(mailbox) {
   document.querySelector('#emails-view').innerHTML = `<h3>${mailbox.charAt(0).toUpperCase() + mailbox.slice(1)}</h3>`;
 }
 
-function send_email() {
+function send_email(event) {
+  event.preventDefault();
   const recipients = document.querySelector('#compose-recipients').value;
   const subject = document.querySelector('#compose-subject').value;
   const body = document.querySelector('#compose-body').value;
@@ -53,8 +54,7 @@ function send_email() {
   .then(result => {
       // Print result
       console.log(result);
-      load_mailbox('sent')
+      load_mailbox('sent');
   });
-
 
 }
