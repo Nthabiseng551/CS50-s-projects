@@ -43,14 +43,14 @@ function load_mailbox(mailbox) {
        console.log(emails);
        emails.forEach(email => {
         const mail = document.createElement('div');
-        mail.className = "List-group-item"; //bootstrap component
+        mail.className = "List-group-item"; //bootstrap component, im going to change component then set background color in css to white(default for unread)
         mail.innerHTML = `
         <p>${email.sender}: ${email.subject} : ${email.timestamp}</p>
         `;
         // Change email background color when the email is read(clicked on) or unread
         mail.addEventListener('click', function() {
             console.log('This element has been clicked!')
-
+            mail.read = true;
         });
         document.querySelector('#emails-view').append(mail);
        })
