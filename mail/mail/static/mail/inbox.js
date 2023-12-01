@@ -42,12 +42,12 @@ function load_mailbox(mailbox) {
     // Print emails
        console.log(emails);
        emails.forEach(email => {
-        const element = document.createElement('div');
-        element.innerHTML = 'This is the content of the div.';
-        element.addEventListener('click', function() {
+        const mail = document.createElement('div');
+        mail.innerHTML = 'This is the content of the div.';
+        mail.addEventListener('click', function() {
             console.log('This element has been clicked!')
         });
-        document.querySelector('#container').append(element);
+        document.querySelector('#container').append(mail);
        })
 });
 }
