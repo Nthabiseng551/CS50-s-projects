@@ -27,6 +27,12 @@ function compose_email() {
 }
 
 function view_email(id){
+
+   // Show email content and hide other views
+   document.querySelector('#emails-view').style.display = 'none';
+   document.querySelector('#compose-view').style.display = 'none';
+   document.querySelector('#emails-content').style.display = 'block';
+
   fetch(`/emails/${id}`)
   .then(response => response.json())
   .then(email => {
