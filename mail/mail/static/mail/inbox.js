@@ -43,6 +43,7 @@ function load_mailbox(mailbox) {
        console.log(emails);
        emails.forEach(email => {
         const mail = document.createElement('div');
+        mail.className"" =
         mail.innerHTML = `
         <p>${email.sender}: ${email.subject} : ${email.timestamp}</p>
         `;
