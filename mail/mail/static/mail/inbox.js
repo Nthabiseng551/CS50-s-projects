@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelector('#compose').addEventListener('click', compose_email);
 
   // When Compose form is submitted
-  document.querySelector('#compose-form').addEventListener('submit', send_email=> {
+  document.querySelector('#compose-form').addEventListener('submit', () => {
     event.preventDefault();
     // Get info submitted
     const recipients = document.querySelector('#compose-recipients').value;
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(result);
         load_mailbox('sent');
     });
-  })
+  });
 
   // By default, load the inbox
   load_mailbox('inbox');
