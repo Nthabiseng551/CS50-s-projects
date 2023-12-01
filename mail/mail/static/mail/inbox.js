@@ -64,7 +64,7 @@ function view_email(id){
         fetch(`/emails/${email.id}`, {
           method: 'PUT',
           body: JSON.stringify({
-              archived: true
+              archived: !email.archived
           })
         })
       });
