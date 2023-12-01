@@ -37,23 +37,23 @@ function load_mailbox(mailbox) {
 }
 
 function send_email() {
-  document.querySelector('#compose-recipients').value;
-  document.querySelector('#compose-subject').value;
-  document.querySelector('#compose-body').value;
+  const recipients = document.querySelector('#compose-recipients').value;
+  const subject = document.querySelector('#compose-subject').value;
+  const body = document.querySelector('#compose-body').value;
 
   fetch('/emails', {
     method: 'POST',
     body: JSON.stringify({
-        recipients: 'baz@example.com',
-        subject: 'Meeting time',
-        body: 'How about we meet tomorrow at 3pm?'
+        recipients: recipients,
+        subject: subject,
+        body: body
     })
   })
   .then(response => response.json())
   .then(result => {
       // Print result
       console.log(result);
-      
+      load_mailbox('sent')
   });
 
 
