@@ -37,7 +37,10 @@ function load_mailbox(mailbox) {
 }
 
 function send_email() {
-  
+  document.querySelector('#compose-recipients').value;
+  document.querySelector('#compose-subject').value;
+  document.querySelector('#compose-body').value;
+
   fetch('/emails', {
     method: 'POST',
     body: JSON.stringify({
@@ -50,9 +53,8 @@ function send_email() {
   .then(result => {
       // Print result
       console.log(result);
+      
   });
-  // Clear out composition fields
-  document.querySelector('#compose-recipients').value;
-  document.querySelector('#compose-subject').value;
-  document.querySelector('#compose-body').value;
+
+
 }
