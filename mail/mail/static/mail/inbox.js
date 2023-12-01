@@ -43,7 +43,7 @@ function load_mailbox(mailbox) {
        console.log(emails);
        emails.forEach(email => {
         const mail = document.createElement('div');
-        mail.className"" =
+        mail.className = "List-group-item"; //bootstrap component
         mail.innerHTML = `
         <p>${email.sender}: ${email.subject} : ${email.timestamp}</p>
         `;
