@@ -36,3 +36,22 @@ function load_mailbox(mailbox) {
   document.querySelector('#emails-view').innerHTML = `<h3>${mailbox.charAt(0).toUpperCase() + mailbox.slice(1)}</h3>`;
 }
 
+function send_email() {
+  fetch('/emails', {
+    method: 'POST',
+    body: JSON.stringify({
+        recipients: 'baz@example.com',
+        subject: 'Meeting time',
+        body: 'How about we meet tomorrow at 3pm?'
+    })
+  })
+  .then(response => response.json())
+  .then(result => {
+      // Print result
+      console.log(result);
+  });
+  // Clear out composition fields
+  document.querySelector('#compose-recipients').value;
+  document.querySelector('#compose-subject').value;
+  document.querySelector('#compose-body').value;
+}
