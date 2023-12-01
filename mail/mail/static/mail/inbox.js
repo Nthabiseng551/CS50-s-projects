@@ -7,11 +7,11 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelector('#compose').addEventListener('click', compose_email);
 
   // When Compose form is submitted
-  document.querySelector('#compose-form').onSubmit = () => {
+  document.querySelector('#compose-form').onsubmit = () => {
     // Get info submitted
-    document.querySelector('#compose-recipients').value = '';
-    document.querySelector('#compose-subject').value = '';
-    document.querySelector('#compose-body').value = '';
+    const recipients = document.querySelector('#compose-recipients').value;
+    const subject = document.querySelector('#compose-subject').value;
+    const body = document.querySelector('#compose-body').value;
   }
 
   // By default, load the inbox
