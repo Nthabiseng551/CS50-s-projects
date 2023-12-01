@@ -45,10 +45,10 @@ function view_email(id){
       `;
       // read vs unread
       if (!email.read){
-        fetch('/emails/100', {
+        fetch(`/emails/${email.id}`, {
           method: 'PUT',
           body: JSON.stringify({
-              archived: true
+              read: true
           })
         })
       }
