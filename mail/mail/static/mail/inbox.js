@@ -74,7 +74,9 @@ function view_email(id){
       document.querySelector('#email-content').append(archive);
 
       // Reply
-      
+      const reply = document.createElement('button');
+      reply.innerHTML = "Reply"
+      document.querySelector('#email-content').append(reply);
   });
 }
 
