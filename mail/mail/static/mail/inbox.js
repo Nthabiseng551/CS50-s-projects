@@ -53,7 +53,13 @@ function view_email(id){
         })
       }
       // archived
-      const element = document.createElement('button');
+      const archive = document.createElement('button');
+      if (email.archived){
+        archive.innerHTML = "Unarchive";
+      }
+      else{
+        archive.innerHTML = "Archive";
+      }
       element.innerHTML = 'This is the content of the div.';
       element.addEventListener('click', function() {
         console.log('This element has been clicked!')
