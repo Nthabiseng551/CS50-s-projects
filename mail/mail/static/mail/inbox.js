@@ -80,6 +80,3 @@ function send_email(event) {
   });
 }
 
-function view_email(id){
-
-}
