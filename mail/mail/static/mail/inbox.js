@@ -27,29 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Print result
         console.log(result);
         load_mailbox('sent');
-        
-  }) = () => {
-    // Get info submitted
-    const recipients = document.querySelector('#compose-recipients').value;
-    const subject = document.querySelector('#compose-subject').value;
-    const body = document.querySelector('#compose-body').value;
-
-    // send email
-    fetch('/emails', {
-      method: 'POST',
-      body: JSON.stringify({
-          recipients: recipients,
-          subject: subject,
-          body: body
-      })
-    })
-    .then(response => response.json())
-    .then(result => {
-        // Print result
-        console.log(result);
-        load_mailbox('sent');
     });
-  }
+  })
 
   // By default, load the inbox
   load_mailbox('inbox');
