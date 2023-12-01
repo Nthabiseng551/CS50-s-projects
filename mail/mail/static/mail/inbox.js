@@ -78,3 +78,7 @@ function send_email(event) {
       load_mailbox('sent');
   });
 }
+
+function view_email(){
+  
+}
