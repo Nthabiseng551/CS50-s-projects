@@ -48,7 +48,7 @@ function load_mailbox(mailbox) {
         <p>${email.sender}: ${email.subject} : ${email.timestamp}</p>
         `;
         // Change email background color when the email is read(clicked on) or unread
-        mail.addEventListener('click', view_email());
+        mail.addEventListener('click', view_email(email.id));
         document.querySelector('#emails-view').append(mail);
        })
 });
