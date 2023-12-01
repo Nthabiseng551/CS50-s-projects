@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelector('#compose').addEventListener('click', compose_email);
 
   // When Compose form is submitted
-  document.querySelector('#compose-form').addEventListener('submit', () => {
+  document.querySelector('#compose-form').addEventListener('submit', => {
     event.preventDefault();
     // Get info submitted
     const recipients = document.querySelector('#compose-recipients').value;
