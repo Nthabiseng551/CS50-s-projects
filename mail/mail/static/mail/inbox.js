@@ -72,6 +72,9 @@ function view_email(id){
         })
       });
       document.querySelector('#email-content').append(archive);
+
+      // Reply
+      
   });
 }
 
