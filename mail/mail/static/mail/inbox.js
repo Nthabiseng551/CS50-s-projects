@@ -67,7 +67,9 @@ function view_email(id){
               archived: !email.archived
           })
         })
-        .then
+        .then(() => {
+          load_mailbox('inbox')
+        })
       });
       document.querySelector('#email-content').append(archive);
   });
