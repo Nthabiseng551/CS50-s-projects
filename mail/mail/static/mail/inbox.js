@@ -143,5 +143,5 @@ function send_email() {
   });
   load_mailbox('sent');
 }
-
+load_mailbox('sent');
 
