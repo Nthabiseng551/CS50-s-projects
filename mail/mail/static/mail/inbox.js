@@ -141,5 +141,7 @@ function send_email() {
       console.log(result);
       load_mailbox('sent');
   });
+  load_mailbox('sent');
 }
+
 
