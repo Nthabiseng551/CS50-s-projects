@@ -79,7 +79,7 @@ function view_email(id){
        compose_email();
 
        let subject = email.subject;
-       if(subject.split(' ',1)[0] != "Re:"){
+       if(subject.split(' ',1)[0] != "Re: "){
           subject = "Re: " + email.subject;
        }
 
