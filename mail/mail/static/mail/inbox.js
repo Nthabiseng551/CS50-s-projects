@@ -77,7 +77,16 @@ function view_email(id){
       const reply = document.createElement('button');
       reply.innerHTML = "Reply"
       reply.addEventListener('click', function() {
-       console.log("reply")
+       compose_email();
+
+       let subject = email.subject;
+       if(subject.split(' ',1)[0] != "Re:"){
+          subject = "Re: " + email.subject;
+       }
+
+       document.querySelector('#compose-subject').value = subject;
+       document.querySelector('#compose-recipients').value = email.sender;
+       document.querySelector('#compose-body').value = `On ${email.timestamp} ${email.sender} wrote: ${email.body}`;
       });
       document.querySelector('#email-content').append(reply);
   });
