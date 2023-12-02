@@ -121,8 +121,8 @@ function load_mailbox(mailbox) {
 });
 }
 
-function send_email(event) {
-  event.preventDefault();
+function send_email() {
+
   const recipients = document.querySelector('#compose-recipients').value;
   const subject = document.querySelector('#compose-subject').value;
   const body = document.querySelector('#compose-body').value;
