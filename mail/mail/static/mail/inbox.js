@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelector('#archived').addEventListener('click', () => load_mailbox('archive'));
   document.querySelector('#compose').addEventListener('click', compose_email);
   // When Compose form is submitted
-  document.querySelector('#compose-form').onsubmitsend_email;
+  document.querySelector('#compose-form').onsubmit = send_email;
 
 
   // By default, load the inbox
