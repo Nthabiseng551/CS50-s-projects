@@ -137,7 +137,8 @@ function send_email() {
   })
   .then(response => response.json())
   .then(result => {
-
+      // Print result
+      console.log(result);
       load_mailbox('sent');
   });
   return false;
