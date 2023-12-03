@@ -68,7 +68,22 @@ function view_email(id) {
       }
 
       archive.addEventListener('click', function() {
-          console.log('This element has been clicked!')
+        if (email.archived){
+          fetch(`/emails/${email.id}`, {
+            method: 'PUT',
+            body: JSON.stringify({
+                archived: false
+            })
+          })
+        }
+        else {
+          fetch(`/emails/${email.id}`, {
+            method: 'PUT',
+            body: JSON.stringify({
+                archived: true
+            })
+          })
+        }
       });
       document.querySelector('#email-content').append(archive);
   });
