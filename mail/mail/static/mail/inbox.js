@@ -57,7 +57,12 @@ function view_email(id) {
         })
       }
       // archive vs unarchive
-      
+      const element = document.createElement('button');
+      element.innerHTML = 'This is the content of the div.';
+      element.addEventListener('click', function() {
+          console.log('This element has been clicked!')
+      });
+      document.querySelector('#container').append(element);
   });
 }
 
