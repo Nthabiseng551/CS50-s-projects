@@ -57,40 +57,40 @@ function view_email(id) {
         })
       }
       // archive vs unarchive
-      if (!request.user.email === email.sender){
+      if (request.user.email !== email.sender){
         const archive = document.createElement('button');
-      if (email.archived){
-        archive.className = "btn btn-sm btn-outline-primary";
-        archive.innerHTML = 'Unarchive';
-      }
-      else {
-        archive.className = "btn btn-sm btn-outline-primary";
-        archive.innerHTML = 'Archive';
-      }
-
-      archive.addEventListener('click', function() {
         if (email.archived){
-          fetch(`/emails/${email.id}`, {
-            method: 'PUT',
-            body: JSON.stringify({
-                archived: false
-            })
-          })
-          .then (() => {load_mailbox('inbox')});
+          archive.className = "btn btn-sm btn-outline-primary";
+          archive.innerHTML = 'Unarchive';
         }
         else {
-          fetch(`/emails/${email.id}`, {
-            method: 'PUT',
-            body: JSON.stringify({
-                archived: true
+          archive.className = "btn btn-sm btn-outline-primary";
+          archive.innerHTML = 'Archive';
+       }
+
+        archive.addEventListener('click', function() {
+          if (email.archived){
+            fetch(`/emails/${email.id}`, {
+              method: 'PUT',
+              body: JSON.stringify({
+                  archived: false
+              })
             })
-          })
-          .then (() => {load_mailbox('inbox')});
-        }
-      });
-      document.querySelector('#email-content').append(archive);
+            .then (() => {load_mailbox('inbox')});
+         }
+          else {
+            fetch(`/emails/${email.id}`, {
+              method: 'PUT',
+              body: JSON.stringify({
+                  archived: true
+              })
+            })
+            .then (() => {load_mailbox('inbox')});
+          }
+        });
+        document.querySelector('#email-content').append(archive);
   };
-  )}
+}
 
 
 function load_mailbox(mailbox) {
