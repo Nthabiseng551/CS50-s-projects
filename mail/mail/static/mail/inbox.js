@@ -57,6 +57,7 @@ function view_email(id) {
         })
       }
       // archive vs unarchive
+      if (email.user !== email.sender){
         const archive = document.createElement('button');
         if (email.archived){
           archive.className = "btn btn-sm btn-outline-primary";
