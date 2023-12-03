@@ -102,8 +102,12 @@ function view_email(id) {
         document.querySelector('#email-content').style.display = 'none';
 
         // Pre-fill composition fields
+        let subject = email.subject;
+        if (subject.split(' ',1)[0] != "Re: "){
+          subject = "Re: " + subject;
+        }
         document.querySelector('#compose-recipients').value = email.sender;
-        document.querySelector('#compose-subject').value = '';
+        document.querySelector('#compose-subject').value = subject;
         document.querySelector('#compose-body').value = `On ${email.timestamp} ${email.sender} wrote: ${email.body}`;
       });
       document.querySelector('#email-content').append(reply);
