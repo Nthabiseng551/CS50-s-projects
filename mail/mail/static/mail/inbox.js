@@ -40,7 +40,7 @@ function load_mailbox(mailbox) {
     // Print emails
       console.log(emails);
 
-    // ... do something else with emails ...
+    // 
   });
 }
 
