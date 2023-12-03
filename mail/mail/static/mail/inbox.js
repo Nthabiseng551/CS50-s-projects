@@ -60,14 +60,14 @@ function view_email(id) {
       const archive = document.createElement('button');
       if (email.archive){
         archive.className = "btn btn-sm btn-outline-primary";
-        element.innerHTML = 'Unarchive';
+        archive.innerHTML = 'Unarchive';
       }
       else {
         archive.className = "btn btn-sm btn-outline-primary";
-        element.innerHTML = 'Archive';
+        archive.innerHTML = 'Archive';
       }
 
-      element.addEventListener('click', function() {
+      archive.addEventListener('click', function() {
           console.log('This element has been clicked!')
       });
       document.querySelector('#email-content').append(archive);
