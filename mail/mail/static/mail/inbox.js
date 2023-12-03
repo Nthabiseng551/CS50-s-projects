@@ -92,7 +92,7 @@ function view_email(id) {
       }
       const reply = document.createElement('button');
       reply.className = "btn btn-sm btn-outline-primary";
-      reply.innerHTML = 'Archive';
+      reply.innerHTML = 'Reply';
       document.querySelector('#email-content').append(reply);
       });
 }
