@@ -53,7 +53,7 @@ function send_email() {
   .then(result => {
       // Print result
       console.log(result);
-      load_mailbox('sent')
+      load_mailbox('sent');
   });
 
   console.log("hi");
