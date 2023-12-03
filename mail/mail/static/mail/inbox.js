@@ -57,7 +57,6 @@ function view_email(id) {
         })
       }
       // archive vs unarchive
-      if (mailbox === "archive"){
         const archive = document.createElement('button');
         if (email.archived){
           archive.className = "btn btn-sm btn-outline-primary";
@@ -67,7 +66,7 @@ function view_email(id) {
           archive.className = "btn btn-sm btn-outline-primary";
           archive.innerHTML = 'Archive';
        }
-      }
+
         archive.addEventListener('click', function() {
           if (email.archived){
             fetch(`/emails/${email.id}`, {
