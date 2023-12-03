@@ -75,7 +75,7 @@ function view_email(id) {
                 archived: false
             })
           })
-          .then () => load_mailbox('archive');
+          .then () => load_mailbox('inbox');
         }
         else {
           fetch(`/emails/${email.id}`, {
