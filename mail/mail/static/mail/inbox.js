@@ -103,8 +103,8 @@ function view_email(id) {
 
         // Pre-fill composition fields
         let subject = email.subject;
-        if (subject.split(' ',1)[0] != "Re: "){
-          subject = "Re: " + subject;
+        if (subject.split(' ',1)[0] != "Re:"){
+          subject = "Re:" + subject;
         }
         document.querySelector('#compose-recipients').value = email.sender;
         document.querySelector('#compose-subject').value = subject;
