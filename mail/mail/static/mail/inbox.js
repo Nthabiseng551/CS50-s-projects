@@ -43,6 +43,7 @@ function view_email(id) {
       <p><strong>To:</strong> ${email.recipients}</p>
       <p><strong>Subject:</strong> ${email.subject}</p>
       <p><strong>Timestamp:</strong> ${email.timestamp}</p>
+      <hr>
       `;
   });
 }
