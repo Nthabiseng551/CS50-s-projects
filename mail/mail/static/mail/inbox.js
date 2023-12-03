@@ -39,7 +39,7 @@ function view_email(id) {
 
       // Display content of email
       document.querySelector('#email-content').innerHTML = `
-      <p><strong>From:</strong> ${email.sender} : ${email.user.email}</p>
+      <p><strong>From:</strong> ${email.sender}</p>
       <p><strong>To:</strong> ${email.recipients}</p>
       <p><strong>Subject:</strong> ${email.subject}</p>
       <p><strong>Timestamp:</strong> ${email.timestamp}</p>
