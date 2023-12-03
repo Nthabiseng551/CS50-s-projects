@@ -88,7 +88,7 @@ function view_email(id) {
             .then (() => {load_mailbox('inbox')});
           }
         });
-        document.querySelector('#email-content').append(archive);
+          document.querySelector('#email-content').append(archive);
       }
       });
 }
