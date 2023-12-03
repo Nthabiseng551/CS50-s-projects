@@ -32,7 +32,8 @@ function view_email(id) {
       // Print email
       console.log(email);
 
-    // ... do something else with email ...
+      // Display content of email
+      
   });
 }
 
