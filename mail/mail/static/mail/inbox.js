@@ -90,10 +90,12 @@ function view_email(id) {
         });
         document.querySelector('#email-content').append(archive);
       }
+      //Reply
       const reply = document.createElement('button');
       reply.className = "btn btn-sm btn-outline-primary";
       reply.innerHTML = 'Reply';
       document.querySelector('#email-content').append(reply);
+      document.querySelector('#compose').addEventListener('click', compose_email);
       });
 }
 
