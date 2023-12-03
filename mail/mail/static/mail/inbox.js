@@ -38,7 +38,12 @@ function view_email(id) {
       document.querySelector('#email-content').style.display = 'block';
 
       // Display content of email
-
+      document.querySelector('#email-content').innerHTML = `
+      <p><strong>From:</strong> ${email.sender}</p>
+      <p><strong>To:</strong> ${email.recipients}</p>
+      <p><strong>Subject:</strong> ${email.subject}</p>
+      <p><strong>Timestamp:</strong> ${email.timestamp}</p>
+      `;
   });
 }
 
