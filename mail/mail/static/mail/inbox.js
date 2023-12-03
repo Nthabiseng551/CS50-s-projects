@@ -44,7 +44,7 @@ function load_mailbox(mailbox) {
     emails.forEach(email => {
       const mail = document.createElement('div');
       mail.className = "list-group-item";
-      mail.innerHTML = `<hr><p><strong>${email.sender}</strong> ${email.subject}<span class="text-muted">${email.timestamp}</p><hr>`;
+      mail.innerHTML = `<p><strong>${email.sender}</strong> ${email.subject}<span  style="float : right;" class="text-muted">${email.timestamp}</span></p>`;
       mail.addEventListener('click', function() {
           console.log('This element has been clicked!')
       });
