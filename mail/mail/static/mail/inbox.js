@@ -45,7 +45,7 @@ function load_mailbox(mailbox) {
       const mail = document.createElement('div');
       // Read vs unread
       if (email.read == True){
-        mail.className = "list-group-item";
+        mail.className = "list-group-item list-group-item-dark";
       }
       else {
         mail.className = "list-group-item";
