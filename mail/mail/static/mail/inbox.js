@@ -84,6 +84,7 @@ function view_email(id) {
                 archived: true
             })
           })
+          .then (() => {load_mailbox('inbox')});
         }
       });
       document.querySelector('#email-content').append(archive);
