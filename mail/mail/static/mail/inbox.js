@@ -56,7 +56,7 @@ function view_email(id) {
           })
         })
       }
-      // archive vs unarchive
+      // archive vs unarchive (not applicable to sent mailbox)
       if (email.user !== email.sender){
         const archive = document.createElement('button');
         if (email.archived){
@@ -89,6 +89,7 @@ function view_email(id) {
           }
         });
         document.querySelector('#email-content').append(archive);
+      }
       });
 }
 
