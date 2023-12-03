@@ -56,6 +56,5 @@ function send_email() {
       load_mailbox('sent');
   });
 
-  console.log("hi");
   return false;
 }
