@@ -24,8 +24,8 @@ function compose_email() {
   document.querySelector('#compose-body').value = '';
 }
 
-function view_email() {
-  console.log("view");
+function view_email(id) {
+  console.log(id);
 }
 
 function load_mailbox(mailbox) {
