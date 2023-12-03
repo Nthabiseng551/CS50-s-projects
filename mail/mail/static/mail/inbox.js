@@ -46,6 +46,16 @@ function view_email(id) {
       <hr>
       <p>${email.body}</p>
       `;
+
+      // read vs unread
+      if (!email.read){
+        fetch(`/emails/${email.id}`, {
+          method: 'PUT',
+          body: JSON.stringify({
+              read: true
+          })
+        })
+      }
   });
 }
 
