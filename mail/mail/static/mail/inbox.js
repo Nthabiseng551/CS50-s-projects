@@ -89,8 +89,11 @@ function view_email(id) {
           }
         });
         document.querySelector('#email-content').append(archive);
-        //reply
       }
+      const reply = document.createElement('button');
+      reply.className = "btn btn-sm btn-outline-primary";
+      reply.innerHTML = 'Archive';
+      document.querySelector('#email-content').append(reply);
       });
 }
 
