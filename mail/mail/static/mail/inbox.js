@@ -18,7 +18,7 @@ function compose_email() {
   // Show compose view and hide other views
   document.querySelector('#emails-view').style.display = 'none';
   document.querySelector('#compose-view').style.display = 'block';
-  document.querySelector('#emails-content').style.display = 'none';
+  document.querySelector('#email-content').style.display = 'none';
 
   // Clear out composition fields
   document.querySelector('#compose-recipients').value = '';
@@ -36,9 +36,9 @@ function view_email(id){
       // Show email content and hide other views
       document.querySelector('#emails-view').style.display = 'none';
       document.querySelector('#compose-view').style.display = 'none';
-      document.querySelector('#emails-content').style.display = 'block';
+      document.querySelector('#email-content').style.display = 'block';
 
-      document.querySelector('#emails-content').innerHTML = `
+      document.querySelector('#email-content').innerHTML = `
           <p>${email.sender}: ${email.subject} : ${email.timestamp} : ${email.recipient}</p>
           <p>${email.body}</p>
       `;
@@ -96,7 +96,7 @@ function load_mailbox(mailbox) {
   // Show the mailbox and hide other views
   document.querySelector('#emails-view').style.display = 'block';
   document.querySelector('#compose-view').style.display = 'none';
-  document.querySelector('#emails-content').style.display = 'none';
+  document.querySelector('#email-content').style.display = 'none';
 
   // Show the mailbox name
   document.querySelector('#emails-view').innerHTML = `<h3>${mailbox.charAt(0).toUpperCase() + mailbox.slice(1)}</h3>`;
