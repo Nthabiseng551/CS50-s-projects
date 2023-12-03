@@ -43,7 +43,7 @@ function load_mailbox(mailbox) {
     // Create a box(div with border) for each email
     emails.forEach(email => {
       const mail = document.createElement('div');
-      mail.innerHTML = 'This is the content of the div.';
+      mail.innerHTML = ``;
       mail.addEventListener('click', function() {
           console.log('This element has been clicked!')
       });
