@@ -58,7 +58,7 @@ function view_email(id) {
       }
       // archive vs unarchive
       const archive = document.createElement('button');
-      archive.className =
+      archive.className = "btn btn-sm btn-outline-primary";
       element.innerHTML = 'This is the content of the div.';
       element.addEventListener('click', function() {
           console.log('This element has been clicked!')
