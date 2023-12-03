@@ -104,7 +104,7 @@ function view_email(id) {
         // Pre-fill composition fields
         document.querySelector('#compose-recipients').value = email.sender;
         document.querySelector('#compose-subject').value = '';
-        document.querySelector('#compose-body').value = On email.timestamp email.sender wrote: email.body;
+        document.querySelector('#compose-body').value = `On ${email.timestamp} ${email.sender} wrote: ${email.body}`;
       });
       document.querySelector('#email-content').append(reply);
       });
