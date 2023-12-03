@@ -24,6 +24,10 @@ function compose_email() {
   document.querySelector('#compose-body').value = '';
 }
 
+function view_email() {
+  console.log("view");
+}
+
 function load_mailbox(mailbox) {
 
   // Show the mailbox and hide other views
@@ -85,6 +89,4 @@ function send_email() {
   return false;
 }
 
-function view_email() {
-  console.log("view");
-}
+
