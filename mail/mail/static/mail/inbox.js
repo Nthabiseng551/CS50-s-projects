@@ -57,27 +57,27 @@ function view_email(id) {
         })
       }
       // archive vs unarchive (not applicable to sent mailbox)
-      if (request.user === email.sender){
-        const archive = document.createElement('button');
-        if (email.archived){
-          archive.className = "btn btn-sm btn-outline-primary";
-          archive.innerHTML = 'Unarchive';
-        }
-        else {
-          archive.className = "btn btn-sm btn-outline-primary";
-          archive.innerHTML = 'Archive';
-       }
-
-        archive.addEventListener('click', function() {
+      if (email.user !== email.sender){
+          const archive = document.createElement('button');
           if (email.archived){
-            fetch(`/emails/${email.id}`, {
-              method: 'PUT',
-              body: JSON.stringify({
-                  archived: false
+              archive.className = "btn btn-sm btn-outline-primary";
+              archive.innerHTML = 'Unarchive';
+              }
+          else {
+              archive.className = "btn btn-sm btn-outline-primary";
+              archive.innerHTML = 'Archive';
+              }
+
+          archive.addEventListener('click', function() {
+          if (email.archived){
+              fetch(`/emails/${email.id}`, {
+                method: 'PUT',
+                body: JSON.stringify({
+                    archived: false
+                })
               })
-            })
-            .then (() => {load_mailbox('inbox')});
-         }
+              .then (() => {load_mailbox('inbox')});
+              }
           else {
             fetch(`/emails/${email.id}`, {
               method: 'PUT',
