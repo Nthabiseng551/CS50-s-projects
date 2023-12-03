@@ -94,7 +94,7 @@ function view_email(id) {
       const reply = document.createElement('button');
       reply.className = "btn btn-sm btn-outline-primary";
       reply.innerHTML = 'Reply';
-      document.querySelector('#email-content').append(reply);
+
       reply.addEventListener('click', function(){
         // Show compose view and hide other views
         document.querySelector('#emails-view').style.display = 'none';
@@ -104,8 +104,9 @@ function view_email(id) {
         // Pre-fill composition fields
         document.querySelector('#compose-recipients').value = email.sender;
         document.querySelector('#compose-subject').value = '';
-        document.querySelector('#compose-body').value = email.body;
+        document.querySelector('#compose-body').value = On email.timestamp email.sender wrote: email.body;
       });
+      document.querySelector('#email-content').append(reply);
       });
 }
 
