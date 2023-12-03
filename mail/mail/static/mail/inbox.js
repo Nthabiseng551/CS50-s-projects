@@ -54,9 +54,7 @@ function load_mailbox(mailbox) {
       mail.innerHTML = `<p><strong>${email.sender}</strong> ${email.subject}<span  style="float : right;" class="text-muted">${email.timestamp}</span></p>`;
 
       // click to view email
-      mail.addEventListener('click', function() {
-          console.log('This element has been clicked!')
-      });
+      mail.addEventListener('click', view_email(email.id));
       document.querySelector('#emails-view').append(mail);
     })
   });
