@@ -42,7 +42,12 @@ function load_mailbox(mailbox) {
 
     // Create a box(div with border) for each email
     emails.forEach(email => {
-      
+      const element = document.createElement('div');
+      element.innerHTML = 'This is the content of the div.';
+      element.addEventListener('click', function() {
+          console.log('This element has been clicked!')
+      });
+      document.querySelector('#container').append(element);
     })
   });
 }
