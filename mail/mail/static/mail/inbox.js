@@ -26,7 +26,7 @@ function compose_email() {
 }
 
 function view_email(id) {
-  console.log(id);
+  
   fetch(`/emails/${id}`)
   .then(response => response.json())
   .then(email => {
