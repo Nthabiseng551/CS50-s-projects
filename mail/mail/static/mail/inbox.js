@@ -57,7 +57,7 @@ function view_email(id) {
         })
       }
       // archive vs unarchive (not applicable to sent mailbox)
-      if (email.user === email.sender){
+
           const archive = document.createElement('button');
           if (email.archived){
               archive.className = "btn btn-sm btn-outline-primary";
@@ -89,7 +89,7 @@ function view_email(id) {
           }
         });
           document.querySelector('#email-content').append(archive);
-                        }
+
       });
 }
 
