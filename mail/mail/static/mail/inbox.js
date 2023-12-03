@@ -43,6 +43,7 @@ function load_mailbox(mailbox) {
     // Create a box(div with border) for each email
     emails.forEach(email => {
       const mail = document.createElement('div');
+      if (email.read)
       mail.className = "list-group-item";
       mail.innerHTML = `<p><strong>${email.sender}</strong> ${email.subject}<span  style="float : right;" class="text-muted">${email.timestamp}</span></p>`;
       mail.addEventListener('click', function() {
