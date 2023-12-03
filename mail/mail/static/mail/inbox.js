@@ -56,6 +56,8 @@ function view_email(id) {
           })
         })
       }
+      // archive vs unarchive
+      
   });
 }
 
