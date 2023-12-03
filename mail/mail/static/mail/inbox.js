@@ -26,7 +26,7 @@ function compose_email() {
 }
 
 function view_email(id) {
-  
+
   fetch(`/emails/${id}`)
   .then(response => response.json())
   .then(email => {
@@ -91,7 +91,7 @@ function view_email(id) {
       document.querySelector('#email-content').append(archive);
   });
 }
-}
+
 
 
 
