@@ -67,7 +67,7 @@ function view_email(id) {
           archive.className = "btn btn-sm btn-outline-primary";
           archive.innerHTML = 'Archive';
        }
-
+      }
         archive.addEventListener('click', function() {
           if (email.archived){
             fetch(`/emails/${email.id}`, {
