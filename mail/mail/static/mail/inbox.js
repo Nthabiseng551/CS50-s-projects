@@ -75,7 +75,7 @@ function view_email(id) {
                 archived: false
             })
           })
-          .then () => load_mailbox('inbox');
+          .then () => load_mailbox('inbox')
         }
         else {
           fetch(`/emails/${email.id}`, {
@@ -84,6 +84,7 @@ function view_email(id) {
                 archived: true
             })
           })
+          .then () => load_mailbox('inbox')
         }
       });
       document.querySelector('#email-content').append(archive);
