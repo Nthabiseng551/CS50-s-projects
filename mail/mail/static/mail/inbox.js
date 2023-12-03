@@ -58,12 +58,19 @@ function view_email(id) {
       }
       // archive vs unarchive
       const archive = document.createElement('button');
-      archive.className = "btn btn-sm btn-outline-primary";
-      element.innerHTML = 'This is the content of the div.';
+      if (email.archive){
+        archive.className = "btn btn-sm btn-outline-primary";
+        element.innerHTML = 'Unarchive';
+      }
+      else {
+        archive.className = "btn btn-sm btn-outline-primary";
+        element.innerHTML = 'Archive';
+      }
+
       element.addEventListener('click', function() {
           console.log('This element has been clicked!')
       });
-      document.querySelector('#container').append(element);
+      document.querySelector('#email-content').append(archive);
   });
 }
 
