@@ -86,3 +86,7 @@ function send_email() {
 
   return false;
 }
+
+function view_email() {
+  console.log("view");
+}
