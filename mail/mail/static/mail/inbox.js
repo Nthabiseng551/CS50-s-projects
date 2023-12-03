@@ -25,7 +25,7 @@ function compose_email() {
   document.querySelector('#compose-body').value = '';
 }
 
-function view_email(id) {
+function view_email(id, mailbox) {
 
   fetch(`/emails/${id}`)
   .then(response => response.json())
