@@ -44,7 +44,7 @@ function load_mailbox(mailbox) {
     emails.forEach(email => {
       const mail = document.createElement('div');
       // Read vs unread
-      if (email.read == True){
+      if (email.read){
         mail.className = "list-group-item list-group-item-dark";
       }
       else {
@@ -52,6 +52,8 @@ function load_mailbox(mailbox) {
       }
 
       mail.innerHTML = `<p><strong>${email.sender}</strong> ${email.subject}<span  style="float : right;" class="text-muted">${email.timestamp}</span></p>`;
+
+      // click to view email
       mail.addEventListener('click', function() {
           console.log('This element has been clicked!')
       });
