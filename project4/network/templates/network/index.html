@@ -4,6 +4,9 @@
     <h1>All Posts</h1>
     {% for post in posts %}
     <div>
+        <p>{{ post.user }}</p>
+        <p>{{ post.post }}</p>
+        <p>{{ post.timestamp }}</p>
     </div>
     {% endfor %}
 {% endblock %}
