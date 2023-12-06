@@ -13,6 +13,8 @@ def index(request):
     posts = Post.objects.all().order_by("id").reverse()
     # Paginator (10 posts per page)
     p = Paginator(posts, 10)
+    # number of pages
+    pages = p.num_pages
     return render(request, "network/index.html", {
         "posts": posts
     })
