@@ -6,7 +6,7 @@ class User(AbstractUser):
     pass
 
 class Post(models.Model):
-//user, content, timestamp
+//user, content, timestamp, likes
 
 class Comment(models.Model):
     comment = models.CharField(max_length=300)
