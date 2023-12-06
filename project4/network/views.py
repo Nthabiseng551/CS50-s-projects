@@ -6,6 +6,7 @@ from django.urls import reverse
 
 from datetime import datetime
 from .models import User, Post, Comment
+from django.core.paginator import Paginator
 
 
 def index(request):
