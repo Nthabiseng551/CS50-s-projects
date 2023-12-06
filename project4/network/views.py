@@ -11,6 +11,8 @@ from django.core.paginator import Paginator
 
 def index(request):
     posts = Post.objects.all().order_by("id").reverse()
+    # Paginator (10 posts per page)
+    p = Paginator(posts, 10)
     return render(request, "network/index.html", {
         "posts": posts
     })
