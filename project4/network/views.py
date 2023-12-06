@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 
-from .models import User
+from .models import User, Post, Comment
 
 
 def index(request):
@@ -64,4 +64,14 @@ def register(request):
 
 def new_post(request):
     if request.method == "POST":
+        # current user
+        user = request.user
+
+        # Get post's content
         post = request.POST["post"]
+        newpost = Post(
+            post = post,
+            timestamp = datetime.now(),
+            post_by = user
+        )
+        newpost.save()
