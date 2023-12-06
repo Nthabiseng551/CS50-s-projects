@@ -6,9 +6,8 @@ class User(AbstractUser):
     pass
 
 class Post(models.Model):
-    comment = models.CharField(max_length=300)
-    comment_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name="author")
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="item")
+    post = models.CharField(max_length=300)
+    post_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name="poster")
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
     def __str__(self):
