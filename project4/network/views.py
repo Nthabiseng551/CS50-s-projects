@@ -75,3 +75,7 @@ def new_post(request):
             post_by = user
         )
         newpost.save()
+        # Redirect user to index
+        return HttpResponseRedirect(reverse("index"))
+    else:
+        return render(request, "network/newpost.html")
