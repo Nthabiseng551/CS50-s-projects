@@ -9,7 +9,6 @@ class Post(models.Model):
     post = models.CharField(max_length=300)
     post_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name="poster")
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
-    likes = models.
 
     def __str__(self):
         return f"Post {self.id} by,{self.post}"
