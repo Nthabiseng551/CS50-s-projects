@@ -90,4 +90,12 @@ def new_post(request):
         return render(request, "network/newpost.html")
 
 def profile(request, user_id):
-    
+    user = User.objects.get(pk=user_id)
+    posts = Post.objects.filter(user=user).order_by("id").reverse()
+    # Paginator (10 posts per page)
+    paginator = Paginator(posts, 10)
+    page_number = request.GET.get("page")
+    page_posts = paginator.get_page(page_number)
+    return render(request, "network/profile.html", {
+        "page_posts": page_posts
+    })
