@@ -131,6 +131,8 @@ def unfollow(request, user_id):
     return HttpResponseRedirect(reverse(profile, kwargs=('user_id': user_id)))
 
 def following(request):
+    #current user
+    user
     posts = Post.objects.all().order_by("timestamp").reverse()
     # Paginator (10 posts per page)
     paginator = Paginator(posts, 10)
