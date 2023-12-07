@@ -1,10 +1,12 @@
 {% extends "network/layout.html" %}
 
 {% block body %}
-    <h1>{{ user.username }}</h1>
+    <h1>{{ username }}</h1>
     <div>
         <p>followers:{{ followers}} following: {{ following }}</p>
     </div>
+    {% if user.is_authenticated %}
+    {% endif %}
     {% for post in page_posts %}
     <div>
         <p>{{ post.post_by }}</p>
