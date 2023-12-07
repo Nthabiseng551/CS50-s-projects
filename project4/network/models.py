@@ -13,9 +13,9 @@ class Post(models.Model):
     def __str__(self):
         return f"Post {self.id} by,{self.post}"
 
-class User_following(models.Model):
+class UserFollowing(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="following")
     following_user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="follower")
 
     def __str__(self):
-        return f"{self.user} is following {self.following_user}"
+        return f"{self.following_user} is following {self.user}"
