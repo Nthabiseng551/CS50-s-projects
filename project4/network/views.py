@@ -127,5 +127,5 @@ def follow(request, user_id):
 def unfollow(request, user_id):
     userProfile = User.objects.get(pk=user_id)
     userProfile.followers.remove(request.user)
-    user_id = 
+    user_id = userProfile
     return HttpResponseRedirect(reverse("index"))
