@@ -22,13 +22,14 @@ def index(request):
     #check if current user liked a post
     for like in likes:
             if like.user.id == request.user.id:
-                isFollower = True
+                liked.append(like.post.id)
                 break
             else:
-                isFollower = False
+                liked = []
 
     return render(request, "network/index.html", {
-        "page_posts": page_posts
+        "page_posts": page_posts,
+        "liked": liked
     })
 
 
