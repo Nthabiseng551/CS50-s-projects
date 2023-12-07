@@ -16,6 +16,10 @@ def index(request):
     paginator = Paginator(posts, 10)
     page_number = request.GET.get("page")
     page_posts = paginator.get_page(page_number)
+
+    likes = PostLike.objects.all()
+    liked = []
+
     return render(request, "network/index.html", {
         "page_posts": page_posts
     })
