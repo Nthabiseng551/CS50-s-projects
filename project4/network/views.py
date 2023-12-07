@@ -136,6 +136,11 @@ def following(request):
 
     following = user.following.all()
     posts = Post.objects.all().order_by("timestamp").reverse()
+
+    followingPosts = []
+
+    for post in posts:
+        for 
     # Paginator (10 posts per page)
     paginator = Paginator(posts, 10)
     page_number = request.GET.get("page")
