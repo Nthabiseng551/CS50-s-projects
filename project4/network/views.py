@@ -123,7 +123,7 @@ def follow(request, user_id):
     userProfile = User.objects.get(pk=user_id)
     userProfile.followers.add(request.user)
     user_id = userProfile.id
-    return HttpResponseRedirect(reverse(profile, kwargs=('user_id': user_id)))
+    return HttpResponseRedirect(reverse("profile", args=('user_id': user_id)))
 
 def unfollow(request, user_id):
     userProfile = User.objects.get(pk=user_id)
