@@ -16,3 +16,6 @@ class Post(models.Model):
 class User_following(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="following")
     following_user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="follower")
+
+    def __str__(self):
+        return f"{self.user} is following {self.following_user}"
