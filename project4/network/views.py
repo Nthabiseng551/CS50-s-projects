@@ -119,6 +119,9 @@ def profile(request, user_id):
         "user": user
     })
 def follow(request, user_id):
+    userProfile = User.objects.get(pk=user_id)
+    userProfile.followers.add(request.user)
+    return redirect('profile', pk=profile.pk)
 
 def unfollow(request, user_id):
     userProfile = User.objects.get(pk=user_id)
