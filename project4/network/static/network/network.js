@@ -3,9 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
 const button = document.querySelector(".heart-like-button");
 
 button.addEventListener("click", () => {
-  if (button.className.contains("liked")) {
+  if (button.classList.contains("liked")) {
     button.classList.remove("liked");
-  } else {
+  }
+  else {
     button.classList.add("liked");
   }
 });
