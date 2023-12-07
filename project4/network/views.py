@@ -123,13 +123,13 @@ def follow(request, user_id):
     userProfile = User.objects.get(pk=user_id)
     userProfile.followers.add(request.user)
     user_id = userProfile.id
-    return HttpResponseRedirect(reverse("profile", args=('user_id': user_id)))
+    return HttpResponseRedirect(reverse("profile", args=(user_id, )))
 
 def unfollow(request, user_id):
     userProfile = User.objects.get(pk=user_id)
     userProfile.followers.remove(request.user)
     user_id = userProfile.id
-    return HttpResponseRedirect(reverse(profile, kwargs=('user_id': user_id)))
+    return HttpResponseRedirect(reverse("profile", args=(user_id, )))
 
 def following(request):
     #current user
@@ -142,7 +142,7 @@ def following(request):
 
     for post in posts:
         for person in following:
-            if person.user == post.post_by
+            if person.user == post.post_by:
                 followingPosts.append(post)
 
     # Paginator (10 posts per page)
