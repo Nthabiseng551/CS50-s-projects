@@ -22,7 +22,7 @@
     {% endif %}
     {% for post in page_posts %}
     <div>
-        <p>{{ post.post_by }}</p>
+        <p><a href="{% url 'profile' user_id=post.post_by.id %}">{{ post.post_by }}</a></p>
         <p>{{ post.post }}</p>
         <p>{{ post.timestamp }}</p>
     </div>
