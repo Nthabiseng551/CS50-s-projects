@@ -1,0 +1,9 @@
+.heart-like-button {
+    position: relative;
+    width: 160px;
+    height: 130px;
+  }
+
+  .heart-like-button-liked{
+  background-color: #d65076;
+}
