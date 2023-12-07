@@ -14,4 +14,5 @@ class Post(models.Model):
         return f"Post {self.id} by,{self.post}"
 
 class User_following(models.Model):
-    user = 
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="follower")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="follower")
