@@ -118,6 +118,6 @@ def profile(request, user_id):
         "isFollower": isFollower,
         "user": user
     })
-def follow(request):
+def follow(request, user_id):
 
-def unfollow(request):
+def unfollow(request, user_id):
