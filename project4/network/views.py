@@ -121,11 +121,11 @@ def profile(request, user_id):
 def follow(request, user_id):
     userProfile = User.objects.get(pk=user_id)
     userProfile.followers.add(request.user)
-    user_id =
-    return HttpResponseRedirect(reverse("index"))
+    user_id = userProfile.id
+    return HttpResponseRedirect(reverse(profile, kwargs=('user_id': user_id)))
 
 def unfollow(request, user_id):
     userProfile = User.objects.get(pk=user_id)
     userProfile.followers.remove(request.user)
-    user_id = userProfile
+    user_id = userProfile.id
     return HttpResponseRedirect(reverse("index"))
