@@ -91,7 +91,7 @@ def new_post(request):
 
 def profile(request, user_id):
     user = User.objects.get(pk=user_id)
-    username = user.username
+
     posts = Post.objects.filter(user=user).order_by("timestamp").reverse()
     # Paginator (10 posts per page)
     paginator = Paginator(posts, 10)
@@ -112,7 +112,7 @@ def profile(request, user_id):
 
     return render(request, "network/profile.html", {
         "page_posts": page_posts,
-        "username": username,
+        "user": user,
         "following": len(following),
         "followers": len(followers),
         "isFollower": isFollower
