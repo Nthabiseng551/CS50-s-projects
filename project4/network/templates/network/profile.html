@@ -3,7 +3,7 @@
 {% block body %}
     <h1>{{ username }}</h1>
     <div>
-        <p>followers: following</p>
+        <p>followers:{{ followers}} following: {{ following }}</p>
     </div>
     {% for post in page_posts %}
     <div>
