@@ -152,20 +152,3 @@ def following(request):
         "page_posts": page_posts
     })
 
-def edit(request, user_id):
-    if request.method == "POST":
-        # current user
-        user = request.user
-
-        # Get post's content
-        post = request.POST["post"]
-        newpost = Post(
-            post = post,
-            timestamp = datetime.now(),
-            post_by = user
-        )
-        newpost.save()
-        # Redirect user to index
-        return HttpResponseRedirect(reverse("index"))
-    else:
-        return render(request, "network/newpost.html")
