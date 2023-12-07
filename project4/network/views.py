@@ -132,7 +132,9 @@ def unfollow(request, user_id):
 
 def following(request):
     #current user
-    user
+    user = request.user
+
+    following =
     posts = Post.objects.all().order_by("timestamp").reverse()
     # Paginator (10 posts per page)
     paginator = Paginator(posts, 10)
