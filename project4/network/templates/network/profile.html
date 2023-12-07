@@ -5,7 +5,7 @@
     <div>
         <p>followers:{{ followers}} following: {{ following }}</p>
     </div>
-    {% if user.is_authenticated %}
+    {% if user != request.user %}
     {% endif %}
     {% for post in page_posts %}
     <div>
