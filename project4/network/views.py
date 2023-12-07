@@ -141,9 +141,11 @@ def following(request):
 
     for post in posts:
         for person in following:
-            if person.user ==
+            if person.user == post.post_by
+                followingPosts.append(post)
+
     # Paginator (10 posts per page)
-    paginator = Paginator(posts, 10)
+    paginator = Paginator(followingPosts, 10)
     page_number = request.GET.get("page")
     page_posts = paginator.get_page(page_number)
     return render(request, "network/index.html", {
