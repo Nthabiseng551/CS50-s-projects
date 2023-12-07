@@ -1,3 +1,4 @@
+//like vs unlike
 const button = document.querySelector(".heart-like-button");
 
 button.addEventListener("click", () => {
