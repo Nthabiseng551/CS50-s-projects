@@ -12,6 +12,8 @@
         {% endif %}
         <p>{{ post.post }}</p>
         <p>{{ post.timestamp }}</p>
+        {% if user.is_authenticated %}
+        {% endif %}
     </div>
     {% endfor %}
     <nav aria-label="Page navigation example">
