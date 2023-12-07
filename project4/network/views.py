@@ -10,7 +10,7 @@ from django.core.paginator import Paginator
 
 
 def index(request):
-    posts = Post.objects.all().order_by("id").reverse()
+    posts = Post.objects.all().order_by("timestamp").reverse()
     # Paginator (10 posts per page)
     paginator = Paginator(posts, 10)
     page_number = request.GET.get("page")
@@ -92,7 +92,7 @@ def new_post(request):
 def profile(request, user_id):
     user = User.objects.get(pk=user_id)
     username = user.username
-    posts = Post.objects.filter(user=user).order_by("id").reverse()
+    posts = Post.objects.filter(user=user).order_by("timestamp").reverse()
     # Paginator (10 posts per page)
     paginator = Paginator(posts, 10)
     page_number = request.GET.get("page")
