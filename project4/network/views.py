@@ -88,3 +88,6 @@ def new_post(request):
         return HttpResponseRedirect(reverse("index"))
     else:
         return render(request, "network/newpost.html")
+
+def profile(request, user_id):
+    
