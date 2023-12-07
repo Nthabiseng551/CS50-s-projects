@@ -128,4 +128,4 @@ def unfollow(request, user_id):
     userProfile = User.objects.get(pk=user_id)
     userProfile.followers.remove(request.user)
     user_id = userProfile.id
-    return HttpResponseRedirect(reverse("index"))
+    return HttpResponseRedirect(reverse(profile, kwargs=('user_id': user_id)))
