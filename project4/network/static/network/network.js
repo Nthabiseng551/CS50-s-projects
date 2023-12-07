@@ -1,4 +1,5 @@
 //like vs unlike
+document.addEventListener('DOMContentLoaded', function() {
 const button = document.querySelector(".heart-like-button");
 
 button.addEventListener("click", () => {
@@ -7,4 +8,5 @@ button.addEventListener("click", () => {
   } else {
     button.classList.add("liked");
   }
+});
 });
