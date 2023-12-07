@@ -14,8 +14,9 @@
         <p>{{ post.timestamp }}</p>
         {% if user.is_authenticated %}
             {% if post.id in liked %}
-            
+                <div class="heart-like-button"></div>
             {% else %}
+                <div class="heart-like-button"></div>
             {% endif %}
         {% endif %}
     </div>
