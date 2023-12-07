@@ -6,7 +6,7 @@ from django.urls import reverse
 
 import json
 from datetime import datetime
-from .models import User, Post, UserFollowing
+from .models import User, Post, UserFollowing, PostLike
 from django.core.paginator import Paginator
 
 
