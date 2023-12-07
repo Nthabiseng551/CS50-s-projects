@@ -140,7 +140,8 @@ def following(request):
     followingPosts = []
 
     for post in posts:
-        for 
+        for person in following:
+            if person.user ==
     # Paginator (10 posts per page)
     paginator = Paginator(posts, 10)
     page_number = request.GET.get("page")
