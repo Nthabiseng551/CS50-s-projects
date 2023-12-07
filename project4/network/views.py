@@ -97,6 +97,10 @@ def profile(request, user_id):
     paginator = Paginator(posts, 10)
     page_number = request.GET.get("page")
     page_posts = paginator.get_page(page_number)
+
+    # Following and followers
+    following = UserFollowing.objects.filter(user=user)
+    followers = UserFollowing.objects.filter(user=user)
     return render(request, "network/profile.html", {
         "page_posts": page_posts,
         "username": username
