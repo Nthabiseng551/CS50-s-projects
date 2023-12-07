@@ -148,6 +148,6 @@ def following(request):
     paginator = Paginator(followingPosts, 10)
     page_number = request.GET.get("page")
     page_posts = paginator.get_page(page_number)
-    return render(request, "network/index.html", {
+    return render(request, "network/following.html", {
         "page_posts": page_posts
     })
