@@ -3,7 +3,7 @@
 {% block body %}
     <h1>Following page</h1>
     {% for post in page_posts %}
-    <div>
+    <div class="list-group-item">
         <p><a href="{% url 'profile' user_id=post.post_by.id %}">{{ post.post_by }}</a></p>
         <p>{{ post.post }}</p>
         <p>{{ post.timestamp }}</p>
