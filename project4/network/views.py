@@ -122,11 +122,10 @@ def profile(request, user_id):
         userFollow = followers.filter(following_user=currentUser)
         if len(userFollow) == 0:
             isFollower = False
-            if follower == currentUser:
-                isFollower = True
-                break
-            else:
-                isFollower = False
+        else:
+            isFollower = True
+    except:
+        isFollower = False
 
     return render(request, "network/profile.html", {
         "page_posts": page_posts,
