@@ -18,13 +18,18 @@
                     <button class="btn btn-primary" type=submit>Follow</button>
                 </form>
             {% endif %}
-        
+
         {% endif %}
     {% endif %}
 
     {% for post in page_posts %}
     <div>
         <p><a href="{% url 'profile' user_id=post.post_by.id %}">{{ post.post_by }}</a></p>
+        {% if user.is_authenticated %}
+            {% if user == post.post_by %}
+                <p>Edit</p>
+            {% endif %}
+        {% endif %}
         <p>{{ post.post }}</p>
         <p>{{ post.timestamp }}</p>
     </div>
