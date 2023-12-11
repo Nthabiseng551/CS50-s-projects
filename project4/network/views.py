@@ -138,6 +138,11 @@ def follow(request, user_id):
     userProfile = User.objects.get(pk=user_id)
     userProfile.follower.add(request.user)
     user_id = userProfile.id
+
+    follow = (
+        user=
+    )
+    follow.save
     return HttpResponseRedirect(reverse("profile", args=(user_id, )))
 
 def unfollow(request, user_id):
