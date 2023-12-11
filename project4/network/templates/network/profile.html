@@ -2,8 +2,8 @@
 
 {% block body %}
     <h1>{{ username }}</h1>
-    <div>
-        <p>followers:{{ followers}} following: {{ following }}</p>
+    <div class="container">
+        <p>followers:{{ followers }} following: {{ following }}</p>
     </div>
     {% if user != request.user %}
         {% if isFollower %}
