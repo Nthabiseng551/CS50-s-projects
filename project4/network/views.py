@@ -115,7 +115,7 @@ def profile(request, user_id):
 
     # Following and followers
     following = UserFollowing.objects.filter(following_user=userProfile)
-    followers = UserFollowing.objects.filter(user=userProfile)
+    followers = 
 
     #check if current user is a follower
     try:
