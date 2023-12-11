@@ -117,7 +117,6 @@ def profile(request, user_id):
     following = userProfile.following.all()
     followers = userProfile.follower.all()
 
-    isFollower = False
     #check if current user is a follower
     for follower in followers:
             if follower == currentUser:
@@ -129,8 +128,8 @@ def profile(request, user_id):
     return render(request, "network/profile.html", {
         "page_posts": page_posts,
         "username": username,
-        "following": following,
-        "followers": followers,
+        "following": len(following),
+        "followers": len(followers),
         "isFollower": isFollower,
         "userProfile": userProfile,
         "currentUser": currentUser
