@@ -134,6 +134,8 @@ def profile(request, user_id):
         "userProfile": userProfile,
         "currentUser": currentUser
     })
+
+@csrf_exempt
 def follow(request, user_id):
     userProfile = User.objects.get(pk=user_id)
     user_id = userProfile.id
@@ -146,6 +148,7 @@ def follow(request, user_id):
     follow.save()
     return HttpResponseRedirect(reverse("profile", args=(user_id, )))
 
+@csrf_exempt
 def unfollow(request, user_id):
     userProfile = User.objects.get(pk=user_id)
     user_id = userProfile.id
