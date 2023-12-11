@@ -129,8 +129,8 @@ def profile(request, user_id):
     return render(request, "network/profile.html", {
         "page_posts": page_posts,
         "username": username,
-        "following": len(following),
-        "followers": len(followers),
+        "following": count(following),
+        "followers": count(followers),
         "isFollower": isFollower,
         "userProfile": userProfile,
         "currentUser": currentUser
