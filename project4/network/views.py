@@ -130,7 +130,8 @@ def profile(request, user_id):
         "following": len(following),
         "followers": len(followers),
         "isFollower": isFollower,
-        "user": user
+        "user": user,
+        "currentUser": currentUser
     })
 def follow(request, user_id):
     userProfile = User.objects.get(pk=user_id)

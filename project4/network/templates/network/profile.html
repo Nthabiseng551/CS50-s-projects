@@ -6,7 +6,7 @@
         <p>followers:{{ followers }} following: {{ following }}</p>
     </div>
     {% if user.is_authenticated %}
-        {% if user != request.user %}
+        {% if user != currentUser %}
             {% if isFollower %}
                 <form method="POST" action="{% url 'unfollow' user_id=user.id %}">
                     {% csrf_token %}
