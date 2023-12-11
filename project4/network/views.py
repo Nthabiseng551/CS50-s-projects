@@ -148,9 +148,16 @@ def follow(request, user_id):
 
 def unfollow(request, user_id):
     userProfile = User.objects.get(pk=user_id)
-    userProfile.follower.remove(request.user)
     user_id = userProfile.id
+    currentUser = User.objects.get(pk=request.user.id)
+
+    follow = UserFollowing.objects.get(
+        user = userProfile,
+        following_user = currentUser
+    )
+    follow.delete()
     return HttpResponseRedirect(reverse("profile", args=(user_id, )))
+
 
 def following(request):
     #current user
