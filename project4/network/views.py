@@ -118,8 +118,10 @@ def profile(request, user_id):
     followers = userProfile.follower.all()
 
     #check if current user is a follower
-    userFollow = followers.filter(following_user=currentUser)
-    for follower in followers:
+    try:
+        userFollow = followers.filter(following_user=currentUser)
+        if len(userFollow) == 0:
+            isFollower = False
             if follower == currentUser:
                 isFollower = True
                 break
