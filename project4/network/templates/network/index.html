@@ -7,7 +7,7 @@
         <p><a href="{% url 'profile' user_id=post.post_by.id %}">{{ post.post_by }}</a></p>
         {% if user.is_authenticated %}
             {% if user == post.post_by %}
-                <p>Edit</p>
+                <p><a href="{% url 'edit' post_id=post.id %}">Edit</a></p>
             {% endif %}
         {% endif %}
         <p>{{ post.post }}</p>
