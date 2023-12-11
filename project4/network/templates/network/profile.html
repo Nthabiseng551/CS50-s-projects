@@ -10,12 +10,12 @@
             {% if isFollower %}
                 <form method="POST" action="{% url 'unfollow' user_id=user.id %}">
                     {% csrf_token %}
-                    <button class="btn btn-outline-danger" type=submit>UnFollow</button>
+                    <button class="btn btn-primary" type=submit>UnFollow</button>
                 </form>
             {% else %}
                 <form method="POST" action="{% url 'follow' user_id=user.id %}">
                     {% csrf_token %}
-                    <button class="btn btn-outline-success" type=submit>Follow</button>
+                    <button class="btn btn-primary" type=submit>Follow</button>
                 </form>
             {% endif %}
         {% else %}
