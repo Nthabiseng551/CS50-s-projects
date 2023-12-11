@@ -6,14 +6,14 @@
         <p>followers:{{ followers }} following: {{ following }}</p>
     </div>
     {% if user.is_authenticated %}
-        {% if user != currentUser %}
+        {% if userProfile != currentUser %}
             {% if isFollower %}
-                <form method="POST" action="{% url 'unfollow' user_id=user.id %}">
+                <form method="POST" action="{% url 'unfollow' user_id=userProfile.id %}">
                     {% csrf_token %}
                     <button class="btn btn-primary" type=submit>UnFollow</button>
                 </form>
             {% else %}
-                <form method="POST" action="{% url 'follow' user_id=user.id %}">
+                <form method="POST" action="{% url 'follow' user_id=userProfile.id %}">
                     {% csrf_token %}
                     <button class="btn btn-primary" type=submit>Follow</button>
                 </form>

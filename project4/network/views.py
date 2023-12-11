@@ -103,18 +103,18 @@ def new_post(request):
         return render(request, "network/newpost.html")
 
 def profile(request, user_id):
-    user = User.objects.get(pk=user_id)
+    userProfile = User.objects.get(pk=user_id)
     currentUser = User.objects.get(pk=request.user.id)
-    username = user.username
-    posts = Post.objects.filter(post_by=user).order_by("timestamp").reverse()
+    username = userProfile.username
+    posts = Post.objects.filter(post_by=userProfile).order_by("timestamp").reverse()
     # Paginator (10 posts per page)
     paginator = Paginator(posts, 10)
     page_number = request.GET.get("page")
     page_posts = paginator.get_page(page_number)
 
     # Following and followers
-    following = user.following.all()
-    followers = user.follower.all()
+    following = userProfile.following.all()
+    followers = userProfile.follower.all()
 
     isFollower = False
     #check if current user is a follower
@@ -131,7 +131,7 @@ def profile(request, user_id):
         "following": len(following),
         "followers": len(followers),
         "isFollower": isFollower,
-        "user": user,
+        "userProfile": userProfile,
         "currentUser": currentUser
     })
 def follow(request, user_id):
