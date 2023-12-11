@@ -168,7 +168,7 @@ def following(request):
     #current user
     user = User.objects.get(pk=request.user.id)
 
-    following = user.following.all()
+    following = user.follower.all()
     posts = Post.objects.all().order_by("timestamp").reverse()
 
     followingPosts = []
