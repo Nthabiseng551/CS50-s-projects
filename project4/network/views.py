@@ -114,8 +114,8 @@ def profile(request, user_id):
     page_posts = paginator.get_page(page_number)
 
     # Following and followers
-    following = UserFollowing.objects.get(following_user=user)
-    followers = UserFollowing.objects.get(user=user)
+    following = UserFollowing.objects.get(following_user=userProfile)
+    followers = UserFollowing.objects.get(user=userProfile)
 
     #check if current user is a follower
     try:
