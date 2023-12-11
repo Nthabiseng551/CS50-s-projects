@@ -26,7 +26,7 @@
     <div>
         <p><a href="{% url 'profile' user_id=post.post_by.id %}">{{ post.post_by }}</a></p>
         {% if user.is_authenticated %}
-            {% if user == post.post_by %}
+            {% if currentUser == post.post_by %}
                 <p>Edit</p>
             {% endif %}
         {% endif %}
