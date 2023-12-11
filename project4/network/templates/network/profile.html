@@ -5,21 +5,24 @@
     <div class="container">
         <p>followers:{{ followers }} following: {{ following }}</p>
     </div>
-    {% if user != request.user %}
-        {% if isFollower %}
-            <form method="POST" action="{% url 'unfollow' user_id=user.id %}">
-                {% csrf_token %}
-                <button class="btn btn-outline-danger" type=submit>UnFollow</button>
-            </form>
+    {% if user.is_authenticated %}
+        {% if user != request.user %}
+            {% if isFollower %}
+                <form method="POST" action="{% url 'unfollow' user_id=user.id %}">
+                    {% csrf_token %}
+                    <button class="btn btn-outline-danger" type=submit>UnFollow</button>
+                </form>
+            {% else %}
+                <form method="POST" action="{% url 'follow' user_id=user.id %}">
+                    {% csrf_token %}
+                    <button class="btn btn-outline-success" type=submit>Follow</button>
+                </form>
+            {% endif %}
         {% else %}
-            <form method="POST" action="{% url 'follow' user_id=user.id %}">
-                {% csrf_token %}
-                <button class="btn btn-outline-success" type=submit>Follow</button>
-            </form>
+                <p>Edit</p>
         {% endif %}
-    {% else %}
-            <p>Edit</p>
     {% endif %}
+
     {% for post in page_posts %}
     <div>
         <p><a href="{% url 'profile' user_id=post.post_by.id %}">{{ post.post_by }}</a></p>
