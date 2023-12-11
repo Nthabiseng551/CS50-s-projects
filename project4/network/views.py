@@ -106,7 +106,7 @@ def profile(request, user_id):
     user = User.objects.get(pk=user_id)
     currentUser = User.objects.get(pk=request.user.id)
     username = user.username
-    posts = Post.objects.filter(user=user).order_by("timestamp").reverse()
+    posts = Post.objects.filter(post_by=user).order_by("timestamp").reverse()
     # Paginator (10 posts per page)
     paginator = Paginator(posts, 10)
     page_number = request.GET.get("page")
