@@ -136,11 +136,10 @@ def profile(request, user_id):
     })
 def follow(request, user_id):
     userProfile = User.objects.get(pk=user_id)
-    userProfile.follower.add(request.user)
     user_id = userProfile.id
     currentUser = User.objects.get(pk=request.user.id)
 
-    follow = (
+    follow = UserFollowing(
         user = userProfile,
         following_user = currentUser
     )
