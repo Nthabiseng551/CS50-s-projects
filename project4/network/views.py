@@ -116,6 +116,7 @@ def profile(request, user_id):
     following = user.following.all()
     followers = user.follower.all()
 
+    isFollower = False
     #check if current user is a follower
     for follower in followers:
             if follower == currentUser:
