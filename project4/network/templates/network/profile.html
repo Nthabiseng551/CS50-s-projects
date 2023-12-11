@@ -23,7 +23,7 @@
     {% endif %}
 
     {% for post in page_posts %}
-    <div>
+    <div class="list-group-item">
         <p><a href="{% url 'profile' user_id=post.post_by.id %}">{{ post.post_by }}</a></p>
         {% if user.is_authenticated %}
             {% if currentUser == post.post_by %}
