@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
             likeBtn.className === "btn btn-dark";
         })
     }
-    else if (likeBtn.className === "btn btn-dark"){
+    else if (event.target.className === "btn btn-dark"){
         fetch(`/like/${id}`)
         .then(response => response.json)
         .then(result => {
