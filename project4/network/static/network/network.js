@@ -27,3 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 })
 
+function liking(id, liked){
+    const btn = document.getElementById();
+}
