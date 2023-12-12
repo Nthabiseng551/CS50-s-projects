@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 })
 
-document.addEventListener('DOMContentLoaded', function() {
+function liking(id)
 
     if (event.target.className === "btn btn-danger"){
         fetch(`/unlike/${post.id}`)
