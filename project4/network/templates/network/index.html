@@ -18,7 +18,7 @@
 
         {% if user.is_authenticated %}
             {% if user == post.post_by %}
-                <button class="btn btn-primary" id="edit">Edit</button>
+                <button class="btn btn-primary" id="edit-btn">Edit</button>
             {% endif %}
         {% endif %}
     </div>
@@ -36,7 +36,7 @@
 
       <script>
         document.addEventListener('DOMContentLoaded', function() {
-            
+            edit-btn = document.querySelector('#edit-btn')
         })
       </script>
 {% endblock %}
