@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('button').forEach(button => { button.onclick = function() {
 
-    if (likeBtn.className === "btn btn-danger"){
+    if (event.target.className === "btn btn-danger"){
         fetch(`/unlike/${id}`)
         .then(response => response.json)
         .then(result => {
@@ -48,3 +48,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 })
 })
+
