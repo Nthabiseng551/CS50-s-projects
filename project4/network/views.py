@@ -197,3 +197,13 @@ def edit(request, post_id):
     original_post.save()
 
     return JsonResponse({ "editted_post": editted_post })
+
+# API function for liking posts
+@csrf_exempt
+def like(request, post_id):
+    post = Post.objects.get(pk=post_id)
+    
+
+# API function for unlike posts
+@csrf_exempt
+def unlike(request, post_id):
