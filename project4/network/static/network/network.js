@@ -24,8 +24,11 @@ document.addEventListener('DOMContentLoaded', function() {
           });
       }
   })
-  document.querySelector('#liked-btn').onclick = count;
-  document.querySelector('#unlike-btn').onclick = count;
+  const likedBtn = document.querySelector('#liked-btn');
+  const unlikeBtn = document.querySelector('#unlike-btn');
+  likedBtn.addEventListener('click', function() {
+    
+  })
 
 })
 
