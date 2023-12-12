@@ -25,12 +25,8 @@
     {% for post in page_posts %}
     <div id="postdiv" class="list-group-item" data-id="{{ post.id }}">
         <p><a href="{% url 'profile' user_id=post.post_by.id %}">{{ post.post_by }}</a></p>
-        {% if user.is_authenticated %}
-            {% if currentUser == post.post_by %}
-                <p>Edit</p>
-            {% endif %}
-        {% endif %}
-        <p>{{ post.post }}</p>
+        
+        <p id="post-content">{{ post.post }}</p>
         <p>{{ post.timestamp }}</p>
     </div>
     {% endfor %}
