@@ -37,7 +37,7 @@
       <script>
         document.addEventListener('DOMContentLoaded', function() {
             const editBtn = document.querySelector('#edit-btn');
-            editBtn.onclick = function() {
+            editBtn.addEventListener('click', function() {
                 const originalPost = document.querySelector('#post-content').value;
 
                 if (editBtn.innerText === 'Edit'){
