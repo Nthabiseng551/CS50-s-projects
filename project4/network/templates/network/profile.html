@@ -25,7 +25,6 @@
     {% for post in page_posts %}
     <div id="postdiv" class="list-group-item" data-id="{{ post.id }}">
         <p><a href="{% url 'profile' user_id=post.post_by.id %}">{{ post.post_by }}</a></p>
-        
         <p id="post-content">{{ post.post }}</p>
         <p>{{ post.timestamp }}</p>
     </div>
