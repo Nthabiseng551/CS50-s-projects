@@ -28,5 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 function liking(id, liked){
-    const btn = document.getElementById();
+    const btn = document.getElementById(`${id}`);
+    if (liked.indexOf{id} >= 0){
+        var 
+    }
 }
