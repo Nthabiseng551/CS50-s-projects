@@ -17,9 +17,9 @@
 
         {% if user.is_authenticated %}
             {% if post.id in liked %}
-                <button class="btn btn-danger float-left">&hearts;<span id="liked-btn">{{ post.}}</span></button>
+                <button class="btn btn-danger float-left">&hearts;<span id="liked-btn">{{ post.like.all.count }}</span></button>
             {% else %}
-                <button class="btn btn-dark float-left">&hearts;<span id="unlike-btn">{{}}</span></button>
+                <button class="btn btn-dark float-left">&hearts;<span id="unlike-btn">{{ post.like.all.count }}</span></button>
             {% endif %}
         {% endif %}
     </div>
