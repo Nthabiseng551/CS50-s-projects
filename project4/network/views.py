@@ -223,4 +223,5 @@ def unlike(request, post_id):
     user = User.objects.get(pk=request.user.id)
     like = PostLike.objects.filter(user=user, post=post)
     like.delete()
-    return JsonResponse({ "message": "post unliked succesfully",  })
+    num_likes = PostLike.objects.filter(post=post)
+    return JsonResponse({ "message": "post unliked succesfully", "num_likes": len(num_likes) })
