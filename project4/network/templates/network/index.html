@@ -47,7 +47,10 @@
                 }
                 else if (editBtn.innerHTML === 'Save'){
                     fetch(`/edit/${post.id}`, {
-                        
+                        method: 'POST',
+                        body: JSON.stringify({
+                            post: document.querySelector('#post-content').value
+                        })
                     })
                 }
             }
