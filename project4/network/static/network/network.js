@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('button').forEach(button => { button.onclick = function() {
+        const id = document.querySelector('#postdiv').dataset.id;
 
     if (event.target.className === "btn btn-danger"){
         fetch(`/unlike/${id}`)
