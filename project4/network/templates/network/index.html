@@ -45,6 +45,9 @@
                     document.querySelector('#edit-content').placeholder = originalpost;
                     editBtn.innerHTML = "Save";
                 }
+                else if (editBtn.innerHTML === 'Save'){
+                    fetch(`/edit/${id}`)
+                }
             }
         })
       </script>
