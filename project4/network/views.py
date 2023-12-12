@@ -202,8 +202,19 @@ def edit(request, post_id):
 @csrf_exempt
 def like(request, post_id):
     post = Post.objects.get(pk=post_id)
-    
+    user = User.objects.get(pk=request.user.id)
+    like = PostLike(
+        user = user,
+        post = post
+    )
+    like.save()
+    return JsonResponse({ "message": "post liked succesfully" })
 
 # API function for unlike posts
 @csrf_exempt
 def unlike(request, post_id):
+    post = Post.objects.get(pk=post_id)
+    user = User.objects.get(pk=request.user.id)
+    like = PostLike.objects.filter(user=user, post=post)
+    like.delete()
+    return JsonResponse({ "message": "post unliked succesfully" })
