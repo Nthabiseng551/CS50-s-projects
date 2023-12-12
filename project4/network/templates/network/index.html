@@ -6,7 +6,7 @@
     <div id="postdiv" class="list-group-item" data-id="{{ post.id }}">
         <p><a href="{% url 'profile' user_id=post.post_by.id %}">{{ post.post_by }}</a></p>
         <p id="post-content">{{ post.post }}</p>
-        <p>{{ post.timestamp }}</p>
+        <p class="text-muted">{{ post.timestamp }}</p>
 
 
         {% if user.is_authenticated %}
