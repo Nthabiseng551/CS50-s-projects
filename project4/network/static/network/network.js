@@ -29,7 +29,10 @@ document.addEventListener('DOMContentLoaded', function() {
   likedBtn.addEventListener('click', function() {
     const id = document.querySelector('#postdiv').dataset.id;
     fetch(`/like/${id}`)
-    .then
+    .then(response => response.json())
+    .then(result => {
+        
+    });
   })
 
 })
