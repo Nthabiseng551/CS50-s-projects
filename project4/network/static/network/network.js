@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function liking(id, liked){
     const btn = document.getElementById(`${id}`);
-    if (liked.indexOf{id} >= 0){
+    if (liked.indexOf(id) >= 0){
         var uliked = true;
     }
     else {
