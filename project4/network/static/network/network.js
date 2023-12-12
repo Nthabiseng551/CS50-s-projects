@@ -28,8 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 document.addEventListener('DOMContentLoaded', function() {
-    const likeBtn = document.querySelectorAll('#like-btn').forEach;
-    likeBtn.addEventListener('click', function() {
+    document.querySelectorAll('button').forEach(button => { button.onclick = function() {
 
     if (likeBtn.className === "btn btn-danger"){
         fetch(`/unlike/${id}`)
