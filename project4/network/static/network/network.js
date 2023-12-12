@@ -28,11 +28,10 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('button').forEach(button => { button.onclick = function() {
-        const id = document.querySelector('#postdiv').dataset.id;
+    document.querySelectorAll('#like-btn')
 
     if (event.target.className === "btn btn-danger"){
-        fetch(`/unlike/${id}`)
+        fetch(`/unlike/${post.id}`)
         .then(response => response.json)
         .then(result => {
             console.log(result.num_likes);
@@ -40,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
     }
     else if (event.target.className === "btn btn-dark"){
-        fetch(`/like/${id}`)
+        fetch(`/like/${post.id}`)
         .then(response => response.json)
         .then(result => {
             console.log(result.num_likes);
@@ -49,5 +48,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 })
 
-})
 
