@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 var clicks = 0;
-$(".like_cont").click(function(e) {
+$("#liked-btn").click(function(e) {
     if ($(this).html() == "Like") {
         $(this).html('Unlike').removeClass('like_cont').addClass('unlike_cont');
         clicks++;
