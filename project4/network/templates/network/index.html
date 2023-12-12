@@ -39,7 +39,7 @@
             const editBtn = document.querySelector('#edit-btn');
             editBtn.addEventListener('click', function() {
                 const originalPost = document.querySelector('#post-content').innerText;
-                const id = post.id;
+                const id = document.querySelector('#').dataset.id;
 
                 if (editBtn.innerHTML === 'Edit'){
                     document.querySelector('#post-content').innerHTML = `<textarea id="edit-content" rows="5" cols="100"></textarea>`;
