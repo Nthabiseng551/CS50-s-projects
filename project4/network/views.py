@@ -28,9 +28,14 @@ def index(request):
             else:
                 liked = []
 
+    # number of likes for each post
+    for post in posts:
+        num_likes = post.like.all()
+
     return render(request, "network/index.html", {
         "page_posts": page_posts,
-        "liked": liked
+        "liked": liked,
+        "": len(num_likes)
     })
 
 
