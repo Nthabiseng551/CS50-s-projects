@@ -27,7 +27,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 })
 
+document.addEventListener('DOMContentLoaded', function() {
     const likeBtn = document.querySelector('#like-btn');
+    likeBtn.addEventListener('click', function() {
 
     if (likeBtn.className === "btn btn-danger"){
         fetch(`/unlike/${id}`)
@@ -43,4 +45,5 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log(result.num_likes)
         })
     }
-
+})
+})
