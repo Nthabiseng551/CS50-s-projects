@@ -27,7 +27,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const likedBtn = document.querySelector('#liked-btn');
   const unlikeBtn = document.querySelector('#unlike-btn');
   likedBtn.addEventListener('click', function() {
+    const id = document.querySelector('#postdiv').dataset.id;
     fetch(`/like/${id}`)
+    .then
   })
 
 })
