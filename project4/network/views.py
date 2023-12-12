@@ -192,3 +192,4 @@ def edit(request, post_id):
     post = Post.objects.get(pk=post_id)
 
     data = json.loads(request.body)
+    editted = data.get("post")
