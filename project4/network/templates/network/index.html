@@ -38,7 +38,8 @@
         document.addEventListener('DOMContentLoaded', function() {
             const editBtn = document.querySelector('#edit-btn')
             editBtn.onclick = function() {
-
+                const id = editBtn.parentElement.parentElement.dataset.id
+                const originalPost = editBtn.parentElement.querySelector('').innerHTML
             }
         })
       </script>
