@@ -46,10 +46,11 @@
                     editBtn.innerHTML = "Save";
                 }
                 else if (editBtn.innerHTML === 'Save'){
+                    const post = document.querySelector('#edit-content').value;
                     fetch(`/edit/${post.id}`, {
                         method: 'POST',
                         body: JSON.stringify({
-                            post: document.querySelector('#edit-content').value
+                            post: post
                         })
                     })
                     .then(response => response.json())
