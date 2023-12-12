@@ -34,12 +34,12 @@ $("#liked-btn").click(function(e) {
     if ($(this).html() == "Like") {
         $(this).html('Unlike').removeClass('like_cont').addClass('unlike_cont');
         count++;
-       $('.likecount').html(clicks);
+       $('.likecount').html(count);
     }
     else {
     $(this).html('Like').removeClass('unlike_cont').addClass('like_cont');
-        clicks--;
-        $('.likecount').html(clicks);
+        count--;
+        $('.likecount').html(count);
     }
     return false;
 });
