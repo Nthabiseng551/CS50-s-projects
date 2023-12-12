@@ -31,13 +31,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 var count = 0;
 $("#liked-btn").click(function(e) {
-    if ($(this).html() == "Like") {
         $(this).html('Unlike').removeClass('like_cont').addClass('unlike_cont');
         count++;
        $('.likecount').html(count);
-    }
-    else {
-    $(this).html('Like').removeClass('unlike_cont').addClass('like_cont');
+});
+
+$("#unlike-btn").click(function(e) {
+    if ($(this).html() == "Like") {
+        $(this).html('Unlike').removeClass('like_cont').addClass('unlike_cont');
         count--;
         $('.likecount').html(count);
     }
