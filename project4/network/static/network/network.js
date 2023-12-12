@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 })
 
-function liking(id, liked){
     const likeBtn = document.querySelector('#like-btn');
 
     if (likeBtn.className === "btn btn-danger"){
@@ -37,11 +36,11 @@ function liking(id, liked){
             console.log(result.num_likes)
         })
     }
-    else{
+    else if (likeBtn.className === "btn btn-dark"){
         fetch(`/like/${id}`)
         .then(response => response.json)
         .then(result => {
             console.log(result.num_likes)
         })
     }
-}
+
