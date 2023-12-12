@@ -49,7 +49,7 @@
                     fetch(`/edit/${post.id}`, {
                         method: 'POST',
                         body: JSON.stringify({
-                            post: document.querySelector('#post-content').value
+                            post: document.querySelector('#edit-content').value
                         })
                     })
                 }
