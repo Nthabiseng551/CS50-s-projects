@@ -189,4 +189,4 @@ def following(request):
 # API function for editing posts
 @csrf_exempt
 def edit(request, post_id):
-    post
+    post = Post.objects.get(pk=post_id)
