@@ -35,14 +35,16 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch(`/unlike/${id}`)
         .then(response => response.json)
         .then(result => {
-            console.log(result.num_likes)
+            console.log(result.num_likes);
+            likeBtn.className === "btn btn-dark";
         })
     }
     else if (likeBtn.className === "btn btn-dark"){
         fetch(`/like/${id}`)
         .then(response => response.json)
         .then(result => {
-            console.log(result.num_likes)
+            console.log(result.num_likes);
+            likeBtn.className === "btn btn-danger";
         })
     }
 })
