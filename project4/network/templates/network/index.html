@@ -38,12 +38,12 @@
         document.addEventListener('DOMContentLoaded', function() {
             const editBtn = document.querySelector('#edit-btn')
             editBtn.onclick = function() {
-                const originalPost = document.querySelector('#post-content').innerHTML
+                const originalPost = document.querySelector('#post-content').innerHTML;
 
                 if (editBtn.innerHTML === 'Edit'){
                     document.querySelector('#post-content').innerHTML = `<textarea id="edit-content" rows="5" cols="100"></textarea>`;
                     document.querySelector('#edit-content').placeholder = originalpost;
-                    editBtn.innerHTML = "Save"
+                    editBtn.innerHTML = "Save";
                 }
             }
         })
