@@ -17,9 +17,9 @@
 
         {% if user.is_authenticated %}
             {% if post.id in liked %}
-                <div class="heart-like-button"></div>
+                <button class="btn btn-primary"></button>
             {% else %}
-                <div class="heart-like-button"></div>
+
             {% endif %}
         {% endif %}
     </div>
