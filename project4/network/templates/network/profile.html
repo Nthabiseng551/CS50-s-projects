@@ -27,6 +27,13 @@
         <p><a href="{% url 'profile' user_id=post.post_by.id %}">{{ post.post_by }}</a></p>
         <p id="post-content">{{ post.post }}</p>
         <p>{{ post.timestamp }}</p>
+        
+
+        {% if user.is_authenticated %}
+            {% if user == post.post_by %}
+                <button class="btn btn-primary" id="edit-btn">Edit</button>
+            {% endif %}
+        {% endif %}
     </div>
     {% endfor %}
     <nav aria-label="Page navigation example">
