@@ -1,17 +1,3 @@
-//like vs unlike
-document.addEventListener('DOMContentLoaded', function() {
-const button = document.querySelector(".heart-like-button");
-
-button.addEventListener("click", () => {
-  if (button.classList.contains("liked")) {
-    button.classList.remove("liked");
-  }
-  else {
-    button.classList.add("liked");
-  }
-});
-});
-
 document.addEventListener('DOMContentLoaded', function() {
   const editBtn = document.querySelector('#edit-btn');
   editBtn.addEventListener('click', function() {
