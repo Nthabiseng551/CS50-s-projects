@@ -40,12 +40,12 @@
             editBtn.addEventListener('click', function() {
                 const originalPost = document.querySelector('#post-content').value;
 
-                if (editBtn.innerText === 'Edit'){
+                if (editBtn.innerHTML === 'Edit'){
                     document.querySelector('#post-content').innerHTML = `<textarea id="edit-content" rows="5" cols="100"></textarea>`;
                     document.querySelector('#edit-content').placeholder = originalpost;
                     editBtn.innerHTML = "Save";
                 }
-                else if (editBtn.innerText === 'Save'){
+                else if (editBtn.innerHTML === 'Save'){
                     fetch(`/edit/${post.id}`, {
                         method: 'POST',
                         body: JSON.stringify({
