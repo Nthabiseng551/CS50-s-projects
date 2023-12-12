@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const unlikeBtn = document.querySelector('#unlike-btn');
   likedBtn.addEventListener('click', function() {
     const id = document.querySelector('#postdiv').dataset.id;
-    fetch(`/like/${id}`)
+    fetch(`/unlike/${id}`)
     .then(response => response.json())
     .then(result => {
         document.querySelector('#liked-btn').innerHTML = result.num_likes;
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
   })
   unlikeBtn.addEventListener('click', function() {
     const id = document.querySelector('#postdiv').dataset.id;
-    fetch(`/unlike/${id}`)
+    fetch(`/like/${id}`)
     .then(response => response.json())
     .then(result => {
         document.querySelector('#liked-btn').innerHTML = result.num_likes;
