@@ -196,4 +196,4 @@ def edit(request, post_id):
     original_post.post = editted_post
     original_post.save()
 
-    return JsonResponse({ "editted_post": editted_post})
+    return JsonResponse({ "editted_post": editted_post })
