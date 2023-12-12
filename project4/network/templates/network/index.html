@@ -46,7 +46,9 @@
                     editBtn.innerHTML = "Save";
                 }
                 else if (editBtn.innerHTML === 'Save'){
-                    fetch(`/edit/${post.id}`)
+                    fetch(`/edit/${post.id}`, {
+                        
+                    })
                 }
             }
         })
