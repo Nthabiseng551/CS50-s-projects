@@ -29,18 +29,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
 })
 
-var count = 0;
-$("#liked-btn").click(function(e) {
-        $(this).html('Unlike').removeClass('like_cont').addClass('unlike_cont');
-        count++;
-       $('.likecount').html(count);
-});
-
-$("#unlike-btn").click(function(e) {
-    if ($(this).html() == "Like") {
-        $(this).html('Unlike').removeClass('like_cont').addClass('unlike_cont');
-        count--;
-        $('.likecount').html(count);
-    }
-    return false;
-});
