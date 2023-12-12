@@ -6,7 +6,7 @@
     <div class="list-group-item">
         <p><a href="{% url 'profile' user_id=post.post_by.id %}">{{ post.post_by }}</a></p>
 
-        <p>{{ post.post }}</p>
+        <p id="post-content">{{ post.post }}</p>
         <p>{{ post.timestamp }}</p>
         {% if user.is_authenticated %}
             {% if post.id in liked %}
@@ -39,7 +39,7 @@
             const editBtn = document.querySelector('#edit-btn')
             editBtn.onclick = function() {
                 const id = editBtn.parentElement.parentElement.dataset.id
-                const originalPost = editBtn.parentElement.querySelector('').innerHTML
+                const originalPost = editBtn.parentElement.querySelector('#post-content').innerHTML
             }
         })
       </script>
