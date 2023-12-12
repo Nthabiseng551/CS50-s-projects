@@ -30,6 +30,24 @@ document.addEventListener('DOMContentLoaded', function() {
 function liking(id, liked){
     const btn = document.getElementById(`${id}`);
     if (liked.indexOf{id} >= 0){
-        var 
+        var uliked = true;
+    }
+    else {
+        var uliked = false;
+    }
+
+    if (uliked === true){
+        fetch(`/unlike/${id}`)
+        .then(response => response.json)
+        .then(result => {
+            console.log(result.num_likes)
+        })
+    }
+    else{
+        fetch(`/like/${id}`)
+        .then(response => response.json)
+        .then(result => {
+            console.log(result.num_likes)
+        })
     }
 }
