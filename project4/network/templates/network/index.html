@@ -18,7 +18,7 @@
 
         {% if user.is_authenticated %}
             {% if user == post.post_by %}
-                
+                <button class="btn btn-primary" id="edit">Edit</button>
             {% endif %}
         {% endif %}
     </div>
