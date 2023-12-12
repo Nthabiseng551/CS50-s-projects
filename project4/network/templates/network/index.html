@@ -3,7 +3,7 @@
 {% block body %}
     <h1>All Posts</h1>
     {% for post in page_posts %}
-    <div class="list-group-item" data-id="{{ post.id }}">
+    <div id="postdiv" class="list-group-item" data-id="{{ post.id }}">
         <p><a href="{% url 'profile' user_id=post.post_by.id %}">{{ post.post_by }}</a></p>
 
         <p id="post-content">{{ post.post }}</p>
@@ -39,7 +39,7 @@
             const editBtn = document.querySelector('#edit-btn');
             editBtn.addEventListener('click', function() {
                 const originalPost = document.querySelector('#post-content').innerText;
-                const id = document.querySelector('#').dataset.id;
+                const id = document.querySelector('#postdiv').dataset.id;
 
                 if (editBtn.innerHTML === 'Edit'){
                     document.querySelector('#post-content').innerHTML = `<textarea id="edit-content" rows="5" cols="100"></textarea>`;
