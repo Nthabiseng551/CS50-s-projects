@@ -18,7 +18,9 @@
 
         {% if user.is_authenticated %}
             {% if user == post.post_by %}
-                <input class="btn btn-primary" type="submit" value="Edit">
+                <form action="{% url 'edit' %}" method="post">
+                    <input class="btn btn-primary" type="submit" value="Edit">
+                </form>
             {% endif %}
         {% endif %}
     </div>
