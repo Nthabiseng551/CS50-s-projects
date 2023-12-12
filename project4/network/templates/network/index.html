@@ -55,6 +55,7 @@
                     .then(response => response.json())
                     .then(result => {
                         document.querySelector('#post-content').innerHTML = result.
+                        editBtn.innerHTML = "Edit";
                     });
                 }
             }
