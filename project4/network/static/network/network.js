@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
           });
       }
   })
-  const likedBtn = document.querySelector('#liked-btn');
-  const unlikeBtn = document.querySelector('#unlike-btn');
-  const id = document.querySelector('#postdiv').dataset.id;
+  document.querySelector('#liked-btn').onclick = count;
+  document.querySelector('#unlike-btn').onclick = count;
 })
