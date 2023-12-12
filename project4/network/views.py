@@ -30,7 +30,7 @@ def index(request):
 
     # number of likes for each post
     for post in posts:
-        num_likes = PostLike.objects.filter()
+        num_likes = PostLike.objects.filter(post=post)
 
     return render(request, "network/index.html", {
         "page_posts": page_posts,
