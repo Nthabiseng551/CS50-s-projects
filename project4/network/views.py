@@ -189,7 +189,11 @@ def following(request):
 # API function for editing posts
 @csrf_exempt
 def edit(request, post_id):
-    post = Post.objects.get(pk=post_id)
+    original_post = Post.objects.get(pk=post_id)
 
     data = json.loads(request.body)
-    editted = data.get("post")
+    editted_post = data.get("post")
+    original_post.post = editted_post
+    original_post.save()
+
+    return JsonResponse
