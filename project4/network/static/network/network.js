@@ -28,15 +28,9 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 function liking(id, liked){
-    const btn = document.getElementById(`${id}`);
-    if (liked.indexOf{id} >= 0){
-        var uliked = true;
-    }
-    else {
-        var uliked = false;
-    }
+    const likeBtn = document.querySelector('#like-btn');
 
-    if (uliked === true){
+    if (likeBtn.className === "btn btn-danger"){
         fetch(`/unlike/${id}`)
         .then(response => response.json)
         .then(result => {
