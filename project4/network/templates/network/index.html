@@ -3,7 +3,7 @@
 {% block body %}
     <h1>All Posts</h1>
     {% for post in page_posts %}
-    <div class="list-group-item" data-id="{{ post.id }}">
+    <div class="list-group-item">
         <p><a href="{% url 'profile' user_id=post.post_by.id %}">{{ post.post_by }}</a></p>
 
         <p id="post-content">{{ post.post }}</p>
@@ -46,7 +46,7 @@
                     editBtn.innerHTML = "Save";
                 }
                 else if (editBtn.innerHTML === 'Save'){
-                    fetch(`/edit/${id}`)
+                    fetch(`/edit/${post.id}`)
                 }
             }
         })
