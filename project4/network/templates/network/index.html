@@ -18,10 +18,7 @@
 
         {% if user.is_authenticated %}
             {% if user == post.post_by %}
-                <form action="{% url 'edit' %}" method="post">
-                    {% csrf_token %}
-                    <input class="btn btn-primary" type="submit" value="Edit">
-                </form>
+                
             {% endif %}
         {% endif %}
     </div>
