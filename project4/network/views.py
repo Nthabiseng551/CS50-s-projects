@@ -35,7 +35,7 @@ def index(request):
     return render(request, "network/index.html", {
         "page_posts": page_posts,
         "liked": liked,
-        "": len(num_likes)
+        "num_likes": len(num_likes)
     })
 
 
