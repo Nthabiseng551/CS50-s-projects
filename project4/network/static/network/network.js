@@ -31,7 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
     fetch(`/like/${id}`)
     .then(response => response.json())
     .then(result => {
-        document.querySelector('#post-content').innerHTML = result.num_likes;
+        document.querySelector('#liked-btn').innerHTML = result.num_likes;
+        document.querySelector('#unlike-btn').innerHTML = result.num_likes;
     });
   })
 
