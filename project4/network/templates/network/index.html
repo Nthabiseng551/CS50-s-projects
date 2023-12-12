@@ -17,7 +17,6 @@
 
         {% if user.is_authenticated %}
             {% if post.id in liked %}
-                <p><a class="btn btn-primary" href="/requests" role="button">View requests</a></p>
                 <button class="btn btn-danger">&hearts;<span id="liked-btn">{{ post.like.all.count }}</span></button>
             {% else %}
                 <button class="btn btn-dark">&hearts;<span id="unlike-btn">{{ post.like.all.count }}</span></button>
