@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 document.addEventListener('DOMContentLoaded', function() {
-    const likeBtn = document.querySelector('#like-btn');
+    const likeBtn = document.querySelectorAll('#like-btn').forEach;
     likeBtn.addEventListener('click', function() {
 
     if (likeBtn.className === "btn btn-danger"){
