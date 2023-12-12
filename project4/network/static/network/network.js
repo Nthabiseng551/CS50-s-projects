@@ -29,11 +29,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 })
 
-var clicks = 0;
+var count = 0;
 $("#liked-btn").click(function(e) {
     if ($(this).html() == "Like") {
         $(this).html('Unlike').removeClass('like_cont').addClass('unlike_cont');
-        clicks++;
+        count++;
        $('.likecount').html(clicks);
     }
     else {
