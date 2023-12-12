@@ -35,6 +35,15 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('#unlike-btn').innerHTML = result.num_likes;
     });
   })
+  unlikeBtn.addEventListener('click', function() {
+    const id = document.querySelector('#postdiv').dataset.id;
+    fetch(`/unlike/${id}`)
+    .then(response => response.json())
+    .then(result => {
+        document.querySelector('#liked-btn').innerHTML = result.num_likes;
+        document.querySelector('#unlike-btn').innerHTML = result.num_likes;
+    });
+  })
 
 })
 
