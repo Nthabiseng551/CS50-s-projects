@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    
+    var likeBtn = document.getElementById('like-btn');
 })
 
 
