@@ -2,7 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
     var likeBtn = document.getElementById('like-btn');
 
     function like(){
-        if (likeBtn.className === "btn btn-danger")
+        if (likeBtn.className === "btn btn-danger"){
+            likeBtn.className = "btn btn-dark"
+        }
     }
 })
 
