@@ -1,7 +1,7 @@
 {% extends "network/layout.html" %}
 
 {% block body %}
-    <h1>Following page</h1>
+    <h2>Following page</h2>
     {% for post in page_posts %}
     <div class="list-group-item">
         <p><a href="{% url 'profile' user_id=post.post_by.id %}">{{ post.post_by }}</a></p>
