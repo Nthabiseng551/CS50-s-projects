@@ -3,7 +3,7 @@
 {% block body %}
     <h1>{{ username }}</h1>
     <div class="container">
-        <p>followers:{{ followers }} following: {{ following }}</p>
+        <h4>followers:{{ followers }} following: {{ following }}</h4>
     </div>
     {% if user.is_authenticated %}
         {% if userProfile != currentUser %}
