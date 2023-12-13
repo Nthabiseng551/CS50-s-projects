@@ -1,3 +1,8 @@
+document.addEventListener('DOMContentLoaded', function() {
+    
+})
+
+
 
 function liking(id)
     const likeBtn
