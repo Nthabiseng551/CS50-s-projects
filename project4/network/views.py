@@ -215,6 +215,7 @@ def like(request, post_id):
     like.save()
     num_likes = PostLike.objects.filter(post=post)
     data = json.loads(request.body)
+    editted_post = data.get("post")
     return JsonResponse({ "message": "post liked succesfully", "num_likes": len(num_likes) })
 
 # API function for unlike posts
