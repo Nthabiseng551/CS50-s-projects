@@ -40,6 +40,7 @@
 
         function liking(id, liked){
                  var likeBtn = document.getElementById('like-btn');
+                 const likecount = document.getElementById('like-count');
                  if (likeBtn.className === "btn btn-danger"){
                     fetch(`/unlike/${id}`)
                     .then(response => response.json)
