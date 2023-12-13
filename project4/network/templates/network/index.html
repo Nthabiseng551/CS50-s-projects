@@ -36,11 +36,11 @@
       </nav>
       <script>
 
-        var likeBtn = document.getElementById('like-btn');
+        var likeBtn = document.getElementById(`${id}`);
 
         function liking(id, liked){
                  if (likeBtn.className === "btn btn-danger"){
-                    fetch(`/unlike/${post.id}`)
+                    fetch(`/unlike/${id}`)
                     .then(response => response.json)
                     .then(result => {
                         console.log(result.num_likes);
@@ -48,7 +48,7 @@
                  })
                 }
                  else{
-                    fetch(`/like/${post.id}`)
+                    fetch(`/like/${id}`)
                     .then(response => response.json)
                     .then(result => {
                         console.log(result.num_likes);
