@@ -36,9 +36,10 @@
       </nav>
       <script>
 
-        var likeBtn = document.getElementById(`${id}`);
+
 
         function liking(id, liked){
+                 var likeBtn = document.getElementById(`${id}`);
                  if (likeBtn.className === "btn btn-danger"){
                     fetch(`/unlike/${id}`)
                     .then(response => response.json)
