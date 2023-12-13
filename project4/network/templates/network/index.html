@@ -50,6 +50,7 @@
                         console.log(result);
                         likeBtn.className = "btn btn-dark";
                         likecount--;
+                        likes.innerHTML = likecount;
                  })
                 }
                  else{
@@ -58,6 +59,8 @@
                     .then(result => {
                         console.log(result);
                         likeBtn.className = "btn btn-danger";
+                        likecount++;
+                        likes.innerHTML = likecount;
                  })
                 }
         }
