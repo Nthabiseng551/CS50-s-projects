@@ -80,10 +80,10 @@
             const editBtn = event.target;
             const originalPost = element.parentElement.querySelector('#post-content').innerText;
 
-            if (editBtn.innerHTML === 'Edit'){
-                document.querySelector('#post-content').innerHTML = `<textarea id="edit-content" rows="5" cols="100"></textarea>`;
-                document.querySelector('#edit-content').innerText = originalPost;
-                editBtn.innerHTML = "Save";
+            if (editBtn.parentElement.querySelector('#edit-btn').innerText === 'Edit'){
+                editBtn.parentElement.querySelector('#post-content').innerHTML = `<textarea id="edit-content" rows="5" cols="100"></textarea>`;
+                editBtn.parentElement.querySelector('#edit-content').innerText = originalPost;
+                editBtn.parentElement.querySelector('#edit-btn').innerText = "Save";
             }
             else if (editBtn.innerHTML === 'Save'){
                 const post = document.querySelector('#edit-content').value;
