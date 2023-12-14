@@ -209,16 +209,11 @@ def like(request, post_id):
     post = Post.objects.get(pk=post_id)
     user = User.objects.get(pk=request.user.id)
 
-    post.likes.add(user)
+    if user in post.likes.all():
+        post.likes.remove(user)
+    else:
+        post.likes.add(user)
+
+    return JsonResponse({ "message": "like added/removed" })
 
 
-    return JsonResponse({ "message": "like added" })
-
-# API function for unlike posts
-@csrf_exempt
-def unlike(request, post_id):
-    post = Post.objects.get(pk=post_id)
-    user = User.objects.get(pk=request.user.id)
-
-    post.likes.remove(user)
-    return JsonResponse({ "message": "like removed" })
