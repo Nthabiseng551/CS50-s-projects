@@ -17,12 +17,15 @@
 
         {% if user.is_authenticated %}
             {% if post.id in liked %}
-            <form method="POST" action="{% url 'like' post.pk %}">
-                {% csrf_token %}
-                <button type="submit" onclick="liking({{ post.id }}, {{ liked }})" class="btn btn-danger" id="like-btn">&hearts;<span id="like-count">{{ post.likes.all.count }}</span></button>
-            </form>
+                <form method="POST" action="{% url 'like' post.pk %}">
+                    {% csrf_token %}
+                    <button type="submit" onclick="liking({{ post.id }}, {{ liked }})" class="btn btn-danger" id="like-btn">&hearts;<span id="like-count">{{ post.likes.all.count }}</span></button>
+                </form>
             {% else %}
-                <button onclick="liking({{ post.id }}, {{ liked }})" class="btn btn-dark" id="like-btn">&hearts;<span id="like-count">{{ post.likes.all.count }}</span></button>
+                <form method="POST" action="{% url 'unlike' post.pk %}">
+                    {% csrf_token %}
+                    <button onclick="liking({{ post.id }}, {{ liked }})" class="btn btn-dark" id="like-btn">&hearts;<span id="like-count">{{ post.likes.all.count }}</span></button>
+                </form>
             {% endif %}
         {% endif %}
     </div>
