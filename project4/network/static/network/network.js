@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('#edit-btn').forEach(button => {
+
   const editBtn = document.querySelector('#edit-btn');
   editBtn.addEventListener('click', function() {
       const originalPost = document.querySelector('#post-content').innerText;
@@ -25,5 +25,5 @@ document.addEventListener('DOMContentLoaded', function() {
           });
       }
   })
-})
+
 })
