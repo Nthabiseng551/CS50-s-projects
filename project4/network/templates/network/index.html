@@ -59,7 +59,7 @@
         }
 
         function unliking(id){
-                 var likeBtn = document.querySelector('.btn btn-danger');
+                 const likeBtn = event.target;
                  const likes = document.getElementById('like-count');
                  let likecount = parseInt(document.querySelector('#like-count').innerText);
 
