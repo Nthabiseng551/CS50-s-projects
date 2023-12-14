@@ -45,7 +45,7 @@
 
 
         function liking(id){
-                 var likeBtn = document.getElementById('like-btn');
+                 var likeBtn = document.querySelector('.btn btn-dark');
                  const likes = document.getElementById('like-count');
                  let likecount = parseInt(document.querySelector('#like-count').innerText);
 
@@ -61,7 +61,7 @@
         }
 
         function unliking(id){
-                 var likeBtn = document.getElementById('unlike-btn');
+                 var likeBtn = document.querySelector('.btn btn-danger');
                  const likes = document.getElementById('like-count');
                  let likecount = parseInt(document.querySelector('#like-count').innerText);
 
