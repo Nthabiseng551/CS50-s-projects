@@ -16,7 +16,7 @@
         {% endif %}
 
         {% if user.is_authenticated %}
-            {% if post.id in liked %}
+            {% if liked %}
                 <form method="POST" action="{% url 'like' post_id=post.id %}">
                     {% csrf_token %}
                     <button type="submit" onclick="unliking({{ post.id }})" class="btn btn-danger" id="like-btn">&hearts;<span id="like-count">{{ post.likes.all.count }}</span></button>
