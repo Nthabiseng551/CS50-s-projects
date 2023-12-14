@@ -77,8 +77,8 @@
 
 
         function editing(id){
-            const editBtn = document.querySelector('#edit-btn');
-            const originalPost = document.querySelector('#post-content').innerText;
+            const editBtn = event.target;
+            const originalPost = elementdocument.querySelector('#post-content').innerText;
 
             if (editBtn.innerHTML === 'Edit'){
                 document.querySelector('#post-content').innerHTML = `<textarea id="edit-content" rows="5" cols="100"></textarea>`;
