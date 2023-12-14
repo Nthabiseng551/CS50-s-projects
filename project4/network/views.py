@@ -224,6 +224,5 @@ def unlike(request, post_id):
     data = json.loads(request.body)
     post_likes = data.get("likes")
     post.likes = post_likes
-    post.likes.add(user)
     post.likes.remove(user)
     return JsonResponse({ "post_likes": post_likes })
