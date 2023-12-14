@@ -208,19 +208,17 @@ def edit(request, post_id):
 def like(request, post_id):
     post = Post.objects.get(pk=post_id)
     user = User.objects.get(pk=request.user.id)
-    
+
     post.likes.add(user)
 
 
-    return JsonResponse({ "post_likes": post_likes })
+    return JsonResponse({ "post": post })
 
 # API function for unlike posts
 @csrf_exempt
 def unlike(request, post_id):
     post = Post.objects.get(pk=post_id)
     user = User.objects.get(pk=request.user.id)
-    data = json.loads(request.body)
-    post_likes = data.get("likes")
-    post.likes = post_likes
+
     post.likes.remove(user)
-    return JsonResponse({ "post_likes": post_likes })
+    return JsonResponse({ "post": post })
