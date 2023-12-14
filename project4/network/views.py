@@ -18,19 +18,14 @@ def index(request):
     page_number = request.GET.get("page")
     page_posts = paginator.get_page(page_number)
 
-    likes = PostLike.objects.all()
-    liked = []
-    #check if current user liked a post
-    for like in likes:
-            try:
-                if like.user.id == request.user.id:
-                    liked.append(like.post.id)
-            except:
-                liked = []
 
     # number of likes for each post
     for post in posts:
         num_likes = post.likes.all()
+        if request.user in post.likes.all():
+            liked = true
+        else:
+            liked = false
 
     return render(request, "network/index.html", {
         "page_posts": page_posts,
