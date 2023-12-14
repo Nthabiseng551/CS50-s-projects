@@ -96,7 +96,7 @@
                 .then(response => response.json())
                 .then(result => {
                     editBtn.parentElement.querySelector('#post-content') = result.editted_post;
-                    editBtn.parentElement.querySelector('#edit-btn').innerText = "Edit";
+                    editBtn.parentElement.querySelector('#edit-btn').innerHTML = "Edit";
                 });
             }
         }
