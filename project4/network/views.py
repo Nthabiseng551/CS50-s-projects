@@ -214,6 +214,6 @@ def like(request, post_id):
     else:
         post.likes.add(user)
 
-    return
+    return JsonResponse({"message": "like added/removed"})
 
 
