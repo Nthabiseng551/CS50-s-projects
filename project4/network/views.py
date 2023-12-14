@@ -22,10 +22,10 @@ def index(request):
     liked = []
     #check if current user liked a post
     for like in likes:
-            if like.user.id == request.user.id:
-                liked.append(like.post.id)
-                break
-            else:
+            try:
+                if like.user.id == request.user.id:
+                    liked.append(like.post.id)
+            except:
                 liked = []
 
     # number of likes for each post
