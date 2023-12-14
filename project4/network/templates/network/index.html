@@ -17,7 +17,7 @@
 
         {% if user.is_authenticated %}
             {% if liked %}
-                    <button type="submit" onclick="unliking({{ post.id }})" class="btn btn-danger" id="like-btn">&hearts;<span id="like-count">{{ post.likes.all.count }}</span></button>
+                    <button type="submit" onclick="liking({{ post.id }})" class="btn btn-danger" id="like-btn">&hearts;<span id="like-count">{{ post.likes.all.count }}</span></button>
             {% else %}
                     <button onclick="liking({{ post.id }})" class="btn btn-dark" id="like-btn">&hearts;<span id="like-count">{{ post.likes.all.count }}</span></button>
             {% endif %}
@@ -49,6 +49,9 @@
                         likecount++;
                         likes.innerText = likecount;
                  })
+                }
+                else {
+                    
                 }
         }
 
