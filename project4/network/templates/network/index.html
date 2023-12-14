@@ -61,7 +61,7 @@
         function unliking(id){
                  const likeBtn = event.target;
                  const likes = likeBtn.parentElement.querySelectordocument('#like-count');
-                 let likecount = parseInt(document.querySelector('#like-count').innerText);
+                 let likecount = parseInt(likes.innerText);
 
                  if (likeBtn.className === "btn btn-danger"){
                     fetch(`/unlike/${id}`)
