@@ -208,12 +208,8 @@ def edit(request, post_id):
 def like(request, post_id):
     post = Post.objects.get(pk=post_id)
     user = User.objects.get(pk=request.user.id)
-    like = PostLike(
-        user = user,
-        post = post
-    )
-    like.save()
 
+    post.likes.add(user)
 
     return JsonResponse({ "message": "post liked succesfully" })
 
