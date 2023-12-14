@@ -49,16 +49,7 @@
                  const likes = document.getElementById('like-count');
                  let likecount = parseInt(document.querySelector('#like-count').innerText);
 
-                 if (likeBtn.className === "btn btn-danger"){
-                    fetch(`/unlike/${id}`)
-                    .then(response => response.json)
-                    .then(result => {
-                        likeBtn.className = "btn btn-dark";
-                        likecount--;
-                        likes.innerText = likecount;
-                 })
-                }
-                 else{
+                 if (likeBtn.className === "btn btn-dark"){
                     fetch(`/like/${id}`)
                     .then(response => response.json)
                     .then(result => {
@@ -69,7 +60,7 @@
                 }
         }
 
-        function liking(id){
+        function unliking(id){
                  var likeBtn = document.getElementById('like-btn');
                  const likes = document.getElementById('like-count');
                  let likecount = parseInt(document.querySelector('#like-count').innerText);
@@ -83,15 +74,7 @@
                         likes.innerText = likecount;
                  })
                 }
-                 else{
-                    fetch(`/like/${id}`)
-                    .then(response => response.json)
-                    .then(result => {
-                        likeBtn.className = "btn btn-danger";
-                        likecount++;
-                        likes.innerText = likecount;
-                 })
-                }
+
         }
 
 
