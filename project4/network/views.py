@@ -211,7 +211,7 @@ def like(request, post_id):
 
     post.likes.add(user)
 
-    return HttpResponseRedirect(reverse(request.path))
+    return JsonResponse
 
 # API function for unlike posts
 @csrf_exempt
@@ -220,4 +220,4 @@ def unlike(request, post_id):
     user = User.objects.get(pk=request.user.id)
 
     post.likes.remove(user)
-    return HttpResponseRedirect(reverse(request.path))
+    return JsonResponse
