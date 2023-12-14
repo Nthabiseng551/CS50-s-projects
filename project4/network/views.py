@@ -208,8 +208,6 @@ def edit(request, post_id):
 def like(request, post_id):
     post = Post.objects.get(pk=post_id)
     user = User.objects.get(pk=request.user.id)
-    num_likes = PostLike.objects.filter(post=post)
-    data = json.loads(request.body)
     like = PostLike(
         user = user,
         post = post
@@ -217,7 +215,7 @@ def like(request, post_id):
     like.save()
     num_likes = PostLike.objects.filter(post=post)
 
-    return JsonResponse({ "message": "post liked succesfully", "data": data })
+    return JsonResponse({ "message": "post liked succesfully", "num_likes": num_likes })
 
 # API function for unlike posts
 @csrf_exempt
