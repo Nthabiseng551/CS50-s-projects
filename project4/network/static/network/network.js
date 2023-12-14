@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const editBtn = document.querySelector('#edit-btn');
+  const editBtn = document.querySelectorAll('#edit-btn');
   editBtn.addEventListener('click', function() {
       const originalPost = document.querySelector('#post-content').innerText;
       const id = document.querySelector('#postdiv').dataset.id;
