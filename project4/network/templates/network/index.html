@@ -51,7 +51,13 @@
                  })
                 }
                 else {
-                    
+                    fetch(`/like/${id}`)
+                    .then(response => response.json)
+                    .then(result => {
+                        likeBtn.className = "btn btn-dark";
+                        likecount--;
+                        likes.innerText = likecount;
+                 })
                 }
         }
 
