@@ -64,7 +64,7 @@
                  let likecount = parseInt(likes.innerText);
 
                  if (likeBtn.className === "btn btn-danger"){
-                    fetch(`/unlike/${id}`)
+                    fetch(`/like/${id}`)
                     .then(response => response.json)
                     .then(result => {
                         likeBtn.className = "btn btn-dark";
