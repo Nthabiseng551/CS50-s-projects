@@ -11,7 +11,7 @@
 
         {% if user.is_authenticated %}
             {% if user == post.post_by %}
-                <button onclick="editing({{ post.id }})" class="btn btn-primary" id="edit-btn">Edit</button>
+                <button onclick="editing({{ post.id }})" class="btn btn-primary edit" id="edit-btn">Edit</button>
             {% endif %}
         {% endif %}
 
@@ -79,7 +79,7 @@
 
 
         function editing(id){
-            const editBtn = document.querySelector('#edit-btn');
+            const editBtn = document.querySelector('.btn btn-primary edit');
             const originalPost = document.querySelector('#post-content').innerText;
 
             if (editBtn.innerHTML === 'Edit'){
