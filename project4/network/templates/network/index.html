@@ -47,11 +47,11 @@
                  const likes = likeBtn.parentElement.querySelector('#like-count');
                  let likecount = parseInt(likes.innerText);
 
-                 if (likeBtn.querySelector('#like-btn').className === "btn btn-dark"){
+                 if (likeBtn.className === "btn btn-dark"){
                     fetch(`/like/${id}`)
                     .then(response => response.json)
                     .then(result => {
-                        likeBtn.querySelector('#like-btn').className = "btn btn-danger";
+                        likeBtn.className = "btn btn-danger";
                         likecount++;
                         likes.innerText = likecount;
                  })
@@ -63,11 +63,11 @@
                  const likes = likeBtn.parentElement.querySelector('#like-count');
                  let likecount = parseInt(likes.innerText);
 
-                 if (likeBtn.querySelector('#unlike-btn').className === "btn btn-danger"){
+                 if (likeBtn.className === "btn btn-danger"){
                     fetch(`/unlike/${id}`)
                     .then(response => response.json)
                     .then(result => {
-                        likeBtn.querySelector('#unlike-btn').className = "btn btn-dark";
+                        likeBtn.className = "btn btn-dark";
                         likecount--;
                         likes.innerText = likecount;
                  })
