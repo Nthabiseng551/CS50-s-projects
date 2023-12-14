@@ -21,7 +21,8 @@ class UserFollowing(models.Model):
         return f"{self.following_user} is following {self.user}"
 
 class PostLike(models.Model):
-    likes = models.ManyToManyField(User, on_delete=models.CASCADE, related_name="post_like")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="like")
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="likedPost")
 
     def __str__(self):
-        return self.likes.count()
+        return f"{self.user} liked {self.post}"
