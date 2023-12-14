@@ -221,4 +221,4 @@ def unlike(request, post_id):
     user = User.objects.get(pk=request.user.id)
 
     post.likes.remove(user)
-    return JsonResponse({ "post": post })
+    return JsonResponse({ "likes": post })
