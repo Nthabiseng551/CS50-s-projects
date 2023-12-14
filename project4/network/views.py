@@ -212,7 +212,7 @@ def like(request, post_id):
     post_likes = data.get("likes")
     post.likes = post_likes
     post.likes.add(user)
-    
+
 
     return JsonResponse({ "post_likes": post_likes })
 
@@ -221,6 +221,9 @@ def like(request, post_id):
 def unlike(request, post_id):
     post = Post.objects.get(pk=post_id)
     user = User.objects.get(pk=request.user.id)
-
+    data = json.loads(request.body)
+    post_likes = data.get("likes")
+    post.likes = post_likes
+    post.likes.add(user)
     post.likes.remove(user)
     return JsonResponse({ "post_likes": post_likes })
