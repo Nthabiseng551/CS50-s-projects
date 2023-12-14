@@ -86,7 +86,7 @@
                 editBtn.parentElement.querySelector('#edit-btn').innerText = "Save";
             }
             else if (editBtn.parentElement.querySelector('#edit-btn').innerText === 'Save'){
-                const post = editBtn.parentElement.querySelector('#edit-content').innerText;
+                const post = editBtn.parentElement.querySelector('#edit-content').value;
                 fetch(`/edit/${id}`, {
                     method: 'POST',
                     body: JSON.stringify({
