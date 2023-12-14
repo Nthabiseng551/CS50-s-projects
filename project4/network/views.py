@@ -23,9 +23,9 @@ def index(request):
     for post in posts:
         num_likes = post.likes.all()
         if request.user in post.likes.all():
-            liked = true
+            liked = True
         else:
-            liked = false
+            liked = False
 
     return render(request, "network/index.html", {
         "page_posts": page_posts,
