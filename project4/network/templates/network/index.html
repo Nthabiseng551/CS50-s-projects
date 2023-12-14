@@ -69,6 +69,32 @@
                 }
         }
 
+        function liking(id){
+                 var likeBtn = document.getElementById('like-btn');
+                 const likes = document.getElementById('like-count');
+                 let likecount = parseInt(document.querySelector('#like-count').innerText);
+
+                 if (likeBtn.className === "btn btn-danger"){
+                    fetch(`/unlike/${id}`)
+                    .then(response => response.json)
+                    .then(result => {
+                        likeBtn.className = "btn btn-dark";
+                        likecount--;
+                        likes.innerText = likecount;
+                 })
+                }
+                 else{
+                    fetch(`/like/${id}`)
+                    .then(response => response.json)
+                    .then(result => {
+                        likeBtn.className = "btn btn-danger";
+                        likecount++;
+                        likes.innerText = likecount;
+                 })
+                }
+        }
+
+
         function editing(id){
         const originalPost = document.querySelector('#post-content').innerText;
 
