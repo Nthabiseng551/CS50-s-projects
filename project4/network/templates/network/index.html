@@ -19,12 +19,12 @@
             {% if post.id in liked %}
                 <form method="POST" action="{% url 'like' post_id=post.id %}">
                     {% csrf_token %}
-                    <button type="submit" onclick="liking({{ post.id }}, {{ liked }})" class="btn btn-danger" id="like-btn">&hearts;<span id="like-count">{{ post.likes.all.count }}</span></button>
+                    <button type="submit" onclick="liking({{ post.id }})" class="btn btn-danger" id="like-btn">&hearts;<span id="like-count">{{ post.likes.all.count }}</span></button>
                 </form>
             {% else %}
                 <form method="POST" action="{% url 'unlike' post_id=post.id %}">
                     {% csrf_token %}
-                    <button onclick="liking({{ post.id }}, {{ liked }})" class="btn btn-dark" id="like-btn">&hearts;<span id="like-count">{{ post.likes.all.count }}</span></button>
+                    <button onclick="liking({{ post.id }})" class="btn btn-dark" id="like-btn">&hearts;<span id="like-count">{{ post.likes.all.count }}</span></button>
                 </form>
             {% endif %}
         {% endif %}
@@ -70,5 +70,31 @@
                  })
                 }
         }
+
+        function editing(id){
+        const originalPost = document.querySelector('#post-content').innerText;
+        const id = document.querySelector('#postdiv').dataset.id;
+
+            if (editBtn.innerHTML === 'Edit'){
+                document.querySelector('#post-content').innerHTML = `<textarea id="edit-content" rows="5" cols="100"></textarea>`;
+                document.querySelector('#edit-content').innerText = originalPost;
+                editBtn.innerHTML = "Save";
+            }
+            else if (editBtn.innerHTML === 'Save'){
+                const post = document.querySelector('#edit-content').value;
+                fetch(`/edit/${id}`, {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        post: post
+                    })
+                })
+                .then(response => response.json())
+                .then(result => {
+                    document.querySelector('#post-content').innerHTML = result.editted_post;
+                    editBtn.innerHTML = "Edit";
+                });
+            }
+        }
+
       </script>
 {% endblock %}
