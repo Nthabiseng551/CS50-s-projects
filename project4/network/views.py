@@ -213,7 +213,8 @@ def like(request, post_id):
         post.likes.remove(user)
     else:
         post.likes.add(user)
+    data = json.loads(request.body)
 
-    return JsonResponse({ "message": "like added/removed" })
+    return data
 
 
