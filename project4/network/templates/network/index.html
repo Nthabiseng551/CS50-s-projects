@@ -53,7 +53,6 @@
                     fetch(`/unlike/${id}`)
                     .then(response => response.json)
                     .then(result => {
-                        console.log(result);
                         likeBtn.className = "btn btn-dark";
                         likecount--;
                         likes.innerText = likecount;
@@ -63,7 +62,6 @@
                     fetch(`/like/${id}`)
                     .then(response => response.json)
                     .then(result => {
-                        console.log(result);
                         likeBtn.className = "btn btn-danger";
                         likecount++;
                         likes.innerText = likecount;
