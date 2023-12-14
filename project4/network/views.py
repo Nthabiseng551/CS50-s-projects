@@ -210,6 +210,7 @@ def like(request, post_id):
     user = User.objects.get(pk=request.user.id)
     data = json.loads(request.body)
     post_likes = data.get("likes")
+    post.likes = post_likes
     post.likes.add(user)
 
     return JsonResponse({ "post_likes": post_likes })
