@@ -85,7 +85,7 @@
                 editBtn.parentElement.querySelector('#edit-content').innerText = originalPost;
                 editBtn.parentElement.querySelector('#edit-btn').innerText = "Save";
             }
-            else if (editBtn.innerHTML === 'Save'){
+            else if (editBtn.parentElement.querySelector('#edit-btn').innerText === 'Save'){
                 const post = document.querySelector('#edit-content').value;
                 fetch(`/edit/${id}`, {
                     method: 'POST',
