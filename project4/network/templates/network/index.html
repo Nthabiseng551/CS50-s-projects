@@ -67,7 +67,7 @@
                     fetch(`/unlike/${id}`)
                     .then(response => response.json)
                     .then(result => {
-                        likeBtn.className = "btn btn-dark";
+                        likeBtn.parentElement.querySelector('#unlike-btn').className = "btn btn-dark";
                         likecount--;
                         likes.innerText = likecount;
                  })
