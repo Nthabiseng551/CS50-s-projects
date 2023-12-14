@@ -18,7 +18,7 @@ def index(request):
     page_number = request.GET.get("page")
     page_posts = paginator.get_page(page_number)
 
-
+    liked = False
     # number of likes for each post
     for post in posts:
         num_likes = post.likes.all()
