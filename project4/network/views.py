@@ -212,7 +212,7 @@ def like(request, post_id):
     post.likes.add(user)
 
 
-    return JsonResponse({ "post": post })
+    return JsonResponse({ "message": "like added" })
 
 # API function for unlike posts
 @csrf_exempt
@@ -221,4 +221,4 @@ def unlike(request, post_id):
     user = User.objects.get(pk=request.user.id)
 
     post.likes.remove(user)
-    return JsonResponse({ "likes": post })
+    return JsonResponse({ "message": "like removed" })
