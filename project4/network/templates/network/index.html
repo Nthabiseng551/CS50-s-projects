@@ -43,15 +43,15 @@
       <script>
 
         function liking(id){
-                 var likeBtn = document.querySelector('.btn btn-dark');
-                 const likes = document.getElementById('like-count');
-                 let likecount = parseInt(document.querySelector('#like-count').innerText);
+                 const likeBtn = event.target;
+                 const likes = likeBtn.parentElement.querySelector('#like-count');
+                 let likecount = parseInt(likes.innerText);
 
-                 if (likeBtn.className === "btn btn-dark"){
+                 if (likeBtn.parentElement.querySelector('#like-btn').className === "btn btn-dark"){
                     fetch(`/like/${id}`)
                     .then(response => response.json)
                     .then(result => {
-                        likeBtn.className = "btn btn-danger";
+                        likeBtn.parentElement.querySelector('#like-btn').className = "btn btn-danger";
                         likecount++;
                         likes.innerText = likecount;
                  })
@@ -60,7 +60,7 @@
 
         function unliking(id){
                  const likeBtn = event.target;
-                 const likes = likeBtn.parentElement.querySelectordocument('#like-count');
+                 const likes = likeBtn.parentElement.querySelector('#like-count');
                  let likecount = parseInt(likes.innerText);
 
                  if (likeBtn.parentElement.querySelector('#unlike-btn').className === "btn btn-danger"){
