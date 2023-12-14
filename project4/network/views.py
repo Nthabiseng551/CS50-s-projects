@@ -208,9 +208,7 @@ def edit(request, post_id):
 def like(request, post_id):
     post = Post.objects.get(pk=post_id)
     user = User.objects.get(pk=request.user.id)
-    data = json.loads(request.body)
-    post_likes = data.get("likes")
-    post.likes = post_likes
+    
     post.likes.add(user)
 
 
