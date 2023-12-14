@@ -44,7 +44,7 @@
 
 
 
-        function liking(id, liked){
+        function liking(id){
                  var likeBtn = document.getElementById('like-btn');
                  const likes = document.getElementById('like-count');
                  let likecount = parseInt(document.querySelector('#like-count').innerText);
@@ -73,7 +73,6 @@
 
         function editing(id){
         const originalPost = document.querySelector('#post-content').innerText;
-        const id = document.querySelector('#postdiv').dataset.id;
 
             if (editBtn.innerHTML === 'Edit'){
                 document.querySelector('#post-content').innerHTML = `<textarea id="edit-content" rows="5" cols="100"></textarea>`;
