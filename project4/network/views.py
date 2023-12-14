@@ -30,7 +30,7 @@ def index(request):
 
     # number of likes for each post
     for post in posts:
-        num_likes = post.like.all()
+        num_likes = post.likedPost.all()
 
     return render(request, "network/index.html", {
         "page_posts": page_posts,
