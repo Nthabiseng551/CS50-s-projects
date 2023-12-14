@@ -27,3 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
   })
 
 })
+
+function editing(id){
+
+}
