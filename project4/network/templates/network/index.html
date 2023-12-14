@@ -11,7 +11,7 @@
 
         {% if user.is_authenticated %}
             {% if user == post.post_by %}
-                <button class="btn btn-primary" id="edit-btn">Edit</button>
+                <button onclick="editing({{ post.id }})" class="btn btn-primary" id="edit-btn">Edit</button>
             {% endif %}
         {% endif %}
 
