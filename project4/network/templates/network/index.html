@@ -63,7 +63,7 @@
                  const likes = likeBtn.parentElement.querySelectordocument('#like-count');
                  let likecount = parseInt(likes.innerText);
 
-                 if (likeBtn.parentElement.querySelector('#like-btn').className === "btn btn-danger"){
+                 if (likeBtn.parentElement.querySelector('#unlike-btn').className === "btn btn-danger"){
                     fetch(`/unlike/${id}`)
                     .then(response => response.json)
                     .then(result => {
