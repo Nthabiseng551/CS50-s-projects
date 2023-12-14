@@ -213,9 +213,9 @@ def like(request, post_id):
         post = post
     )
     like.save()
-    num_likes = PostLike.objects.filter(post=post)
 
-    return JsonResponse({ "message": "post liked succesfully", "num_likes": num_likes })
+
+    return JsonResponse({ "message": "post liked succesfully" })
 
 # API function for unlike posts
 @csrf_exempt
