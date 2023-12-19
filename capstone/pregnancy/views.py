@@ -13,6 +13,9 @@ from .models import User,
 
 # Create your views here.
 
+def index(request):
+    return render(request, "pregnancy/index.html")
+
 def login_view(request):
     if request.method == "POST":
 
