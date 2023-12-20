@@ -14,7 +14,7 @@ from .models import User, UserProfile
 # Create your views here.
 
 def index(request):
-
+    userProfile = UserProfile.objects.get(pk=1)
     if request.method == "POST":
         currentUser = User.objects.get(pk=request.user.id)
         userProfile = UserProfile.objects.get(pk=1)
