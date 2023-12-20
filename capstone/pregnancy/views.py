@@ -19,6 +19,8 @@ def index(request):
         userProfile = UserProfile.objects.get(user=currentUser)
         week = request.POST["week"]
         userProfile.week_of_pregnancy = week
+
+        return HttpResponseRedirect(reverse("index"))
     else:
         return render(request, "pregnancy/index.html")
 
