@@ -17,7 +17,7 @@ def index(request):
 
     if request.method == "POST":
         currentUser = User.objects.get(pk=request.user.id)
-        userProfile = UserProfile.objects.filter(user=currentUser)
+        userProfile = UserProfile.objects.get(user=currentUser)
         week = request.POST["week"]
         userProfile.week_of_pregnancy = week
         userProfile.pregnant = True
