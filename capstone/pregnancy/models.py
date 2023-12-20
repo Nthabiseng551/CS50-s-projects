@@ -6,7 +6,7 @@ class User(AbstractUser):
     pass
 
 class UserProfile(models.Model):
-    user = models.ForeignKey("User", on_delete=models.CASCADE, related_name="emails")
+    user = models.ForeignKey("User", on_delete=models.CASCADE, related_name="user")
     pregnant = models.BooleanField(default=False)
     dietician = models.BooleanField(default=False)
     counsellor = models.BooleanField(default=False)
