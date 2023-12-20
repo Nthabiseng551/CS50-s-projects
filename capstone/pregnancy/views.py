@@ -18,11 +18,9 @@ def index(request):
         currentUser = User.objects.get(pk=request.user.id)
         userProfile = UserProfile.objects.get(user=currentUser)
         week = request.POST["week"]
-
-
-    currentUser = User.objects.get(pk=request.user.id)
-    userProfile = UserProfile.objects.filter(user=currentUser)
-    return render(request, "pregnancy/index.html")
+        userProfile.week_of_pregnancy = week
+    else:
+        return render(request, "pregnancy/index.html")
 
 def login_view(request):
     if request.method == "POST":
