@@ -12,7 +12,7 @@ from datetime import datetime
 from .models import User, UserProfile
 
 # Create your views here.
-
+@csrf_exempt
 def index(request):
 
     if request.method == "POST":
@@ -27,6 +27,7 @@ def index(request):
     else:
         return render(request, "pregnancy/index.html")
 
+@csrf_exempt
 def login_view(request):
     if request.method == "POST":
 
@@ -46,12 +47,13 @@ def login_view(request):
     else:
         return render(request, "pregnancy/login.html")
 
-
+@csrf_exempt
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect(reverse("index"))
 
 
+@csrf_exempt
 def register(request):
     if request.method == "POST":
         username = request.POST["username"]
