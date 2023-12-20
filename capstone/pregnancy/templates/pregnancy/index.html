@@ -4,7 +4,7 @@
 <h2>Register as dietician</h2>
 <h2>Register as counsellor</h2>
 {% if user.is_authenticated %}
-    <h3>Hi, {{ user.username }} {{ userProfile.week_of_pregnancy }}</h3>
+    <h3>Hi, {{ user.username }}, {{ userProfile.week_of_pregnancy }}</h3>
     <p> at i weeks</p>
     <p> i weeks to go</p>
     <p>If you are pregnant and have not specified your week of pregnancy when registering, or rectify the current week, please specify your current week of pregnancy below, so that you can start tracking your journey.</p>
