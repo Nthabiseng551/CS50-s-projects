@@ -14,10 +14,9 @@ from .models import User, UserProfile
 # Create your views here.
 
 def index(request):
-
+    currentUser = User.objects.get(pk=request.user.id)
+    userProfile = UserProfile.objects.filter(user=currentUser)
     if request.method == "POST":
-        currentUser = User.objects.get(pk=request.user.id)
-        userProfile = UserProfile.objects.filter(user=currentUser)
 
         week = request.POST["week"]
         userProfile.week_of_pregnancy = week
