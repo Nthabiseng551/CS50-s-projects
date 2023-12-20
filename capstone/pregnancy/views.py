@@ -9,7 +9,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 from datetime import datetime
 
-from .models import User
+from .models import User, UserProfile
 
 # Create your views here.
 
