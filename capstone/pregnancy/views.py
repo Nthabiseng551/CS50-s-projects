@@ -27,7 +27,7 @@ def index(request):
     else:
         if request.user.is_authenticated:
             currentUser = User.objects.get(pk=request.user.id)
-            userProfile = UserProfile.objects.filter(user=currentUser, pregnant=True)
+            userProfile = UserProfile.objects.get(user=currentUser, pregnant=True)
             week = userProfile.week_of_pregnancy
             return render(request, "pregnancy/index.html",{
                 "week": week
