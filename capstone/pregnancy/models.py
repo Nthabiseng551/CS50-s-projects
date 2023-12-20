@@ -5,4 +5,8 @@ from django.db import models
 class User(AbstractUser):
     pass
 
-class UserPro
+class UserProfile(models.Model):
+    user
+    pregnant
+    dietician
+    counsellor
