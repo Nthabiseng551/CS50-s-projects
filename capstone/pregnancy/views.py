@@ -15,6 +15,9 @@ from .models import User, UserProfile
 
 def index(request):
     if request.method == "POST":
+        week = request.POST["week"]
+        
+
     currentUser = User.objects.get(pk=request.user.id)
     userProfile = UserProfile.objects.filter(user=currentUser)
     return render(request, "pregnancy/index.html")
