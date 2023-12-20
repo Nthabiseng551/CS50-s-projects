@@ -4,6 +4,7 @@
 <h2>Register as dietician</h2>
 <h2>Register as counsellor</h2>
 {% if user.is_authenticated %}
+    {% if %}
     <h3>Hi, {{ user.username }}</h3>
     <p>Your are currently on week i</p>
     <p>i weeks to go!!</p>
