@@ -14,6 +14,9 @@ from .models import User, UserProfile
 # Create your views here.
 
 def index(request):
+    # current user
+    user = request.user
+    if 
     return render(request, "pregnancy/index.html")
 
 def login_view(request):
