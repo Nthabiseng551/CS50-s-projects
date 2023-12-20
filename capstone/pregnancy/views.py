@@ -75,13 +75,14 @@ def register(request):
             return render(request, "pregnancy/register.html", {
                 "message": "Username already taken."
             })
-        userProfile = UserProfile(
-            user =
-            pregnant =
-            dietician =
-            counsellor =
-            week_of_pregnancy =
+        newProfile = UserProfile(
+            user = user,
+            pregnant = False,
+            dietician = False,
+            counsellor = False,
+            week_of_pregnancy = 0
         )
+        newProfile.save
         login(request, user)
         return HttpResponseRedirect(reverse("index"))
     else:
