@@ -4,11 +4,12 @@
 <h2>Register as dietician</h2>
 <h2>Register as counsellor</h2>
 {% if user.is_authenticated %}
-    {% if > 0 %}
     <h3>Hi, {{ user.username }}</h3>
-    <p>Your are currently on week i</p>
-    <p>i weeks to go!!</p>
-    
+    {% if pregnant %}
+        <h3>Hi, {{ user.username }}</h3>
+        <p>Your are currently on week i</p>
+        <p>i weeks to go!!</p>
+    {% endif %}
     <p>If you are pregnant and have not specified your week of pregnancy when registering, or rectify the current week, please specify your current week of pregnancy below, so that you can start tracking your journey.</p>
     <form action="{% url 'index' %}" method="POST">
         {% csrf_token %}
