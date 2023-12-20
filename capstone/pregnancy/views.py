@@ -75,7 +75,7 @@ def register(request):
             counsellor = False,
             week_of_pregnancy = 0
             )
-            newProfile.save
+            newProfile.save()
         except IntegrityError:
             return render(request, "pregnancy/register.html", {
                 "message": "Username already taken."
