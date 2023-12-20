@@ -13,4 +13,4 @@ class UserProfile(models.Model):
     week_of_pregnancy = models.IntegerField(default=0)
 
     def __str__(self):
-        return f"{self.user}, {self.week_of_pregnancy}"
+        return f"{self.id}, {self.user}, {self.week_of_pregnancy}"
