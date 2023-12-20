@@ -27,7 +27,7 @@ def index(request):
     else:
         if request.user.is_authenticated:
             currentUser = User.objects.get(pk=request.user.id)
-            userProfile = UserProfile.objects.filter(user=currentUser)
+            userProfile = UserProfile.objects.filter(user=currentUser, pregnant=True)
             return render(request, "pregnancy/index.html",{
                 "userProfile": userProfile
             })
