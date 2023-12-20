@@ -15,7 +15,7 @@ from .models import User, UserProfile
 
 def index(request):
     currentUser = User.objects.get(pk=request.user.id)
-    userProfile = UserProfile.objects.filter(user=currentUser)
+    userProfile = UserProfile.objects.get(user=currentUser)
     pregnant = userProfile.pregnant
     if request.method == "POST":
 
