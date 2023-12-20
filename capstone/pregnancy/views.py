@@ -16,6 +16,7 @@ from .models import User, UserProfile
 def index(request):
     currentUser = User.objects.get(pk=request.user.id)
     userProfile = UserProfile.objects.filter(user=currentUser)
+    pregnant = userProfile.pregnant
     if request.method == "POST":
 
         week = request.POST["week"]
@@ -25,7 +26,8 @@ def index(request):
         return HttpResponseRedirect(reverse("index"))
     else:
         return render(request, "pregnancy/index.html", {
-            "userProfile": userProfile
+            "userProfile": userProfile,
+            "pregnant": pregnant
         })
 
 def login_view(request):
