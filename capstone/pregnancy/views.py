@@ -15,6 +15,7 @@ from .models import User, UserProfile
 
 def index(request):
     currentUser = User.objects.get(pk=request.user.id)
+    userProfile = UserProfile.objects.filter(user=currentUser)
     return render(request, "pregnancy/index.html")
 
 def login_view(request):
