@@ -24,6 +24,7 @@ def index(request):
 
         return HttpResponseRedirect(reverse("index"))
     else:
+        userProfile = UserProfile.objects.filter(pregnant=)
         return render(request, "pregnancy/index.html")
 
 def login_view(request):
