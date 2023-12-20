@@ -20,6 +20,7 @@ def index(request):
 
         week = request.POST["week"]
         userProfile.week_of_pregnancy = week
+        userProfile.pregnant = True
 
         return HttpResponseRedirect(reverse("index"))
     else:
