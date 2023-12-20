@@ -16,6 +16,7 @@ from .models import User, UserProfile
 def index(request):
     if request.method == "POST":
         currentUser = User.objects.get(pk=request.user.id)
+        userProfile = UserProfile.objects.get(user=currentUser)
         week = request.POST["week"]
 
 
