@@ -15,8 +15,8 @@ from .models import User, UserProfile
 
 def index(request):
     currentUser = User.objects.get(pk=request.user.id)
-    userProfile = UserProfile.objects.get(user=currentUser.id)
-    preg = userProfile.pregnant
+    userProfile = UserProfile.objects.get(user=currentUser)
+
     if request.method == "POST":
 
         week = request.POST["week"]
@@ -26,8 +26,7 @@ def index(request):
         return HttpResponseRedirect(reverse("index"))
     else:
         return render(request, "pregnancy/index.html", {
-            "userProfile": userProfile,
-            "pregnant": preg
+            "userProfile": userProfile
         })
 
 def login_view(request):
