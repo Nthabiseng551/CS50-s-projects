@@ -24,7 +24,9 @@ def index(request):
 
         return HttpResponseRedirect(reverse("index"))
     else:
-        return render(request, "pregnancy/index.html")
+        return render(request, "pregnancy/index.html", {
+            "userProfile": userProfile
+        })
 
 def login_view(request):
     if request.method == "POST":
