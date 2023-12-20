@@ -10,7 +10,7 @@ class UserProfile(models.Model):
     pregnant = models.BooleanField(default=False)
     dietician = models.BooleanField(default=False)
     counsellor = models.BooleanField(default=False)
-    week_of_pregnancy =
+    week_of_pregnancy = models.IntegerField(default=0)
 
     def __str__(self):
         return f"{self.user}, {self.week_of_pregnancy}"
