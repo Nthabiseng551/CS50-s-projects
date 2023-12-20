@@ -14,15 +14,18 @@ from .models import User, UserProfile
 # Create your views here.
 
 def index(request):
+    currentUser = User.objects.get(pk=request.user.id)
+    userProfile = UserProfile.objects.get(user=currentUser)
     if request.method == "POST":
-        currentUser = User.objects.get(pk=request.user.id)
-        userProfile = UserProfile.objects.get(user=currentUser)
+
         week = request.POST["week"]
         userProfile.week_of_pregnancy = week
 
         return HttpResponseRedirect(reverse("index"))
     else:
-        return render(request, "pregnancy/index.html")
+        return render(request, "pregnancy/index.html", {
+            "userProfile": userProfile
+        })
 
 def login_view(request):
     if request.method == "POST":
