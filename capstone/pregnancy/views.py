@@ -25,7 +25,14 @@ def index(request):
 
         return HttpResponseRedirect(reverse("index"))
     else:
-        return render(request, "pregnancy/index.html")
+        if request.user.is_authenticated:
+            currentUser = User.objects.get(pk=request.user.id)
+            userProfile = UserProfile.objects.filter(user=currentUser)
+            return render(request, "pregnancy/index.html",{
+                "userProfile": userProfile
+            })
+        else:
+            return render(request, "pregnancy/index.html")
 
 @csrf_exempt
 def login_view(request):
