@@ -3,5 +3,7 @@
 {% block body %}
 <h2>Register as dietician</h2>
 <h2>Register as counsellor</h2>
-<p>If you are pregnant and have not specified your week of pregnancy when registering, or rectify the current week, please specify your current week of pregnancy below, so that you can start tracking your journey.</p>
-{% endblock %}
+{% if user.is_authenticated %}
+    <p>If you are pregnant and have not specified your week of pregnancy when registering, or rectify the current week, please specify your current week of pregnancy below, so that you can start tracking your journey.</p>
+{% endif %}
+    {% endblock %}
