@@ -107,7 +107,7 @@ def professionals(request):
 # Function for users to sign up as dieticians
 def dietician(request):
     if request.method == "POST":
-        username = request.POST["cname"]
+        username = request.POST["username"]
         currentUser = request.user
 
         if username != currentUser.username:
@@ -129,7 +129,7 @@ def dietician(request):
 # Function for users to sign up as counsellors
 def counsellor(request):
     if request.method == "POST":
-        username = request.POST["cname"]
+        username = request.POST["username"]
         currentUser = request.user
 
         if username != currentUser.username:
