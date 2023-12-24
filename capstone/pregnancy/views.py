@@ -145,6 +145,7 @@ def counsellor(request):
             })
         userProfile.counsellor = True
         userProfile.save()
+        messages.success(request, 'Prenatal counsellor sign up form successfully submitted')
 
         return HttpResponseRedirect(reverse("professionals"))
     else:
