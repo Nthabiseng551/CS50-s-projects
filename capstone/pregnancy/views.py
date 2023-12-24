@@ -109,7 +109,7 @@ def counsellor(request):
         username = request.POST["username"]
         currentUser = User.objects.get(pk=request.user.id)
         userProfile = UserProfile.objects.get(user=currentUser)
-        if username != request.user.username:
+        if currentUser != user:
             return render(request, "pregnancy/counsellor.html", {
                 "message": "Please provide your valid username."
             })
