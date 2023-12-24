@@ -113,7 +113,8 @@ def counsellor(request):
             return render(request, "pregnancy/counsellor.html", {
                 "message": "Please provide your valid username."
             })
-        
+
         return HttpResponseRedirect(reverse("professionals"))
     else:
+        if userProfile.counsellor:
         return render(request, "pregnancy/counsellor.html")
