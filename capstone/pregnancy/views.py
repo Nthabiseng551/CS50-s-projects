@@ -118,6 +118,8 @@ def counsellor(request):
              return render(request, "pregnancy/counsellor.html", {
                 "message": "You are already registered as counsellor."
             })
+        userProfile.counsellor = True
+        userProfile.save()
 
         return HttpResponseRedirect(reverse("professionals"))
     else:
