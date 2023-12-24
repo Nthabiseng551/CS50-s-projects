@@ -106,6 +106,7 @@ def professionals(request):
     return render(request, "pregnancy/professionals.html")
 
 # Function for users to sign up as dieticians
+@csrf_exempt
 def dietician(request):
     if request.method == "POST":
         username = request.POST["username"]
@@ -129,6 +130,7 @@ def dietician(request):
         return render(request, "pregnancy/dietician.html")
 
 # Function for users to sign up as counsellors
+@csrf_exempt
 def counsellor(request):
     if request.method == "POST":
         username = request.POST["username"]
