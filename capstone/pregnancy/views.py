@@ -23,7 +23,7 @@ def index(request):
         userProfile.pregnant = True
         userProfile.save()
 
-        messages.success(request, 'Week of pregnancy succesfully updated')
+        messages.success(request, 'Week of pregnancy successfully updated')
         return HttpResponseRedirect(reverse("index"))
     else:
         if request.user.is_authenticated:
