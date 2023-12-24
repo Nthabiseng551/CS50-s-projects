@@ -23,6 +23,7 @@ def index(request):
         userProfile.pregnant = True
         userProfile.save()
 
+        messages.success(request, 'Week of pregnancy succesfully updated')
         return HttpResponseRedirect(reverse("index"))
     else:
         if request.user.is_authenticated:
@@ -122,6 +123,7 @@ def dietician(request):
         userProfile.dietician = True
         userProfile.save()
 
+        messages.success(request, 'Dietician sign up form successfully submitted')
         return HttpResponseRedirect(reverse("professionals"))
     else:
         return render(request, "pregnancy/dietician.html")
