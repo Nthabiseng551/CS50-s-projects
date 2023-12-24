@@ -29,6 +29,7 @@ def index(request):
             currentUser = User.objects.get(pk=request.user.id)
             userProfile = UserProfile.objects.get(user=currentUser)
             week = userProfile.week_of_pregnancy
+            togo = 40 - week
             return render(request, "pregnancy/index.html",{
                 "week": week
             })
