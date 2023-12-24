@@ -103,3 +103,9 @@ def register(request):
 
 def professionals(request):
     return render(request, "pregnancy/professionals.html")
+
+def counsellor(request):
+    if request.method == "POST":
+        username = request.POST["name"]
+    else:
+        return render(request, "pregnancy/counsellor.html")
