@@ -100,3 +100,6 @@ def register(request):
         return HttpResponseRedirect(reverse("index"))
     else:
         return render(request, "pregnancy/register.html")
+
+def professionals(request):
+    return render(request, "pregnancy/professionals.html")
