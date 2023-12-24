@@ -1,0 +1,9 @@
+{% extends "pregnancy/layout.html" %}
+
+{% block body %}
+<form action="{% url 'counsellor' %}" method="POST">
+    {% csrf_token %}
+    <input name="week" type="number" placeholder="Week of pregnancy" min="1">
+    <button class="btn btn-primary" id ="week" type="submit">Save</button>
+</form>
+{% endblock %}
