@@ -1,6 +1,10 @@
 {% extends "pregnancy/layout.html" %}
 
 {% block body %}
+    {% if message %}
+        <div>{{ message }}</div>
+    {% endif %}
+    
 <form action="{% url 'counsellor' %}" method="POST">
     {% csrf_token %}
     <input name="cname" type="text" placeholder="counsellor name">
