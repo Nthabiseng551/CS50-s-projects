@@ -104,6 +104,29 @@ def register(request):
 def professionals(request):
     return render(request, "pregnancy/professionals.html")
 
+# Function for users to sign up as dieticians
+def dietician(request):
+    if request.method == "POST":
+        username = request.POST["cname"]
+        currentUser = request.user
+
+        if username != currentUser.username:
+            return render(request, "pregnancy/dietician.html", {
+                "message": "Please provide your valid username."
+            })
+        userProfile = UserProfile.objects.get(user=currentUser)
+        if userProfile.dietician:
+             return render(request, "pregnancy/dietician.html", {
+                "message": "You are already registered as dietician."
+            })
+        userProfile.dietician = True
+        userProfile.save()
+
+        return HttpResponseRedirect(reverse("professionals"))
+    else:
+        return render(request, "pregnancy/dietician.html")
+
+# Function for users to sign up as counsellors
 def counsellor(request):
     if request.method == "POST":
         username = request.POST["cname"]
