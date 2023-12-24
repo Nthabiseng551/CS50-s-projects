@@ -48,6 +48,26 @@
           </nav>
 
         <div class="body">
+            {% if messages %}
+
+		<div class="messages">
+		{% for message in messages %}
+            {% if message.tags == "error" %}
+			    <div class="alert alert-danger msg fade show" role="alert">
+				    {{ message }}
+			    </div>
+            {% elif message.tags == "success" %}
+			<div class="alert alert-success msg fade show" role="alert">
+				{{ message }}
+			</div>
+            {% else %}
+                <div class="alert alert-info msg fade show" role="alert">
+                    {{ message }}
+                </div>
+            {% endif %}
+		{% endfor %}
+		</div>
+	{% endif %}
             {% block body %}
             {% endblock %}
         </div>
