@@ -107,7 +107,7 @@ def professionals(request):
 def counsellor(request):
     if request.method == "POST":
         username = request.POST["username"]
-        currentUser = User.objects.get(pk=request.user.id)
+        currentUser = request.user
 
         if username != currentUser.username:
             return render(request, "pregnancy/counsellor.html", {
