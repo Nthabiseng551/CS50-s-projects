@@ -7,5 +7,6 @@ urlpatterns = [
      path("logout", views.logout_view, name="logout"),
      path("register", views.register, name="register"),
      path("professionals", views.professionals, name="professionals"),
-     path("counsellor", views.counsellor, name="counsellor")
+     path("counsellor", views.counsellor, name="counsellor"),
+     path("dietician", views.dietician, name="dietician")
  ]
