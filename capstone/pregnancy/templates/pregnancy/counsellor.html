@@ -3,7 +3,7 @@
 {% block body %}
 <form action="{% url 'counsellor' %}" method="POST">
     {% csrf_token %}
-    <input name="username" type="text" placeholder="Your name">
+    <input name="username" type="text" placeholder="counsellor name">
     <button class="btn btn-primary" type="submit">Save</button>
 </form>
 {% endblock %}
