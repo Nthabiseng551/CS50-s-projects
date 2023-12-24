@@ -106,7 +106,7 @@ def professionals(request):
 
 def counsellor(request):
     if request.method == "POST":
-        username = request.POST["username"]
+        username = request.POST["cname"]
         currentUser = request.user
 
         if username != currentUser.username:
