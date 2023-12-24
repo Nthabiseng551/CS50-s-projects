@@ -5,7 +5,7 @@
 <h2>Register as counsellor </h2>
 {% if user.is_authenticated %}
     <h3>Hi, {{ user.username }}</h3>
-    {% if preg %}
+    {% if pregnant %}
         <p> at {{ week }} weeks</p>
         <p> {{ togo }} weeks to go</p>
     {% endif %}
