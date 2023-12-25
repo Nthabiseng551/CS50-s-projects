@@ -22,12 +22,8 @@ class UserProfile(models.Model):
 
 class Test(models.Model):
     test_name = models.CharField(max_length=100)
-    week = models.CharField(max_length=100)
+    week = models.IntegerField(null=True)
 
-    def serialize(self):
-        return {
-            "id": self.id,
-            "user": self.user.username,
-            "test_name": self.test_name,
-            "done": self.done
-        }
+    def __str__(self):
+        return f"{self.test_name}; week {self.week}"
+
