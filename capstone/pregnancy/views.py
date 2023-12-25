@@ -174,9 +174,11 @@ def weight(request):
 
         return
     else:
+        track_weight = False
         preWeight = userProfile.pre_weight
         tWeight = userProfile.target_weight
         cWeight = userProfile.current_weight
+        if preWeight or tWeight or cWeight:
         percentage_gain = ((cWeight - preWeight)/ tWeight) * 100
-        track_weight = preWeight or tWeight or cWeight
+
         return render(request, "pregnancy/weight.html")
