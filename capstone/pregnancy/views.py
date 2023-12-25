@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
 
-from datetime import datetime
+from datetime import datetime, date
 
 from .models import User, UserProfile
 
@@ -15,7 +15,7 @@ from .models import User, UserProfile
 currentUser = User.objects.get(pk=request.user.id)
 userProfile = UserProfile.objects.get(user=currentUser)
 week = userProfile.week_of_pregnancy
-currentdate =
+currentdate = date.today()
 # Create your views here.
 
 @csrf_exempt
