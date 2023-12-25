@@ -190,9 +190,11 @@ def weight(request):
         elif preWeight is not None and tWeight is not None and cWeight is not None:
             track_weight = True
             percentage_gain = ((cWeight - preWeight)/ tWeight) * 100
+            duration_percent = (userProfile.current_weight/40) * 100
 
             return render(request, "pregnancy/weight.html",{
                 "percentage_gain": percentage_gain,
                 "track_weight": track_weight
+                "duration_percent": duration_percent
             })
         return render(request, "pregnancy/weight.html")
