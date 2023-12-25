@@ -169,15 +169,13 @@ def health(request):
     updated_date = userProfile.week_update_date
     current_date = datetime.now() + timedelta(weeks=1)
 
-    if week > 0 and week < 41:
-        for i in range(week, 41):
-            if current_date == updated_date + timedelta(weeks=1):
-                updated_date = current_date
-                userProfile.week_update_date = updated_date
-                week = week + 1
-                userProfile.week_of_pregnancy = week
-                userProfile.save()
-                i = i + 1
+    if current_date == updated_date + timedelta(weeks=1):
+        updated_date = current_date
+        userProfile.week_update_date = updated_date
+        week = week + 1
+        userProfile.week_of_pregnancy = week
+        userProfile.save()
+        i = i + 1
 
     return render(request, "pregnancy/health.html",{
         "week": week,
