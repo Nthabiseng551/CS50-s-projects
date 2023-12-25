@@ -7,6 +7,11 @@
     <form action="{% url 'weight' %}" method="POST">
         {% csrf_token %}
         <div class="form-group">
+            <p>Your current weight (in kg)</p>
+            <input name="cweight" class="form-control" type="number">
+        </div>
+        <p>If you haven't provided your pre-pregnancy weight and/or total weight gain target, or wish to rectify their values, do so below: </p>
+        <div class="form-group">
             <p>Your pre-pregnancy weight (in kg)</p>
             <input name="pre-weight" class="form-control" type="number" placeholder="{{ preWeight }}">
         </div>
