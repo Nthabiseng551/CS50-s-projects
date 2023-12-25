@@ -173,7 +173,8 @@ def health(request):
         for i in range(week, 41):
             if currentdate = updateddate + timedelta(weeks=1)
                 updateddate = currentdate
-                week = i + 1
+                week = week + 1
+                i++
 
     return render(request, "pregnancy/health.html",{
         "period": period
