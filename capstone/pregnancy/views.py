@@ -157,8 +157,10 @@ def health(request):
     return render(request, "pregnancy/health.html")
 
 def weight(request):
-    preWeight =
-    tWeight =
+    currentUser = User.objects.get(pk=request.user.id)
+    userProfile = UserProfile.objects.get(user=currentUser)
+    preWeight = userProfile.
+    tWeight = userProfile.
     if request.method == "POST":
         return
     else:
