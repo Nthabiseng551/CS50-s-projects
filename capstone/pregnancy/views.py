@@ -168,8 +168,7 @@ def health(request):
     userProfile = UserProfile.objects.get(user=currentUser)
     week = userProfile.week_of_pregnancy
     updated_date = userProfile.week_update_date
-    if updated_date = date.today():
-    a_week updated_date updated_date + relativedelta(weeks=+1)
+    
     period = date.today() - updated_date
 
     return render(request, "pregnancy/health.html",{
