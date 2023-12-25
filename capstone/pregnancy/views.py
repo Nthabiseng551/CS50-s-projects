@@ -169,6 +169,8 @@ def health(request):
     week = userProfile.week_of_pregnancy
     updated_date = userProfile.week_update_date
 
+    for j in range(week,41):
+        
     period = date.today() + relativedelta(weeks=+1)
     while(True):
         print(weeks[i])
