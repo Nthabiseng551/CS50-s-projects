@@ -15,7 +15,8 @@ from .models import User, UserProfile
 #incrementing weeks of pregnancy
 weeks = []
 for i in range(1,41):
-    week =
+    week = i
+    weeks.append(week)
 
 currentUser = User.objects.get(pk=request.user.id)
 userProfile = UserProfile.objects.get(user=currentUser)
