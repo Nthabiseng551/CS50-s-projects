@@ -8,7 +8,7 @@
 <p>what is your target total pregnancy weight gain from the weight gain calculator? (in kg)</p>
 <form action="{% url 'weight' %}" method="POST">
     {% csrf_token %}
-    <input name="week" type="number" placeholder="Week of pregnancy" min="1">
-    <button class="btn btn-primary" id ="week" type="submit">Save</button>
+    <input name="weight" type="number" placeholder="Weight">
+    <button class="btn btn-primary" type="submit">Save</button>
 </form>
 {% endblock %}
