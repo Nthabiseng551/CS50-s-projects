@@ -29,7 +29,7 @@ class Test(models.Model):
 
 class UserTest(models.Model):
     user = models.ForeignKey("User", on_delete=models.CASCADE, related_name="user")
-    test = models.ForeignKey("Test", on_delete=models.CASCADE, related_name="usertests")
+    test = models.ManyToManyField(Test, blank=True, null=True, related_name="usertests")
     done = models.BooleanField(default=False)
 
     def __str__(self):
