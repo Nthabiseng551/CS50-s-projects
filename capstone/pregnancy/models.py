@@ -23,14 +23,7 @@ class UserProfile(models.Model):
 class Test(models.Model):
     test_name = models.CharField(max_length=100)
     week = models.IntegerField(null=True)
-
-    def __str__(self):
-        return f"{self.test_name}; week {self.week}"
-
-class UserTest(models.Model):
-    user = models.ForeignKey("User", on_delete=models.CASCADE, related_name="tests")
-    test = models.ManyToManyField(Test, blank=True, null=True, related_name="usertests")
     done = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"{self.test.test_name}; {self.user.username}"
+        return f"{self.test_name}; week {self.week}"
