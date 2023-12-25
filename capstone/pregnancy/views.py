@@ -173,7 +173,7 @@ def health(request):
     while(True):
         print(weeks[i])
         i = i+1
-        if(i < size and len(list1[i]) < 10):
+        if(i < 40):
             continue
         else:
             break
