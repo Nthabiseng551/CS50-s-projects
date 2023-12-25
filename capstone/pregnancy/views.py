@@ -11,13 +11,6 @@ from datetime import datetime, date, timedelta
 
 from .models import User, UserProfile
 
-#incrementing weeks of pregnancy
-weeks = []
-for i in range(1,41):
-    week = i
-    weeks.append(week)
-
-
 # Create your views here.
 
 @csrf_exempt
@@ -29,7 +22,7 @@ def index(request):
         week = request.POST["week"]
         userProfile.week_of_pregnancy = week
         userProfile.pregnant = True
-        userProfile.week_update_date = date.today()
+        userProfile.week_update_date = datetime.now()
         userProfile.save()
 
         messages.success(request, 'Week of pregnancy successfully updated')
