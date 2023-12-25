@@ -8,6 +8,7 @@ from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
 
 from datetime import datetime, date
+from dateutil.relativedelta import relativedelta
 
 from .models import User, UserProfile
 
@@ -16,6 +17,8 @@ currentUser = User.objects.get(pk=request.user.id)
 userProfile = UserProfile.objects.get(user=currentUser)
 week = userProfile.week_of_pregnancy
 currentdate = date.today()
+
+period = date.today() + relativedelta(weeks=+1)
 # Create your views here.
 
 @csrf_exempt
