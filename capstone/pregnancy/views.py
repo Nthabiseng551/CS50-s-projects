@@ -176,4 +176,6 @@ def weight(request):
     else:
         preWeight = userProfile.pre_weight
         tWeight = userProfile.target_weight
+        cWeight = userProfile.current_weight
+        
         return render(request, "pregnancy/weight.html")
