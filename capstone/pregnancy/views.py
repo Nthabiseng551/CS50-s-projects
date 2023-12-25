@@ -162,7 +162,8 @@ def weight(request):
     userProfile = UserProfile.objects.get(user=currentUser)
 
     if request.method == "POST":
-        current_weight = request.POST["cweight"]
+        cWeight = request.POST["cweight"]
+        userProfile.current_weight = cWeight
         if not request.POST["pre-weight"]:
             preWeight = userProfile.pre_weight
         else:
