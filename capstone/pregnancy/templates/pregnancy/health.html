@@ -1,14 +1,23 @@
 {% extends "pregnancy/layout.html" %}
 
 {% block body %}
-<h5>request counselling; request consultation with dietician, monitor weight gain, nutrition(choosemyplate)</h5>
-<p>nutrition(choosemyplate) <a href="https://www.myplate.gov/life-stages/pregnancy-and-breastfeeding">Choose my plate</a></p>
-<p>pregnancy weight gain calculator <a href="https://www.whattoexpect.com/pregnancy-weight-gain-calculator">weight gain calculator</a></p>
-<p>According to guidelines, must gain an average of 3 pounds(1.36 kg) per month</p>
-<p>what is your target total pregnancy weight gain from the weight gain calculator? (in kg)</p>
-<form action="{% url 'weight' %}" method="POST">
-    {% csrf_token %}
-    <input name="weight" type="number" placeholder="Weight">
-    <button class="btn btn-primary" type="submit">Save</button>
-</form>
+    <h5>request counselling; request consultation with dietician, monitor weight gain, nutrition(choosemyplate)</h5>
+    <p>nutrition(choosemyplate) <a href="https://www.myplate.gov/life-stages/pregnancy-and-breastfeeding">Choose my plate</a></p>
+    <p>pregnancy weight gain calculator <a href="https://www.whattoexpect.com/pregnancy-weight-gain-calculator">weight gain calculator</a></p>
+    <p>According to guidelines, must gain an average of 3 pounds(1.36 kg) per month</p>
+    <p>what is your target total pregnancy weight gain from the weight gain calculator? (in kg)</p>
+    <form action="{% url 'weight' %}" method="POST">
+        {% csrf_token %}
+        <input name="weight" type="number" placeholder="Weight">
+        <button class="btn btn-primary" type="submit">Save</button>
+    </form>
+
+    <div id="emails-view">
+    </div>
+
+    <div id="emails-view">
+    </div>
+
+    <div id="emails-view">
+    </div>
 {% endblock %}
