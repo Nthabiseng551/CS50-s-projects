@@ -8,12 +8,12 @@
         {% csrf_token %}
         <div class="form-group">
             <p>Your pre-pregnancy weight (in kg)</p>
-            <input id="pre-weight" class="form-control" type="number" value="{{ request.user.email }}">
+            <input name="pre-weight" class="form-control" type="number" value="{{ preWeight }}">
         </div>
 
         <div class="form-group">
             <p>Your target total pregnancy weight gain from the weight gain calculator (in kg)</p>
-            <input class="form-control" type="number" id="tweight">
+            <input class="form-control" type="number" name="tweight">
         </div>
 
         <button class="btn btn-primary" type="submit">Save</button>
