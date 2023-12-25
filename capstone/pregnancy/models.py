@@ -20,3 +20,7 @@ class UserProfile(models.Model):
     def __str__(self):
         return f"{self.id}, {self.user}, {self.week_of_pregnancy}"
 
+class Test(models.Model):
+    user = models.ForeignKey("User", on_delete=models.CASCADE, related_name="user")
+    testname
+    done
