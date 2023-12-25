@@ -22,5 +22,5 @@ class UserProfile(models.Model):
 
 class Test(models.Model):
     user = models.ForeignKey("User", on_delete=models.CASCADE, related_name="user")
-    testname
-    done
+    test_name
+    done = models.BooleanField(default=False)
