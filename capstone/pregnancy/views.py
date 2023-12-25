@@ -13,6 +13,12 @@ from dateutil.relativedelta import relativedelta
 from .models import User, UserProfile
 
 #incrementing weeks of pregnancy
+weeks = []
+for i in range(1,41):
+    weeks[i] = "Week i"
+    print(weeks)
+
+
 currentUser = User.objects.get(pk=request.user.id)
 userProfile = UserProfile.objects.get(user=currentUser)
 week = userProfile.week_of_pregnancy
@@ -20,7 +26,7 @@ currentdate = date.today()
 
 period = date.today() + relativedelta(weeks=+1)
 while(True):
-    print(list1[i])
+    print(weeks[i])
     i = i+1
     if(i < size and len(list1[i]) < 10):
         continue
