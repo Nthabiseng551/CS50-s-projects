@@ -169,6 +169,9 @@ def health(request):
     updated_date = userProfile.week_update_date
     current_date = datetime.now()
 
+    for i in range(week,41):
+        if week < 41:
+            
     return render(request, "pregnancy/health.html",{
         "period": period
     })
