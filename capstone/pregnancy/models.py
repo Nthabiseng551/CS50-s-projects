@@ -11,8 +11,8 @@ class UserProfile(models.Model):
     dietician = models.BooleanField(default=False)
     counsellor = models.BooleanField(default=False)
     week_of_pregnancy = models.IntegerField(null=True)
-    pre_weight = models.FloatField(null=True)
-    target_weight = models.FloatField(null=True)
+    pre_weight = models.FloatField(null=True, blank=True)
+    target_weight = models.FloatField(null=True, blank=True)
 
     def __str__(self):
         return f"{self.id}, {self.user}, {self.week_of_pregnancy}"
