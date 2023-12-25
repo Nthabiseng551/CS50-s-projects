@@ -19,6 +19,13 @@ week = userProfile.week_of_pregnancy
 currentdate = date.today()
 
 period = date.today() + relativedelta(weeks=+1)
+while(True):
+    print(list1[i])
+    i = i+1
+    if(i < size and len(list1[i]) < 10):
+        continue
+    else:
+        break
 # Create your views here.
 
 @csrf_exempt
