@@ -176,9 +176,7 @@ def health(request):
         userProfile.save()
 
     return render(request, "pregnancy/health.html",{
-        "week": week,
-        "today": current_date,
-        "updated": updated_date
+        "week": week
     })
 
 # Function for pregnant users to track weight gain
