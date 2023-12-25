@@ -165,7 +165,8 @@ def health(request):
 
     time_delta = current_date - updated_date
     deltaa = time_delta.days
-    weeks = deltaa/7
+    weeks = math.floor(deltaa/7)
+
 
     return render(request, "pregnancy/health.html",{
         "week": week,
