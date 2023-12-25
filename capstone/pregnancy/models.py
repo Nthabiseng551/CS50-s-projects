@@ -28,7 +28,7 @@ class Test(models.Model):
         return f"{self.test_name}; week {self.week}"
 
 class UserTest(models.Model):
-    user = models.ForeignKey("User", on_delete=models.CASCADE, related_name="user")
+    user = models.ForeignKey("User", on_delete=models.CASCADE, related_name="tests")
     test = models.ManyToManyField(Test, blank=True, null=True, related_name="usertests")
     done = models.BooleanField(default=False)
 
