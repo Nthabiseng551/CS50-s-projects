@@ -184,4 +184,7 @@ def weight(request):
             track_weight = True
             percentage_gain = ((cWeight - preWeight)/ tWeight) * 100
 
-        return render(request, "pregnancy/weight.html",)
+        return render(request, "pregnancy/weight.html",{
+            "percentage_gain": percentage_gain,
+            "track_weight": track_weight
+        })
