@@ -22,7 +22,7 @@ def index(request):
         week = request.POST["week"]
         userProfile.week_of_pregnancy = week
         userProfile.pregnant = True
-        userProfile.week_update_date = datetime.now()
+        userProfile.week_update_date = date.today()
         userProfile.save()
 
         messages.success(request, 'Week of pregnancy successfully updated')
