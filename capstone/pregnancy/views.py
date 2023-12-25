@@ -167,7 +167,7 @@ def health(request):
     currentUser = User.objects.get(pk=request.user.id)
     userProfile = UserProfile.objects.get(user=currentUser)
     week = userProfile.week_of_pregnancy
-    currentdate = date.today()
+    updated_date = userProfile.week_update_date
 
     period = date.today() + relativedelta(weeks=+1)
     while(True):
