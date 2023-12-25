@@ -24,3 +24,11 @@ class Test(models.Model):
     user = models.ForeignKey("User", on_delete=models.CASCADE, related_name="user")
     test_name = models.CharField(max_length=100)
     done = models.BooleanField(default=False)
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "user": self.user.username,
+            "test_name": self.test_name,
+            "done": self.done
+        }
