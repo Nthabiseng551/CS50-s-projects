@@ -7,13 +7,15 @@
     <form action="{% url 'weight' %}" method="POST">
         {% csrf_token %}
         <div class="form-group">
-            <p>Your target total pregnancy weight gain from the weight gain calculator (in kg)</p>
-            <input class="form-control" type="number" id="tweight">
-        </div>
-        <div class="form-group">
             <p>Your pre-pregnancy weight (in kg)</p>
             <input id="pre-weight" class="form-control" type="number">
         </div>
+
+        <div class="form-group">
+            <p>Your target total pregnancy weight gain from the weight gain calculator (in kg)</p>
+            <input class="form-control" type="number" id="tweight">
+        </div>
+
         <button class="btn btn-primary" type="submit">Save</button>
     </form>
 {% endblock %}
