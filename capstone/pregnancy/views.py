@@ -152,3 +152,6 @@ def counsellor(request):
         return HttpResponseRedirect(reverse("professionals"))
     else:
         return render(request, "pregnancy/counsellor.html")
+
+def health(request):
+    return render(request, "pregnancy/health.html")
