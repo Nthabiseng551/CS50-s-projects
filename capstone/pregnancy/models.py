@@ -21,9 +21,8 @@ class UserProfile(models.Model):
         return f"{self.id}, {self.user}, {self.week_of_pregnancy}"
 
 class Test(models.Model):
-    user = models.ForeignKey("User", on_delete=models.CASCADE, related_name="user")
     test_name = models.CharField(max_length=100)
-    done = models.BooleanField(default=False)
+    week = models.CharField(max_length=100)
 
     def serialize(self):
         return {
