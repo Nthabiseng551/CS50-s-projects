@@ -161,8 +161,8 @@ def weight(request):
     userProfile = UserProfile.objects.get(user=currentUser)
     preWeight = userProfile.pre_weight
     tWeight = userProfile.target_weight
-    current_weight =
     if request.method == "POST":
+        current_weight =
         return
     else:
         return render(request, "pregnancy/weight.html")
