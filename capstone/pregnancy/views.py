@@ -14,7 +14,7 @@ from .models import User, UserProfile
 #incrementing weeks of pregnancy
 currentUser = User.objects.get(pk=request.user.id)
 userProfile = UserProfile.objects.get(user=currentUser)
-if userProfile.pregnant 
+week = userProfile.week_of_pregnancy
 # Create your views here.
 
 @csrf_exempt
