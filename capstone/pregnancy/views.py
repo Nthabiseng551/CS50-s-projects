@@ -18,19 +18,7 @@ for i in range(1,41):
     week = i
     weeks.append(week)
 
-currentUser = User.objects.get(pk=request.user.id)
-userProfile = UserProfile.objects.get(user=currentUser)
-week = userProfile.week_of_pregnancy
-currentdate = date.today()
 
-period = date.today() + relativedelta(weeks=+1)
-while(True):
-    print(weeks[i])
-    i = i+1
-    if(i < size and len(list1[i]) < 10):
-        continue
-    else:
-        break
 # Create your views here.
 
 @csrf_exempt
@@ -175,6 +163,19 @@ def counsellor(request):
         return render(request, "pregnancy/counsellor.html")
 
 def health(request):
+    currentUser = User.objects.get(pk=request.user.id)
+    userProfile = UserProfile.objects.get(user=currentUser)
+    week = userProfile.week_of_pregnancy
+    currentdate = date.today()
+
+    period = date.today() + relativedelta(weeks=+1)
+    while(True):
+        print(weeks[i])
+        i = i+1
+        if(i < size and len(list1[i]) < 10):
+            continue
+        else:
+            break
     return render(request, "pregnancy/health.html")
 
 # Function for pregnant users to track weight gain
