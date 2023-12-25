@@ -180,7 +180,9 @@ def health(request):
                 i = i + 1
 
     return render(request, "pregnancy/health.html",{
-        "week": week
+        "week": week,
+        "today": current_date,
+        "updated": updated_date
     })
 
 # Function for pregnant users to track weight gain
