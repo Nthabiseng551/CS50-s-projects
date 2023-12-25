@@ -12,7 +12,9 @@ from datetime import datetime
 from .models import User, UserProfile
 
 #incrementing weeks of pregnancy
-currentUser = request.user
+currentUser = User.objects.get(pk=request.user.id)
+userProfile = UserProfile.objects.get(user=currentUser)
+if userProfile.pregnant 
 # Create your views here.
 
 @csrf_exempt
