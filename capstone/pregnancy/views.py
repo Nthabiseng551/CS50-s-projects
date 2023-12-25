@@ -170,7 +170,7 @@ def health(request):
     current_date = datetime.now()
 
     return render(request, "pregnancy/health.html",{
-        "period": period,
+        "period": period
     })
 
 # Function for pregnant users to track weight gain
