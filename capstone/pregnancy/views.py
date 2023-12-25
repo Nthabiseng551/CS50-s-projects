@@ -170,15 +170,9 @@ def health(request):
     updated_date = userProfile.week_update_date
     if updated_date = date.today():
     a_week = updated_date + relativedelta(weeks=+1)
-    i = week
-    while(True):
-        updated_date = 
-        print(weeks[i])
-        i = i+1
-        if(i < 40):
-            continue
-        else:
-            break
+    
+    for i in range(week,41):
+        if date.today() - updated_date
     return render(request, "pregnancy/health.html")
 
 # Function for pregnant users to track weight gain
