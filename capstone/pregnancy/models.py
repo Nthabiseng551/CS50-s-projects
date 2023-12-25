@@ -27,3 +27,6 @@ class Test(models.Model):
     def __str__(self):
         return f"{self.test_name}; week {self.week}"
 
+class UserTest(models.Model):
+    user = models.ForeignKey("User", on_delete=models.CASCADE, related_name="user")
+    test = models.ForeignKey("Test", on_delete=models.CASCADE, related_name="usertests")
