@@ -15,6 +15,7 @@ from .models import User, UserProfile
 currentUser = User.objects.get(pk=request.user.id)
 userProfile = UserProfile.objects.get(user=currentUser)
 week = userProfile.week_of_pregnancy
+currentdate =
 # Create your views here.
 
 @csrf_exempt
