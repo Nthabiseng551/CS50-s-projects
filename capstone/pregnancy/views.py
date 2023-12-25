@@ -163,11 +163,12 @@ def health(request):
     current_date = date.today() + timedelta(weeks=1)
 
     time_delta = current_date - updated_date
-    deltaa = time_delta.weeks
+    deltaa = time_delta.days
+    weeks = deltaa/7
 
     return render(request, "pregnancy/health.html",{
         "week": week,
-        "timedelta": deltaa
+        "timedelta": weeks
     })
 
 # Function for pregnant users to track weight gain
