@@ -180,7 +180,8 @@ def weight(request):
         cWeight = userProfile.current_weight
         if preWeight is None or tWeight is None or cWeight is None:
             track_weight = False
-        else:
-        percentage_gain = ((cWeight - preWeight)/ tWeight) * 100
+        elif preWeight is not None and tWeight is not None and cWeight is not None:
+            track_weight = True
+            percentage_gain = ((cWeight - preWeight)/ tWeight) * 100
 
-        return render(request, "pregnancy/weight.html")
+        return render(request, "pregnancy/weight.html",)
