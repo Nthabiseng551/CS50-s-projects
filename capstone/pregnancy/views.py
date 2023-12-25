@@ -157,6 +157,8 @@ def health(request):
     return render(request, "pregnancy/health.html")
 
 def weight(request):
+    preWeight =
+    tWeight =
     if request.method == "POST":
         return
     else:
