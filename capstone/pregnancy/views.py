@@ -179,7 +179,7 @@ def weight(request):
             userProfile.target_weight = tWeight
             userProfile.save()
 
-        return
+        return HttpResponseRedirect(reverse("weight"))
     else:
         track_weight = True
         preWeight = userProfile.pre_weight
