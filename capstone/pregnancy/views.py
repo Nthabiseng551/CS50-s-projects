@@ -156,6 +156,7 @@ def counsellor(request):
 def health(request):
     return render(request, "pregnancy/health.html")
 
+# Function for pregnant users to track weight gain
 def weight(request):
     currentUser = User.objects.get(pk=request.user.id)
     userProfile = UserProfile.objects.get(user=currentUser)
