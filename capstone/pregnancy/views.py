@@ -171,8 +171,8 @@ def health(request):
 
     if week > 0 and week < 41:
         for i in range(week, 41):
-            if currentdate = updateddate + timedelta(weeks=1)
-                updateddate = currentdate
+            if current_date = updated_date + timedelta(weeks=1)
+                updated_date = current_date
                 week = week + 1
                 i++
 
