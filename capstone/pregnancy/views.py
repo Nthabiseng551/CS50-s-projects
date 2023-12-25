@@ -167,6 +167,7 @@ def health(request):
     deltaa = time_delta.days
     weeks = math.floor(deltaa/7) + week
     userProfile.week_of_pregnancy = weeks
+    userProfile.week_update_date =
     userProfile.save()
 
 
