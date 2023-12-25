@@ -169,7 +169,7 @@ def health(request):
     week = userProfile.week_of_pregnancy
     updated_date = userProfile.week_update_date
     if updated_date = date.today():
-    period = updated_date + relativedelta(weeks=+1)
+    a_week = updated_date + relativedelta(weeks=+1)
     i = week
     while(True):
         print(weeks[i])
