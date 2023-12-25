@@ -10,5 +10,6 @@ urlpatterns = [
      path("counsellor", views.counsellor, name="counsellor"),
      path("dietician", views.dietician, name="dietician"),
      path("health", views.health, name="health"),
-     path("weight", views.weight, name="weight")
+     path("weight", views.weight, name="weight"),
+     path("tests", views.tests, name="tests")
  ]

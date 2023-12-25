@@ -222,3 +222,10 @@ def weight(request):
                 "duration_percent": duration_percent
             })
         return render(request, "pregnancy/weight.html")
+# prenatal tests view
+def tests(request):
+    tests = Test.objects.all()
+    return render(request, "pregnancy/tests.html", {
+        "tests": tests
+    })
+

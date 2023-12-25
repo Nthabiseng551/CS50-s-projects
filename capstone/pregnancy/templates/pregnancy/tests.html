@@ -1,4 +1,7 @@
 {% extends "pregnancy/layout.html" %}
 
 {% block body %}
+    {% for test in tests %}
+    <p>{{ test.test_name }}; Week {{ test.week }}</p>
+    {% endfor %}
 {% endblock %}
