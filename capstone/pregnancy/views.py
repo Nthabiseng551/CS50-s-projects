@@ -167,7 +167,7 @@ def health(request):
     userProfile = UserProfile.objects.get(user=currentUser)
     week = userProfile.week_of_pregnancy
     updated_date = userProfile.week_update_date
-    current_date = datetime.now()
+    current_date = datetime.now() 
 
     if week > 0 and week < 41:
         for i in range(week, 41):
