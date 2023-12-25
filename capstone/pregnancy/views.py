@@ -159,8 +159,8 @@ def health(request):
 def weight(request):
     currentUser = User.objects.get(pk=request.user.id)
     userProfile = UserProfile.objects.get(user=currentUser)
-    preWeight = userProfile.
-    tWeight = userProfile.
+    preWeight = userProfile.pre_weight
+    tWeight = userProfile.target_weight
     if request.method == "POST":
         return
     else:
