@@ -172,6 +172,7 @@ def health(request):
     a_week = updated_date + relativedelta(weeks=+1)
     i = week
     while(True):
+        updated_date = 
         print(weeks[i])
         i = i+1
         if(i < 40):
