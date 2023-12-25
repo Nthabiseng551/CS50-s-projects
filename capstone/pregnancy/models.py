@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from datetime import datetime, date
 
 # Create your models here.
 class User(AbstractUser):
@@ -11,7 +12,7 @@ class UserProfile(models.Model):
     dietician = models.BooleanField(default=False)
     counsellor = models.BooleanField(default=False)
     week_of_pregnancy = models.IntegerField(null=True)
-    week_date
+    week_update_date = models.DateField(default=date.today)
     pre_weight = models.FloatField(null=True, blank=True)
     target_weight = models.FloatField(null=True, blank=True)
     current_weight = models.FloatField(null=True, blank=True)
