@@ -161,12 +161,14 @@ def health(request):
     userProfile = UserProfile.objects.get(user=currentUser)
     week = userProfile.week_of_pregnancy
     updated_date = userProfile.week_update_date
-    current_date = date.today() + timedelta(weeks=1)
+    # Added timedelta weeks to manipulate current date for the sake of demonstration of incrementing weeks for future dates
+    current_date = date.today() + timedelta(weeks=0)
 
     time_delta = current_date - updated_date
     deltaa = time_delta.days
     weeks = math.floor(deltaa/7) + week
     userProfile.week_of_pregnancy = weeks
+    userProfile.week_update_date = current_date
     userProfile.save()
     week = userProfile.week_of_pregnancy
 
