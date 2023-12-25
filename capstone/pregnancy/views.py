@@ -168,7 +168,7 @@ def health(request):
     weeks = math.floor(deltaa/7) + week
     userProfile.week_of_pregnancy = weeks
     userProfile.save()
-
+    week = userProfile.week_of_pregnancy
 
     return render(request, "pregnancy/health.html",{
         "week": week,
