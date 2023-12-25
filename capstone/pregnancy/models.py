@@ -32,4 +32,5 @@ class UserTest(models.Model):
     test = models.ForeignKey("Test", on_delete=models.CASCADE, related_name="usertests")
     done = models.BooleanField(default=False)
 
-    
+    def __str__(self):
+        return f"{self.test.test_name}; {self.user.username}"
