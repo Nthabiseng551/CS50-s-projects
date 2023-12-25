@@ -8,7 +8,6 @@ from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
 
 from datetime import datetime, date, timedelta
-from dateutil.relativedelta import relativedelta
 
 from .models import User, UserProfile
 
@@ -168,13 +167,10 @@ def health(request):
     userProfile = UserProfile.objects.get(user=currentUser)
     week = userProfile.week_of_pregnancy
     updated_date = userProfile.week_update_date
-
-    period = date.today() - updated_date
+    current_date = datetime.now()
 
     return render(request, "pregnancy/health.html",{
         "period": period,
-        "today": date.today(),
-        "updated": updated_date
     })
 
 # Function for pregnant users to track weight gain
