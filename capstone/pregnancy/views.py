@@ -171,7 +171,7 @@ def health(request):
 
     for i in range(week,41):
         if week < 41:
-            
+            newDate = 
     return render(request, "pregnancy/health.html",{
         "period": period
     })
