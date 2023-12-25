@@ -155,3 +155,9 @@ def counsellor(request):
 
 def health(request):
     return render(request, "pregnancy/health.html")
+
+def weight(request):
+    if request.method == "POST":
+        return
+    else:
+        return render(request, "pregnancy/weight.html")

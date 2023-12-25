@@ -1,0 +1,19 @@
+{% extends "pregnancy/layout.html" %}
+
+{% block body %}
+    <p>pregnancy weight gain calculator <a href="https://www.whattoexpect.com/pregnancy-weight-gain-calculator">weight gain calculator</a></p>
+    <p>According to guidelines, must gain an average of 3 pounds(1.36 kg) per month</p>
+    <p>Track weight gain</p>
+    <form action="{% url 'weight' %}" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <p>Your target total pregnancy weight gain from the weight gain calculator (in kg)</p>
+            <input class="form-control" type="number" id="tweight">
+        </div>
+        <div class="form-group">
+            <p>Your pre-pregnancy weight (in kg)</p>
+            <input id="pre-weight" class="form-control" type="number">
+        </div>
+        <button class="btn btn-primary" type="submit">Save</button>
+    </form>
+{% endblock %}

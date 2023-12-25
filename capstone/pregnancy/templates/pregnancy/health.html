@@ -3,20 +3,6 @@
 {% block body %}
     <h5>request counselling; request consultation with dietician, monitor weight gain, nutrition(choosemyplate)</h5>
     <p>nutrition(choosemyplate) <a href="https://www.myplate.gov/life-stages/pregnancy-and-breastfeeding">Choose my plate</a></p>
-    <p>pregnancy weight gain calculator <a href="https://www.whattoexpect.com/pregnancy-weight-gain-calculator">weight gain calculator</a></p>
-    <p>According to guidelines, must gain an average of 3 pounds(1.36 kg) per month</p>
-    <p>Track weight gain</p>
-    <form action="{% url 'weight' %}" method="POST">
-        {% csrf_token %}
-        <div class="form-group">
-            <p>Your target total pregnancy weight gain from the weight gain calculator (in kg)</p>
-            <input class="form-control" type="number" id="tweight">
-        </div>
-        <div class="form-group">
-            <p>Your pre-pregnancy weight (in kg)</p>
-            <input id="pre-weight" class="form-control" type="number">
-        </div>
-        <button class="btn btn-primary" type="submit">Save</button>
-    </form>
+    <p>Monitor weight gain</p>
 
 {% endblock %}
