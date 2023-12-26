@@ -33,10 +33,9 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            document.querySelector('#difference')
+            document.querySelector('#difference').style.display = 'none';
             const diff = document.querySelector('#difference').value;
             alert(`Hello, ${diff}`);
-
         });
     </script>
 {% endblock %}
