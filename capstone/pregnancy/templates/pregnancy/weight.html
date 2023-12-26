@@ -38,12 +38,15 @@
 
             if (diff <= 10){
                 document.querySelector("#track").style.color = "Green";
+                document.querySelector("#track").innerText = "Great! You're within the recommended pregnancy weight gain range";
             }
             else if (diff > 10 && diff <= 15){
                 document.querySelector("#track").style.color = "Orange";
+                document.querySelector("#track").innerText = "green";
             }
             else if (diff > 15){
                 document.querySelector("#track").style.color = "Red";
+                document.querySelector("#track").innerText = "green";
             }
         });
     </script>
