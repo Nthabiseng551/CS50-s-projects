@@ -216,7 +216,7 @@ def weight(request):
             track_weight = True
             percentage_gain = ((cWeight - preWeight)/ tWeight) * 100
             duration_percent = (userProfile.week_of_pregnancy / 40) * 100
-            difference = abs(1 - 2)
+            difference = abs(percentage_gain - duration_percent)
             update_date = userProfile.currentWeight_update_date
 
             return render(request, "pregnancy/weight.html",{
