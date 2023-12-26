@@ -24,9 +24,7 @@ class UserProfile(models.Model):
 class Test(models.Model):
     test_name = models.CharField(max_length=100)
     description = models.CharField(max_length=255)
-    week_start = models.IntegerField(null=True)
-    week_end = models.IntegerField(null=True)
-    done = models.BooleanField(default=False)
+    trimester = models.IntegerField(null=True)
 
     def __str__(self):
-        return f"{self.test_name}; week {self.week}"
+        return f"{self.test_name}; week {self.trimester}"
