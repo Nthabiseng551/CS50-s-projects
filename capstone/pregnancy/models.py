@@ -27,4 +27,4 @@ class Test(models.Model):
     trimester = models.IntegerField(null=True)
 
     def __str__(self):
-        return f"{self.test_name}; week {self.trimester}"
+        return f"{self.test_name}; trimester {self.trimester}"
