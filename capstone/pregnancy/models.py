@@ -23,7 +23,7 @@ class UserProfile(models.Model):
 
 class Test(models.Model):
     test_name = models.CharField(max_length=100)
-    description = models.CharField(max_length=255,null=True)
+    description = models.CharField(max_length=255, null=True, blank=True)
     trimester = models.IntegerField(null=True)
 
     def __str__(self):
