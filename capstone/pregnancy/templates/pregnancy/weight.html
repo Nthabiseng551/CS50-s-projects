@@ -6,7 +6,7 @@
         <h1>{{ duration_percent|floatformat }}%</h1>
         <h3 id="difference">{{ difference }}</h3>
         <h3>approximate weight gain and pregnancy duration values are a good indication that you are tracking within recommended guidelines</h3>
-        <h3>absolute value difference between duration and weight gain percentage: 10% is green, 11 to 15% is orange, greater than 15% is red</h3>
+        <h3 id="track">absolute value difference between duration and weight gain percentage: 10% is green, 11 to 15% is orange, greater than 15% is red</h3>
     {% endif %}
     <p>pregnancy weight gain calculator <a href="https://www.whattoexpect.com/pregnancy-weight-gain-calculator">weight gain calculator</a></p>
     <p>According to guidelines, must gain an average of 3 pounds(1.36 kg) per month</p>
@@ -37,7 +37,7 @@
             alert(`Hello, ${diff}`);
             document.querySelector('#difference').style.display = 'none';
             if (diff <= 10){
-                document.querySelector("#hello").style.color
+                document.querySelector("#track").style.color = "Green";
             }
         });
     </script>
