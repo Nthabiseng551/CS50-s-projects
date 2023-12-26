@@ -38,7 +38,7 @@
 
             if (diff <= 10){
                 document.querySelector("#track").style.color = "Green";
-                document.querySelector("#track").innerText = "Great! You're within your recommended pregnancy weight gain range";
+                document.querySelector("#track").innerHTML = "<h3>Great! You're within your recommended pregnancy weight gain range";
             }
             else if (diff > 10 && diff <= 15){
                 document.querySelector("#track").style.color = "Orange";
