@@ -5,9 +5,9 @@
         <h1>{{ percentage_gain|floatformat }}% Latest recorded weight gain, {{ date }}</h1>
         <h1>{{ duration_percent|floatformat }}%</h1>
         <h3 id="difference">{{ difference }}</h3>
-        <h3 id="green-flag"><span style="color:Green;">&#9873;</span></h3>
-        <h3 id="orange-flag"><span style="color:orange;">&#9873;</span></h3>
-        <h3 id="red-flag"><span style="color:red;">&#9873;</span></h3>
+        <h3 id="green-flag"><span style="color:Green;">&#9873;</span> Safe</h3>
+        <h3 id="orange-flag"><span style="color:orange;">&#9873;</span> Caution</h3>
+        <h3 id="red-flag"><span style="color:red;">&#9873;</span> Unsafe</h3>
         <h3 id="track">absolute value difference between duration and weight gain percentage: 10% is green-safe, 11 to 15% is orange-caution, greater than 15% is red-unsafe</h3>
     {% endif %}
     <p>pregnancy weight gain calculator <a href="https://www.whattoexpect.com/pregnancy-weight-gain-calculator">weight gain calculator</a></p>
@@ -39,15 +39,23 @@
             document.querySelector('#difference').style.display = 'none';
 
             if (diff <= 10){
-                
+                document.querySelector('#red-flag').style.display = 'none';
+                document.querySelector('#orange-flag').style.display = 'none';
+                document.querySelector('#green-flag').style.display = 'block';
                 document.querySelector("#track").style.color = "Green";
                 document.querySelector("#track").innerText = "Great! You're within your recommended pregnancy weight gain range.";
             }
             else if (diff > 10 && diff <= 15){
+                document.querySelector('#red-flag').style.display = 'none';
+                document.querySelector('#orange-flag').style.display = 'block';
+                document.querySelector('#green-flag').style.display = 'none';
                 document.querySelector("#track").style.color = "Orange";
                 document.querySelector("#track").innerText = "You're tracking at a close proximity to your recommended weight gain range.";
             }
             else if (diff > 15){
+                document.querySelector('#red-flag').style.display = 'block';
+                document.querySelector('#orange-flag').style.display = 'none';
+                document.querySelector('#green-flag').style.display = 'none';
                 document.querySelector("#track").style.color = "Red";
                 document.querySelector("#track").innerText = "You're tracking below or above your recommended weight gain range.";
             }
