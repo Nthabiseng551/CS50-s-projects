@@ -2,7 +2,22 @@
 
 {% block body %}
     <h3>Keep track of tests you have done, not all are compulsory some depends on the individual,Each test you get will vary according to your risk for certain conditions; List of common prenatal tests,</h3>
-    {% for test in tests %}
-    <p>{{ test.test_name }}; Week {{ test.week }}</p>
+    <div>
+        <h4>First Trimester Tests and Screenings</h4>
+    {% for test in tests1 %}
+    <p>{{ test.test_name }}</p>
     {% endfor %}
+    </div>
+    <div>
+        <h4>Second Trimester Tests and Screenings</h4>
+        {% for test in tests2 %}
+        <p>{{ test.test_name }}</p>
+        {% endfor %}
+    </div>
+        <div>
+            <h4>Third Trimester Tests and Screenings</h4>
+            {% for test in tests3 %}
+            <p>{{ test.test_name }}</p>
+            {% endfor %}
+        </div>
 {% endblock %}
