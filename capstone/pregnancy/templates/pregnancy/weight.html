@@ -29,4 +29,13 @@
         <input type="hidden" id="difference" name="difference" value="{{ difference }}">
         <button class="btn btn-primary" type="submit">Save</button>
     </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('form').onsubmit = function() {
+                const diff = document.querySelector('#difference').value;
+                alert(`Hello, ${diff}`);
+            };
+        });
+    </script>
 {% endblock %}
