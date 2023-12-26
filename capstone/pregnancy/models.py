@@ -16,6 +16,7 @@ class UserProfile(models.Model):
     pre_weight = models.FloatField(null=True, blank=True)
     target_weight = models.FloatField(null=True, blank=True)
     current_weight = models.FloatField(null=True, blank=True)
+    currentWeight_update_date = models.DateField(default=date.today)
 
     def __str__(self):
         return f"{self.id}, {self.user}, {self.week_of_pregnancy}"
