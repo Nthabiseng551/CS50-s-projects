@@ -4,6 +4,7 @@
     {% if track_weight %}
         <h1>{{ percentage_gain|floatformat }}% Latest recorded weight gain, {{ date }}</h1>
         <h1>{{ duration_percent|floatformat }}%</h1>
+        <h3 id="difference">{{ difference }}</h3>
         <h3>approximate weight gain and pregnancy duration values are a good indication that you are tracking within recommended guidelines</h3>
         <h3>absolute value difference between duration and weight gain percentage: 10% is green, 11 to 15% is orange, greater than 15% is red</h3>
     {% endif %}
@@ -26,7 +27,7 @@
             <p>Your target total pregnancy weight gain from the weight gain calculator (in kg)</p>
             <input class="form-control" type="number" name="tweight" placeholder="{{ tWeight }}">
         </div>
-        <input type="hidden" id="difference" name="difference" value="{{ difference }}">
+
         <button class="btn btn-primary" type="submit">Save</button>
     </form>
 
