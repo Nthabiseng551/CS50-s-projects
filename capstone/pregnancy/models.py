@@ -23,6 +23,7 @@ class UserProfile(models.Model):
 
 class Test(models.Model):
     test_name = models.CharField(max_length=100)
+    description = models.CharField(max_length=100)
     week_start = models.IntegerField(null=True)
     week_end = models.IntegerField(null=True)
     done = models.BooleanField(default=False)
