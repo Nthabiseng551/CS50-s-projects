@@ -186,6 +186,7 @@ def weight(request):
         cWeight = request.POST["cweight"]
         userProfile.current_weight = cWeight
         userProfile.pregnant = True
+        userProfile.currentWeight_update_date = date.today()
         userProfile.save()
         if not request.POST["pre-weight"]:
             preWeight = userProfile.pre_weight
