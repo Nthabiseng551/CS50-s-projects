@@ -246,6 +246,5 @@ def tests(request):
     return render(request, "pregnancy/tests.html", {
         "tests1": tests1,
         "tests2": tests2,
-        "tests3": tests3,
-        "done": False
+        "tests3": tests3
     })
