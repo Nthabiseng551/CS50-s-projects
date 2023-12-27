@@ -41,7 +41,7 @@
                 let testsdone = localStorage.getItem('testsdone');
                 let done = localStorage.getItem('done');
 
-                if (btn.className === "btn btn-dark" && done === "True"){
+                if (done === "True"){
                     testsdone--;
                     done = 'False';
                     document.querySelector('#tests-done').innerText = testsdone;
