@@ -32,6 +32,8 @@ def index(request):
         if request.user.is_authenticated:
             currentUser = User.objects.get(pk=request.user.id)
             userProfile = UserProfile.objects.get(user=currentUser)
+            tests = Test.objects.all()
+            
             week = userProfile.week_of_pregnancy
             to_go = 40 - week
             preg = userProfile.pregnant
