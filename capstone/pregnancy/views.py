@@ -242,7 +242,11 @@ def tests(request):
 
     tests = userProfile.tests.all()
     for test in tests:
-        done = test.done
+        if test in userProfile.tests.filter(done=True):
+            done = True
+        elif test in userProfile.tests.filter(done=False):
+            done=False
+
 
     tests1 = userProfile.tests.filter(trimester=1)
 
@@ -253,5 +257,6 @@ def tests(request):
     return render(request, "pregnancy/tests.html", {
         "tests1": tests1,
         "tests2": tests2,
-        "tests3": tests3
+        "tests3": tests3,
+        "done": done
     })
