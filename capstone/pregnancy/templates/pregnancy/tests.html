@@ -56,6 +56,9 @@
             if (!localStorage.getItem('done')) {
                 localStorage.setItem('done', 'False');
                 }
+            if (!localStorage.getItem('class')) {
+                localStorage.setItem('class', 'False');
+                }
             document.querySelector('#tests-done').innerHTML = localStorage.getItem('testsdone');
     });
         </script>
