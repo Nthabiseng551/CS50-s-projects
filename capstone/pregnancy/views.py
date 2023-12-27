@@ -254,7 +254,7 @@ def tests(request):
 def test(request, test_id):
 
     try:
-        test = Test.objects.get(user=request.user, pk=test_id)
+        test = Test.objects.get(pk=test_id)
     except Test.DoesNotExist:
         return JsonResponse({"error": "Test not found."}, status=404)
 
