@@ -7,17 +7,7 @@
         <h4>First Trimester Tests and Screenings</h4>
     {% for test in tests1 %}
     <p>{{ test.test_name }}</p>
-    {% if done %}
-    <form method="POST" action="{% url 'testdone' test_id=test.id %}">
-        {% csrf_token %}
         <button onclick="testdone()" class = "btn btn-sm btn-outline-primary" type="submit">Done</button>
-    </form>
-    {% else %}
-    <form method="POST" action="{% url 'notdone' test_id=test.id %}">
-        {% csrf_token %}
-        <button onclick="testdone()" class = "btn btn-dark" type="submit">notDone</button>
-    </form>
-    {% endif %}
     {% endfor %}
     </div>
     <div>
