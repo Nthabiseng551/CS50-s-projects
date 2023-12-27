@@ -2,6 +2,7 @@
 
 {% block body %}
     <h3>Keep track of tests you have done, not all are compulsory some depends on the individual,Each test you get will vary according to your risk for certain conditions; List of common prenatal tests,</h3>
+    <h3 id="tests-done"></h3>
     <div>
         <h4>First Trimester Tests and Screenings</h4>
     {% for test in tests1 %}
@@ -33,5 +34,8 @@
                     btn.className = "btn btn-dark";
                 }
             }
+
+            testsDone = document.getElementsByClassName("btn btn-dark");
+            document.querySelector("#tests-done").innerText = testsDone.length;
         </script>
 {% endblock %}
