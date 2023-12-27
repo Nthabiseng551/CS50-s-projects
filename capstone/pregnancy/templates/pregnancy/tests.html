@@ -7,7 +7,7 @@
         <h4>First Trimester Tests and Screenings</h4>
     {% for test in tests1 %}
     <p>{{ test.test_name }}</p>
-        <button onclick="testdone()" class = "btn btn-sm btn-outline-primary">Done</button>
+        <button onclick="testdone()" class="btn btn-sm btn-outline-primary">Done</button>
     {% endfor %}
     </div>
     <div>
@@ -48,13 +48,11 @@
                     done = 'False';
                     btn.innerHTML = "Done";
                 }
-                document.querySelector('#tests-done').innerText = testsdone;
                 localStorage.setItem('testsdone', testsdone);
                 localStorage.setItem('done', done);
             }
-            document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('#tests-done').innerHTML = localStorage.getItem('testsdone');
-        document.querySelector('button').onclick = testdone;
     });
         </script>
 {% endblock %}
