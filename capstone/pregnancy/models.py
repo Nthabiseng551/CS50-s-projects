@@ -26,7 +26,7 @@ class Test(models.Model):
     test_name = models.CharField(max_length=100)
     description = models.CharField(max_length=255, null=True, blank=True)
     trimester = models.IntegerField(null=True)
-    done = models.BooleanField(default=False)
+    done = models.BooleanField()
 
     def __str__(self):
         return f"{self.id},{self.done} {self.test_name}"
