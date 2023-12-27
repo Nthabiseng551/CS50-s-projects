@@ -37,9 +37,9 @@
                 let testsdone = localStorage.getItem('testsdone');
                 let done = localStorage.getItem('done');
 
-                if (done === "True"){
-                    testsdone--;
-                    done = 'False';
+                if (done === "False"){
+                    testsdone++;
+                    done = 'True';
                     document.querySelector('#tests-done').innerText = testsdone;
                     btn.className = "btn btn-sm btn-outline-primary";
                     btn.innerHTML = "notDone";
