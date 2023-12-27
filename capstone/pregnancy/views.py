@@ -10,7 +10,7 @@ import math
 
 from datetime import datetime, date, timedelta
 
-from .models import User, UserProfile, Test
+from .models import User, UserProfile
 
 # Create your views here.
 
