@@ -40,11 +40,14 @@
                 const btn = event.target;
                 let testsdone = localStorage.getItem('testsdone');
                 if (btn.className === "btn btn-dark"){
+                    testsdone++;
                     btn.className = "btn btn-sm btn-outline-primary";
                 }
                 else {
+                    testsdone--;
                     btn.className = "btn btn-dark";
                 }
+                localStorage.setItem('testsdone', testsdone);
             }
 
         </script>
