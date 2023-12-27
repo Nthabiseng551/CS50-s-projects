@@ -11,5 +11,8 @@ urlpatterns = [
      path("dietician", views.dietician, name="dietician"),
      path("health", views.health, name="health"),
      path("weight", views.weight, name="weight"),
-     path("tests", views.tests, name="tests")
+     path("tests", views.tests, name="tests"),
+
+     #API route
+     path("test/<int:test_id>", views.test, name="test")
  ]
