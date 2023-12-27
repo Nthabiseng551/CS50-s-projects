@@ -31,21 +31,16 @@
 
                 const btn = event.target;
                 let testsdone = localStorage.getItem('testsdone');
-                let done = localStorage.getItem('done');
 
-                if (done==="False"){
+                if (btn.innerHTML = "Done";){
                     testsdone++;
-                    done = 'True';
                     btn.innerHTML = "notDone";
                     localStorage.setItem('testsdone', testsdone);
-                    localStorage.setItem('done', done);
                 }
-                else if (done==="True"){
+                else if (btn.innerHTML = "notDone"){
                     testsdone--;
-                    done = 'False';
                     btn.innerHTML = "Done";
                     localStorage.setItem('testsdone', testsdone);
-                    localStorage.setItem('done', done);
                 }
 
             }
@@ -53,11 +48,7 @@
             if (!localStorage.getItem('testsdone')) {
                     localStorage.setItem('testsdone', 0);
                     }
-            if (!localStorage.getItem('btn html')) {
-                localStorage.setItem('btn html', 'Done');
-                }
             document.querySelector('#tests-done').innerHTML = localStorage.getItem('testsdone');
-            document.querySelector('#tests-done').innerHTML = localStorage.getItem('btn html');
 
     });
         </script>
