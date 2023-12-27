@@ -238,23 +238,14 @@ def tests(request):
     userProfile = UserProfile.objects.get(user=currentUser)
 
     tests1 = userProfile.tests.filter(trimester=1)
-    for test in tests1:
-        if test.done == True:
-            done1 = True
-        else:
-            done1 = False
 
     tests2 = userProfile.tests.filter(trimester=2)
-    for test in tests2:
-        done2 = False
 
     tests3 = userProfile.tests.filter(trimester=3)
-    for test in tests3:
-        done3 = test.done
 
     return render(request, "pregnancy/tests.html", {
         "tests1": tests1,
         "tests2": tests2,
         "tests3": tests3,
-        "done1": done1
+        "done": F
     })
