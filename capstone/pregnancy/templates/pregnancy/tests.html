@@ -26,17 +26,13 @@
         </div>
         <script>
 
-            if (!localStorage.getItem('testsdone')) {
-
-
-                localStorage.setItem('testsdone', 0);
-            }
-            if (!localStorage.getItem('done')) {
-
-                localStorage.setItem('done', 'False');
-                }
-
             function testdone(){
+                if (!localStorage.getItem('testsdone')) {
+                    localStorage.setItem('testsdone', 0);
+                    }
+                if (!localStorage.getItem('done')) {
+                    localStorage.setItem('done', 'False');
+                    }
                 const btn = event.target;
                 let testsdone = localStorage.getItem('testsdone');
                 let done = localStorage.getItem('done');
