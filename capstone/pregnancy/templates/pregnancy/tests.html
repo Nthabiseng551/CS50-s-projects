@@ -18,12 +18,7 @@
         <h4>Second Trimester Tests and Screenings</h4>
         {% for test in tests2 %}
         <p>{{ test.test_name }}</p>
-        {% if done %}
             <button onclick="testdone()" class = "btn btn-sm btn-outline-primary" type="submit">Done</button>
-        {% else %}
-            <button onclick="testdone()" class = "btn btn-dark" type="submit">Done</button>
-        {% endif %}
-
         {% endfor %}
     </div>
         <div>
