@@ -6,7 +6,7 @@
         <h4>First Trimester Tests and Screenings</h4>
     {% for test in tests1 %}
     <p>{{ test.test_name }}</p>
-    <button class = "btn btn-sm btn-outline-primary" id="test-done">Done</button>
+    <button onclick="testdone()" class = "btn btn-sm btn-outline-primary" id="test-done">Done</button>
     {% endfor %}
     </div>
     <div>
@@ -23,4 +23,9 @@
             <button class = "btn btn-sm btn-outline-primary" id="test-done">Done</button>
             {% endfor %}
         </div>
+        <script>
+            function testdone(){
+                
+            }
+        </script>
 {% endblock %}
