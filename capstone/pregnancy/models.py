@@ -23,7 +23,7 @@ class UserProfile(models.Model):
 
 class Test(models.Model):
     user = models.ForeignKey("User", null=True, blank=True, on_delete=models.CASCADE, related_name="tests")
-    users = models.ManyToManyField("User", null=True, blank=True,related_name="emails_received")
+    users = models.ManyToManyField("User", null=True, blank=True, related_name="test_users")
     test_name = models.CharField(max_length=100)
     description = models.CharField(max_length=255, null=True, blank=True)
     trimester = models.IntegerField(null=True)
