@@ -25,12 +25,7 @@
             {% endfor %}
         </div>
         <script>
-            if (!localStorage.getItem('testsdone')) {
-                    localStorage.setItem('testsdone', 0);
-                    }
-            if (!localStorage.getItem('done')) {
-                localStorage.setItem('done', 'False');
-                }
+
 
             function testdone(){
 
@@ -52,11 +47,16 @@
                     localStorage.setItem('testsdone', testsdone);
                     localStorage.setItem('done', done);
                 }
-                localStorage.setItem('testsdone', testsdone);
-                localStorage.setItem('done', done);
+
             }
         document.addEventListener('DOMContentLoaded', function() {
-        document.querySelector('#tests-done').innerHTML = localStorage.getItem('testsdone');
+            if (!localStorage.getItem('testsdone')) {
+                    localStorage.setItem('testsdone', 0);
+                    }
+            if (!localStorage.getItem('done')) {
+                localStorage.setItem('done', 'False');
+                }
+            document.querySelector('#tests-done').innerHTML = localStorage.getItem('testsdone');
     });
         </script>
 {% endblock %}
