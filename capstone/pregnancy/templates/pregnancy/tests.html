@@ -40,10 +40,17 @@
 
                 localStorage.setItem('testsdone', 0);
             }
+            if (!localStorage.getItem('done')) {
+
+
+                localStorage.setItem('done', False);
+                }
 
             function testdone(){
                 const btn = event.target;
                 let testsdone = localStorage.getItem('testsdone');
+                let done = localStorage.getItem('done');
+                
                 if (btn.className === "btn btn-dark"){
                     testsdone--;
                     document.querySelector('#tests-done').innerText = testsdone;
