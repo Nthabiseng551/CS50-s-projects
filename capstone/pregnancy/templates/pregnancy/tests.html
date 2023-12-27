@@ -26,7 +26,9 @@
         </div>
         <script>
 
-
+            if (!localStorage.getItem('testsdone')) {
+                    localStorage.setItem('testsdone', 0);
+                    }
             function testdone(){
 
                 const btn = event.target;
