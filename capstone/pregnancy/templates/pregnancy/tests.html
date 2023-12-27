@@ -37,12 +37,10 @@
                 if (btn.innerHTML === "Done"){
                     testsdone++;
                     btn.innerHTML = "notDone";
-                    localStorage.setItem('testsdone', testsdone);
                 }
                 else if (btn.innerHTML === "notDone"){
                     testsdone--;
                     btn.innerHTML = "Done";
-                    localStorage.setItem('testsdone', testsdone);
                 }
             }
         document.addEventListener('DOMContentLoaded', function() {
