@@ -7,10 +7,10 @@
     {% for test in tests1 %}
     <p>{{ test.test_name }}</p>
     {% if user.is_authenticated %}
-            {% if liked %}
-                    <button type="submit" onclick="liking({{ post.id }})" class="btn btn-danger" id="like-btn">&hearts;<span id="like-count">{{ post.likes.all.count }}</span></button>
+            {% if done %}
+                    <button type="submit" onclick="liking({{ post.id }})" class="btn btn-danger" id="like-btn">&hearts;</button>
             {% else %}
-                    <button onclick="liking({{ post.id }})" class="btn btn-dark" id="like-btn">&hearts;<span id="like-count">{{ post.likes.all.count }}</span></button>
+                    <button onclick="liking({{ post.id }})" class="btn btn-dark" id="like-btn">&hearts;</button>
             {% endif %}
         {% endif %}
     <button class = "btn btn-sm btn-outline-primary" id="test-done">Done</button>
