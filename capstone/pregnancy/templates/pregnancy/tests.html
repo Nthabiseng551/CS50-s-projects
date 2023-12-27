@@ -37,9 +37,12 @@
             }
             if (!localStorage.getItem('done')) {
 
-
-                localStorage.setItem('done', False);
+                localStorage.setItem('done', 'False');
                 }
+                if (!localStorage.getItem('class')) {
+
+                    localStorage.setItem('class', 'btn btn-sm btn-outline-primary');
+                    }
 
             function testdone(){
                 const btn = event.target;
