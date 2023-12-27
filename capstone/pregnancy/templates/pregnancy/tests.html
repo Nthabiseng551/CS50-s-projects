@@ -14,14 +14,14 @@
         <h4>Second Trimester Tests and Screenings</h4>
         {% for test in tests2 %}
         <p>{{ test.test_name }}</p>
-            <button onclick="testdone()" className = "btn btn-sm btn-outline-primary">Done</button>
+            <button onclick="testdone()" class = "btn btn-sm btn-outline-primary">Done</button>
         {% endfor %}
     </div>
         <div>
             <h4>Third Trimester Tests and Screenings</h4>
             {% for test in tests3 %}
             <p>{{ test.test_name }}</p>
-            <button onclick="testdone()" className = "btn btn-sm btn-outline-primary">Done</button>
+            <button onclick="testdone()" class = "btn btn-sm btn-outline-primary">Done</button>
             {% endfor %}
         </div>
         <script>
@@ -49,7 +49,6 @@
                     testsdone--;
                     done = 'False';
                     document.querySelector('#tests-done').innerText = testsdone;
-                    btn.className = "btn btn-dark";
                     btn.innerHTML = "Done";
                     localStorage.setItem('testsdone', testsdone);
                     localStorage.setItem('done', done);
