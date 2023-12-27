@@ -22,7 +22,7 @@ class UserProfile(models.Model):
         return f"{self.id}, {self.user}, {self.week_of_pregnancy}"
 
 class Test(models.Model):
-    user = models.ManyToManyField("User", null=True, blank=True, related_name="test_users")
+    user = models.ForeignKey("User", null=True, blank=True, related_name="tests")
     test_name = models.CharField(max_length=100)
     description = models.CharField(max_length=255, null=True, blank=True)
     trimester = models.IntegerField(null=True)
