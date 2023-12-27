@@ -102,6 +102,8 @@ def register(request):
 
         tests = Test.objects.all()
         for test in tests:
+            test.user = user
+            test.save()
         login(request, user)
         return HttpResponseRedirect(reverse("index"))
     else:
