@@ -38,12 +38,12 @@
                 let testsdone = localStorage.getItem('testsdone');
                 let done = localStorage.getItem('done');
 
-                if (btn.innerHTML === "Done" && done==="False"){
+                if (done==="False"){
                     testsdone++;
                     done = 'True';
                     btn.innerHTML = "notDone";
                 }
-                else if (btn.innerHTML === "notDone" && done==="True"){
+                else if (done==="True"){
                     testsdone--;
                     done = 'False';
                     btn.innerHTML = "Done";
