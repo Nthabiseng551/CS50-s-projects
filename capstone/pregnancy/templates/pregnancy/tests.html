@@ -44,11 +44,7 @@
                 }
             }
         document.addEventListener('DOMContentLoaded', function() {
-            if (!localStorage.getItem('testsdone')) {
-                    localStorage.setItem('testsdone', 0);
-                    }
             document.querySelector('#tests-done').innerHTML = localStorage.getItem('testsdone');
-
     });
         </script>
 {% endblock %}
