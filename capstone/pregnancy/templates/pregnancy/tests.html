@@ -53,15 +53,18 @@
 
                 if (btn.className === "btn btn-dark" && done === "True"){
                     testsdone--;
+                    done = False;
                     document.querySelector('#tests-done').innerText = testsdone;
                     btn.className = "btn btn-sm btn-outline-primary";
                 }
                 else {
                     testsdone++;
+                    done = True;
                     document.querySelector('#tests-done').innerText = testsdone;
                     btn.className = "btn btn-dark";
                 }
                 localStorage.setItem('testsdone', testsdone);
+                localStorage.setItem('done', done);
             }
 
         </script>
