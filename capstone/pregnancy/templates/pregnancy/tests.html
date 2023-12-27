@@ -7,21 +7,21 @@
         <h4>First Trimester Tests and Screenings</h4>
     {% for test in tests1 %}
     <p>{{ test.test_name }}</p>
-        <button onclick="testdone()">Done</button>
+        <button onclick="testdone()" class = "btn btn-sm btn-outline-primary">Done</button>
     {% endfor %}
     </div>
     <div>
         <h4>Second Trimester Tests and Screenings</h4>
         {% for test in tests2 %}
         <p>{{ test.test_name }}</p>
-            <button onclick="testdone()">Done</button>
+            <button onclick="testdone()" className = "btn btn-sm btn-outline-primary">Done</button>
         {% endfor %}
     </div>
         <div>
             <h4>Third Trimester Tests and Screenings</h4>
             {% for test in tests3 %}
             <p>{{ test.test_name }}</p>
-            <button onclick="testdone()">Done</button>
+            <button onclick="testdone()" className = "btn btn-sm btn-outline-primary">Done</button>
             {% endfor %}
         </div>
         <script>
@@ -41,7 +41,6 @@
                     testsdone++;
                     done = 'True';
                     document.querySelector('#tests-done').innerText = testsdone;
-                    btn.className = "btn btn-sm btn-outline-primary";
                     btn.innerHTML = "notDone";
                     localStorage.setItem('testsdone', testsdone);
                     localStorage.setItem('done', done);
