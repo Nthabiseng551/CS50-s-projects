@@ -227,6 +227,7 @@ def weight(request):
                 "date": update_date
             })
         return render(request, "pregnancy/weight.html")
+
 # prenatal tests view
 def tests(request):
     users = User.objects.all()
