@@ -233,10 +233,6 @@ def tests(request):
     users = UserProfile.objects.all()
     tests = Test.objects.all()
 
-    for test in tests:
-        test.users = users
-        test.save()
-
     tests1 = Test.objects.filter(trimester=1)
 
     tests2 = Test.objects.filter(trimester=2)
@@ -246,7 +242,6 @@ def tests(request):
     return render(request, "pregnancy/tests.html", {
         "tests1": tests1,
         "tests2": tests2,
-        "tests3": tests3,
-        "users": users
+        "tests3": tests3
     })
 
