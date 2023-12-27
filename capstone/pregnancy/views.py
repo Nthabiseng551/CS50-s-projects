@@ -248,4 +248,7 @@ def tests(request):
         "done": testdone
     })
 
-def test(request, testid):
+#API
+@csrf_exempt
+@login_required
+def test(request, test_id):
