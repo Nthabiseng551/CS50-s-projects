@@ -40,17 +40,9 @@
                 const btn = event.target;
                 let testsdone = localStorage.getItem('testsdone');
                 if (btn.className === "btn btn-dark"){
-                    fetch(`/test/${test.id}`, {
-                        method: 'PUT',
-                        body: JSON.stringify({
-                            done: True
-                })
-              })
-                    .then (() => {
-                        testsdone--;
-                        document.querySelector('#tests-done').innerText = testsdone;
-                        btn.className = "btn btn-sm btn-outline-primary";
-              });
+                    testsdone--;
+                    document.querySelector('#tests-done').innerText = testsdone;
+                    btn.className = "btn btn-sm btn-outline-primary";
                 }
                 else {
                     testsdone++;

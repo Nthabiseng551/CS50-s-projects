@@ -247,34 +247,3 @@ def tests(request):
         "tests3": tests3,
         "done": testdone
     })
-
-#API
-@csrf_exempt
-@login_required
-def test(request, test_id):
-
-    try:
-        test = Test.objects.get(pk=test_id)
-    except Test.DoesNotExist:
-        return JsonResponse({"error": "Test not found."}, status=404)
-
-
-    if request.method == "GET":
-        return JsonResponse(test.serialize())
-
-
-    elif request.method == "PUT":
-        data = json.loads(request.body)
-        if data.get("done") is not None:
-            test.done = data["done"]
-
-        email.save()
-        return HttpResponse(status=204)
-
-
-    else:
-        return JsonResponse({
-            "error": "GET or PUT request required."
-        }, status=400)
-
-
