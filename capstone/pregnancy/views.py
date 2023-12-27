@@ -234,6 +234,7 @@ def tests(request):
     for user in users:
         for test in tests:
             test.user = user
+            test.save()
 
     tests1 = Test.objects.filter(trimester=1)
     tests2 = Test.objects.filter(trimester=2)
