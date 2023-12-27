@@ -236,7 +236,7 @@ def tests(request):
     for test in tests:
         test.users = users
         test.save()
-        d
+        test_done = test.done
 
     tests1 = Test.objects.filter(trimester=1)
 
