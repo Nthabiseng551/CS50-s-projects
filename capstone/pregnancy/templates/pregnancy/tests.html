@@ -31,7 +31,7 @@
             if (!localStorage.getItem('done')) {
                 localStorage.setItem('done', 'False');
                 }
-                
+
             function testdone(){
 
                 const btn = event.target;
@@ -52,6 +52,9 @@
                 localStorage.setItem('testsdone', testsdone);
                 localStorage.setItem('done', done);
             }
-
+            document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector('#tests-done').innerHTML = localStorage.getItem('testsdone');
+        document.querySelector('button').onclick = testdone;
+    });
         </script>
 {% endblock %}
