@@ -46,12 +46,14 @@
                     done = 'False';
                     document.querySelector('#tests-done').innerText = testsdone;
                     btn.className = "btn btn-sm btn-outline-primary";
+                    btn.innerHTML = "notDone"
                 }
                 else {
                     testsdone++;
                     done = 'True';
                     document.querySelector('#tests-done').innerText = testsdone;
                     btn.className = "btn btn-dark";
+                    btn.innerHTML = "Done"
                 }
                 localStorage.setItem('testsdone', testsdone);
                 localStorage.setItem('done', done);
