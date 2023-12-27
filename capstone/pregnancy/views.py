@@ -239,11 +239,11 @@ def tests(request):
 
     tests1 = userProfile.tests.filter(trimester=1)
     for test in tests1:
-        done = test.done
+        done = False
 
     tests2 = userProfile.tests.filter(trimester=2)
     for test in tests2:
-        done = test.done
+        done = True
 
     tests3 = userProfile.tests.filter(trimester=3)
     for test in tests3:
