@@ -93,10 +93,10 @@ def register(request):
             pregnant = False,
             dietician = False,
             counsellor = False,
-            week_of_pregnancy = 0,
-            tests.set(tests)
+            week_of_pregnancy = 0
             )
             newProfile.save()
+            newProfile.tests.set(tests)
         except IntegrityError:
             return render(request, "pregnancy/register.html", {
                 "message": "Username already taken."
