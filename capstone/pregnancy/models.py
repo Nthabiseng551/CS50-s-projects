@@ -22,9 +22,11 @@ class UserProfile(models.Model):
         return f"{self.id}, {self.user}, {self.week_of_pregnancy}"
 
 class Test(models.Model):
+    user = models.ForeignKey("User", on_delete=models.CASCADE, related_name="tests")
     test_name = models.CharField(max_length=100)
     description = models.CharField(max_length=255, null=True, blank=True)
     trimester = models.IntegerField(null=True)
+    done = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.test_name}; trimester {self.trimester}"
