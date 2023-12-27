@@ -43,16 +43,19 @@
                     document.querySelector('#tests-done').innerText = testsdone;
                     btn.className = "btn btn-sm btn-outline-primary";
                     btn.innerHTML = "notDone";
+                    localStorage.setItem('testsdone', testsdone);
+                    localStorage.setItem('done', done);
                 }
                 else {
-                    testsdone++;
-                    done = 'True';
+                    testsdone--;
+                    done = 'False';
                     document.querySelector('#tests-done').innerText = testsdone;
                     btn.className = "btn btn-dark";
                     btn.innerHTML = "Done";
+                    localStorage.setItem('testsdone', testsdone);
+                    localStorage.setItem('done', done);
                 }
-                localStorage.setItem('testsdone', testsdone);
-                localStorage.setItem('done', done);
+
             }
 
         </script>
