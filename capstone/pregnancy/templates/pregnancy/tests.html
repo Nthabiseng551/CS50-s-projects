@@ -38,6 +38,7 @@
 
             function testdone(){
                 const btn = event.target;
+                let testsdone = localStorage.getItem('testsdone');
                 if (btn.className === "btn btn-dark"){
                     btn.className = "btn btn-sm btn-outline-primary";
                 }
