@@ -25,6 +25,11 @@
             {% endfor %}
         </div>
         <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            testsDone = document.getElementsByClassName("btn btn-dark");
+            document.querySelector("#tests-done").innerText = testsDone.length;
+            });
+
             function testdone(){
                 const btn = event.target;
                 if (btn.className === "btn btn-dark"){
@@ -35,7 +40,5 @@
                 }
             }
 
-            testsDone = document.getElementsByClassName("btn btn-dark");
-            document.querySelector("#tests-done").innerText = testsDone.length;
         </script>
 {% endblock %}
