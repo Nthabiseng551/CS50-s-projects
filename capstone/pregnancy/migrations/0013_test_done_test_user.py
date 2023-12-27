@@ -21,7 +21,7 @@ class Migration(migrations.Migration):
             model_name="test",
             name="user",
             field=models.ForeignKey(
-                default=django.utils.timezone.now,
+                default=,
                 on_delete=django.db.models.deletion.CASCADE,
                 related_name="tests",
                 to=settings.AUTH_USER_MODEL,
