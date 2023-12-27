@@ -243,7 +243,7 @@ def tests(request):
 
     tests2 = userProfile.tests.filter(trimester=2)
     for test in tests2:
-        done = True
+        done = False
 
     tests3 = userProfile.tests.filter(trimester=3)
     for test in tests3:
