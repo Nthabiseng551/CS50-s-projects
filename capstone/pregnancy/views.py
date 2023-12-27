@@ -230,6 +230,12 @@ def weight(request):
 
 # prenatal tests view
 def tests(request):
-
-    return
+    tests1 = Test.objects.filter(trimester=1)
+    tests2 = Test.objects.filter(trimester=2)
+    tests3 = Test.objects.filter(trimester=3)
+    return render(request, "pregnancy/tests.html", {
+        "tests1": tests1,
+        "tests2": tests2,
+        "tests3": tests3
+    })
 
