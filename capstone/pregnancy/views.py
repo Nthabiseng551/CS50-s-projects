@@ -83,6 +83,7 @@ def register(request):
                 "message": "Passwords must match."
             })
 
+        tests = Test.objects.all()
         # Attempt to create new user
         try:
             user = User.objects.create_user(username, email, password)
@@ -92,7 +93,8 @@ def register(request):
             pregnant = False,
             dietician = False,
             counsellor = False,
-            week_of_pregnancy = 0
+            week_of_pregnancy = 0,
+            tests = tests
             )
             newProfile.save()
         except IntegrityError:
