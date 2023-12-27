@@ -7,25 +7,21 @@
         <h4>First Trimester Tests and Screenings</h4>
     {% for test in tests1 %}
     <p>{{ test.test_name }}</p>
-    {% if done %}
-        <button onclick="testdone()" class = "btn btn-sm btn-outline-primary" type="submit">Done</button>
-    {% else %}
-        <button onclick="testdone()" class = "btn btn-dark" type="submit">Done</button>
-    {% endif %}
+        <button onclick="testdone()" class = "btn btn-sm btn-outline-primary">Done</button>
     {% endfor %}
     </div>
     <div>
         <h4>Second Trimester Tests and Screenings</h4>
         {% for test in tests2 %}
         <p>{{ test.test_name }}</p>
-            <button onclick="testdone()" class = "btn btn-sm btn-outline-primary" type="submit">Done</button>
+            <button onclick="testdone()" class = "btn btn-sm btn-outline-primary">Done</button>
         {% endfor %}
     </div>
         <div>
             <h4>Third Trimester Tests and Screenings</h4>
             {% for test in tests3 %}
             <p>{{ test.test_name }}</p>
-            <button onclick="testdone()" class = "btn btn-sm btn-outline-primary" id="test-done">Done</button>
+            <button onclick="testdone()" class = "btn btn-sm btn-outline-primary">Done</button>
             {% endfor %}
         </div>
         <script>
@@ -39,16 +35,11 @@
 
                 localStorage.setItem('done', 'False');
                 }
-                if (!localStorage.getItem('class')) {
-
-                    localStorage.setItem('class', 'btn btn-sm btn-outline-primary');
-                    }
 
             function testdone(){
                 const btn = event.target;
                 let testsdone = localStorage.getItem('testsdone');
                 let done = localStorage.getItem('done');
-                let class = localStorage.getItem('class');
 
                 if (btn.className === "btn btn-dark" && done === "True"){
                     testsdone--;
@@ -64,7 +55,6 @@
                 }
                 localStorage.setItem('testsdone', testsdone);
                 localStorage.setItem('done', done);
-                localStorage.setItem('class', class);
             }
 
         </script>
