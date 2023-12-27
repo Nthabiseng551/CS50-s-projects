@@ -25,6 +25,12 @@
             {% endfor %}
         </div>
         <script>
+
+            if (!localStorage.getItem('testsdone')) {
+
+
+                localStorage.setItem('testsdone', 0);
+            }
             document.addEventListener('DOMContentLoaded', function() {
             testsDone = document.getElementsByClassName("btn btn-sm btn-outline-primary");
             document.querySelector("#tests-done").innerText = testsDone.length;
