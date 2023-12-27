@@ -85,7 +85,6 @@ def register(request):
                 "message": "Passwords must match."
             })
 
-        tests = Test.objects.all()
         # Attempt to create new user
         try:
             user = User.objects.create_user(username, email, password)
@@ -98,7 +97,9 @@ def register(request):
             week_of_pregnancy = 0
             )
             newProfile.save()
-            newProfile.tests.set(tests)
+            tests = Test.objects.all()
+            for test in tests:
+                newProfile.usertests.add(test)
         except IntegrityError:
             return render(request, "pregnancy/register.html", {
                 "message": "Username already taken."
