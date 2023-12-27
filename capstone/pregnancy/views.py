@@ -237,8 +237,6 @@ def tests(request):
     currentUser = User.objects.get(pk=request.user.id)
     userProfile = UserProfile.objects.get(user=currentUser)
 
-    tests = userProfile.tests.all()
-
     tests1 = userProfile.tests.filter(trimester=1)
 
     tests2 = userProfile.tests.filter(trimester=2)
