@@ -100,10 +100,7 @@ def register(request):
                 "message": "Username already taken."
             })
 
-        tests = Test.objects.all()
-        for test in tests:
-            test.user = user
-            test.save()
+        tests 
         login(request, user)
         return HttpResponseRedirect(reverse("index"))
     else:
