@@ -28,5 +28,11 @@ class Test(models.Model):
     trimester = models.IntegerField(null=True)
     done = models.BooleanField(default=False)
 
-    def __str__(self):
-        return f"{self.test_name}; trimester {self.trimester}"
+    def serialize(self):
+        return {
+            "id": self.id,
+            "name": self.test_name,
+            "description": self.description,
+            "trimester": self.trimester,
+            "done": self.done
+        }
