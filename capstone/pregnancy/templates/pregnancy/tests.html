@@ -42,11 +42,15 @@
                     testsdone++;
                     done = 'True';
                     btn.innerHTML = "notDone";
+                    localStorage.setItem('testsdone', testsdone);
+                    localStorage.setItem('done', done);
                 }
                 else if (done==="True"){
                     testsdone--;
                     done = 'False';
                     btn.innerHTML = "Done";
+                    localStorage.setItem('testsdone', testsdone);
+                    localStorage.setItem('done', done);
                 }
                 localStorage.setItem('testsdone', testsdone);
                 localStorage.setItem('done', done);
