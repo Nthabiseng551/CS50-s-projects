@@ -248,3 +248,4 @@ def tests(request):
         "done": testdone
     })
 
+def test(request, testid):
