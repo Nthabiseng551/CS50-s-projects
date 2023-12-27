@@ -27,7 +27,10 @@
             function testdone(){
                 const btn = event.target;
                 if (btn.className === "btn btn-dark"){
-
+                    btn.className = "btn btn-sm btn-outline-primary";
+                }
+                else {
+                    btn.className = "btn btn-dark";
                 }
             }
         </script>
