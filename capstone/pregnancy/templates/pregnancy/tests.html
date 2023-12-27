@@ -43,7 +43,7 @@
                     done = 'True';
                     btn.innerHTML = "notDone";
                 }
-                else {
+                else if (btn.innerHTML === "notDone" && done==="True"){
                     testsdone--;
                     done = 'False';
                     btn.innerHTML = "Done";
