@@ -38,22 +38,17 @@
                 let testsdone = localStorage.getItem('testsdone');
                 let done = localStorage.getItem('done');
 
-                if (btn.innerHTML === "Done"){
+                if (btn.innerHTML === "Done" && done==="False"){
                     testsdone++;
                     done = 'True';
-                    document.querySelector('#tests-done').innerText = testsdone;
                     btn.innerHTML = "notDone";
-                    localStorage.setItem('testsdone', testsdone);
-                    localStorage.setItem('done', done);
                 }
                 else {
                     testsdone--;
                     done = 'False';
-                    document.querySelector('#tests-done').innerText = testsdone;
                     btn.innerHTML = "Done";
-                    localStorage.setItem('testsdone', testsdone);
-                    localStorage.setItem('done', done);
                 }
+                document.querySelector('#tests-done').innerText = testsdone;
                 localStorage.setItem('testsdone', testsdone);
                 localStorage.setItem('done', done);
             }
