@@ -247,5 +247,5 @@ def tests(request):
         "tests1": tests1,
         "tests2": tests2,
         "tests3": tests3,
-        "done": F
+        "done": False
     })
