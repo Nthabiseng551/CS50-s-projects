@@ -48,6 +48,7 @@
                 const btn = event.target;
                 let testsdone = localStorage.getItem('testsdone');
                 let done = localStorage.getItem('done');
+                let class = localStorage.getItem('class');
 
                 if (btn.className === "btn btn-dark" && done === "True"){
                     testsdone--;
