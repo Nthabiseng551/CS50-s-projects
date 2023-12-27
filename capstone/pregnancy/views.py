@@ -230,7 +230,7 @@ def weight(request):
 
 # prenatal tests view
 def tests(request):
-    users = User.objects.all()
+    users = UserProfile.objects.all()
     tests = Test.objects.all()
 
     for user in users:
