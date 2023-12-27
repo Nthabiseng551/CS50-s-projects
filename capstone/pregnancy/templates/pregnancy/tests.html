@@ -33,12 +33,12 @@
                 if (!localStorage.getItem('done')) {
                     localStorage.setItem('done', 'False');
                     }
-                    
+
                 const btn = event.target;
                 let testsdone = localStorage.getItem('testsdone');
                 let done = localStorage.getItem('done');
 
-                if (done === "False"){
+                if (btn.innerHTML === "Done"){
                     testsdone++;
                     done = 'True';
                     document.querySelector('#tests-done').innerText = testsdone;
