@@ -38,12 +38,13 @@
                     testsdone++;
                     document.querySelector('#tests-done').innerHTML = localStorage.getItem('testsdone');
                     btn.innerHTML = "notDone";
-                    
+                    localStorage.setItem('testsdone', testsdone);
                 }
                 else if (btn.innerHTML === "notDone"){
                     testsdone--;
                     document.querySelector('#tests-done').innerHTML = localStorage.getItem('testsdone');
                     btn.innerHTML = "Done";
+                    localStorage.setItem('testsdone', testsdone);
                 }
             }
         document.addEventListener('DOMContentLoaded', function() {
