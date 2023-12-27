@@ -94,7 +94,7 @@ def register(request):
             dietician = False,
             counsellor = False,
             week_of_pregnancy = 0,
-            tests = tests
+            tests.set(tests)
             )
             newProfile.save()
         except IntegrityError:
