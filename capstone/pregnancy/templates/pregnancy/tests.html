@@ -9,9 +9,9 @@
     <p>{{ test.test_name }}</p>
     {% if done %}
         <button onclick="testdone()" class = "btn btn-sm btn-outline-primary" type="submit">Done</button>
-        {% else %}
+    {% else %}
         <button onclick="testdone()" class = "btn btn-dark" type="submit">Done</button>
-        {% endif %}
+    {% endif %}
     {% endfor %}
     </div>
     <div>
