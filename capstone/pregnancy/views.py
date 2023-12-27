@@ -237,9 +237,6 @@ def tests(request):
 
     tests = userProfile.tests.all()
 
-    for test in tests:
-        testdone = test.done
-
     tests1 = Test.objects.filter(trimester=1)
 
     tests2 = Test.objects.filter(trimester=2)
