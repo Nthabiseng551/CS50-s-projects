@@ -232,6 +232,8 @@ def weight(request):
 def tests(request):
     users = UserProfile.objects.all()
     tests = Test.objects.all()
+    for test in tests:
+        testdone = test.done
 
     tests1 = Test.objects.filter(trimester=1)
 
@@ -242,6 +244,7 @@ def tests(request):
     return render(request, "pregnancy/tests.html", {
         "tests1": tests1,
         "tests2": tests2,
-        "tests3": tests3
+        "tests3": tests3,
+        "done": testdone
     })
 
