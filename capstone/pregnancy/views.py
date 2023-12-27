@@ -242,7 +242,7 @@ def tests(request):
 
     tests = userProfile.tests.all()
     for test in tests:
-        isdone = test.done
+        done = test.done
 
     tests1 = userProfile.tests.filter(trimester=1)
 
