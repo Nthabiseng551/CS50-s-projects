@@ -37,10 +37,12 @@
                 let testsdone = localStorage.getItem('testsdone');
                 if (btn.className === "btn btn-dark"){
                     testsdone++;
+                    document.querySelector('#tests-done').innerText = testsdone;
                     btn.className = "btn btn-sm btn-outline-primary";
                 }
                 else {
                     testsdone--;
+                    
                     btn.className = "btn btn-dark";
                 }
                 localStorage.setItem('testsdone', testsdone);
