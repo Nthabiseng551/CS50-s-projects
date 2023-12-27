@@ -8,7 +8,9 @@
     {% for test in tests1 %}
     <p>{{ test.test_name }}</p>
     {% if done %}
-        <button onclick="testdone()" class = "btn btn-sm btn-outline-primary" id="test-done">Done</button>
+        <form>
+        <button onclick="testdone()" class = "btn btn-sm btn-outline-primary" type="submit">Done</button>
+        </form>
     {% else %}
         <button onclick="testdone()" class = "btn btn-dark" id="test-done">Done</button>
     {% endif %}
