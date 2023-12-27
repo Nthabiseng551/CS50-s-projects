@@ -233,8 +233,8 @@ def tests(request):
     users = User.objects.all()
     tests = Test.objects.all()
 
-    for test in tests:
-        for user in users:
+    for user in users:
+        for test in tests:
             test.user = user
             test.save()
 
