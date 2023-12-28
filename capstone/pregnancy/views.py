@@ -314,7 +314,7 @@ def crequests(request):
         requestProfile = UserProfile.objects.get(user=user)
         requestProfile.counselling_requested = False
         requestProfile.save()
-        messages.success(request, 'You have accepted { user.username }'s couselling consultation request')
+        messages.success(request, f"You have accepted { user.username }'s couselling consultation request")
         return HttpResponseRedirect(reverse("crequests"))
     else:
         if userProfile.counsellor == True:
