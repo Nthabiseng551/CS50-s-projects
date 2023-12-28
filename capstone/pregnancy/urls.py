@@ -15,5 +15,5 @@ urlpatterns = [
      path("requests/", views.counsellor_request, name="counsellor_request"),
      path("request/", views.diet_request, name="diet_request"),
      path("cancel/", views.cancel_crequest, name="cancel_crequest"),
-     path("cancell/", views.diet_request, name="diet_request")
+     path("cancell/", views.cancel_drequest, name="cancel_drequest")
  ]
