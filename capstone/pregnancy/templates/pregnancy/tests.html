@@ -49,8 +49,7 @@
                 }
             }
         document.addEventListener('DOMContentLoaded', function() {
-            document.querySelector('#tests-done').innerHTML = `localStorage.getItem('testsdone') of 14 tests done`;
-            localStorage.clear();
+            document.querySelector('#tests-done').innerText = `{localStorage.getItem('testsdone')} of 14 tests done`;
     });
         </script>
 {% endblock %}
