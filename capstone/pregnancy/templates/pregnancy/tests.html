@@ -37,14 +37,14 @@
                 if (btn.innerHTML === "Done"){
                     testsdone++;
                     localStorage.setItem('testsdone', testsdone);
-                    document.querySelector('#tests-done').innerHTML = localStorage.getItem('testsdone');
+                    document.querySelector('#tests-done').innerHTML = `${localStorage.getItem('testsdone')} of 14 tests done`;
                     btn.innerHTML = "notDone";
 
                 }
                 else if (btn.innerHTML === "notDone"){
                     testsdone--;
                     localStorage.setItem('testsdone', testsdone);
-                    document.querySelector('#tests-done').innerHTML = localStorage.getItem('testsdone');
+                    document.querySelector('#tests-done').innerHTML = `${localStorage.getItem('testsdone')} of 14 tests done`;
                     btn.innerHTML = "Done";
                 }
             }
