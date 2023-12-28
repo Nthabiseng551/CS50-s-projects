@@ -17,5 +17,6 @@ urlpatterns = [
      path("cancel/", views.cancel_crequest, name="cancel_crequest"),
      path("cancell/", views.cancel_drequest, name="cancel_drequest"),
      path("request/", views.drequests, name="drequests"),
-     path("requests/", views.crequests, name="crequests")
+     path("requests/", views.crequests, name="crequests"),
+     path("accept/", views.accept_crequest, name="accept_crequest")
  ]
