@@ -257,7 +257,7 @@ def counsellor_request(request):
     # current user
     currentUser = User.objects.get(pk=request.user.id)
     userProfile = UserProfile.objects.get(user=currentUser)
-
+    
     userProfile.counselling_requested = True
     userProfile.save()
     messages.success(request, 'Consultation with counsellor request lodged succesfully')
