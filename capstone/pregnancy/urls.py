@@ -12,8 +12,5 @@ urlpatterns = [
      path("health", views.health, name="health"),
      path("weight", views.weight, name="weight"),
      path("tests", views.tests, name="tests"),
-     # API Routes
-     path("requests", views.requests, name="requests"),
-     path("requests/<int:request_id>", views.request, name="request"),
-     path("requests/<str:requestfor>", views.requestfor, name="requestfor"),
+
  ]
