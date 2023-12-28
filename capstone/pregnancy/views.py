@@ -260,7 +260,7 @@ def counsellor_request(request):
 
     userProfile.counselling_requested = True
     userProfile.save()
-    messages.success(request, 'Counselling request lodged succesfully')
+    messages.success(request, 'Consultation with counsellor request lodged succesfully')
     return HttpResponseRedirect(reverse("health"))
 
 @login_required
@@ -271,5 +271,5 @@ def diet_request(request):
 
     userProfile.diet_requested = True
     userProfile.save()
-    messages.success(request, 'Counselling request lodged succesfully')
+    messages.success(request, 'Consultation with counsellor request lodged succesfully')
     return HttpResponseRedirect(reverse("health"))
