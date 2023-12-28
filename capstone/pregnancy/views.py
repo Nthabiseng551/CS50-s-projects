@@ -253,13 +253,12 @@ def tests(request):
     })
 
 @login_required
-def counsellor_request(request, user_id):
+def counsellor_request(request):
     # current user
-    user = request.user
     currentUser = User.objects.get(pk=request.user.id)
     userProfile = UserProfile.objects.get(user=currentUser)
 
-    listing = Listing.objects.get(pk=listing_id)
-    listing.watchlist.add(user)
+    userProfile.counselling_requested = True
+    userProfile.save()
     messages.success(request, 'Counselling request lodged succesfully')
     return HttpResponseRedirect(reverse("health"))
