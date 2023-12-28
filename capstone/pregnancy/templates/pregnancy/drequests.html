@@ -1,0 +1,7 @@
+{% extends "pregnancy/layout.html" %}
+
+{% block body %}
+{% for user in users %}
+<p>{{ user.username }}</p>
+{% endfor %}
+{% endblock %}
