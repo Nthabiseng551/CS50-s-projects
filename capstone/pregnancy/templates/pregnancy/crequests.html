@@ -6,7 +6,7 @@
 {% else %}
     {% for user in users %}
     <p>{{ user.user.username }}</p>
-    <form action="{% url 'crequest' %}" method="POST">
+    <form action="{% url 'crequests' %}" method="POST">
         {% csrf_token %}
         <input name="requestUser" type="hidden" value="{{ user.user }}">
         <button class="btn btn-secondary btn-lg btn-block" type="submit">Accept request</button>
