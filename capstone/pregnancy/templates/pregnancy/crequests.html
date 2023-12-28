@@ -1,7 +1,11 @@
 {% extends "pregnancy/layout.html" %}
 
 {% block body %}
-{% for user in users %}
-<p>{{ user.user.username }}</p>
-{% endfor %}
+{% if not users %}
+<p> No requests</p>
+{% else %}
+    {% for user in users %}
+    <p>{{ user.user.username }}</p>
+    {% endfor %}
+{% endif %}
 {% endblock %}
