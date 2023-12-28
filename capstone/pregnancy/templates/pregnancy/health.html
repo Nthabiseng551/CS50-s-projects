@@ -6,11 +6,11 @@
     <p>Monitor weight gain <a href="{% url 'weight' %}">Track weight.</a></p>
 
     {% if drequested %}
-    <h3>{{ user.username }} you already have a live request for consultation with a counsellor, click the button below if you wish to cancel the request</h3>
+    <h3>{{ user.username }} you already have a live request for consultation with a dietician, click the button below if you wish to cancel the request</h3>
     <div>
         <form action="{% url 'cancel_drequest' %}" method="POST">
                 {% csrf_token %}
-                <button class="btn btn-secondary btn-lg btn-block" id = "drequest" type="submit">Request a consultation with a perinatal dietician</button>
+                <button class="btn btn-secondary btn-lg btn-block" id = "drequest" type="submit">Cancel my request for consultation with a perinatal dietician</button>
         </form>
         <div>
     {% else %}
@@ -27,7 +27,7 @@
             <div>
                 <form action="{% url 'cancel_crequest' %}" method="POST">
                         {% csrf_token %}
-                        <button class="btn btn-secondary btn-lg btn-block" id = "crequest" type="submit">Request a consultation with a perinatal counsellor</button>
+                        <button class="btn btn-secondary btn-lg btn-block" id = "crequest" type="submit">Cancel my request for consultation with a counsellor</button>
                 </form>
                 <div>
             {% else %}
