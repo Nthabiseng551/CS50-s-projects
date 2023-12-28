@@ -15,5 +15,5 @@ urlpatterns = [
      # API Routes
      path("requests", views.requests, name="requests"),
      path("requests/<int:request_id>", views.request, name="request"),
-     path("requests/<str:r>", views.mailbox, name="mailbox"),
+     path("requests/<str:requestfor>", views.requestfor, name="requestfor"),
  ]
