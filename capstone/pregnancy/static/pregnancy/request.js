@@ -10,8 +10,5 @@ function diet_request() {
 
     document.querySelector('#diet-request-view').style.display = 'block';
 
-    // Clear out composition fields
-    document.querySelector('#compose-recipients').value = '';
-    document.querySelector('#compose-subject').value = '';
-    document.querySelector('#compose-body').value = '';
+    document.querySelectorAll('dconcern').value = '';
   }
