@@ -12,5 +12,6 @@ urlpatterns = [
      path("health", views.health, name="health"),
      path("weight", views.weight, name="weight"),
      path("tests", views.tests, name="tests"),
-
+     path("remove/<int:user_id>", views.remove, name="remove"),
+     path("remove/<int:user_id>", views.remove, name="remove"),
  ]
