@@ -167,6 +167,11 @@ def health(request):
     currentUser = User.objects.get(pk=request.user.id)
     userProfile = UserProfile.objects.get(user=currentUser)
     week = userProfile.week_of_pregnancy
+
+    # check if user requested counselling with counsellor and/or ditecian
+    crequested = userProfile.counselling_requested
+    drequested = userProfile.diet_requested
+
     updated_date = userProfile.week_update_date
     # Added timedelta weeks to manipulate current date for the sake of demonstration of incrementing weeks for future dates
     current_date = date.today() + timedelta(weeks=0)
@@ -181,7 +186,9 @@ def health(request):
 
     return render(request, "pregnancy/health.html",{
         "week": week,
-        "timedelta": weeks
+        "timedelta": weeks,
+        "crequested": crequested,
+        "drequested": drequested
     })
 
 # Function for pregnant users to track weight gain
@@ -257,7 +264,7 @@ def counsellor_request(request):
     # current user
     currentUser = User.objects.get(pk=request.user.id)
     userProfile = UserProfile.objects.get(user=currentUser)
-    
+
     userProfile.counselling_requested = True
     userProfile.save()
     messages.success(request, 'Consultation with counsellor request lodged succesfully')
