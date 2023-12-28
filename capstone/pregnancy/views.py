@@ -253,11 +253,11 @@ def tests(request):
     })
 
 @login_required
-def (request, user_id):
+def counsellor_request(request, user_id):
     # current user
     user = request.user
 
     listing = Listing.objects.get(pk=listing_id)
     listing.watchlist.add(user)
-    messages.success(request, 'Listing added to watchlist.')
-    return HttpResponseRedirect(reverse("listing", args=(listing_id, )))
+    messages.success(request, 'Counselling request lodged succesfully')
+    return HttpResponseRedirect(reverse("health"))
