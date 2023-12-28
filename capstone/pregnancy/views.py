@@ -319,3 +319,14 @@ def crequests(request):
 
 #function for dieticians to view consultation requests
 def drequests(request):
+    currentUser = User.objects.get(pk=request.user.id)
+    userProfile = UserProfile.objects.get(user=currentUser)
+    requestedUsers = UserProfile.objects.filter(diet_requested = True)
+
+    if userProfile.dietician == True:
+        return render(request, "pregnancy/drequests.html",{
+            "users": requestedUsers
+        })
+    else:
+        messages.error(request, 'You are not authorized to access the requests page')
+        return HttpResponseRedirect(reverse("professionals"))
