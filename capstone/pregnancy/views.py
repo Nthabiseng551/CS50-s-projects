@@ -309,7 +309,7 @@ def crequests(request):
     userProfile = UserProfile.objects.get(user=currentUser)
 
     if userProfile.counsellor == True:
-        return
+        return return render(request, "pregnancy/crequests.html")
     else:
         messages.error(request, 'You are not authorized to access the requests page')
         return HttpResponseRedirect(reverse("professionals"))
