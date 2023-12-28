@@ -10,5 +10,5 @@ function diet_request() {
 
     document.querySelector('#diet-request-view').style.display = 'block';
 
-    document.querySelectorAll('dconcern').forEach(input).value = '';
+    
   }
