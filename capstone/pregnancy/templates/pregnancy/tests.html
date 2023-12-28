@@ -36,19 +36,21 @@
 
                 if (btn.innerHTML === "Done"){
                     testsdone++;
+                    localStorage.setItem('testsdone', testsdone);
                     document.querySelector('#tests-done').innerHTML = localStorage.getItem('testsdone');
                     btn.innerHTML = "notDone";
-                    localStorage.setItem('testsdone', testsdone);
+
                 }
                 else if (btn.innerHTML === "notDone"){
                     testsdone--;
+                    localStorage.setItem('testsdone', testsdone);
                     document.querySelector('#tests-done').innerHTML = localStorage.getItem('testsdone');
                     btn.innerHTML = "Done";
-                    localStorage.setItem('testsdone', testsdone);
                 }
             }
         document.addEventListener('DOMContentLoaded', function() {
-            document.querySelector('#tests-done').innerHTML = localStorage.getItem('testsdone');
+            document.querySelector('#tests-done').innerHTML = `localStorage.getItem('testsdone') of 14 tests done`;
+            localStorage.clear();
     });
         </script>
 {% endblock %}
