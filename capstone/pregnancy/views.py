@@ -271,5 +271,5 @@ def diet_request(request):
 
     userProfile.diet_requested = True
     userProfile.save()
-    messages.success(request, 'Consultation with counsellor request lodged succesfully')
+    messages.success(request, 'Consultation with dietician request lodged succesfully')
     return HttpResponseRedirect(reverse("health"))
