@@ -302,3 +302,17 @@ def cancel_crequest(request):
     userProfile.save()
     messages.success(request, 'Consultation with counsellor request cancelled')
     return HttpResponseRedirect(reverse("health"))
+
+#fuction for counsellors to view counselling requests
+def crequests(request):
+    currentUser = User.objects.get(pk=request.user.id)
+    userProfile = UserProfile.objects.get(user=currentUser)
+
+    if userProfile.counsellor == True:
+        return
+    else:
+        messages.error(request, 'You are not authorized to access the requests page')
+        return HttpResponseRedirect(reverse("professionals"))
+
+#function for dieticians to view consultation requests
+def drequests(request):
