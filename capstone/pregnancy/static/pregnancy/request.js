@@ -15,9 +15,8 @@ function diet_request() {
 
 function send_request() {
     // Get data from compose form submitted
-    const recipients = document.querySelector('#compose-recipients').value;
-    const subject = document.querySelector('#compose-subject').value;
-    const body = document.querySelector('#compose-body').value;
+    const concerns = document.querySelectorAll('dconcern').value;
+    
 
     // Send data
     fetch('/emails', {
