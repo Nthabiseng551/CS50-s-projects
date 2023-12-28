@@ -11,5 +11,9 @@ urlpatterns = [
      path("dietician", views.dietician, name="dietician"),
      path("health", views.health, name="health"),
      path("weight", views.weight, name="weight"),
-     path("tests", views.tests, name="tests")
+     path("tests", views.tests, name="tests"),
+     # API Routes
+     path("requests", views.compose, name="compose"),
+     path("requests/<int:request_id>", views.email, name="email"),
+     path("requests/<str:mailbox>", views.mailbox, name="mailbox"),
  ]
