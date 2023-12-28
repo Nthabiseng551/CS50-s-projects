@@ -13,5 +13,5 @@ urlpatterns = [
      path("weight", views.weight, name="weight"),
      path("tests", views.tests, name="tests"),
      path("requests/", views.counsellor_request, name="counsellor_request"),
-     path("requests/", views.diet_request, name="diet_request")
+     path("request/", views.diet_request, name="diet_request")
  ]
