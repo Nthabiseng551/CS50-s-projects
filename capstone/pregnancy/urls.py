@@ -13,7 +13,7 @@ urlpatterns = [
      path("weight", views.weight, name="weight"),
      path("tests", views.tests, name="tests"),
      # API Routes
-     path("requests", views.request, name="request"),
-     path("requests/<int:request_id>", views.email, name="email"),
-     path("requests/<str:mailbox>", views.mailbox, name="mailbox"),
+     path("requests", views.requests, name="requests"),
+     path("requests/<int:request_id>", views.request, name="request"),
+     path("requests/<str:r>", views.mailbox, name="mailbox"),
  ]
