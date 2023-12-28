@@ -13,5 +13,7 @@ urlpatterns = [
      path("weight", views.weight, name="weight"),
      path("tests", views.tests, name="tests"),
      path("requests/", views.counsellor_request, name="counsellor_request"),
-     path("request/", views.diet_request, name="diet_request")
+     path("request/", views.diet_request, name="diet_request"),
+     path("cancel/", views.cancel_crequest, name="cancel_crequest"),
+     path("cancell/", views.diet_request, name="diet_request")
  ]

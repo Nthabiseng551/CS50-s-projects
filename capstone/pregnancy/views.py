@@ -280,3 +280,25 @@ def diet_request(request):
     userProfile.save()
     messages.success(request, 'Consultation with dietician request lodged succesfully')
     return HttpResponseRedirect(reverse("health"))
+
+@login_required
+def cancel_drequest(request):
+    # current user
+    currentUser = User.objects.get(pk=request.user.id)
+    userProfile = UserProfile.objects.get(user=currentUser)
+
+    userProfile.diet_requested = False
+    userProfile.save()
+    messages.success(request, 'Consultation with dietician request cancelled')
+    return HttpResponseRedirect(reverse("health"))
+
+@login_required
+def cancel_crequest(request):
+    # current user
+    currentUser = User.objects.get(pk=request.user.id)
+    userProfile = UserProfile.objects.get(user=currentUser)
+
+    userProfile.counselling_requested = False
+    userProfile.save()
+    messages.success(request, 'Consultation with counsellor request cancelled')
+    return HttpResponseRedirect(reverse("health"))
