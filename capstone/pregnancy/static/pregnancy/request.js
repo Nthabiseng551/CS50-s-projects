@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    document.querySelector('#').addEventListener('click', diet_request);
+    document.querySelector('#drequest').addEventListener('click', diet_request);
     // Send email when compose form submitted
-    document.querySelector('#compose-form').onsubmit = send_request;
+    document.querySelector('#diet-form').onsubmit = send_request;
 
   });
