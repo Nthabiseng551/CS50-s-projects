@@ -5,13 +5,13 @@
     <p>nutrition(choosemyplate) <a href="https://www.myplate.gov/life-stages/pregnancy-and-breastfeeding">Choose my plate</a></p>
     <p>Monitor weight gain <a href="{% url 'weight' %}">Track weight.</a></p>
     <div>
-        <form action="{% url 'diet_request' user_id=request.user.id %}" method="POST">
+        <form action="{% url 'diet_request' %}" method="POST">
                 {% csrf_token %}
                 <button class="btn btn-secondary btn-lg btn-block" id = "drequest" type="submit">Request a consultation with a perinatal dietician</button>
         </form>
         <div>
             <div>
-                <form action="{% url 'counsellor_request' user_id=request.user.id %}" method="POST">
+                <form action="{% url 'counsellor_request' %}" method="POST">
                         {% csrf_token %}
                         <button class="btn btn-secondary btn-lg btn-block" id = "crequest" type="submit">Request a consultation with a perinatal counsellor</button>
                 </form>
