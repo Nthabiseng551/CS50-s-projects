@@ -4,12 +4,32 @@
     <h5>{{ week }}: {{ timedelta }} request counselling; request consultation with dietician, monitor weight gain, nutrition(choosemyplate)</h5>
     <p>nutrition(choosemyplate) <a href="https://www.myplate.gov/life-stages/pregnancy-and-breastfeeding">Choose my plate</a></p>
     <p>Monitor weight gain <a href="{% url 'weight' %}">Track weight.</a></p>
+
+    {% if drequested %}
+    <div>
+        <form action="{% url 'cancel_drequest' %}" method="POST">
+                {% csrf_token %}
+                <button class="btn btn-secondary btn-lg btn-block" id = "drequest" type="submit">Request a consultation with a perinatal dietician</button>
+        </form>
+        <div>
+    {% else %}
     <div>
         <form action="{% url 'diet_request' %}" method="POST">
                 {% csrf_token %}
                 <button class="btn btn-secondary btn-lg btn-block" id = "drequest" type="submit">Request a consultation with a perinatal dietician</button>
         </form>
         <div>
+            {% endif %}
+
+            {% if crequested %}
+            <h3>{{}}</h3>
+            <div>
+                <form action="{% url 'cancel_crequest' %}" method="POST">
+                        {% csrf_token %}
+                        <button class="btn btn-secondary btn-lg btn-block" id = "crequest" type="submit">Request a consultation with a perinatal counsellor</button>
+                </form>
+                <div>
+            {% else %}
             <div>
                 <form action="{% url 'counsellor_request' %}" method="POST">
                         {% csrf_token %}
