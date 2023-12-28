@@ -307,9 +307,12 @@ def cancel_crequest(request):
 def crequests(request):
     currentUser = User.objects.get(pk=request.user.id)
     userProfile = UserProfile.objects.get(user=currentUser)
+    requestedUsers = UserProfile.objects.filter(counselling_requested = True)
 
     if userProfile.counsellor == True:
-        return return render(request, "pregnancy/crequests.html")
+        return return render(request, "pregnancy/crequests.html",{
+            "users": requestedUsers
+        })
     else:
         messages.error(request, 'You are not authorized to access the requests page')
         return HttpResponseRedirect(reverse("professionals"))
