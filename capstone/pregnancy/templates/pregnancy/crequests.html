@@ -6,7 +6,9 @@
 {% else %}
     {% for user in users %}
     <p>{{ user.user.username }}</p>
-    <input type="hidden" class="btn btn-primary" value="hidden">
+    <form>
+    <input name="requestUser" class="btn btn-primary" value="{{ user.user }}">
+    </form>
     {% endfor %}
 {% endif %}
 {% endblock %}
