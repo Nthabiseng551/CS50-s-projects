@@ -12,8 +12,10 @@ urlpatterns = [
      path("health", views.health, name="health"),
      path("weight", views.weight, name="weight"),
      path("tests", views.tests, name="tests"),
-     path("requests/", views.counsellor_request, name="counsellor_request"),
-     path("request/", views.diet_request, name="diet_request"),
+     path("requested/", views.counsellor_request, name="counsellor_request"),
+     path("requestedd/", views.diet_request, name="diet_request"),
      path("cancel/", views.cancel_crequest, name="cancel_crequest"),
-     path("cancell/", views.cancel_drequest, name="cancel_drequest")
+     path("cancell/", views.cancel_drequest, name="cancel_drequest"),
+     path("request/", views.drequests, name="drequests"),
+     path("requests/", views.crequests, name="crequests")
  ]
