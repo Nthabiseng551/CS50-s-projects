@@ -309,13 +309,21 @@ def crequests(request):
     userProfile = UserProfile.objects.get(user=currentUser)
     requestedUsers = UserProfile.objects.filter(counselling_requested = True)
 
-    if userProfile.counsellor == True:
-        return render(request, "pregnancy/crequests.html",{
-            "users": requestedUsers
-        })
+    if request.method == "POST":
+        user = request.POST["requestUser"]
+        requestProfile = UserProfile.objects.get(user=user)
+        requestProfile.counselling_requested = False
+        requestProfile.save()
+        messages.success(request, 'You have accepted { user.username }'s couselling consultation request')
+        return HttpResponseRedirect(reverse("crequests"))
     else:
-        messages.error(request, 'You are not authorized to access the requests page')
-        return HttpResponseRedirect(reverse("professionals"))
+        if userProfile.counsellor == True:
+            return render(request, "pregnancy/crequests.html",{
+                "users": requestedUsers
+            })
+        else:
+            messages.error(request, 'You are not authorized to access the requests page')
+            return HttpResponseRedirect(reverse("professionals"))
 
 #function for dieticians to view consultation requests
 def drequests(request):
