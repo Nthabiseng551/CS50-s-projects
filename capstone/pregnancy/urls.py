@@ -12,6 +12,6 @@ urlpatterns = [
      path("health", views.health, name="health"),
      path("weight", views.weight, name="weight"),
      path("tests", views.tests, name="tests"),
-     path("requests/<int:user_id>", views.counsellor_request, name="counsellor_request"),
-     path("requests/<int:user_id>", views.diet_request, name="diet_request")
+     path("requests/", views.counsellor_request, name="counsellor_request"),
+     path("requests/", views.diet_request, name="diet_request")
  ]
