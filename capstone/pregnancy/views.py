@@ -310,7 +310,7 @@ def crequests(request):
     requestedUsers = UserProfile.objects.filter(counselling_requested = True)
 
     if userProfile.counsellor == True:
-        return return render(request, "pregnancy/crequests.html",{
+        return render(request, "pregnancy/crequests.html",{
             "users": requestedUsers
         })
     else:
