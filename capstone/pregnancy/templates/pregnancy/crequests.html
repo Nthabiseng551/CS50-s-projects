@@ -6,6 +6,7 @@
 {% else %}
     {% for user in users %}
     <p>{{ user.user.username }}</p>
+    <input type="hidden" class="btn btn-primary" value="hidden">
     {% endfor %}
 {% endif %}
 {% endblock %}
