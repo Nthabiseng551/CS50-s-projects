@@ -262,3 +262,14 @@ def counsellor_request(request):
     userProfile.save()
     messages.success(request, 'Counselling request lodged succesfully')
     return HttpResponseRedirect(reverse("health"))
+
+@login_required
+def diet_request(request):
+    # current user
+    currentUser = User.objects.get(pk=request.user.id)
+    userProfile = UserProfile.objects.get(user=currentUser)
+
+    userProfile.diet_requested = True
+    userProfile.save()
+    messages.success(request, 'Counselling request lodged succesfully')
+    return HttpResponseRedirect(reverse("health"))
