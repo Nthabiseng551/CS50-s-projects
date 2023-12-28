@@ -256,6 +256,8 @@ def tests(request):
 def counsellor_request(request, user_id):
     # current user
     user = request.user
+    currentUser = User.objects.get(pk=request.user.id)
+    userProfile = UserProfile.objects.get(user=currentUser)
 
     listing = Listing.objects.get(pk=listing_id)
     listing.watchlist.add(user)
