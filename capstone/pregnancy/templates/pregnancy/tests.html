@@ -19,20 +19,37 @@
     </div>
     </div>
 
-    <div class="container">
-        <h4>Second Trimester Tests and Screenings</h4>
-        {% for test in tests2 %}
-        <p>{{ test.test_name }}</p>
-            <button onclick="testdone()" class = "btn">Done</button>
-        {% endfor %}
+    <div class="container" style="margin-bottom: 30px;">
+        <h4 style="margin-bottom: 30px;">Second Trimester Tests and Screenings</h4>
+        <div class="list-group" style="margin-bottom: 30px;">
+    {% for test in tests2 %}
+    <div class="list-group-item">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{ test.test_name }}</h5>
+          <button onclick="testdone()" class="btn">Done</button>
+        </div>
+        <p class="mb-1" style="text-align: left;">{{ test.description }}</p>
+
+    </div>
+    {% endfor %}
+    </div>
     </div>
         <div class="container">
-            <h4>Third Trimester Tests and Screenings</h4>
-            {% for test in tests3 %}
-            <p>{{ test.test_name }}</p>
-            <button onclick="testdone()" class = "btn">Done</button>
-            {% endfor %}
+            <h4 style="margin-bottom: 30px;">Third Trimester Tests and Screenings</h4>
+        <div class="list-group" style="margin-bottom: 30px;">
+    {% for test in tests3 %}
+    <div class="list-group-item">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{ test.test_name }}</h5>
+          <button onclick="testdone()" class="btn">Done</button>
         </div>
+        <p class="mb-1" style="text-align: left;">{{ test.description }}</p>
+
+    </div>
+    {% endfor %}
+</div>
+        </div>
+
         <script>
 
             if (!localStorage.getItem('testsdone')) {
