@@ -7,10 +7,16 @@
         <h4>First Trimester Tests and Screenings</h4>
         <div class="list-group">
     {% for test in tests1 %}
-    <p>{{ test.test_name }}</p>
-        <button onclick="testdone()" class="btn">Done</button>
-    {% endfor %}
+    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{ test.test_name }}</h5>
+          <small>3 days ago</small>
         </div>
+        <p class="mb-1">{{ test.description }}</p>
+        <button onclick="testdone()" class="btn">Done</button>
+      </a>
+    {% endfor %}
+    </div>
     </div>
 
     <div class="container">
