@@ -6,7 +6,7 @@
 </div>
 
 {% if user.is_authenticated %}
-    <h3 style="text-align: center; color:#ff007f;">Hi, {{ user.username }}</h3>
+    <h3 style="text-align: center; color:#ff007f; margin-bottom: 20px;">Hi, {{ user.username }}</h3>
     {% if pregnant %}
     <div class="container">
         <p> at {{ week }} weeks</p>
