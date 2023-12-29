@@ -1,6 +1,20 @@
 {% extends "pregnancy/layout.html" %}
 
 {% block body %}
+<div class="container" style="margin-bottom: 30px;">
+    <h4 style="margin-bottom: 30px;">For Perinatal Dieticians</h4>
+    <div class="list-group" style="margin-bottom: 30px;">
+<div class="list-group-item">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{ test.test_name }}</h5>
+      <button onclick="testdone()" class="btn">Done</button>
+    </div>
+    <p class="mb-1" style="text-align: left;">{{ test.description }}</p>
+
+</div>
+</div>
+</div>
+
 <p>Register as prenatal counsellor <a href="{% url 'counsellor' %}">Register here.</a></p>
 <p>counsellors view requests for counselling<a href="{% url 'crequests' %}">View counselling request</a></p>
 
