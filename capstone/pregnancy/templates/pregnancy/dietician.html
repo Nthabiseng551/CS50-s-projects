@@ -7,7 +7,12 @@
 
 <form action="{% url 'dietician' %}" method="POST">
     {% csrf_token %}
+    <p>Name</p>
+    <p>Surname</p>
+    <p>Email Address</p>
     <input name="username" type="text" placeholder="dietician name">
+    <p>Declaration:</p>
+
     <button class="btn" type="submit">Save</button>
 </form>
 {% endblock %}
