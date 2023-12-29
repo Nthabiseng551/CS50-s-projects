@@ -12,7 +12,7 @@
     <form action="{% url 'index' %}" method="POST">
         {% csrf_token %}
         <input name="week" type="number" placeholder="Week of pregnancy" min="1">
-        <button class="btn btn-primary" id ="week" type="submit">Save</button>
+        <button id ="week" type="submit">Save</button>
     </form>
 {% endif %}
     {% endblock %}
