@@ -23,14 +23,14 @@
     <div>
         <form action="{% url 'cancel_crequest' %}" method="POST">
                 {% csrf_token %}
-                <button class="btn btn-secondary btn-lg btn-block" style="margin-bottom: 20px;" id = "crequest" type="submit">Cancel my request for consultation with a counsellor</button>
+                <button class="btn btn-secondary btn-lg btn-block" style="margin-bottom: 30px;" id = "crequest" type="submit">Cancel my request for consultation with a counsellor</button>
         </form>
     </div>
     {% else %}
     <div>
         <form action="{% url 'counsellor_request' %}" method="POST">
                 {% csrf_token %}
-                <button class="btn btn-secondary btn-lg btn-block" style="margin-bottom: 20px;" id = "crequest" type="submit">Request a consultation with a perinatal counsellor</button>
+                <button class="btn btn-secondary btn-lg btn-block" style="margin-bottom: 30px;" id = "crequest" type="submit">Request a consultation with a perinatal counsellor</button>
         </form>
     </div>
         {% endif %}
@@ -45,14 +45,14 @@
     <div>
         <form action="{% url 'cancel_drequest' %}" method="POST">
                 {% csrf_token %}
-                <button class="btn btn-secondary btn-lg btn-block" style="margin-bottom: 20px;" id = "drequest" type="submit">Cancel my request for consultation with a perinatal dietician</button>
+                <button class="btn btn-secondary btn-lg btn-block" style="margin-bottom: 30px;" id = "drequest" type="submit">Cancel my request for consultation with a perinatal dietician</button>
         </form>
     </div>
     {% else %}
     <div>
         <form action="{% url 'diet_request' %}" method="POST">
                 {% csrf_token %}
-                <button class="btn btn-secondary btn-lg btn-block" style="margin-bottom: 20px;" id = "drequest" type="submit">Request a consultation with a perinatal dietician</button>
+                <button class="btn btn-secondary btn-lg btn-block" style="margin-bottom: 30px;" id = "drequest" type="submit">Request a consultation with a perinatal dietician</button>
         </form>
     </div>
             {% endif %}
