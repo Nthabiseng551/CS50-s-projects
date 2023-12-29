@@ -7,6 +7,11 @@
         <h4 class="col-4" style="color: #444;">Weight gain percentage:  <div style="display: inline-block;" class="circle1">{{ percentage_gain|floatformat }}%</div><h4>
         <h4 class="col-4" style="color: #444;">How far along your are:  <div style="display: inline-block;" class="circle2"> {{ duration_percent|floatformat }}%</div></h4>
         </div>
+        <h3 id="difference">{{ difference }}</h3>
+        <h3 id="green-flag" style="color:Green;"><span>&#9873;</span> Safe</h3>
+        <h3 id="orange-flag" style="color:orange;"><span>&#9873;</span> Caution</h3>
+        <h3 id="red-flag" style="color:red;"><span>&#9873;</span> Unsafe</h3>
+        <h3 id="track">absolute value difference between duration and weight gain percentage: 10% is green-safe, 11 to 15% is orange-caution, greater than 15% is red-unsafe</h3>
         <h4>Latest recorded weight gain, <span class="text-muted">{{ date }}</span></h4>
     </div>
         <h1>{{ percentage_gain|floatformat }}% Latest recorded weight gain, <span class="text-muted">{{ date }}</span></h1>
