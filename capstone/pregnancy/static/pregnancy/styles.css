@@ -1,6 +1,6 @@
 .btn{
     background-color: #FFC0CB; /* pink */
-    color: #000;
+    color: #444;
   }
 
 .header {
@@ -25,7 +25,7 @@
   font-size: 32px;
   border: 3px solid #000;
   background-color: #ff007f;/* pink */
-  color: #fff;
+  color: #444;
   border-color: #ff007f;
 }
 
@@ -37,12 +37,12 @@
   font-size: 32px;
   border: 3px solid #000;
   background-color: #FFC0CB;/* darker pink */
-  color: #fff;
+  color: #444;
   border-color: #FFC0CB;
 }
 
 .accordion {
-  background-color: #ff007f;
+  background-color: #FFC0CB;
   color: #444;
   cursor: pointer;
   padding: 18px;
