@@ -10,10 +10,14 @@
     <div class="list-group-item">
         <div class="d-flex w-100 justify-content-between">
           <h5 class="mb-1">{{ user.user.username }}</h5>
-          <button onclick="testdone()" class="btn">Done</button>
+          <form action="{% url 'drequests' %}" method="POST">
+            {% csrf_token %}
+            <input name="requestUser" type="hidden" value="{{ user.user }}">
+            <button class="btn" type="submit">Accept request</button>
+    </form>
         </div>
         <p class="mb-1" style="text-align: left;">Email Address: {{ user.user.email }}</p>
-        <p class="mb-1" style="text-align: left;">Email Address: {{ user.user.email }}</p>
+        <p class="mb-1" style="text-align: left;">Submitted: {{ user.user.email }}</p>
 
     </div>
     {% endfor %}
