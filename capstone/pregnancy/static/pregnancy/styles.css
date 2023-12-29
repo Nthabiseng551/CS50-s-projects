@@ -67,7 +67,7 @@
 }
 
 .accordion:after {
-  content: '\f106'; /* Unicode character for "plus" sign (+) */
+  content: '\f078'; /* Unicode character for "plus" sign (+) */
   font-size: 13px;
   color: #777;
   float: right;
