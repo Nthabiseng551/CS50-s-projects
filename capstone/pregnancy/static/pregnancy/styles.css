@@ -48,7 +48,8 @@
   padding: 18px;
   width: 100%;
   text-align: left;
-  border-style: none;
+  border-style: solid;
+  border-color: 
   outline: none;
   transition: 0.4s;
 }
