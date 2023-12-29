@@ -13,13 +13,15 @@
     <p>pregnancy weight gain calculator <a href="https://www.whattoexpect.com/pregnancy-weight-gain-calculator">weight gain calculator</a></p>
     <p>According to guidelines, must gain an average of 3 pounds(1.36 kg) per month, approximate weight gain and pregnancy duration values are a good indication that you are tracking within recommended guidelines gradually</p>
     <p>Track weight gain</p>
+    <div class="container">
     <form action="{% url 'weight' %}" method="POST">
         {% csrf_token %}
         <div class="form-group">
             <p>Your current weight (in kg)</p>
             <input name="cweight" class="form-control" type="number">
         </div>
-        <p>If you haven't provided your pre-pregnancy weight and/or total weight gain target, or wish to rectify their values, do so below: </p>
+    </div>
+        <p><strong>If you haven't provided your pre-pregnancy weight and/or total weight gain target, or wish to rectify their values, do so below: </strong></p>
         <div class="form-group">
             <p>Your pre-pregnancy weight (in kg)</p>
             <input name="pre-weight" class="form-control" type="number" placeholder="{{ preWeight }}">
