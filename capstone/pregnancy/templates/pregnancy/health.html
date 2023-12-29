@@ -24,18 +24,18 @@
                 {% csrf_token %}
                 <button class="btn btn-secondary btn-lg btn-block" id = "crequest" type="submit">Cancel my request for consultation with a counsellor</button>
         </form>
-        <div>
+    </div>
     {% else %}
     <div>
         <form action="{% url 'counsellor_request' %}" method="POST">
                 {% csrf_token %}
                 <button class="btn btn-secondary btn-lg btn-block" id = "crequest" type="submit">Request a consultation with a perinatal counsellor</button>
         </form>
-        <div>
-            {% endif %}
+    </div>
+        {% endif %}
 
         </div>
-    </div>
+
 <button class="accordion">Perinatal Dieticians</button>
 <div class="panel">
   <p>Lorem ipsum...</p>
