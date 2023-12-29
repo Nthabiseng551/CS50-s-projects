@@ -332,10 +332,20 @@ def drequests(request):
     userProfile = UserProfile.objects.get(user=currentUser)
     requestedUsers = UserProfile.objects.filter(diet_requested = True)
 
-    if userProfile.dietician == True:
-        return render(request, "pregnancy/drequests.html",{
-            "users": requestedUsers
-        })
+    if request.method == "POST":
+        user = request.POST["requestUser"]
+        userObj = User.objects.get(username=user)
+        requestProfile = UserProfile.objects.get(user=userObj)
+        requestProfile.diet_requested = False
+        requestProfile.save()
+        messages.success(request, f"You have accepted { userObj.username }'s request for consultation")
+        return HttpResponseRedirect(reverse("drequests"))
     else:
-        messages.error(request, 'You are not authorized to access the requests page')
-        return HttpResponseRedirect(reverse("professionals"))
+
+        if userProfile.dietician == True:
+            return render(request, "pregnancy/drequests.html",{
+                "users": requestedUsers
+            })
+        else:
+            messages.error(request, 'You are not authorized to access the requests page')
+            return HttpResponseRedirect(reverse("professionals"))
