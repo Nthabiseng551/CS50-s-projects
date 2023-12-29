@@ -4,13 +4,24 @@
 {% if not users %}
 <h2> No requests</h2>
 {% else %}
+<h4 style="margin-bottom: 30px;">First Trimester Tests and Screenings</h4>
+        <div class="list-group" style="margin-bottom: 30px;">
     {% for user in users %}
-    <p>{{ user.user.username }}</p>
-    <form action="{% url 'crequests' %}" method="POST">
-        {% csrf_token %}
-        <input name="requestUser" type="hidden" value="{{ user.user }}">
-        <button class="btn" type="submit">Accept request</button>
-</form>
+    <div class="list-group-item">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{ user.user.username }}</h5>
+          <form action="{% url 'drequests' %}" method="POST">
+            {% csrf_token %}
+            <input name="requestUser" type="hidden" value="{{ user.user }}">
+            <button class="btn" type="submit">Accept request</button>
+    </form>
+        </div>
+        <p class="mb-1" style="text-align: left;">Email Address: {{ user.user.email }}</p>
+
+    </div>
     {% endfor %}
+    </div>
+
 {% endif %}
+
 {% endblock %}
