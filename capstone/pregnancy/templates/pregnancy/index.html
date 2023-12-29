@@ -9,8 +9,8 @@
     <h3 style="text-align: center; color:#ff007f; margin-bottom: 20px;">Hi, {{ user.username }}</h3>
     {% if pregnant %}
     <div class="container">
-        <p> at {{ week }} weeks</p>
-        <p> {{ togo }} weeks to go</p>
+        <div class="circle">{{ week }}</div>
+        <div class="circle"> {{ togo }}</div>
     </div>
     {% endif %}
     <div class="container">
