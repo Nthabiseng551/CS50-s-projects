@@ -22,14 +22,6 @@
     {% endfor %}
     </div>
 
-    {% for user in users %}
-    <p>{{ user.user.username }}</p>
-    <form action="{% url 'drequests' %}" method="POST">
-        {% csrf_token %}
-        <input name="requestUser" type="hidden" value="{{ user.user }}">
-        <button class="btn" type="submit">Accept request</button>
-</form>
-    {% endfor %}
 {% endif %}
 {% endblock %}
 
