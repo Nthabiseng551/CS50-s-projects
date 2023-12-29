@@ -2,3 +2,11 @@
     background-color: #FFC0CB; /* pink */
     color: #000;
   }
+
+.header {
+    background-color: #477bff;
+    color: #fff;
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+    text-align: center;
+}
