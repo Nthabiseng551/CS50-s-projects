@@ -2,6 +2,13 @@
 
 {% block body %}
     {% if track_weight %}
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+        <h4 class="col-4" style="color: #444;">Weight gain percentage:  <div style="display: inline-block;" class="circle1">{{ percentage_gain|floatformat }}%</div><h4>
+        <h4 class="col-4" style="color: #444;">How far along your are:  <div style="display: inline-block;" class="circle2"> {{ duration_percent|floatformat }}%</div></h4>
+        </div>
+        <h4>Latest recorded weight gain, <span class="text-muted">{{ date }}</span></h4>
+    </div>
         <h1>{{ percentage_gain|floatformat }}% Latest recorded weight gain, <span class="text-muted">{{ date }}</span></h1>
         <h1>{{ duration_percent|floatformat }}%</h1>
         <h3 id="difference">{{ difference }}</h3>
