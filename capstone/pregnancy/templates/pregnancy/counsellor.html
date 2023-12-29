@@ -8,6 +8,15 @@
 <form action="{% url 'counsellor' %}" method="POST">
     {% csrf_token %}
     <input name="username" type="text" placeholder="counsellor name">
+    <div class="form-check">
+        <h4>Declaration</h4>
+        <input type="checkbox" class="form-check-input" id="test1">
+        <label for="test1">I have background or experience in psychology, counselling and mental health</label>
+        <br>
+        <input type="checkbox" class="form-check-input" id="test2">
+        <label for="test2">I have regular internet access and can be able to keep in contact with clients when needed</label>
+
+      </div>
     <button class="btn" type="submit">Save</button>
 </form>
 {% endblock %}
