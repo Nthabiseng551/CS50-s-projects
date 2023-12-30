@@ -40,6 +40,9 @@ def index(request):
             if week is not None:
                 to_go = 40 - week
                 preg = userProfile.pregnant
+            else:
+                to_go = 0
+                preg = userProfile.pregnant
             return render(request, "pregnancy/index.html",{
                 "week": week,
                 "togo": to_go,
