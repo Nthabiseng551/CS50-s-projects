@@ -37,6 +37,7 @@ def index(request):
                 userProfile.tests.add(test)
 
             week = userProfile.week_of_pregnancy
+            if week i
             to_go = 40 - week
             preg = userProfile.pregnant
             return render(request, "pregnancy/index.html",{
