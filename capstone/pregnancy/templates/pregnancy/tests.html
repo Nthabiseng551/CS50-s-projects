@@ -63,19 +63,19 @@
                 if (btn.innerHTML === "Done"){
                     testsdone++;
                     localStorage.setItem('testsdone', testsdone);
-                    document.querySelector('#tests-done').innerHTML = `${localStorage.getItem('testsdone')} of 14 tests done`;
+                    document.querySelector('#tests-done').innerHTML = `${localStorage.getItem('testsdone')} of 15 tests done`;
                     btn.innerHTML = "&#x2713";
 
                 }
                 else{
                     testsdone--;
                     localStorage.setItem('testsdone', testsdone);
-                    document.querySelector('#tests-done').innerHTML = `${localStorage.getItem('testsdone')} of 14 tests done`;
+                    document.querySelector('#tests-done').innerHTML = `${localStorage.getItem('testsdone')} of 15 tests done`;
                     btn.innerHTML = "Done";
                 }
             }
         document.addEventListener('DOMContentLoaded', function() {
-            document.querySelector('#tests-done').innerHTML = `${localStorage.getItem('testsdone')} of 14 tests done`;
+            document.querySelector('#tests-done').innerHTML = `${localStorage.getItem('testsdone')} of 15 tests done`;
             localStorage.clear();
     });
         </script>
