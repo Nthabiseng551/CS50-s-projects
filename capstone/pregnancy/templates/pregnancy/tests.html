@@ -70,7 +70,7 @@
                     btn.innerHTML = "&#x2713";
 
                 }
-                else if (btn.innerHTML === "&#x2713"){
+                else{
                     testsdone--;
                     localStorage.setItem('testsdone', testsdone);
                     document.querySelector('#tests-done').innerHTML = `${localStorage.getItem('testsdone')} of 14 tests done`;
