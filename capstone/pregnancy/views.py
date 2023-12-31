@@ -105,7 +105,7 @@ def register(request):
             newProfile.save()
             tests = Test.objects.all()
             for test in tests:
-                newProfile.usertests.add(test)
+                newProfile.tests.add(test)
         except IntegrityError:
             return render(request, "pregnancy/register.html", {
                 "message": "Username already taken."
