@@ -1,0 +1,1 @@
+A simple homepage that introduces myself, favorite hobby or extracurricular, or anything else of my interest, created using HTML, CSS, and JavaScript.[Problem specification](https://cs50.harvard.edu/x/2023/psets/8/homepage/)
