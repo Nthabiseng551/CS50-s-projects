@@ -1,1 +1,1 @@
-write a program that recreates a half-pyramid, of height provided by user on prompt, using hashes (#) for blocks, in python. [Problem specification](https://cs50.harvard.edu/college/2023/fall/psets/6/mario/less/)
+A program that recreates a half-pyramid, of height provided by user on prompt, using hashes (#) for blocks, in python. [Problem specification](https://cs50.harvard.edu/college/2023/fall/psets/6/mario/less/)
